@@ -1,0 +1,39 @@
+.App {
+    text-align: center;
+  }
+  
+  .mainGrid{
+      /* border: 2px solid red; */
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-left: auto;
+      grid-gap: 10px;
+      margin-top: 12rem;
+  
+  }
+  
+  .mainGrid .grid1{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    text-decoration: none;
+  }
+  
+  .grid1 img{
+    border: 2px solid green;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .grid1 a{
+    text-decoration: none;
+    color: black;
+  }
+  
+  
+  
+  
