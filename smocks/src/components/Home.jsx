@@ -1,9 +1,11 @@
 import React from 'react'
 import user from '../images/user.png';
 import { NavLink } from "react-router-dom"
-
+import Carl from './Carl.jsx'
 function Home() {
   return (
+    <>
+    <Carl></Carl>
     <div className='mainGrid'>
         <div className='grid1'>
         <NavLink to="/signup">
@@ -28,6 +30,7 @@ function Home() {
         
         </div>
     </div>
+    </>
   )
 }
 
