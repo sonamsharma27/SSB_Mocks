@@ -12,7 +12,6 @@
     width: 80%;
     box-shadow: 1px 4px 8px 3px #c4b6b6;
     background-color: hsl(0, 0%, 90%);
-    /* margin-bottom: 5rem; */
 
 }
 
@@ -23,7 +22,6 @@
   align-items: center;
   padding: 6rem;
   text-decoration: none;
-  /* background: rgb(74, 77, 174); */
 }
 
 .grid1 img{
@@ -81,7 +79,6 @@ h1{
   border-top-right-radius: 2%;
   border-bottom-right-radius: 2%;
   box-shadow: 6px 4px 8px 1px #c4b6b6;
-  /* padding-right: 4rem; */
 }
 
 Form{
@@ -105,5 +102,17 @@ Form .placeholder{
     width: 170%;
 }
 
+.para{
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+}
 
+.s_login{
+  margin-left: 2rem;
+  color: black;
+}
 
+.s_login:hover{
+  color: rgb(57, 64, 64);
+  text-decoration: none;
+}
