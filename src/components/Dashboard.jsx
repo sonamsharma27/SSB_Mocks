@@ -11,7 +11,7 @@ import '../dashboard.css'
 function NavScrollExample() {
   return (
     <>
-    <Navbar bg="light" expand="lg">
+    {/* <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -26,11 +26,11 @@ function NavScrollExample() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> */}
 
     <img src={pic9} alt="Army" srcset="" />
     <div className="ssb-section">
-        <h1>SSB Interview</h1>
+        <h1>SSB Tests</h1>
         <div className="ssb-grid">
             <div className="ssb-grid1">
               <Nav.Link href='/wat'>

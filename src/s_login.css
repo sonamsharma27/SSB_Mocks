@@ -5,6 +5,7 @@ h1{
   
   .main-grid1{
     display: grid;
+
     grid-template-columns: 1fr 1fr;
     padding-left: 12rem;
     padding-right: 12rem;
@@ -15,6 +16,7 @@ h1{
   
   .main-grid1 .grid-3{
     background-image: url(./images/pic8.png);
+    background-image: url("https://defencedirecteducation.com/wp-content/uploads/2018/12/FkWD3LAagAMy09W-768x512.jpeg");
     height: 70vh;
     background-size: cover;
     background-repeat: no-repeat;

@@ -50,11 +50,12 @@ export default function Login() {
         <Form.Label>Password</Form.Label>
         <Form.Control required type="password" name="password"  className='placeholder' placeholder="Password" />
       </Form.Group>
-      <NavLink to="/dashboard" className="btn1">
-        Submit
+      <NavLink to="/dashboard" >
+        <Button variant='primary' className="btn1" type="submit"> Submit</Button>
+       
       </NavLink>
-      <p  className='para2'>Not Registered 
-        <NavLink to="/signup" className='s_signup'>Registered</NavLink>
+      <p  >
+        <NavLink to="/signup" className='s_signup'><b>Not registered? Register here</b></NavLink>
       </p>
     </Form>
     </div>

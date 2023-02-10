@@ -25,8 +25,9 @@ export default function Login() {
         <Form.Control type="password"  className='placeholder' placeholder="Password" />
       </Form.Group>
 
-    <NavLink to="/dashboard" className="btn1">
-        Submit
+    <NavLink to="/dashboard">
+      <Button className="btn1" variant='primary' type='submit'>Submit</Button>
+        
       </NavLink>
       
     </Form>

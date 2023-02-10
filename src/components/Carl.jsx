@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 function carl() {
     return(
-        <Carousel autoPlay={true} showArrows={true} emulateTouch={true} showStatus={false} animationHandler="fade" infiniteLoop={true} transitionTime={1500} showThumbs={false} showIndicators={false}  interval={3000}>
+        <Carousel autoPlay={true} showArrows={true}  showStatus={false} animationHandler="fade" infiniteLoop={true} transitionTime={1500} showThumbs={false} showIndicators={false}  interval={3000}>
         <div>
             <img src="https://m.economictimes.com/thumb/msid-95129371,width-1599,height-886,resizemode-4,imgsize-142484/srinagar-enactment-of-air-landed-operations-of-the-indian-army-which-ensured-vi-.jpg" />
         </div>

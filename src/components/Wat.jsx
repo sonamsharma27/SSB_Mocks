@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 export default function Wat() {
   return (
     <>
-    <Navbar bg="light" expand="lg">
+    {/* <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -21,7 +21,7 @@ export default function Wat() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> */}
     
     <h1>Word Association Test (WAT)</h1>
     <p style={{marginLeft: '2rem'}}>Word Association Testing is one of the psychological techniques in which the subconscious behaviour of an individual is tested.</p>

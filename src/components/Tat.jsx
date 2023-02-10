@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 export default function Tat() {
   return (
     <>
-    <Navbar bg="light" expand="lg">
+    {/* <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -21,7 +21,7 @@ export default function Tat() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> */}
     
     <h1>Situation Reaction Test (SRT)</h1>
     <p style={{marginLeft: '2rem'}}>Thematic Appreciation Test (TAT) is a projective method of assessing personality, which is considered the best method as it reveals a person’s innate personality by responding to some pictures or situations.</p>

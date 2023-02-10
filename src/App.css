@@ -66,6 +66,8 @@ h1{
 .main-grid .grid-2{
   border: 2px solid black;
   background-image: url(./images/pic6.jpg);
+  background-image: url(./images/asp.avif);
+
   height: 70vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -121,3 +123,15 @@ Form .placeholder{
   color: rgb(57, 64, 64);
   text-decoration: none;
 }
+
+Nav{
+  /* background-image: linear-gradient(to bottom right, #00C0FF, #108b97); */
+  /* background-image: url('./images/7757.jpg'); */
+  
+  
+}
+
+body{
+  background-image: './images/7757.png';
+}
+

@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 export default function Srt() {
   return (
     <>
-    <Navbar bg="light" expand="lg">
+    {/* <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -21,7 +21,7 @@ export default function Srt() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> */}
     
     <h1>Situation Reaction Test (SRT)</h1>
     <p style={{marginLeft: '2rem'}}>Situation Reaction Test or SRT is a specially designed psychological test designated to test your responses to these day-to-day situations. Your responses show your personality and give the actual picture of your conscious and subconscious mind. Whether you can handle Odd situations with an alert mind.</p>

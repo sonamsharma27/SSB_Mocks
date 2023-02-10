@@ -41,6 +41,7 @@ function CarouselFadeExample() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel> */}
+    {/* <h1>SSB Mocks</h1> */}
     <Carl></Carl>
 
     <div className='mainGrid'>
@@ -59,6 +60,7 @@ function CarouselFadeExample() {
         </div>
 
         <div className='grid1'>
+
             <NavLink to="/login">
                 <img src={user} alt="student"/>
                 <h4>Login as Admin</h4>

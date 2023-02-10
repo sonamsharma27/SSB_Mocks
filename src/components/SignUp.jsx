@@ -44,10 +44,10 @@ function BasicExample() {
       </div>
 
     <div className="image">
-    <h1>Registeration</h1>
+    <h1>Registration</h1>
     <Form> 
       <Form.Group id="firstform" className="firstform" controlId="formBasicEmail">
-        <Form.Label>Name Of The Student</Form.Label>
+        <Form.Label>Name </Form.Label>
         <Form.Control name="name" required type="name" className='placeholder' placeholder="Enter name" />
       </Form.Group>
 
@@ -63,8 +63,7 @@ function BasicExample() {
       <Button className='btn1' variant="primary" type="submit">
         Submit
       </Button>
-      <p className='para'>Already Registered 
-        <NavLink to="/s_login" className='s_login'>Login</NavLink>
+      <p className=''><NavLink to="/s_login" className='s_login'><b>Already registered? Login here</b></NavLink>
       </p>
     </Form>
     </div>
