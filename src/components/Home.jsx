@@ -52,16 +52,16 @@ function CarouselFadeExample() {
         </div>
 
         <div className='grid1'>
-        <NavLink to="/login">
+        <NavLink to="/signup">
                 <img src={user} alt="student"/>
-                <h4>Login as Admin</h4>
+                <h4>Login as Alumni</h4>
         </NavLink>
         </div>
 
         <div className='grid1'>
-            <NavLink to="/signup">
+            <NavLink to="/login">
                 <img src={user} alt="student"/>
-                <h4>Login as Alumni</h4>
+                <h4>Login as Admin</h4>
             </NavLink>
         
         

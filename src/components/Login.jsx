@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { NavLink } from "react-router-dom"
 import '../login.css';
 
 export default function Login() {
@@ -12,7 +13,7 @@ export default function Login() {
       </div>
 
     <div className="image">
-    <h1>Login as Admin User</h1>
+    <h1>Login as Admin </h1>
     <Form>
       <Form.Group className="firstform" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -23,9 +24,11 @@ export default function Login() {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password"  className='placeholder' placeholder="Password" />
       </Form.Group>
-      <Button className='btn1' variant="primary" type="submit">
+
+    <NavLink to="/dashboard" className="btn1">
         Submit
-      </Button>
+      </NavLink>
+      
     </Form>
     </div>
     </div>

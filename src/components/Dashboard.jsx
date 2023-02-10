@@ -2,6 +2,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import pic9 from '../images/pic9.jpg'
+import wat from'../images/wat.jpg'
+import tat from'../images/tat.jpg'
+import srt from'../images/srt.jpg'
+import { NavLink } from "react-router-dom"
 import '../dashboard.css'
 
 function NavScrollExample() {
@@ -29,13 +33,20 @@ function NavScrollExample() {
         <h1>SSB Interview</h1>
         <div className="ssb-grid">
             <div className="ssb-grid1">
+              <Nav.Link href='/wat'>
+              <img src={wat} alt="word test" srcset="" />
+              </Nav.Link>
                 
             </div>
             <div className="ssb-grid1">
-
+            <Nav.Link  href='/tat'>
+              <img src={tat} alt="word test" srcset="" />
+              </Nav.Link>
             </div>
             <div className="ssb-grid1">
-
+            <Nav.Link  href='/srt'>
+              <img src={srt} alt="word test" srcset="" />
+              </Nav.Link>
             </div>
         </div>
     </div>

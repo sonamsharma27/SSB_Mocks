@@ -1,17 +1,35 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { NavLink } from "react-router-dom"
 import '../s_login.css';
 
-export default function Login(props) {
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
+export default function Login() {
+  // const [data, setData] = useState({ email: "", password: "" });
+	// const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log(email);
-  }
+  // const handleChange = ({ currentTarget: input }) => {
+	// 	setData({ ...data, [input.name]: input.value });
+	// };
+
+  // const handleSubmit = async (e) => {
+	// 	e.preventDefault();
+	// 	try {
+	// 		const url = "http://localhost:8080/api/auth";
+	// 		const { data: res } = await axios.post(url, data);
+	// 		localStorage.setItem("token", res.data);
+	// 		window.location = "/dashboard";
+	// 	} catch (error) {
+	// 		if (
+	// 			error.response &&
+	// 			error.response.status >= 400 &&
+	// 			error.response.status <= 500
+	// 		) {
+	// 			setError(error.response.data.message);
+	// 		}
+	// 	}
+	// };
   return (
     <>
     <div className="main-grid1">
@@ -21,21 +39,22 @@ export default function Login(props) {
 
     <div className="image">
     <h1>Login</h1>
-    <Form onSubmit={handleSubmit}>
+    <Form>
       <Form.Group className="firstform" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" className='placeholder' placeholder="Enter email" />
+        <Form.Control 
+							type="email" required name="email" className='placeholder' placeholder="Enter email" />
       </Form.Group>
 
       <Form.Group className="firstform" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control value={pass} onChange={(e) => setPass(e.target.value)} type="password" name="password"  className='placeholder' placeholder="Password" />
+        <Form.Control required type="password" name="password"  className='placeholder' placeholder="Password" />
       </Form.Group>
-      <Button className='btn1' variant="primary" type="submit">
+      <NavLink to="/dashboard" className="btn1">
         Submit
-      </Button>
+      </NavLink>
       <p  className='para2'>Not Registered 
-        <NavLink onClick={() => props.onFormSwitch('register')} to="/signup" className='s_signup'>Registered</NavLink>
+        <NavLink to="/signup" className='s_signup'>Registered</NavLink>
       </p>
     </Form>
     </div>

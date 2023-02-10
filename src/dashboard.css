@@ -4,10 +4,14 @@
 }
 
 img{
-    width: 99vw;
+    width: 98.5vw;
     height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.ssb-section{
+    height: 800px;
 }
 
 .ssb-section .ssb-grid{
@@ -17,6 +21,13 @@ img{
 }
 
 .ssb-grid .ssb-grid1{
-    border: 2px solid red;
     height: 500px;
+    box-shadow: 1px 4px 8px 3px #c4b6b6;
+}
+
+.ssb-grid1 img{
+    height: 400px;
+    width: 400px;
+    margin-left: 2rem;
+    margin-top: 2rem;
 }
