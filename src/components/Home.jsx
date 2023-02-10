@@ -5,11 +5,11 @@ import pic1 from '../images/pic1.jpg'
 import pic2 from '../images/pic2.jpg'
 import pic3 from '../images/pic3.jpg'
 import { NavLink } from "react-router-dom"
-
+import Carl from './Carl.jsx'
 function CarouselFadeExample() {
   return (
     <>
-    <Carousel fade>
+    {/* <Carousel fade>
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -40,8 +40,8 @@ function CarouselFadeExample() {
         <Carousel.Caption>
         </Carousel.Caption>
       </Carousel.Item>
-    </Carousel>
-
+    </Carousel> */}
+    <Carl></Carl>
 
     <div className='mainGrid'>
         <div className='grid1'>
