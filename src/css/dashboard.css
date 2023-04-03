@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.ss_inter{
+    text-align: center;
+    padding-top: 3rem;
+}
 img{
     width: 98.5vw;
     height: 90vh;
@@ -12,6 +16,25 @@ img{
 
 .ssb-section{
     height: 800px;
+    margin-left: 2rem;
+}
+.ssb-section .ssb-stage1{
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-gap: 14rem;
+}
+
+.ssb-stage1 .ssb-stage-grid1{
+    height: 500px;
+    box-shadow: 1px 4px 8px 3px #c4b6b6;
+    margin-top: 2rem;
+}
+
+.ssb-stage-grid1 img{
+    height: 400px;
+    width: 400px;
+    margin-left: 2rem;
+    margin-top: 2rem;
 }
 
 .ssb-section .ssb-grid{
@@ -23,6 +46,7 @@ img{
 .ssb-grid .ssb-grid1{
     height: 500px;
     box-shadow: 1px 4px 8px 3px #c4b6b6;
+    margin-top: 2rem;
 }
 
 .ssb-grid1 img{

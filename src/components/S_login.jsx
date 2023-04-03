@@ -3,7 +3,7 @@ import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { NavLink } from "react-router-dom"
-import '../s_login.css';
+import '../css/s_login.css'
 
 export default function Login() {
   // const [data, setData] = useState({ email: "", password: "" });
@@ -38,7 +38,7 @@ export default function Login() {
       </div>
 
     <div className="image">
-    <h1>Login</h1>
+    <h1 className="log">Login</h1>
     <Form>
       <Form.Group className="firstform" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>

@@ -6,7 +6,8 @@ import wat from'../images/wat.jpg'
 import tat from'../images/tat.jpg'
 import srt from'../images/srt.jpg'
 import { NavLink } from "react-router-dom"
-import '../dashboard.css'
+import '../css/dashboard.css'
+import oir from '../images/oir.jpeg'
 
 function NavScrollExample() {
   return (
@@ -30,7 +31,23 @@ function NavScrollExample() {
 
     <img src={pic9} alt="Army" srcset="" />
     <div className="ssb-section">
-        <h1>SSB Interview</h1>
+        <h1 className='ssb_inter'>SSB Interview</h1>
+        <h2 style={{marginTop: "2rem"}}>Stage 1</h2>
+        <div className="ssb-stage1">
+        <div className="ssb-stage-grid1">
+              <Nav.Link href='/oir'>
+              <img src={oir} alt="word test" srcset="" />
+              </Nav.Link>
+        </div>
+
+        <div className="ssb-stage-grid1">
+            <Nav.Link  href='/tat'>
+              <img src={tat} alt="word test" srcset="" />
+              </Nav.Link>
+         </div>
+        </div>
+        
+        <h2 style={{marginTop: "2rem"}}>Stage 2</h2>
         <div className="ssb-grid">
             <div className="ssb-grid1">
               <Nav.Link href='/wat'>

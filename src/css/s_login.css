@@ -1,4 +1,4 @@
-h1{
+.log{
     text-align: center;
     padding-top: 3rem;
   }
@@ -14,7 +14,7 @@ h1{
   }
   
   .main-grid1 .grid-3{
-    background-image: url(./images/pic8.png);
+    background-image: url(../images/pic8.png);
     height: 70vh;
     background-size: cover;
     background-repeat: no-repeat;

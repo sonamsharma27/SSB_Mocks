@@ -1,4 +1,4 @@
-h1{
+.login_admin{
     text-align: center;
     padding-top: 3rem;
   }
@@ -14,7 +14,7 @@ h1{
   }
   
   .main-grid .grid-3{
-    background-image: url(./images/pic7.webp);
+    background-image: url(../images/pic7.webp);
     height: 70vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,7 +33,6 @@ h1{
     border-top-right-radius: 2%;
     border-bottom-right-radius: 2%;
     box-shadow: 6px 4px 8px 1px #c4b6b6;
-    /* padding-right: 4rem; */
   }
   
   Form{

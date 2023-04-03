@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { NavLink } from "react-router-dom"
-import '../login.css';
+import '../css/login.css'
 
 export default function Login() {
   return (
@@ -13,7 +13,7 @@ export default function Login() {
       </div>
 
     <div className="image">
-    <h1>Login as Admin </h1>
+    <h1 className='login_admin'>Login as Admin </h1>
     <Form>
       <Form.Group className="firstform" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
