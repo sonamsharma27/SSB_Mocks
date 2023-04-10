@@ -41,7 +41,7 @@ function NavScrollExample() {
         </div>
 
         <div className="ssb-stage-grid1">
-            <Nav.Link  href='/tat'>
+            <Nav.Link  href='/ppdt_intro'>
               <img src={tat} alt="word test" srcset="" />
               </Nav.Link>
          </div>

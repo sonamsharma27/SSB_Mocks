@@ -13,8 +13,11 @@ import { Tab } from 'bootstrap';
 import Tat from './Tat';
 import Srt from './Srt';
 import Verbal from './Verbal';
+import PpdtQues from './Ppdt/PpdtQues';
 import Non_verbal from './Non_verbal';
 import Result_ver from './Result_ver';
+import Ppdt from './Ppdt/Ppdt';
+import PpdtIntro from './Ppdt/PpdtIntro';
 
 
 function App() {
@@ -30,11 +33,14 @@ function App() {
       <Route path="/alumniform" element={<AlumniForm/>} />  
       <Route path="/oir" element={<Oir/>} />    
       <Route path="/verbal" element={<Verbal/>} />
+      <Route path="/ppdt_ques" element={<PpdtQues />} />
       <Route path="/non_verbal" element={<Non_verbal/>} />
       <Route path="/result" element={<Result_ver/>} />
       <Route path="/wat" element={<Wat/>} />      
-      <Route path="/tat" element={<Tat/>} />      
-      <Route path="/srt" element={<Srt/>} />      
+      <Route path="/tat" element={<Tat/>} />
+      <Route path="/ppdt" element={<Ppdt/>} />      
+      <Route path="/srt" element={<Srt/>} />
+      <Route path='/ppdt_intro' element={<PpdtIntro/>}/>
       </Routes>
     </BrowserRouter>
   );
