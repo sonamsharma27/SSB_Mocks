@@ -14,6 +14,7 @@ import Tat from './Tat';
 import Srt from './Srt';
 import Verbal from './Verbal';
 import Non_verbal from './Non_verbal';
+import Result_ver from './Result_ver';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route path="/oir" element={<Oir/>} />    
       <Route path="/verbal" element={<Verbal/>} />
       <Route path="/non_verbal" element={<Non_verbal/>} />
+      <Route path="/result" element={<Result_ver/>} />
       <Route path="/wat" element={<Wat/>} />      
       <Route path="/tat" element={<Tat/>} />      
       <Route path="/srt" element={<Srt/>} />      
