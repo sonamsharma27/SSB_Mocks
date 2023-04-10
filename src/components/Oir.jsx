@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import '../css/oir.css'
 import { NavLink } from "react-router-dom"
 
 export default function Oir() {
+    const inputRef = useRef(null)
   return (
     <>
         <h1 className='heading'>OIR Mock Test</h1>
@@ -35,6 +36,10 @@ export default function Oir() {
                 <h4>6. Answer all the questions.</h4>
             </div>
         </div>
+
+        <form id='form'>
+            <input type="text" ref={inputRef} placeholder="Username"/>
+        </form>
 
         <div className="btn_grid">
             <NavLink to="/non_verbal" className="btn_non">
