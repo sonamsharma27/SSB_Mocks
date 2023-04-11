@@ -2,10 +2,16 @@ import React from 'react'
 import '../css/res_ver.css'
 import { NavLink } from "react-router-dom"
 import ResulttableVer from './ResultTable_ver'
+import { useDispatch } from 'react-redux'
+import { resetAllAction } from '../redux/question_reducer'
+import { resetResultAction } from '../redux/result_reducer'
 
 export default function Result_ver() {
+
+    const dispatch = useDispatch()
     function onRestart(){
-        console.log("Restart")
+        dispatch(resetAllAction())
+        dispatch(resetResultAction())
     }
   return (
     <div className='container'>
