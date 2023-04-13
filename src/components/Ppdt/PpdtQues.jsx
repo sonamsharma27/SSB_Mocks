@@ -1,5 +1,6 @@
 import React from 'react'
 import PpdtTimer from './PpdtTimer'
+import './PpdtQues.css'
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 export default function PpdtQues() {
@@ -12,37 +13,37 @@ export default function PpdtQues() {
         {showQuestions?
         <div className="question-container">
         <PpdtTimer/>
-      <div>
+      <div className='question_form'>
         <form action="submit" method="post">
-          <div>
-          <label htmlFor="">Title of the story</label>
-          <input type="text" />
+          <div className='ques_form'>
+          <label className='ques_label' htmlFor="">Title of the story:</label>
+          <input type="text" className='ques_input'/>
           </div>
-          <div>
-          <label htmlFor="">Enter the name of the main character of your story</label>
-          <input type="text" />
+          <div className='ques_form'>
+          <label className='ques_label' htmlFor="">Enter the name of the main character of your story:</label>
+          <input type="text" className='ques_input'/>
           </div>
-          <div>
-          <label htmlFor="">Enter the number of characters in your story</label>
-          <input type="number" />
+          <div className='ques_form'>
+          <label className='ques_label' htmlFor="">Enter the number of characters in your story:</label>
+          <input type="number" className='ques_input' />
           </div>
-          <div>
-          <label htmlFor="">Enter the name, age ,sex , mood of the all characters of your story</label>
-          <textarea type="text" />
+          <div className='ques_form'>
+          <label className='ques_label' htmlFor="">Enter the name, age ,sex , mood of the all characters of your story:</label>
+          <textarea type="text" className='ques_input' />
           </div>
-          <div>
-          <label htmlFor="">Write your story here</label>
-          <textarea type="text" />
+          <div className='ques_form'>
+          <label className='ques_label' htmlFor="">Write your story here:</label>
+          <textarea type="text" className='ques_input'/>
           </div>
         </form>
     </div>
     </div>
     :
-    <div>
+    <div className='ques_submit'>
         <h1>Your response has been submitted.</h1>
-        <div>
-        <Link to="/dashboard">Click here to go to dashboard</Link> <br /> <br />
-        <Link to="/ppdt">Try another PPDT test</Link>
+        <div className='ques_link'>
+        <Link className='ques_dash' to="/dashboard">Click here to go to dashboard</Link> <br /> <br />
+        <Link className='ques_dash' to="/ppdt">Try another PPDT test</Link>
         </div>
     </div>
         }

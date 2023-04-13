@@ -6,8 +6,14 @@ import { movePrevQuestion } from '../hooks/FetchQuestion'
 import {useSelector,useDispatch} from 'react-redux'
 import { PushAnswer } from '../hooks/setResult'
 import {Navigate} from 'react-router-dom'
+import PpdtTimer from '../components/Ppdt/PpdtTimer'
+import Result_ver from './Result_ver'
 
 export default function Verbal() {
+  const [showQuestions, setShowQuestions] = useState(true);
+    setTimeout(()=>{
+        setShowQuestions(false);
+    },10000)
   const [check,setChecked] = useState(undefined)
   const result = useSelector(state => state.result.result)
   const {queue,trace} = useSelector(state => state.questions)
@@ -18,7 +24,7 @@ export default function Verbal() {
   })
 
   function onPrev(){
-    // console.log("previous")
+    console.log("previous")
     if(trace>0){
       dispatch(movePrevQuestion())
     }
@@ -34,8 +40,12 @@ export default function Verbal() {
     // console.log("next")
     if(trace<queue.length){
       dispatch(moveNextQuestion())
-      dispatch(PushAnswer(check))
+      
+      if(result.length<=trace){
+        dispatch(PushAnswer(check))
+      }
     }
+    setChecked(undefined)
     
   }
 
@@ -44,13 +54,22 @@ export default function Verbal() {
   }
 
   return (
+    showQuestions?
+
     <div className='cont'>
-      <h1>OIR Verbal Reasoning: Mock Test</h1>
-      <Questions onChecked={onChecked}/>
+      
+      <div>
+      <h1 className='oir-head'>OIR Verbal Reasoning: Mock Test</h1>
+      
+      <Questions onChecked={onChecked} className='ques'/>
       <div className='btn_grid1'>
-        <button className='prev btn2' onClick={onPrev}>Prev</button>
+      { trace > 0 ? <button className='btn2 prev' onClick={onPrev}>prev</button> : <div></div>}
         <button className='next btn2' onClick={onNext}>next</button>
       </div>
+      </div>
+      <PpdtTimer />
     </div>
+    :
+    <Result_ver />
   )
 }

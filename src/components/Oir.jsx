@@ -1,9 +1,19 @@
 import React,{useRef} from 'react'
 import '../css/oir.css'
 import { NavLink } from "react-router-dom"
+import { useDispatch } from 'react-redux'
+import { setUserId } from '../redux/result_reducer'
 
 export default function Oir() {
+
     const inputRef = useRef(null)
+    const dispatch = useDispatch()
+
+    function startQuiz(){
+        if(inputRef.current?.value){
+            dispatch(setUserId(inputRef.current?.value))
+        }
+    }
   return (
     <>
         <h1 className='heading'>OIR Mock Test</h1>
@@ -46,7 +56,7 @@ export default function Oir() {
                 Non-Verbal Test
             </NavLink>
             
-            <NavLink to="/verbal" className="btn_ver">
+            <NavLink to="/verbal" onClick={startQuiz} className="btn_ver">
                 Verbal Test
             </NavLink>
             

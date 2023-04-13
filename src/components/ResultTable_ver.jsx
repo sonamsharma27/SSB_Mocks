@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ResultTable_ver() {
+export default function ResultTable_ver({attempts,earnPoints,flag,userId}) {
   return (
     <div>
         <table>
@@ -14,10 +14,10 @@ export default function ResultTable_ver() {
             </thead>
             <tbody>
                 <tr className='table-body'>
-                    <td>Ashishworld</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
+                    <td>{userId}</td>
+                    <td>{attempts}</td>
+                    <td>{earnPoints}</td>
+                    <td>{flag}</td>
                 </tr>
             </tbody>
         </table>

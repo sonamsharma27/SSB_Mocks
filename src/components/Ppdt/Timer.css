@@ -1,7 +1,8 @@
 .AppTimer {
     display: flex;
     padding: 10px;
-    justify-content: center;
+    height: 25vh;
+    margin-left: 35rem;
 }
 
 .cnt {

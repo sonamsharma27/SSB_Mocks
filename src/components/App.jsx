@@ -16,6 +16,7 @@ import Verbal from './Verbal';
 import PpdtQues from './Ppdt/PpdtQues';
 import Non_verbal from './Non_verbal';
 import Result_ver from './Result_ver';
+import { CheckUserExist } from '../helper/helper';
 import Ppdt from './Ppdt/Ppdt';
 import PpdtIntro from './Ppdt/PpdtIntro';
 
@@ -32,10 +33,10 @@ function App() {
       <Route exact path="/s_login" element={<S_login/>} />
       <Route path="/alumniform" element={<AlumniForm/>} />  
       <Route path="/oir" element={<Oir/>} />    
-      <Route path="/verbal" element={<Verbal/>} />
+      <Route path="/verbal" element={<CheckUserExist><Verbal/></CheckUserExist>} />
       <Route path="/ppdt_ques" element={<PpdtQues />} />
       <Route path="/non_verbal" element={<Non_verbal/>} />
-      <Route path="/result" element={<Result_ver/>} />
+      <Route path="/result" element={<CheckUserExist><Result_ver/></CheckUserExist>} />
       <Route path="/wat" element={<Wat/>} />      
       <Route path="/tat" element={<Tat/>} />
       <Route path="/ppdt" element={<Ppdt/>} />      

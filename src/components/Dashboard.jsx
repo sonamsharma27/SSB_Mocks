@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import pic9 from '../images/pic9.jpg'
+import pic10 from '../images/pic9.png'
 import wat from'../images/wat.jpg'
 import tat from'../images/tat.jpg'
 import srt from'../images/srt.jpg'
@@ -42,7 +43,7 @@ function NavScrollExample() {
 
         <div className="ssb-stage-grid1">
             <Nav.Link  href='/ppdt_intro'>
-              <img src={tat} alt="word test" srcset="" />
+              <img src={pic10} alt="word test" srcset="" />
               </Nav.Link>
          </div>
         </div>

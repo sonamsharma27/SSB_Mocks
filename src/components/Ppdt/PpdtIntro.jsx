@@ -1,11 +1,12 @@
 import React from "react";
+import './Ppdt_in.css'
 import { Nav } from "react-bootstrap";
 
 function PpdtIntro() {
   return (
-    <div>
-      <h1>Welcome to Picture Perception Description Test</h1>
-      <p>
+    <div className="ppdt_cont">
+      <h1 className="ppdt_head">Welcome to Picture Perception Description Test</h1>
+      <p className="ppdt_para">
         PPDT is one of the trickiest parts of your SSB Screening, which needs
         regular practice. In Earlier articles, we have explained the PPDT test
         and how to perform your best in the PPDT. Hope that article would have
@@ -15,7 +16,7 @@ function PpdtIntro() {
         pictures at various SSB Centres.
       </p>
       <hr />
-      <p>
+      <p className="ppdt_para">
         In PPDT, all the candidates are assembled in a testing hall and shown a
         hazy picture. You have to observe the picture minutely and try to
         understand what is shown in the picture – as how many characters are
@@ -34,7 +35,7 @@ function PpdtIntro() {
         indicate that time is up. After that, they will collect your answer
         sheet.
       </p>
-      <button type='button'><Nav.Link href='/ppdt'>Start Test</Nav.Link></button>
+      <button className="ppdt_btn" type='button'><Nav.Link className="ppdt_link" href='/ppdt'>Start Test</Nav.Link></button>
     </div>
   );
 }

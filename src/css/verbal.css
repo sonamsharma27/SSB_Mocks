@@ -3,8 +3,34 @@
     margin: 0px;
 }
 
+
+
 .cont{
+    display: flex;
+    background-color: black;
+    padding-top: 3rem;
+    color: white;
+    height: 100vh;
+}
+
+
+.cont .oir-head{
     text-align: center;
+    border: 5px solid green;
+    width: 88%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.cont .questions{
+    margin-top: 6rem;
+    margin-left: 2rem;
+    color: white;
+}
+
+
+.questions .ques_list li{
+    color: white;
 }
 
 .btn_grid1{
@@ -12,8 +38,21 @@
     grid-template-columns: 200px 200px;
     justify-content: center;
     align-items: center;
+    margin-top: 22rem;
+}
+
+.next{
+    background-color: var(--primary-color);
+    margin-left: 58rem;
+}
+
+.prev{
+    background-color: #faff5a;
+    margin-left: -8rem;
 }
 
 .btn2{
     width: 60%;
+    padding: 0.2rem;
+    border-radius: 6px;
 }
