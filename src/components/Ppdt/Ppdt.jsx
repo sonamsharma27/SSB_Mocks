@@ -1,14 +1,19 @@
 import './Ppdt.css';
 import {React, useState, useEffect} from 'react'
 import {Routes, Route, useNavigate} from 'react-router-dom';
-import Ppdt_ques from './PpdtQues';
+import PpdtQues from './PpdtQues';
 import Timer from './Timer';
 
+export default  function Ppdt() {
+  const navigate = useNavigate();
+  const [showImage, setShowImage]= useState(true);
+  const [url, setUrl] = useState('');
+  const setImage =  () =>{
+     fetch('http://localhost:5000/ppdt').then(res=>res.json()).then(res=>setUrl(res.url));
+    console.log('url ppdt ', url);
+  }
 
-export default function Ppdt() {
-    const navigate = useNavigate();
-    const [showImage, setShowImage]= useState(true);
-    useEffect(()=>{
+  useEffect(()=>{
       setTimeout(()=>{
         setShowImage(false);
         // window.location.href='ppdt_ques';
@@ -19,17 +24,17 @@ export default function Ppdt() {
     return (
       <div className="App">
         <div>
-          <h1 className='ppdt'>Picture Perception Description Test(PPDT)</h1>
+          <h1 className='ppdt' >Picture Perception Description Test(PPDT)</h1>
         </div>
         {showImage?
         <div>
           <Timer />
-          <img className='ppdt-img' src="https://gs-post-images.grdp.co/2022/3/ppdt-img1610123219285-98-img1648557559888-24.webp-rs-high-webp.webp" alt="PPDT" />
+        {url?<img src={url} alt="PPDT" className="ppdt-img" /> : 
+        <button onClick={setImage}>Get Image</button>}
         </div>
           :<div>
-            
            <Routes>
-           <Route path="/ppdt_ques" element={<Ppdt_ques />} />
+           <Route path="/ppdt_ques" element={<PpdtQues props = {url}/>} />
            </Routes>
            </div>}
         <div>
@@ -38,3 +43,4 @@ export default function Ppdt() {
       </div>
     );
   }
+  
