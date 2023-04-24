@@ -2,13 +2,11 @@ const express  = require('express')
 const cors  = require('cors')
 const router = require('./router/route')
 const morgan = require('morgan')
-const connectDB = require('./config/db')
-const { connect } = require('./database/conn')
+const {connect} = require('./database/conn')
 
 const app = express();
 
 app.use(cors({origin: true,credentials: true}))
-connectDB();
 connect()
 app.use(morgan('tiny'))
 app.use(express.json())

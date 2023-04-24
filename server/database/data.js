@@ -1,7 +1,7 @@
-module.exports = [
+const questions = [
     {
         id: 1,
-        question : "Javascript is an _______ language",
+        question : "Javascript is an ___ language",
         options : [
             'Object-Oriented',
             'Object-Based',
@@ -48,4 +48,4 @@ module.exports = [
 
 const answers = [0, 1, 2, 1, 0];
 
-module.exports = answers
+module.exports = {questions,answers}

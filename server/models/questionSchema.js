@@ -7,4 +7,4 @@ const questionModel = new Schema({
     createAt: {type:Date,default: Date.now}
 })
 
-module.exports = mongoose.model('Question',questionModel)
+module.exports = mongoose.model('Questions',questionModel)
