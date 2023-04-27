@@ -8,7 +8,8 @@ import Dashboard from './Dashboard';
 import AlumniForm from './AlumniForm';
 import Login from './Login';
 import Oir from './Oir'
-import Wat from './Wat';
+import Wat_test from './Wat/Wat_test';
+import Wat from './Wat/Wat';
 import { Tab } from 'bootstrap';
 import Tat from './Tat';
 import Srt from './Srt';
@@ -37,6 +38,7 @@ function App() {
       <Route path="/ppdt_ques" element={<PpdtQues />} />
       <Route path="/non_verbal" element={<Non_verbal/>} />
       <Route path="/result" element={<CheckUserExist><Result_ver/></CheckUserExist>} />
+      <Route path="/wat_test" element={<Wat_test/>} />
       <Route path="/wat" element={<Wat/>} />      
       <Route path="/tat" element={<Tat/>} />
       <Route path="/ppdt" element={<Ppdt/>} />      
