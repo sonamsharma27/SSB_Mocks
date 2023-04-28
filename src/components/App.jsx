@@ -11,7 +11,7 @@ import Oir from './Oir'
 import Wat_test from './Wat/Wat_test';
 import Wat from './Wat/Wat';
 import { Tab } from 'bootstrap';
-import Tat from './Tat';
+import Tat from './Tat/Tat';
 import Srt from './Srt';
 import Verbal from './Verbal';
 import PpdtQues from './Ppdt/PpdtQues';
