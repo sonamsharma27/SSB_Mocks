@@ -2,7 +2,6 @@ import "./Ppdt.css";
 import { React, useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import PpdtQues from "./PpdtQues";
-import Timer from "./Timer";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 export default function Ppdt() {
@@ -18,7 +17,7 @@ export default function Ppdt() {
       setShowImage(false);
       // window.location.href='ppdt_ques';
       navigate("/ppdt_ques");
-    }, 300000);
+    }, 5000);
   }, []);
 
   return (
@@ -38,12 +37,12 @@ export default function Ppdt() {
                 className="ppdt-img border-2 border-dark"
               />
             </div>
-            <div className="mx-5 timer_div  col-3">
+            <div className="mx-5 timer_div timer  col-3">
               <CountdownCircleTimer
                 isPlaying
-                duration={7}
+                duration={30}
                 colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-                colorsTime={[7, 5, 2, 0]}
+                colorsTime={[23, 15, 8, 0]}
               >
                 {({ remainingTime }) => remainingTime}
               </CountdownCircleTimer>
