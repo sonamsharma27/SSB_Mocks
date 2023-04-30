@@ -5,6 +5,35 @@ import Form from 'react-bootstrap/Form';
 import { NavLink,useNavigate  } from "react-router-dom"
 
 function BasicExample() {
+  const history = useNavigate()
+  const [ user, setUser] = useState({
+    name: "",
+    email:"",
+    password:""
+})
+
+const handleChange = e => {
+  const { name, value } = e.target
+  setUser({
+      ...user,
+      [name]: value
+  })
+}
+
+const register = () => {
+  const { name, email, password } = user
+  if( name && email && password){
+      axios.post("http://localhost:5000/signup", user)
+      .then( res => {
+          alert(res.data.message)
+          history("/s_login")
+      })
+  } else {
+      alert("invalid input")
+  }
+  
+}
+
   // const [data, setData] = useState({
 	// 	name: "",
 	// 	email: "",
@@ -48,19 +77,19 @@ function BasicExample() {
     <Form> 
       <Form.Group id="firstform" className="firstform" controlId="formBasicEmail">
         <Form.Label>Name Of The Student</Form.Label>
-        <Form.Control name="name" required type="name" className='placeholder' placeholder="Enter name" />
+        <Form.Control value={user.name} onChange={ handleChange } name="name" required type="name" className='placeholder' placeholder="Enter name" />
       </Form.Group>
 
       <Form.Group id="email" className="firstform" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control name="email" type="email" required className='placeholder' placeholder="Enter email" />
+        <Form.Control value={user.email} onChange={ handleChange } name="email" type="email" required className='placeholder' placeholder="Enter email" />
       </Form.Group>
 
       <Form.Group id="password" className="firstform" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control required name="password" type="password"  className='placeholder' placeholder="Password" />
+        <Form.Control value={user.password} onChange={ handleChange } required name="password" type="password"  className='placeholder' placeholder="Password" />
       </Form.Group>
-      <Button className='btn1' variant="primary" type="submit">
+      <Button className='btn1' variant="primary" onClick={register}>
         Submit
       </Button>
       <p className='para'>Already Registered 
