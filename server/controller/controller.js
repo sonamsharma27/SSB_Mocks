@@ -1,4 +1,5 @@
 const Questions = require('../models/questionSchema.js')
+const PpdtStore = require('../models/ppdtSchema.js')
 const Results = require('../models/resultSchema.js')
 const questions = require('../database/data.js')
 const answers = require('../database/data.js')
@@ -11,6 +12,16 @@ exports.getQuestions = async function(req,res){
         res.json({error})
     }
     // res.json("questions api get request")
+}
+
+exports.getImage  = async function(req,res){
+    try {
+        const url_doc  = await PpdtStore.aggregate([{ $sample: { size: 1 } }])
+        console.log('url_doc', url_doc);
+        res.json(url_doc[0]);
+    } catch(err){
+        res.json(err);
+    }
 }
 
 exports.insertQuestion = async function(req,res){
