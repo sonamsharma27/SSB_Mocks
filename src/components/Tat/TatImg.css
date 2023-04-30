@@ -1,0 +1,13 @@
+button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.prev {
+    left: 20%;
+}
+
+.next {
+   right: 20%;
+}

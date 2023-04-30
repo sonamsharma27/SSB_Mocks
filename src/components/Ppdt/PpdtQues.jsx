@@ -3,7 +3,7 @@ import PpdtTimer from './PpdtTimer'
 import './PpdtQues.css'
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-export default function PpdtQues() {
+export default function PpdtQues({url}) {
     const [showQuestions, setShowQuestions] = useState(true);
     setTimeout(()=>{
         setShowQuestions(false);
