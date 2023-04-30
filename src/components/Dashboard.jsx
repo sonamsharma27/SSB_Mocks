@@ -51,13 +51,13 @@ function NavScrollExample() {
         <h2 style={{marginTop: "2rem"}}>Stage 2</h2>
         <div className="ssb-grid">
             <div className="ssb-grid1">
-              <Nav.Link href='/wat'>
+              <Nav.Link href='/watintro'>
               <img src={wat} alt="word test" srcset="" />
               </Nav.Link>
                 
             </div>
             <div className="ssb-grid1">
-            <Nav.Link  href='/tat'>
+            <Nav.Link  href='/tatintro'>
               <img src={tat} alt="word test" srcset="" />
               </Nav.Link>
             </div>

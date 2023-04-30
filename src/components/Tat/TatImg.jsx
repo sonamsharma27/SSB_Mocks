@@ -9,9 +9,9 @@ function TatImg({ imgUrls }) {
     setTimeout(() => {
       setShowImg(false);
       setUrl(imgUrls[++idx]);
-    }, 30000);
+    }, 10000);
     setImgNo(1 + imgNo);
-  }, 50000);
+  }, 12000);
   return (
     <div>
       <div className="container w-50 mt-3 ps-5">

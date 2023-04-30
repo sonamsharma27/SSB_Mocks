@@ -8,11 +8,11 @@ import Dashboard from './Dashboard';
 // import AlumniForm from './AlumniForm';
 import Login from './Login';
 import Oir from './Oir'
-import Wat_test from './Wat/Wat_test';
-import Wat from './Wat/Wat';
+import Watintro from './Wat/WatIntro';
 import { Tab } from 'bootstrap';
 import Tat from './Tat/Tat';
 import Srt from './Srt';
+import TatIntro from './Tat/TatIntro';
 import Verbal from './Verbal';
 import PpdtQues from './Ppdt/PpdtQues';
 import Non_verbal from './Non_verbal';
@@ -23,6 +23,7 @@ import { CheckUserExist } from '../helper/helper';
 import Ppdt from './Ppdt/Ppdt';
 import PpdtIntro from './Ppdt/PpdtIntro';
 import { useState } from 'react';
+import Wat from './Wat/Wat';
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/dashboard" exact element={user && user._id ? <Dashboard setLoginUser={setLoginUser} /> : <S_login setLoginUser={setLoginUser}/> && <Alu_login setLoginUser={setLoginUser}/>} />
+      <Route path="/dashboard" exact element={user ? <Dashboard setLoginUser={setLoginUser} /> : <S_login setLoginUser={setLoginUser}/> && <Alu_login setLoginUser={setLoginUser}/>} />
       console.log(user);
       console.log(user._id);
       <Route exact path="/" element={<CarouselFadeExample/>} />
@@ -46,8 +47,10 @@ function App() {
       <Route path="/ppdt_ques" element={<PpdtQues />} />
       <Route path="/non_verbal" element={<Non_verbal/>} />
       <Route path="/result" element={<CheckUserExist><Result_ver/></CheckUserExist>} />
-      <Route path="/wat_test" element={<Wat_test/>} />
+
+      <Route path="/watintro" element={<Watintro/>} />      
       <Route path="/wat" element={<Wat/>} />      
+      <Route path="/tatintro" element={<TatIntro/>} />      
       <Route path="/tat" element={<Tat/>} />
       <Route path="/ppdt" element={<Ppdt/>} />      
       <Route path="/srt" element={<Srt/>} />
