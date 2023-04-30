@@ -21,3 +21,11 @@
   border: 3px solid green;
   border-radius: 5px;
 }
+
+.timer_div {
+  margin-top: 10rem;
+}
+
+.timer {
+  font-size: 4rem;
+}
