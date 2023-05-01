@@ -1,21 +1,46 @@
-import React from 'react'
+import React from "react";
 import { Nav } from "react-bootstrap";
-import './GpeIntro.css'
+import "./GpeIntro.css";
 function gpeIntro() {
   return (
     <div className="gpe_cont">
       <h1 className="gpe_head">Welcome to Group Planning Exercise </h1>
       <p className="gpe_para">
-      Technically Thematic Apperception Test (gpe) is a projective psychological test. Proponents of this technique assert that a person’s responses reveal underlying motives, concerns, and the way they see the social world through the stories they make up about ambiguous pictures of people.
+        Group Planning Exercise or also called Military Planning exercise is the
+        second test of the GTO series. It is generally conducted on the third
+        day of the five-day SSB Interview schedule. It is the first task where
+        you have to virtually think and act as an Officer.
       </p>
       <hr />
       <p className="gpe_para">
-      Thematic Apperception Test in SSB consists of set of ambiguous pictures that will be shown to the candidate, while looking on these pictures candidates must create a theme like a story which requires a hero and a challenge, how the hero will overcome the crisis and succeed.
-      In gpe a candidate will be asked to write a story from his own based on the images shown. A candidate shouldn’t just use his memory blocks and start preparing a story, he/she needs to see that every third or fourth line there is different meanings are coming, try interpregpeion and analyze those meaning as third person because that meaning shows candidate’s sgpee of mind.
+        In this task, you will be narrated a situation in which you are part of
+        a group who are heading to someplace or returning from some location.
+        Meanwhile, you and your group come to know about various problems which
+        have either happened and will affect others or are going to happen in
+        the future. There will be approximately 3 to 5 problems of different
+        magnitude. Some resources will be given, which either will be given
+        directly in the problem or you have to consider them by your common
+        sense.
       </p>
-      <button className="gpe_btn" type='button'><Nav.Link className="gpe_link" href='/gpe'>Start Test</Nav.Link></button>
+      <p className="gpe_para">
+        You as a leader of the group have to act swiftly and have to address
+        every problem giving workable solutions to every problem. You have to
+        act as a group, taking actions simultaneously by optimal use of
+        resources.
+      </p>
+      <p className="gpe_para">
+        Time and distance covered will also be under watch, as you have to solve
+        every problem within the time limit considering the practical time taken
+        to cover the distance. The 2D or 3D map of the area with every detail
+        will also be kept in front of you for your better understanding.
+      </p>
+      <button className="gpe_btn" type="button">
+        <Nav.Link className="gpe_link" href="/gpe">
+          Start Test
+        </Nav.Link>
+      </button>
     </div>
-  )
+  );
 }
 
-export default gpeIntro
+export default gpeIntro;

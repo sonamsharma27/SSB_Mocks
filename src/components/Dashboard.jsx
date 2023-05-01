@@ -66,6 +66,11 @@ function NavScrollExample() {
               <img src={srt} alt="word test" srcset="" />
               </Nav.Link>
             </div>
+            <div className="ssb-grid1">
+            <Nav.Link  href='/gpe_intro'>
+              <img src='https://ssbcrackexams.com/wp-content/uploads/2020/09/Group-Planning-Exercise-At-SSB.jpg' alt="Group Planning Exercise" srcset="" />
+              </Nav.Link>
+            </div>
         </div>
     </div>
     </>

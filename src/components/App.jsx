@@ -24,7 +24,8 @@ import Ppdt from './Ppdt/Ppdt';
 import PpdtIntro from './Ppdt/PpdtIntro';
 import { useState } from 'react';
 import Wat from './Wat/Wat';
-
+import Gpe from './Gpe/Gpe';
+import GpeIntro from './Gpe/GpeIntro';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -55,6 +56,8 @@ function App() {
       <Route path="/ppdt" element={<Ppdt/>} />      
       <Route path="/srt" element={<Srt/>} />
       <Route path='/ppdt_intro' element={<PpdtIntro/>}/>
+      <Route path='/gpe_intro' element={<GpeIntro/>}/>
+      <Route path='/gpe' element={<Gpe/>}/>
       </Routes>
     </BrowserRouter>
   );

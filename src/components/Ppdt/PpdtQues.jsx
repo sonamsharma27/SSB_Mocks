@@ -1,6 +1,7 @@
 import React from 'react'
 import PpdtTimer from './PpdtTimer'
 import './PpdtQues.css'
+import axios from 'axios';
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 export default function PpdtQues({url}) {
@@ -8,7 +9,6 @@ export default function PpdtQues({url}) {
     const [showQuestions, setShowQuestions] = useState(true);
     const [userResp, setUserResp] = useState({
       username : 'username',
-      url: url,
       title : '',
       main_character : '',
       characters: '',
@@ -21,17 +21,27 @@ export default function PpdtQues({url}) {
     }
 
     useEffect(()=>{
+      console.log('====================================');
+      console.log(url);
+      console.log('====================================');
       setTimeout(()=>{
         setShowQuestions(false);
-        const requestOptions = {
-          method: 'POST',
-          headers: { 'Content-Type': 'text/json' },
-          body: JSON.stringify({ ...userResp })
-          
-      };
-      fetch('http://localhost:5000/api/ppdt_resp', requestOptions)
-          .then(response => response.json())
-          .then(response=>console.log(response));
+        console.log(userResp);
+        axios.post('http://localhost:5000/api/ppdt_resp', {
+        username: 'John',
+        url: url,
+        title : userResp.title,
+        main_character : userResp.main_character,
+        characters: userResp.characters,
+        total_characters: userResp.total_characters,
+        story: userResp.story
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
       },10000)
     },[]);
   return (

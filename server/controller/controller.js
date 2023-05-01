@@ -1,10 +1,11 @@
 const Questions = require('../models/questionSchema.js')
 const PpdtStore = require('../models/ppdtSchema.js')
+const GpeStore = require('../models/gpeSchema.js')
 const Results = require('../models/resultSchema.js')
 const questions = require('../database/data.js')
 const answers = require('../database/data.js')
 const PpdtResponse = require('../models/ppdtResponseSchema.js')
-
+const GpeResponse = require('../models/gpeResponseSchema.js')
 exports.getQuestions = async function (req, res) {
     try {
         const q = await Questions.find()
@@ -25,8 +26,7 @@ exports.insertPpdtResponse = async function (req, res) {
             username: username, 
             url: url, 
             title: title, 
-            main_character: 
-            main_character, 
+            main_character: main_character, 
             total_characters: total_characters, 
             characters: characters, 
             story: story }, function (err, data) {
@@ -37,9 +37,37 @@ exports.insertPpdtResponse = async function (req, res) {
     }
 }
 
+
+exports.insertGpeResponse = async function (req, res) {
+    try {
+        console.log(req.body);
+        const { username,  problem, solution, url} = req.body;
+        if (!username || !url) throw new Error('Data Not Provided...!');
+
+        GpeResponse.create({ 
+            username: username, 
+            url: url, 
+            problem: problem, 
+            solution: solution
+           }, function (err, data) {
+            res.json({ msg: "PPDT Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
 exports.getImage = async function (req, res) {
     try {
         const url_doc = await PpdtStore.aggregate([{ $sample: { size: 1 } }])
+        res.json(url_doc[0]);
+    } catch (err) {
+        res.json(err);
+    }
+}
+exports.getGpeImage = async function (req, res) {
+    try {
+        const url_doc = await GpeStore.aggregate([{ $sample: { size: 1 } }])
         res.json(url_doc[0]);
     } catch (err) {
         res.json(err);

@@ -51,7 +51,7 @@ export default function Ppdt() {
         ) : (
           <div>
             <Routes>
-              <Route path="/ppdt_ques" element={<PpdtQues props={url} />} />
+              <Route path="/ppdt_ques" element={<PpdtQues url={'url'} />} />
             </Routes>
           </div>
         )}
