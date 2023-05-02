@@ -27,7 +27,7 @@ export default function Gpe() {
       .catch(function (error) {
         console.log(error);
       });
-    }, 10000);
+    }, 100000);
   }, []);
 
   return (

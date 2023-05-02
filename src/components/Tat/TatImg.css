@@ -11,3 +11,8 @@ button {
 .next {
    right: 20%;
 }
+
+.total_timer {
+    position: absolute;
+    right: 2%;
+}

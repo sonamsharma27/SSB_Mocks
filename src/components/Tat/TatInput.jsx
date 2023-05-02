@@ -4,34 +4,12 @@ import InputCard from "./InputCard";
 function TatInput({ setStoryInput, storyInput }) {
   return (
     <>
-      <div className="container d-flex justify-content-center align-items-center mt-2 ">
+      <div className=" d-flex justify-content-center align-items-center mt-2 ">
         <div
           id="carouselExampleCaptions"
           className="carousel slide "
           data-bs-ride="carousel"
         > 
-          <div className="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="0"
-              className="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-          </div>
           <div className="carousel-inner">
             <InputCard className='active' setStoryInput={setStoryInput} storyInput={storyInput} img_no={1} />
             <InputCard setStoryInput={setStoryInput} storyInput={storyInput} img_no={2} />
@@ -45,7 +23,7 @@ function TatInput({ setStoryInput, storyInput }) {
           </div>
         </div>
         <button
-            className="btn btn-warning prev "
+            className="btn btn-warning border-0 prev "
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev"
@@ -54,7 +32,7 @@ function TatInput({ setStoryInput, storyInput }) {
             <span className="text-dark">Prev</span>
           </button>
           <button
-            className="btn btn-warning next"
+            className="btn btn-warning  next"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="next"
