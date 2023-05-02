@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './TatImg.css'
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+
 function TatImg({ imgUrls }) {
   const [showImg, setShowImg] = useState(true);
   const [url, setUrl] = useState(imgUrls[0]);
