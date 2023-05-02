@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.gpe_cont{
+    background-color: black;
+    padding-top: 2rem;
+    height: 100vh;
+}
+
+.gpe_cont .gpe_head{
+    text-align: center;
+    margin-top: 2rem;
+    border: 5px solid green;
+    width: 60%;
+    margin: auto;
+    padding: 6px;
+    color: white;
+}
+
+.gpe_cont .gpe_para{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    color: white;
+}
+
+.gpe_cont .gpe_btn{
+    margin-left: 2rem;
+}
+
+.gpe_link{
+    color: white;
+    background-color: rgb(9, 183, 35);
+}
+
+.gpe_link:hover{
+    color: black;
+    background-color: white;
+}

@@ -62,7 +62,7 @@ function NavScrollExample() {
               </Nav.Link>
             </div>
             <div className="ssb-grid1">
-            <Nav.Link  href='/srt'>
+            <Nav.Link  href='/srtintro'>
               <img src={srt} alt="word test" srcset="" />
               </Nav.Link>
             </div>

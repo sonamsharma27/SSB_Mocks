@@ -11,7 +11,8 @@ import Oir from './Oir'
 import Watintro from './Wat/WatIntro';
 import { Tab } from 'bootstrap';
 import Tat from './Tat/Tat';
-import Srt from './Srt';
+import SrtIntro from './Srt/SrtIntro';
+import Srt from './Srt/Srt';
 import TatIntro from './Tat/TatIntro';
 import Verbal from './Verbal';
 import PpdtQues from './Ppdt/PpdtQues';
@@ -48,12 +49,12 @@ function App() {
       <Route path="/ppdt_ques" element={<PpdtQues />} />
       <Route path="/non_verbal" element={<Non_verbal/>} />
       <Route path="/result" element={<CheckUserExist><Result_ver/></CheckUserExist>} />
-
       <Route path="/watintro" element={<Watintro/>} />      
       <Route path="/wat" element={<Wat/>} />      
       <Route path="/tatintro" element={<TatIntro/>} />      
       <Route path="/tat" element={<Tat/>} />
       <Route path="/ppdt" element={<Ppdt/>} />      
+      <Route path="/srtintro" element={<SrtIntro/>} />
       <Route path="/srt" element={<Srt/>} />
       <Route path='/ppdt_intro' element={<PpdtIntro/>}/>
       <Route path='/gpe_intro' element={<GpeIntro/>}/>

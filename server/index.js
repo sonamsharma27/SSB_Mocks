@@ -95,6 +95,7 @@ app.post("/alu_signup", (req, res)=> {
 }) 
 
 
+
 app.get('/',(req,res)=>{
     try {
         res.json("Get request")

@@ -1,11 +1,13 @@
 const Questions = require('../models/questionSchema.js')
 const PpdtStore = require('../models/ppdtSchema.js')
 const GpeStore = require('../models/gpeSchema.js')
+const SrtStore = require('../models/srtSchema.js')
 const Results = require('../models/resultSchema.js')
 const questions = require('../database/data.js')
 const answers = require('../database/data.js')
 const PpdtResponse = require('../models/ppdtResponseSchema.js')
 const GpeResponse = require('../models/gpeResponseSchema.js')
+const SrtResponse = require('../models/srtResponseSchema.js')
 exports.getQuestions = async function (req, res) {
     try {
         const q = await Questions.find()
@@ -14,6 +16,15 @@ exports.getQuestions = async function (req, res) {
         res.json({ error })
     }
     // res.json("questions api get request")
+}
+
+exports.getSrtQuestion = async function (req, res) {
+    try {
+        const q = await SrtStore.find()
+        res.json(q)
+    } catch (error) {
+        res.json({error})
+    }
 }
 
 exports.insertPpdtResponse = async function (req, res) {
@@ -57,6 +68,8 @@ exports.insertGpeResponse = async function (req, res) {
     }
 }
 
+
+
 exports.getImage = async function (req, res) {
     try {
         const url_doc = await PpdtStore.aggregate([{ $sample: { size: 1 } }])
@@ -85,6 +98,23 @@ exports.insertQuestion = async function (req, res) {
     // res.json("questions api post request")
 }
 
+exports.insertSrtResponse = async function (req, res) {
+    try {
+        console.log(req.body);
+        const { username,result} = req.body;
+        if (!username) throw new Error('Data Not Provided...!');
+
+        SrtResponse.create({ 
+            username: username, 
+            result: result
+           }, function (err, data) {
+            res.json({ msg: "Srt Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
 exports.dropQuestion = async function (req, res) {
     try {
         await Questions.deleteMany()
@@ -94,6 +124,7 @@ exports.dropQuestion = async function (req, res) {
     }
 }
 
+
 exports.getResult = async function (req, res) {
     try {
         const r = await Results.find()
@@ -102,6 +133,7 @@ exports.getResult = async function (req, res) {
         res.json({ error })
     }
 }
+
 
 exports.storeResult = async function (req, res) {
     try {
