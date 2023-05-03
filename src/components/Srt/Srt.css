@@ -13,22 +13,19 @@
     0px 0px 20px #b393d3;
 } */
 
-.gpe-img {
-  height: 500px;
-  width:  500px;
-  border: 3px solid green;
-  border-radius: 5px;
-}
 
+.situation .sitlist .sititems{
+  height: 60px;
+  border-bottom: none;
+}
 
 .timer {
   margin-top: 5rem;
   right: 0%;
   margin-right: 1rem;
 }
-
-.grid_div{
-  height: 600px;
+.grid_div1{
+  height: 350px;
 }
 
 .problem {
@@ -36,11 +33,11 @@
   height: 500px;
 }
 
-.input {
-  margin-top: 6rem;
+.input1 {
+  margin-top: 22rem;
   align-self: center;
 }
 
-textarea {
-  margin: auto;
+.textar {
+  margin-left: 11rem;
 }

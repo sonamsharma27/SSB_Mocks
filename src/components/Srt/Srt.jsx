@@ -26,7 +26,7 @@ export default function Srt() {
       
       axios.post('http://localhost:5000/api/srt_resp', {
         username: 'Fred',
-        result: result
+        result: 'result'
       })
       .then(function (response) {
         console.log(response);
@@ -35,7 +35,7 @@ export default function Srt() {
         console.log(error);
       });
       setQuestions()
-    }, 10000);
+    },10000);
   }, []);
 
   return (
@@ -59,23 +59,22 @@ export default function Srt() {
           </div>
             </div>
         </div>
-      <div className="container grid_div shadow-lg p-3 mb-5 bg-body rounded">
+      <div className="container grid_div1 shadow-lg p-3 mb-5 bg-body rounded">
         {questions?  
         (
           <>
-          <div>
+          <div className="situation">
           {
         questions.map((d) => (
-          <ul key={d._id}>
-            <li>{d.questions}</li>
+          <ul key={d._id} className="sitlist">
+            <li style={{color: "black"}} className="sititems">{d.questions}</li>
           </ul>
-          
         ))
       }
       </div>
-      <div className="input-row"> 
-          <p className="mx-5 me-2">Write your solution here.</p>
-            <textarea name="srt_resp" value={result} onChange={e=>setResult(e.target.value)} cols="100" rows="10">
+      <div className="input1"> 
+          <p className="text-center">Write your solution here.</p>
+            <textarea className="textar" name="srt_resp" value={result} onChange={e=>setResult(e.target.value)} cols="100" rows="10">
             
             </textarea>
             
