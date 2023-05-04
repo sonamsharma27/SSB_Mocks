@@ -6,7 +6,7 @@
 .gpe_cont{
     background-color: black;
     padding-top: 2rem;
-    height: 100vh;
+    height: 150vh;
 }
 
 .gpe_cont .gpe_head{
@@ -19,6 +19,17 @@
     color: white;
 }
 
+.gpe_cont .gpe_list{
+    text-align: center;
+    margin-top: 2rem;
+    border: 5px solid green;
+    width: 60%;
+    margin: auto;
+    padding: 6px;
+    color: white;
+    margin-top: 4rem;
+}
+
 .gpe_cont .gpe_para{
     margin-left: 2rem;
     margin-top: 2rem;
@@ -27,6 +38,7 @@
 
 .gpe_cont .gpe_btn{
     margin-left: 2rem;
+    margin-top: 2rem;
 }
 
 .gpe_link{

@@ -42,7 +42,7 @@ export default function PpdtQues({url}) {
       .catch(function (error) {
         console.log(error);
       });
-      },10000)
+      },50000)
     },[]);
   return (
     <div className='ppdt-con'>

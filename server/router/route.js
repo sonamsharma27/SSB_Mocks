@@ -4,13 +4,17 @@ const router = express.Router()
 
 
 router.get('/questions',controller.getQuestions)
+router.get('/nonquestions',controller.getNonQuestions)
 router.get('/ppdt',controller.getImage)
 router.get('/gpe',controller.getGpeImage)
 router.get('/srt',controller.getSrtQuestion)
 router.post('/questions',controller.insertQuestion)
+router.post('/nonquestions',controller.insertNonQuestion)
 router.post('/srt_resp',controller.insertSrtResponse)
 router.post('/ppdt_resp',controller.insertPpdtResponse)
 router.post('/gpe_resp',controller.insertGpeResponse)
 router.route('/questions').get(controller.getQuestions).post(controller.insertQuestion).delete(controller.dropQuestion)
+router.route('/nonquestions').get(controller.getNonQuestions).post(controller.insertNonQuestion).delete(controller.dropNonQuestion)
 router.route('/result').get(controller.getResult).post(controller.storeResult).delete(controller.dropResult)
+router.route('/nonresult').get(controller.getNonResult).post(controller.storeNonResult).delete(controller.dropNonResult)
 module.exports = router;

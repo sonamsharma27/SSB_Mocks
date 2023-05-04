@@ -35,6 +35,22 @@ function PpdtIntro() {
         indicate that time is up. After that, they will collect your answer
         sheet.
       </p>
+
+      <h2 className="ppdt_list">Instructions</h2>
+      <li className="ppdt_para">You will see the picture for 30 secs and then you will get 1 min to note down a few details and then 4 mins to write your story on the page provided by the SSB.</li>
+
+      <li className="ppdt_para">In 1  minute you have to write down the details like the gender of the characters you have seen, their age, mood, and circle the character you have seen first.</li>
+
+      <li className="ppdt_para">All these details have to be marked inside the box provided by SSB.</li>
+
+      <li className="ppdt_para">Write M/F/P for male/female/person(if the gender is not clear).</li>
+
+      <li className="ppdt_para">Write +/-/0  for positive/negative/neutral mood.</li>
+
+      <li className="ppdt_para">Write their age assumed by you and as per the picture showed.</li>
+
+      <li className="ppdt_para">You have to write the action happening in your story, it could be in 3-4 words like ” saving a child”, “Enjoying in vacation”, “helping a poor” etc</li>
+
       <button className="ppdt_btn" type='button'><Nav.Link className="ppdt_link" href='/ppdt'>Start Test</Nav.Link></button>
     </div>
   );

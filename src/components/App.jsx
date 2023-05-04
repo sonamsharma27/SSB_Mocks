@@ -16,7 +16,7 @@ import Srt from './Srt/Srt';
 import TatIntro from './Tat/TatIntro';
 import Verbal from './Verbal';
 import PpdtQues from './Ppdt/PpdtQues';
-import Non_verbal from './Non_verbal';
+// import Non_verbal from './Non_verbal';
 import Alu_login from './Alu_login';
 import Alu_signup from './Alu_signup';
 import Result_ver from './Result_ver';
@@ -34,7 +34,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/dashboard" exact element={user ? <Dashboard setLoginUser={setLoginUser} /> : <S_login setLoginUser={setLoginUser}/> && <Alu_login setLoginUser={setLoginUser}/>} />
+      <Route path="/dashboard" exact element={user?<Dashboard setLoginUser={setLoginUser} /> : <S_login setLoginUser={setLoginUser}/> && <Alu_login setLoginUser={setLoginUser}/>} />
       console.log(user);
       console.log(user._id);
       <Route exact path="/" element={<CarouselFadeExample/>} />
@@ -47,7 +47,7 @@ function App() {
       <Route path="/oir" element={<Oir/>} />    
       <Route path="/verbal" element={<CheckUserExist><Verbal/></CheckUserExist>} />
       <Route path="/ppdt_ques" element={<PpdtQues />} />
-      <Route path="/non_verbal" element={<Non_verbal/>} />
+      {/* <Route path="/non_verbal" element={<Non_verbal/>} /> */}
       <Route path="/result" element={<CheckUserExist><Result_ver/></CheckUserExist>} />
       <Route path="/watintro" element={<Watintro/>} />      
       <Route path="/wat" element={<Wat/>} />      

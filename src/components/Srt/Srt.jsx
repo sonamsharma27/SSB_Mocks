@@ -1,5 +1,6 @@
 import "./Srt.css";
 import { React, useState, useEffect } from "react";
+import PpdtTimer from '../Ppdt/PpdtTimer'
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import axios from 'axios';
@@ -109,3 +110,12 @@ export default function Srt() {
     </>
   );
 }
+{/* <CountdownCircleTimer
+            isPlaying
+            duration={4000}
+            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+            colorsTime={[23, 15, 8, 0]}
+            size = {160}
+          >
+            {({ remainingTime }) => remainingTime}
+          </CountdownCircleTimer> */}

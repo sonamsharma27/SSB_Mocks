@@ -76,7 +76,7 @@ const App = () => {
 		<div className="AppTimer">
 		<div className="cnt">
 			<h3>Test will end in:</h3>
-			<h2>{timer}</h2>
+			<h2 className='pptime'>{timer}</h2>
 		</div>
 		</div>
 	)

@@ -1,10 +1,14 @@
 const Questions = require('../models/questionSchema.js')
+const NonQuestions = require('../models/nonQuestionSchema.js')
 const PpdtStore = require('../models/ppdtSchema.js')
 const GpeStore = require('../models/gpeSchema.js')
 const SrtStore = require('../models/srtSchema.js')
 const Results = require('../models/resultSchema.js')
+const NonResults = require('../models/nonResultSchema.js')
 const questions = require('../database/data.js')
 const answers = require('../database/data.js')
+const nonquestions = require('../database/nondata')
+const nonanswers = require('../database/nondata.js')
 const PpdtResponse = require('../models/ppdtResponseSchema.js')
 const GpeResponse = require('../models/gpeResponseSchema.js')
 const SrtResponse = require('../models/srtResponseSchema.js')
@@ -16,6 +20,15 @@ exports.getQuestions = async function (req, res) {
         res.json({ error })
     }
     // res.json("questions api get request")
+}
+
+exports.getNonQuestions = async function(req,res){
+    try {
+        const q = await NonQuestions.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
 }
 
 exports.getSrtQuestion = async function (req, res) {
@@ -98,6 +111,17 @@ exports.insertQuestion = async function (req, res) {
     // res.json("questions api post request")
 }
 
+exports.insertNonQuestion = async function (req, res) {
+    try {
+        await NonQuestions.insertMany(nonquestions, nonanswers).then(function (err, data) {
+            res.json({ msg: "Non Data Saved Successfully...." })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+    // res.json("questions api post request")
+}
+
 exports.insertSrtResponse = async function (req, res) {
     try {
         console.log(req.body);
@@ -123,11 +147,27 @@ exports.dropQuestion = async function (req, res) {
         res.json({ error })
     }
 }
+exports.dropNonQuestion = async function (req, res) {
+    try {
+        await NonQuestions.deleteMany()
+        res.json({ msg: "Non Question deleted successfully...." })
+    } catch (error) {
+        res.json({ error })
+    }
+}
 
 
 exports.getResult = async function (req, res) {
     try {
         const r = await Results.find()
+        res.json(r)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+exports.getNonResult = async function (req, res) {
+    try {
+        const r = await NonResults.find()
         res.json(r)
     } catch (error) {
         res.json({ error })
@@ -141,7 +181,20 @@ exports.storeResult = async function (req, res) {
         if (!username && !result) throw new Error('Data Not Provided...!');
 
         Results.create({ username, result, attempts, points, achived }, function (err, data) {
-            res.json({ msg: "Result Saved Successfully...!" })
+            res.json({ msg: "Non Result Saved Successfully...!" })
+        })
+
+    } catch (error) {
+        res.json({ error })
+    }
+}
+exports.storeNonResult = async function (req, res) {
+    try {
+        const { username, result, attempts, points, achived } = req.body;
+        if (!username && !result) throw new Error('Data Not Provided...!');
+
+        NonResults.create({ username, result, attempts, points, achived }, function (err, data) {
+            res.json({ msg: "Non Result Saved Successfully...!" })
         })
 
     } catch (error) {
@@ -153,6 +206,14 @@ exports.dropResult = async function (req, res) {
     try {
         await Results.deleteMany();
         res.json({ msg: "Result Deleted Successfully...!" })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+exports.dropNonResult = async function (req, res) {
+    try {
+        await NonResults.deleteMany();
+        res.json({ msg: "Non Result Deleted Successfully...!" })
     } catch (error) {
         res.json({ error })
     }
