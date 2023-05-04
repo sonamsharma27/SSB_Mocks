@@ -12,5 +12,12 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 10px;
     color: rgb(55, 63, 168);
-    border: 2px solid rgb(46, 93, 138)
+    border: 2px solid rgb(46, 93, 138);
+    margin-left: 2rem;
+}
+.cnt{
+    margin-left: 2rem;
+}
+.cnt .pptime{
+    border: 2px solid red;
 }

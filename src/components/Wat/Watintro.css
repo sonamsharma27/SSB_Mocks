@@ -3,13 +3,13 @@
     padding: 0px;
 }
 
-.srt_cont{
+.wat_cont{
     background-color: black;
     padding-top: 2rem;
     height: 150vh;
 }
 
-.srt_cont .srt_head{
+.wat_cont .wat_head{
     text-align: center;
     margin-top: 2rem;
     border: 5px solid green;
@@ -19,7 +19,7 @@
     color: white;
 }
 
-.srt_cont .srt_list{
+.wat_cont .wat_list{
     text-align: center;
     margin-top: 2rem;
     border: 5px solid green;
@@ -31,23 +31,23 @@
 }
 
 
-.srt_cont .srt_para{
+.wat_cont .wat_para{
     margin-left: 2rem;
     margin-top: 2rem;
     color: white;
 }
 
-.srt_cont .srt_btn{
+.wat_cont .wat_btn{
     margin-left: 2rem;
     margin-top: 2rem;
 }
 
-.srt_link{
+.wat_link{
     color: white;
     background-color: rgb(9, 183, 35);
 }
 
-.srt_link:hover{
+.wat_link:hover{
     color: black;
     background-color: white;
 }

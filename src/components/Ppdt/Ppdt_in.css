@@ -6,7 +6,7 @@
 .ppdt_cont{
     background-color: black;
     padding-top: 2rem;
-    height: 100vh;
+    height: 150vh;
 }
 
 .ppdt_cont .ppdt_head{
@@ -18,6 +18,16 @@
     padding: 6px;
     color: white;
 }
+.ppdt_cont .ppdt_list{
+    text-align: center;
+    margin-top: 2rem;
+    border: 5px solid green;
+    width: 60%;
+    margin: auto;
+    padding: 6px;
+    color: white;
+    margin-top: 4rem;
+}
 
 .ppdt_cont .ppdt_para{
     margin-left: 2rem;
@@ -26,6 +36,7 @@
 }
 
 .ppdt_cont .ppdt_btn{
+    margin-top: 2rem;
     margin-left: 2rem;
 }
 

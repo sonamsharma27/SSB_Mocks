@@ -1,5 +1,6 @@
 import "./Gpe.css";
 import { React, useState, useEffect } from "react";
+import PpdtTimer from '../Ppdt/PpdtTimer'
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import axios from 'axios';
@@ -33,15 +34,7 @@ export default function Gpe() {
   return (
     <>
         <div className="timer position-absolute">
-         { showImage?<CountdownCircleTimer
-            isPlaying
-            duration={4000}
-            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-            colorsTime={[23, 15, 8, 0]}
-            size = {160}
-          >
-            {({ remainingTime }) => remainingTime}
-          </CountdownCircleTimer>: <></>}
+         { showImage?<PpdtTimer />: <></>}
         </div>
     <div className=" mt-2 p-0 d-flex flex-column align-items-center justify-content-center bg-grey ">
         <div>
@@ -77,7 +70,7 @@ export default function Gpe() {
                 Click here to go to dashboard
               </Link>{" "}
               <br /> <br />
-              <Link className="ques_dash" to="/gpe">
+              <Link className="ques_dash" to="/gpe_intro">
                 Try another GPE test
               </Link>
             </div>

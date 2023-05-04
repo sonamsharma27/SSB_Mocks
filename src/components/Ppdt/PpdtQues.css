@@ -53,3 +53,14 @@
     text-decoration: none;
  }
 
+ .cnt{
+   margin-left: 2rem;
+}
+
+ .pptime{
+   border: 2px solid black;
+   width: 125px;
+   background-color: wheat;
+   align-items: center;
+   color: black;
+}
