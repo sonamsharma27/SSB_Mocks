@@ -25,13 +25,16 @@ function Tat() {
   });
   const imgUrls=getImgUrls();
   return (
+    <>
     <div className="d-flex flex-column justify-content-center">
       <h1 className="text-center p-2 align-self-center bg-success rounded-2">
         Thematic Apperception Test
       </h1>
       <TatImg imgUrls={imgUrls}  />
-      <TatInput setStoryInput={setStoryInput} storyInput={storyInput} imgUrls={imgUrls} />
+      <TatInput setStoryInput={setStoryInput} storyInput={storyInput} urls={imgUrls} />
     </div>
+
+    </>
   );
 }
 
