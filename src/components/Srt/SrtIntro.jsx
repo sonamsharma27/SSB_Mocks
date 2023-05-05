@@ -7,7 +7,7 @@ import "./Srtintro.css"
 export default function SrtIntro() {
   return (
     <>
-    <Navbar bg="light" expand="lg">
+    {/* <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -22,7 +22,7 @@ export default function SrtIntro() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> */}
 
     <div className="srt_cont">
       <h1 className="srt_head">Situation Reaction Test (SRT)</h1>

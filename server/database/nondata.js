@@ -1,61 +1,56 @@
-const nonquestions = [
+const questions = [
     {
         id: 1,
-        question : "Select a figure from amongst the four alternatives, which when placed in the blank space of figure (X) would complete the pattern.",
-        figures: "http://www.ssbinterviewtips.in/uploads/images/81.JPG",
+        question : "In a certain code language, 493 means friendship big challenge, 961 means struggle big exam and 178 means exam confidential subject. Then, what does confidential stand for?",
         options : [
-            'http://www.ssbinterviewtips.in/uploads/images/81a.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/81b.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/81c.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/81d.JPG'
+            '7 or 8',
+            '7 or 9',
+            '8'
+            // '8 or 1'
         ]
     },
     {
         id: 2,
-        question : "Select a figure from amongst the four alternatives, which when placed in the blank space of figure (X) would complete the pattern.",
-        figures: "http://www.ssbinterviewtips.in/uploads/images/afcat0215-82q.JPG",
+        question : "Parliament is related to Great Britain, in the same way as Congress is related to",
         options : [
-            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82a.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82b.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82c.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82d.JPG'
+            'Japan',
+            'India',
+            'USA'
+            // 'Netherlands'
         ]
     },
     {
         id: 3,
-        question : "Select a figure from amongst the four alternatives, which when placed in the blank space of figure (X) would complete the pattern.",
-        figures: "http://www.ssbinterviewtips.in/uploads/images/81.JPG",
+        question : "Pardon is related to Penalty, in the same way Definitely is related to ",
         options : [
-            'http://www.ssbinterviewtips.in/uploads/images/81a.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/81b.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/81c.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/81d.JPG'
+            'Actually',
+            'Urgently',
+            'Positively'
+            // 'Probably'
         ]
     },
     {
         id: 4,
-        question : "Select a figure from amongst the four alternatives, which when placed in the blank space of figure (X) would complete the pattern.",
-        figures: "http://www.ssbinterviewtips.in/uploads/images/afcat0215-82q.JPG",
+        question : "In a certain code, CONSIDER is written as RMNBSFEJ. How is CHLORINE written in that code?",
         options : [
-            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82a.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82b.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82c.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82d.JPG'
+            'NKGBEOJS',
+            'NKHBFOJS',
+            'NKGBFNJS'
+            // 'NKGBFOJS'
         ]
     },
     {
         id: 5,
-        question : "Select a figure from amongst the four alternatives, which when placed in the blank space of figure (X) would complete the pattern.",
-        figures: "http://www.ssbinterviewtips.in/uploads/images/81.JPG",
+        question : "If + means ‘÷’, ‘÷’ means *, * means - and - means +, then 24 6 2 3 4 + * ÷ - = ?",
         options : [
-            'http://www.ssbinterviewtips.in/uploads/images/81a.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/81b.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/81c.JPG',
-            'http://www.ssbinterviewtips.in/uploads/images/81d.JPG'
+            '6',
+            '4',
+            '2'
+            // '7'
         ]
     }
 ];
 
-const nonanswers = [0, 1, 2, 1, 0];
+const answers = [0, 2, 3, 1, 2];
 
-module.exports = {nonquestions,nonanswers}
+module.exports = {questions,answers}
