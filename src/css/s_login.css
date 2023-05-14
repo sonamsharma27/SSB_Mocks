@@ -50,7 +50,7 @@
   }
   
   .image Form .btn1{
-    margin-top: 19rem;
+    margin-top: 8rem;
     margin-left: 27rem;
   }
   
@@ -58,8 +58,19 @@
       width: 170%;
   }
 
+  .btn9{
+    margin-left: 24rem;
+    margin-top: 12rem;
+  }
+
   .para2{
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    font-size: 18px;
+  }
+
+  .para{
+    margin-top: 4rem;
     margin-left: 3rem;
     font-size: 18px;
   }

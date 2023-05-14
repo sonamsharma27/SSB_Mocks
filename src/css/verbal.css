@@ -10,7 +10,7 @@
     background-color: black;
     padding-top: 3rem;
     color: white;
-    height: 100vh;
+    height: 130vh;
 }
 
 
@@ -44,15 +44,19 @@
 .next{
     background-color: var(--primary-color);
     margin-left: 58rem;
+    padding-left: 26px;
+    text-align: center;
 }
 
 .prev{
     background-color: #faff5a;
     margin-left: -8rem;
+    padding-left: 26px;
 }
 
 .btn2{
-    width: 60%;
-    padding: 0.2rem;
+    width: 6%;
+    /* text-align: center; */
+    margin-top: 14rem;
     border-radius: 6px;
 }

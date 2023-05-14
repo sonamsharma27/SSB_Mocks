@@ -73,10 +73,10 @@ const register = () => {
       </div>
 
     <div className="image">
-    <h1>Registeration</h1>
+    <h1>Registration</h1>
     <Form> 
       <Form.Group id="firstform" className="firstform" controlId="formBasicEmail">
-        <Form.Label>Name Of The Student</Form.Label>
+        <Form.Label>Name Of The Aspirant</Form.Label>
         <Form.Control value={user.name} onChange={ handleChange } name="name" required type="name" className='placeholder' placeholder="Enter name" />
       </Form.Group>
 
@@ -89,7 +89,7 @@ const register = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control value={user.password} onChange={ handleChange } required name="password" type="password"  className='placeholder' placeholder="Password" />
       </Form.Group>
-      <Button className='btn1' variant="primary" onClick={register}>
+      <Button className='btn9' variant="primary" onClick={register}>
         Submit
       </Button>
       <p className='para'>Already Registered 

@@ -4,16 +4,16 @@ import Watword from "./Watword";
 
 const getWords = () => {
   return [
-    "Ashish",
-    "Anand",
-    "Ash",
+    "Guilty",
+    "Battle",
+    "Village",
   ];
 };
 
 function Wat() {
   const [storyInput, setStoryInput] = useState({
-    s0: "",
     s1: "",
+    s0: "",
     s2: "",
     s3: "",
     s4: "",

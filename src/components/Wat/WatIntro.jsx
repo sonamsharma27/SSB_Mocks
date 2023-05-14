@@ -7,7 +7,7 @@ import './Watintro.css'
 export default function WatIntro() {
   return (
     <>
-    <Navbar bg="light" expand="lg">
+    {/* <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -22,7 +22,7 @@ export default function WatIntro() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> */}
 
     <div className="wat_cont">
       <h1 className="wat_head">Welcome to Word Association Test (WAT)</h1>
