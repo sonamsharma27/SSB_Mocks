@@ -24,7 +24,7 @@ function NavScrollExample() {
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="/dashboard">About Us</Nav.Link>
+            <Nav.Link href="/add_test_material">Add test material</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
