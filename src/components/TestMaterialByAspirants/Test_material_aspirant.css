@@ -17,3 +17,11 @@
     background-color: rgb(232, 233, 234);
     cursor: pointer;
 }
+
+.ppdtcontent {
+    width: 55rem;
+}
+
+.w-sm {
+    width: 10rem;
+}
