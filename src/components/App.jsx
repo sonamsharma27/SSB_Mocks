@@ -27,7 +27,11 @@ import { useState } from 'react';
 import Wat from './Wat/Wat';
 import Gpe from './Gpe/Gpe';
 import GpeIntro from './Gpe/GpeIntro';
+<<<<<<< HEAD
 import Response from './Response/Response'
+=======
+import Test_material_aspirant from './TestMaterialByAspirants/Test_material_aspirant';
+>>>>>>> d7f08efe91c8da7429c845e76f2e0148a70f0115
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -36,8 +40,6 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route path="/dashboard" exact element={user?<Dashboard setLoginUser={setLoginUser} /> : <S_login setLoginUser={setLoginUser}/> && <Alu_login setLoginUser={setLoginUser}/>} />
-      console.log(user);
-      console.log(user._id);
       <Route exact path="/" element={<CarouselFadeExample/>} />
       <Route exact path="/signup" element={<SignUp/>} />
       <Route exact path="/alu_signup" element={<Alu_signup/>} />
@@ -45,6 +47,7 @@ function App() {
       <Route exact path="/s_login" element={<S_login setLoginUser={setLoginUser}/>} />
       <Route exact path="/alu_login" element={<Alu_login setLoginUser={setLoginUser}/>} />
       {/* <Route path="/alumniform" element={<AlumniForm/>} />   */}
+      <Route path="/add_test_material" element={<Test_material_aspirant/>} />
       <Route path="/oir" element={<Oir/>} />    
       <Route path="/verbal" element={<CheckUserExist><Verbal/></CheckUserExist>} />
       <Route path="/ppdt_ques" element={<PpdtQues />} />

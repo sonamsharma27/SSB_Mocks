@@ -23,8 +23,13 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+<<<<<<< HEAD
             <Nav.Link href="/response">Response Section</Nav.Link>
             {/* <Nav.Link href="/dashboard">About Us</Nav.Link> */}
+=======
+            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link href="/add_test_material">Add test material</Nav.Link>
+>>>>>>> d7f08efe91c8da7429c845e76f2e0148a70f0115
           </Nav>
         </Navbar.Collapse>
       </Container>
