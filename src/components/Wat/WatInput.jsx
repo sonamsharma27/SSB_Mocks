@@ -9,61 +9,61 @@ function WatInput({ setStoryInput, storyInput }) {
           onClick={() => setActive(1)}
           className={active === 1 ? "active_story" : "story"}
         >
-          Story1
+          Word1
         </div>
         <div
           onClick={() => setActive(2)}
           className={active === 2 ? "active_story" : "story"}
         >
-          Story2
+          Word2
         </div>
         <div
           onClick={() => setActive(3)}
           className={active === 3 ? "active_story" : "story"}
         >
-          Story3
+          Word3
         </div>
         <div
           onClick={() => setActive(4)}
           className={active === 4 ? "active_story" : "story"}
         >
-          Story4
+          Word4
         </div>
         <div
           onClick={() => setActive(5)}
           className={active === 5 ? "active_story" : "story"}
         >
-          Story5
+          Word5
         </div>
         <div
           onClick={() => setActive(6)}
           className={active === 6 ? "active_story" : "story"}
         >
-          Story6
+          Word6
         </div>
         <div
           onClick={() => setActive(7)}
           className={active === 7 ? "active_story" : "story"}
         >
-          Story7
+          Word7
         </div>
         <div
           onClick={() => setActive(8)}
           className={active === 8 ? "active_story" : "story"}
         >
-          Story8
+          Word8
         </div>
         <div
           onClick={() => setActive(9)}
           className={active === 9 ? "active_story" : "story"}
         >
-          Story9
+         Word9
         </div>
         <div
           onClick={() => setActive(10)}
           className={active === 10 ? "active_story" : "story"}
         >
-          Story10
+          Word10
         </div>
       </div>
       <div className="d-flex justify-content-center">

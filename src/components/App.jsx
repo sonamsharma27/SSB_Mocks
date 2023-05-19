@@ -27,6 +27,7 @@ import { useState } from 'react';
 import Wat from './Wat/Wat';
 import Gpe from './Gpe/Gpe';
 import GpeIntro from './Gpe/GpeIntro';
+import Response from './Response/Response'
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -59,6 +60,7 @@ function App() {
       <Route path='/ppdt_intro' element={<PpdtIntro/>}/>
       <Route path='/gpe_intro' element={<GpeIntro/>}/>
       <Route path='/gpe' element={<Gpe/>}/>
+      <Route path='/response' element={<Response/>}/>
       </Routes>
     </BrowserRouter>
   );
