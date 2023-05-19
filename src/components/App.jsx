@@ -27,11 +27,11 @@ import { useState } from 'react';
 import Wat from './Wat/Wat';
 import Gpe from './Gpe/Gpe';
 import GpeIntro from './Gpe/GpeIntro';
-<<<<<<< HEAD
 import Response from './Response/Response'
-=======
+import AlumniDash from './AlumniDashboard/AlumniDash';
 import Test_material_aspirant from './TestMaterialByAspirants/Test_material_aspirant';
->>>>>>> d7f08efe91c8da7429c845e76f2e0148a70f0115
+import AlumniTestMaterial from './AlumniDashboard/AlumniTestMaterial';
+import AlumniHome from './AlumniDashboard/AlumniHome';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -64,7 +64,11 @@ function App() {
       <Route path='/gpe_intro' element={<GpeIntro/>}/>
       <Route path='/gpe' element={<Gpe/>}/>
       <Route path='/response' element={<Response/>}/>
+      <Route path='/alumnidash' element={<AlumniDash/>}/>
+      <Route path='/alumnitestmaterial' element={<AlumniTestMaterial/>}/>
+      <Route path='/alumnihome' element={<AlumniHome/>}/>
       </Routes>
+      
     </BrowserRouter>
   );
 }

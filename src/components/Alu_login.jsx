@@ -25,7 +25,7 @@ export default function Alu_login({setLoginUser}) {
     .then(res => {
         alert(res.data.message)
         setLoginUser(res.data.user)
-        history("/dashboard")
+        history("/alumnidash")
     })
   }
   
