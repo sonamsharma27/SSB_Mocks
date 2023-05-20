@@ -32,6 +32,10 @@ import AlumniDash from './AlumniDashboard/AlumniDash';
 import Test_material_aspirant from './TestMaterialByAspirants/Test_material_aspirant';
 import AlumniTestMaterial from './AlumniDashboard/AlumniTestMaterial';
 import AlumniHome from './AlumniDashboard/AlumniHome';
+import SrtResponse from './AlumniDashboard/SrtResponse';
+import PpdtResponse from './AlumniDashboard/PpdtResponse';
+import TatResponse from './AlumniDashboard/TatResponse';
+import WatResponse from './AlumniDashboard/WatResponse';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -67,6 +71,10 @@ function App() {
       <Route path='/alumnidash' element={<AlumniDash/>}/>
       <Route path='/alumnitestmaterial' element={<AlumniTestMaterial/>}/>
       <Route path='/alumnihome' element={<AlumniHome/>}/>
+      <Route path='/srtresponse' element={<SrtResponse/>}/>
+      <Route path='/ppdtresponse' element={<PpdtResponse/>}/>
+      <Route path='/tatresponse' element={<TatResponse/>}/>
+      <Route path='/watresponse' element={<WatResponse/>}/>
       </Routes>
       
     </BrowserRouter>

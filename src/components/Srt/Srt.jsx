@@ -42,7 +42,7 @@ export default function Srt() {
   return (
     <>
     <div className="timer position-absolute">
-         { questions?<CountdownCircleTimer
+         {/* { questions?<CountdownCircleTimer
             isPlaying
             duration={400}
             colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
@@ -50,7 +50,7 @@ export default function Srt() {
             size = {160}
           >
             {({ remainingTime }) => remainingTime}
-          </CountdownCircleTimer>: <></>}
+          </CountdownCircleTimer>: <></>} */}
         </div>
     <div className=" mt-2 p-0 d-flex flex-column align-items-center justify-content-center bg-grey ">
         <div>
