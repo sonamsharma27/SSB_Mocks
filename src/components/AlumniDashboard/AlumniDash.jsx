@@ -50,7 +50,7 @@ export default function AlumniDash({children}) {
                     </div>
 
                     <div className={`${active === "response" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive(toggle)}>
-                    Response
+                    Feedback
 
                     
                     </div>
