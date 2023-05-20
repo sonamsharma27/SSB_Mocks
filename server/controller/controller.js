@@ -36,6 +36,32 @@ exports.getNonQuestions = async function(req,res){
     }
 }
 
+exports.getSrtResponses = async function(req,res){
+    try {
+        const q = await SrtResponse.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.getPpdtResponses = async function(req,res){
+    try {
+        const q = await PpdtResponse.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+exports.getGpeResponses = async function(req,res){
+    try {
+        const q = await GpeResponse.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
 exports.getSrtQuestion = async function (req, res) {
     try {
         const q = await SrtStore.find()

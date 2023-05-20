@@ -15,6 +15,7 @@ import SrtResponse from './SrtResponse';
 import PpdtResponse from './PpdtResponse';
 import WatResponse from './WatResponse';
 import TatResponse from './TatResponse';
+import GpeResponse from './GpeResponse';
 
 export default function AlumniDash({children}) {
 
@@ -58,40 +59,46 @@ export default function AlumniDash({children}) {
                         <div className={`${active === "ppdtresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("ppdtresponse")}>Ppdt</div>
                         <div className={`${active === "watresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("watresponse")}>Wat</div>
                         <div className={`${active === "tatresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("tatresponse")}>Tat</div>
+
+                        <div className={`${active === "gperesponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("gperesponse")}>Gpe</div>
                     </div>
                     <div className={`${active === "alumnitestmaterial" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("alumnitestmaterial")}>
                     Add Test Material
                     </div>
            </div>
-           <div className={`${active === "alumnidash" ? "displaymaincont"
+           <div className={`${active === "alumnidash" ? "displaymaincontent"
               : "d-none"}`}>
                     AlumniHome
            </div>
-           <div className={`${active === "response" ? "displaymaincont"
+           <div className={`${active === "response" ? "displaymaincontent"
               : "d-none"}`}>
                     Response
            </div>
 
-           <div className={`${active === "srtresponse" ? "displaymaincont"
+           <div className={`${active === "srtresponse" ? "displaymaincontent"
               : "d-none"}`}>
                     <SrtResponse />
            </div>
 
-           <div className={`${active === "ppdtresponse" ? "displaymaincont"
+           <div className={`${active === "ppdtresponse" ? "displaymaincontent"
               : "d-none"}`}>
                     <PpdtResponse />
            </div>
 
-           <div className={`${active === "watresponse" ? "displaymaincont"
+           <div className={`${active === "watresponse" ? "displaymaincontent"
               : "d-none"}`}>
                     <WatResponse />
            </div>
 
-           <div className={`${active === "tatresponse" ? "displaymaincont"
+           <div className={`${active === "tatresponse" ? "displaymaincontent"
               : "d-none"}`}>
                     <TatResponse />
            </div>
-           <div className={`${active === "alumnitestmaterial" ? "displaymaincont"
+           <div className={`${active === "gperesponse" ? "displaymaincontent"
+              : "d-none"}`}>
+                    <GpeResponse />
+           </div>
+           <div className={`${active === "alumnitestmaterial" ? "displaymaincontent"
               : "d-none"}`}>
                     <AlumniTestMaterial />
            </div>

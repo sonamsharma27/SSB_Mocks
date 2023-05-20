@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
+import './SrtResponse.css'
 
 
 export default function SrtResponse() {
@@ -10,7 +11,7 @@ export default function SrtResponse() {
       const response = await axios.get('http://localhost:5000/api/srt_resp');
     //   console.log(response);
       await getAnswers(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -21,12 +22,14 @@ export default function SrtResponse() {
   })
   return (
     <>
-<div>
+      <div className='srtmain'>
           {
         answers.map((d) => (
-          <ul key={d._id} className="sitlist">
-            <li style={{color: "black"}} className="sititems">{d.username}</li>
-          </ul>
+          <div key={d._id} className='srtcontent'>
+            <p style={{color: "black"}}>Username: {d.username}</p>
+            <p style={{color: "black"}}>Result: {d.result}</p>
+            <textarea name="text" id="" cols="120" rows="10" placeholder='Write Your Feedback Here'></textarea>
+          </div>
         ))
       }
       </div>

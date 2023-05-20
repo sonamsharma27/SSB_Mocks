@@ -36,6 +36,7 @@ import SrtResponse from './AlumniDashboard/SrtResponse';
 import PpdtResponse from './AlumniDashboard/PpdtResponse';
 import TatResponse from './AlumniDashboard/TatResponse';
 import WatResponse from './AlumniDashboard/WatResponse';
+import GpeResponse from './AlumniDashboard/GpeResponse';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -75,6 +76,7 @@ function App() {
       <Route path='/ppdtresponse' element={<PpdtResponse/>}/>
       <Route path='/tatresponse' element={<TatResponse/>}/>
       <Route path='/watresponse' element={<WatResponse/>}/>
+      <Route path='/gperesponse' element={<GpeResponse/>}/>
       </Routes>
       
     </BrowserRouter>
