@@ -58,7 +58,7 @@ export default function AlumniDash({children}) {
            </div>
            <div className={`${active === "alumnitestmaterial" ? "displaymaincont"
               : "d-none"}`}>
-                    Add Test Material
+                    <AlumniTestMaterial />
            </div>
         </div>
 

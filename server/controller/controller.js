@@ -10,6 +10,11 @@ const answers = require('../database/data.js')
 const nonquestions = require('../database/nondata')
 const nonanswers = require('../database/nondata.js')
 const PpdtResponse = require('../models/ppdtResponseSchema.js')
+const AlumniPpdtResponse = require('../models/alumniPpdtschema.js')
+const AlumniWatResponse = require('../models/alumniWatschema.js')
+const AlumniTatResponse = require('../models/alumniTatSchema.js')
+const AlumniSrtResponse = require('../models/alumniSrtSchema.js')
+const AlumniGpeResponse = require('../models/alumniGpeSchema.js')
 const GpeResponse = require('../models/gpeResponseSchema.js')
 const SrtResponse = require('../models/srtResponseSchema.js')
 exports.getQuestions = async function (req, res) {
@@ -61,6 +66,86 @@ exports.insertPpdtResponse = async function (req, res) {
     }
 }
 
+exports.insertAlumniPpdtResponse = async function(req,res){
+    try {
+        console.log(req.body);
+        const {url} = req.body
+        if(!url) throw new Error('Data Not Provided...!');
+
+        AlumniPpdtResponse.create({
+            url: url
+        }, function (err, data) {
+            res.json({ msg: "Alumni PPDT Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.insertAlumniWatResponse = async function(req,res){
+    try {
+        console.log(req.body);
+        const {content} = req.body
+        if(!content) throw new Error('Data Not Provided...!');
+
+        AlumniWatResponse.create({
+            content: content
+        }, function (err, data) {
+            res.json({ msg: "Alumni Wat Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.insertAlumniTatResponse = async function(req,res){
+    try {
+        console.log(req.body);
+        const {url} = req.body
+        if(!url) throw new Error('Data Not Provided...!');
+
+        AlumniTatResponse.create({
+            url: url
+        }, function (err, data) {
+            res.json({ msg: "Alumni Tat Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.insertAlumniSrtResponse = async function(req,res){
+    try {
+        console.log(req.body);
+        const {situation} = req.body
+        if(!situation) throw new Error('Data Not Provided...!');
+
+        AlumniSrtResponse.create({
+            situation: situation
+        }, function (err, data) {
+            res.json({ msg: "Alumni Srt Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.insertAlumniGpeResponse = async function(req,res){
+    try {
+        console.log(req.body);
+        const {url,problem} = req.body
+        if(!url) throw new Error('Data Not Provided...!');
+
+        AlumniGpeResponse.create({
+            url: url,
+            problem: problem
+        }, function (err, data) {
+            res.json({ msg: "Alumni Gpe Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
 
 exports.insertGpeResponse = async function (req, res) {
     try {
@@ -74,7 +159,7 @@ exports.insertGpeResponse = async function (req, res) {
             problem: problem, 
             solution: solution
            }, function (err, data) {
-            res.json({ msg: "PPDT Repsonse Saved Successfully...!" })
+            res.json({ msg: "Gpe Repsonse Saved Successfully...!" })
         })
     } catch (error) {
         res.json({ error })
