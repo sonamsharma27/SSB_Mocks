@@ -216,7 +216,7 @@ exports.insertGpeResponse = async function (req, res) {
     try {
         console.log(req.body);
         const { username,  problem, solution, url} = req.body;
-        if (!username || !url) throw new Error('Data Not Provided...!');
+        if (!username ) throw new Error('Data Not Provided...!');
 
         GpeResponse.create({ 
             username: username, 
