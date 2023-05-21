@@ -19,6 +19,7 @@ const GpeResponse = require('../models/gpeResponseSchema.js')
 const SrtResponse = require('../models/srtResponseSchema.js')
 const TatStore = require('../models/tatSchema.js')
 const TatResponse = require('../models/tatResponseSchema.js')
+const axios = require('axios');
 exports.getQuestions = async function (req, res) {
     try {
         const q = await Questions.find()
@@ -377,4 +378,33 @@ exports.dropNonResult = async function (req, res) {
     } catch (error) {
         res.json({ error })
     }
+}
+
+exports.personalityDetection = async function (req,res) {
+    const options = {
+        method: 'POST',
+        url: 'https://personality-traits.p.rapidapi.com/personality',
+        headers: {
+          'content-type': 'application/json',
+          Accept: 'application/json',
+          'X-RapidAPI-Key': 'cc16c628e5msh335b79c5c758c18p132a42jsn500fcc56dc0b',
+          'X-RapidAPI-Host': 'personality-traits.p.rapidapi.com'
+        },
+        data: [
+          {
+            id: '1',
+            language: 'en',
+            text: 'I love the service'
+          }
+        ]
+      };
+      
+      try {
+          const response = await axios.request(options);
+          console.log(response.data);
+          res.json(response.data);
+      } catch (error) {
+          console.error(error);
+          res.json({ error })
+      }
 }
