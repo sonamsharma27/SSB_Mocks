@@ -32,7 +32,11 @@ export default function PpdtQues({url}) {
       setTimeout(()=>{
         setShowQuestions(false);
         // console.log(userResp);
-        axios.post('http://localhost:5000/api/ppdt_resp', {
+       
+      },50000)
+    })
+    useEffect(()=>{
+      axios.post('http://localhost:5000/api/ppdt_resp', {
         username: 'John',
         url: userResp.url,
         title : userResp.title,
@@ -47,8 +51,7 @@ export default function PpdtQues({url}) {
       .catch(function (error) {
         console.log(error);
       });
-      },50000)
-    })
+    },[showQuestions])
    
   return (
     <div className='ppdt-con'>

@@ -10,13 +10,12 @@ export default function Ppdt() {
   const [url, setUrl] = useState("");
 
   useEffect(() => {
+    if(url!=='') return;
     fetch("http://localhost:5000/api/ppdt")
       .then((res) => res.json())
       .then((res) => setUrl(res.url));
     setTimeout(() => {
       setShowImage(false);
-      // window.location.href='ppdt_ques';
-      // navigate("/ppdt_ques");
     }, 5000);
 });
 
@@ -51,7 +50,7 @@ export default function Ppdt() {
         ) : (
           <div>
            
-             <PpdtQues url={url}/>
+             <PpdtQues url={url} showImage={showImage}/>
               {/* <Route path="/ppdt_ques" element={} /> */}
             
           </div>

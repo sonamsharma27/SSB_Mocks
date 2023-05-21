@@ -11,26 +11,31 @@ export default function Gpe() {
   const [problem, setProblem] = useState('');
   const [solution, setSolution] = useState('');
   useEffect(() => {
-    fetch("http://localhost:5000/api/gpe")
-      .then((res) => res.json())
-      .then((res) => {setUrl(res.url); setProblem(res.problem);});
+    if(problem.length) return;
+    setTimeout(()=>{
+      fetch("http://localhost:5000/api/gpe")
+        .then((res) => res.json())
+        .then((res) => {setUrl(res.url); setProblem(res.problem);});
+    },1)
     setTimeout(() => {
       setShowImage(false);
-      axios.post('http://localhost:5000/api/gpe_resp', {
-        username: 'Fred',
-        url: url,
-        problem: problem,
-        solution: solution
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+     
     }, 100000);
-  }, []);
-
+  });
+ useEffect(()=>{
+  axios.post('http://localhost:5000/api/gpe_resp', {
+    username: 'Fred',
+    url: url,
+    problem: problem,
+    solution: solution
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+ },[showImage])
   return (
     <>
         <div className="timer position-absolute">

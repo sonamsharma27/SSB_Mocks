@@ -1,0 +1,13 @@
+table{
+    text-align: center;
+    /* border-radius: 1.5rem; */
+}
+
+thead {
+    border-radius: 1.5rem;
+    background-color: rgb(157, 157, 239);
+}
+
+tbody {
+    background-color: #d2d2ff;
+}

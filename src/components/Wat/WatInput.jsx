@@ -1,7 +1,9 @@
 import React, { useState, Fragment } from "react";
 import "./WatInput.css";
+
 function WatInput({ setStoryInput, storyInput }) {
   const [active, setActive] = useState(1);
+  
   return (
     <>
       <div className="d-flex justify-content-center m-6" style={{marginTop: "4rem"}}>
@@ -180,6 +182,7 @@ function WatInput({ setStoryInput, storyInput }) {
           }}
         ></textarea>
       </div>
+
     </>
   );
 }
