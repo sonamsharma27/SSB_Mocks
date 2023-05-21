@@ -7,7 +7,7 @@ import {
     FaBars,
     
 } from "react-icons/fa";
-import pic9 from '/ssb/ssb_mocks/src/images/pic9.jpg'
+// import pic9 from '/ssb/ssb_mocks/src/images/pic9.jpg'
 import AlumniTestMaterial from './AlumniTestMaterial';
 import Response from '../Response/Response';
 import './AlumniDash.css'

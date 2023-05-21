@@ -16,9 +16,9 @@ export default function Ppdt() {
     setTimeout(() => {
       setShowImage(false);
       // window.location.href='ppdt_ques';
-      navigate("/ppdt_ques");
+      // navigate("/ppdt_ques");
     }, 5000);
-  }, []);
+});
 
   return (
     <div className="container d-flex flex-column align-items-center bg-grey ">
@@ -50,9 +50,10 @@ export default function Ppdt() {
           </div>
         ) : (
           <div>
-            <Routes>
-              <Route path="/ppdt_ques" element={<PpdtQues url={'url'} />} />
-            </Routes>
+           
+             <PpdtQues url={url}/>
+              {/* <Route path="/ppdt_ques" element={} /> */}
+            
           </div>
         )}
       </div>
