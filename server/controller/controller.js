@@ -17,6 +17,8 @@ const AlumniSrtResponse = require('../models/alumniSrtSchema.js')
 const AlumniGpeResponse = require('../models/alumniGpeSchema.js')
 const GpeResponse = require('../models/gpeResponseSchema.js')
 const SrtResponse = require('../models/srtResponseSchema.js')
+const TatStore = require('../models/tatSchema.js')
+const TatResponse = require('../models/tatResponseSchema.js')
 exports.getQuestions = async function (req, res) {
     try {
         const q = await Questions.find()
@@ -91,6 +93,43 @@ exports.insertPpdtResponse = async function (req, res) {
         res.json({ error })
     }
 }
+
+exports.insertTatResponse = async function (req,res) {
+    try {
+        console.log(req.body);
+        const { username, url1, s1, url2, s2,url3, s3,url4, s4,url5, s5,url6, s6,url7, s7,url8, s8,url9, s9,url10, s10} = req.body;
+        if (!username) throw new Error('Data Not Provided...!');
+
+        TatResponse.create({ 
+            username: username, 
+            url1: url1,
+            s1: s1,
+            url2: url2,
+            s2: s2,
+            url3: url3,
+            s3: s3,
+            url4: url4,
+            s4: s4,
+            url5: url5,
+            s5: s5,
+            url6: url6,
+            s6: s6,
+            url7: url7,
+            s7: s7,
+            url8: url8,
+            s8: s8,
+            url9: url9,
+            s9:s9,
+            url10: url10,
+            s10: s10
+        }, function (err, data) {
+            res.json({ msg: "PPDT Repsonse Saved Successfully...!" })
+        })
+    } catch (error){
+        res.json({ error});
+    }
+}
+
 
 exports.insertAlumniPpdtResponse = async function(req,res){
     try {
@@ -202,6 +241,16 @@ exports.getImage = async function (req, res) {
         res.json(err);
     }
 }
+
+exports.getTatImages = async function (req,res) {
+    try {
+        const url_doc = await TatStore.aggregate([{ $sample: {size: 10} }] );
+        res.json(url_doc);
+    } catch (err) {
+        res.json(err);
+    }
+}
+
 exports.getGpeImage = async function (req, res) {
     try {
         const url_doc = await GpeStore.aggregate([{ $sample: { size: 1 } }])
