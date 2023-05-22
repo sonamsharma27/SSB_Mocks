@@ -19,6 +19,8 @@ const GpeResponse = require('../models/gpeResponseSchema.js')
 const SrtResponse = require('../models/srtResponseSchema.js')
 const TatStore = require('../models/tatSchema.js')
 const TatResponse = require('../models/tatResponseSchema.js')
+const WatStore = require('../models/watSchema.js')
+const WatResponse = require('../models/watResponseSchema.js')
 const axios = require('axios');
 exports.getQuestions = async function (req, res) {
     try {
@@ -124,7 +126,43 @@ exports.insertTatResponse = async function (req,res) {
             url10: url10,
             s10: s10
         }, function (err, data) {
-            res.json({ msg: "PPDT Repsonse Saved Successfully...!" })
+            res.json({ msg: "Tat Repsonse Saved Successfully...!" })
+        })
+    } catch (error){
+        res.json({ error});
+    }
+}
+
+exports.insertWatResponse = async function (req,res) {
+    try {
+        console.log(req.body);
+        const { username, word1, s1, word2, s2,word3, s3,word4, s4,word5, s5,word6, s6,word7, s7,word8, s8,word9, s9,word10, s10} = req.body;
+        if (!username) throw new Error('Data Not Provided...!');
+
+        WatResponse.create({ 
+            username: username, 
+            word1: word1,
+            s1: s1,
+            word2: word2,
+            s2: s2,
+            word3: word3,
+            s3: s3,
+            word4: word4,
+            s4: s4,
+            word5: word5,
+            s5: s5,
+            word6: word6,
+            s6: s6,
+            word7: word7,
+            s7: s7,
+            word8: word8,
+            s8: s8,
+            word9: word9,
+            s9:s9,
+            word10: word10,
+            s10: s10
+        }, function (err, data) {
+            res.json({ msg: "Wat Repsonse Saved Successfully...!" })
         })
     } catch (error){
         res.json({ error});
@@ -247,6 +285,15 @@ exports.getTatImages = async function (req,res) {
     try {
         const url_doc = await TatStore.aggregate([{ $sample: {size: 10} }] );
         res.json(url_doc);
+    } catch (err) {
+        res.json(err);
+    }
+}
+
+exports.getWatWords = async function (req,res) {
+    try {
+        const word_doc = await WatStore.aggregate([{ $sample: {size: 10} }] );
+        res.json(word_doc);
     } catch (err) {
         res.json(err);
     }
