@@ -1,8 +1,8 @@
-button {
+/* button {
     position: absolute;
     display: flex;
     align-items: center;
-}
+} */
 
 .prev {
     left: 20%;

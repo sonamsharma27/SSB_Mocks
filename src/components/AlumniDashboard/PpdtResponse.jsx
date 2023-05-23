@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
+import './PpdtResponse.css'
 
 export default function PpdtResponse() {
   const [answers,getAnswers] = useState([])
@@ -24,8 +25,12 @@ export default function PpdtResponse() {
         answers.map((d) => (
           <div key={d._id} className='srtcontent'>
             <p style={{color: "black"}}>Username: {d.username}</p>
+            <p style={{color: "black"}} className='imageurl'>Picture: <img src={d.url} alt="" className='picurl'/></p>
+            <p style={{color: "black"}} className='imageurl'>Story: {d.story}</p>
             {/* <p style={{color: "black"}}>Result: {d.result}</p> */}
-            <textarea name="text" id="" cols="120" rows="10" placeholder='Write Your Feedback Here'></textarea>
+            <textarea name="text" id="" cols="120" rows="3" placeholder='Write Your Feedback Here'></textarea>
+
+            <button className='submitres'>Submit</button>
           </div>
         ))
       }

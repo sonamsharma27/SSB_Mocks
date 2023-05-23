@@ -1,0 +1,15 @@
+.imageurl .picurl{
+    width: 500px;
+    height: 200px;
+}
+
+.submitres{
+    margin-left: 49rem;
+    margin-top: 2rem;
+    width: 10%;
+    line-height: 30px;
+    background-color: aqua;
+    border-radius: 6px;
+    outline: none;
+}
+

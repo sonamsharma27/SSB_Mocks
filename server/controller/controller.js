@@ -21,6 +21,7 @@ const TatStore = require('../models/tatSchema.js')
 const TatResponse = require('../models/tatResponseSchema.js')
 const WatStore = require('../models/watSchema.js')
 const WatResponse = require('../models/watResponseSchema.js')
+const srtFeedback = require('../models/srtFeedback.js')
 const axios = require('axios');
 exports.getQuestions = async function (req, res) {
     try {
@@ -30,6 +31,23 @@ exports.getQuestions = async function (req, res) {
         res.json({ error })
     }
     // res.json("questions api get request")
+}
+
+exports.insertSrtFeedback = async function(req,res){
+    try {
+        console.log(req.body);
+        const { feedback} = req.body;
+        if (!feedback) throw new Error('Data Not Provided...!');
+
+        srtFeedback.create({ 
+            feedback: feedback, 
+            
+        }, function (err, data) {
+            res.json({ msg: "Srt Feddback Saved Successfully...!" })
+        })
+    } catch (error){
+        res.json({ error});
+    }
 }
 
 exports.getNonQuestions = async function(req,res){
@@ -61,6 +79,24 @@ exports.getPpdtResponses = async function(req,res){
 exports.getGpeResponses = async function(req,res){
     try {
         const q = await GpeResponse.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.getWatResponses = async function(req,res){
+    try {
+        const q = await WatResponse.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.getTatResponses = async function(req,res){
+    try {
+        const q = await TatResponse.find()
         res.json(q)
     } catch (error) {
         res.json({ error })
@@ -142,25 +178,25 @@ exports.insertWatResponse = async function (req,res) {
         WatResponse.create({ 
             username: username, 
             word1: word1,
-            s1: s1,
             word2: word2,
-            s2: s2,
             word3: word3,
-            s3: s3,
             word4: word4,
-            s4: s4,
             word5: word5,
-            s5: s5,
             word6: word6,
-            s6: s6,
             word7: word7,
-            s7: s7,
             word8: word8,
-            s8: s8,
             word9: word9,
-            s9:s9,
             word10: word10,
-            s10: s10
+            s1: s1,
+            s2: s2,
+            s3: s3,
+            s4: s4,
+            s5: s5,
+            s6: s6,
+            s7: s7,
+            s8: s8,
+            s9: s9,
+            s10: s10,
         }, function (err, data) {
             res.json({ msg: "Wat Repsonse Saved Successfully...!" })
         })
