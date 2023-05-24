@@ -6,7 +6,7 @@ function WatInput({ setStoryInput, storyInput }) {
   
   return (
     <>
-      <div className="d-flex justify-content-center m-6" style={{marginTop: "4rem"}}>
+      <div className="d-flex justify-content-center m-5" style={{marginTop: "4rem"}}>
         <div
           onClick={() => setActive(1)}
           className={active === 1 ? "active_story" : "story"}
@@ -77,7 +77,6 @@ function WatInput({ setStoryInput, storyInput }) {
           value={storyInput.s1}
           onChange={(e) => {
             setStoryInput({ ...storyInput, s1: e.target.value });
-            console.log(e.target.value);
           }}
         ></textarea>
         <textarea
@@ -88,7 +87,6 @@ function WatInput({ setStoryInput, storyInput }) {
           value={storyInput.s2}
           onChange={(e) => {
             setStoryInput({ ...storyInput, s2: e.target.value });
-            console.log(e.target.value);
           }}
         ></textarea>
         <textarea
@@ -99,7 +97,6 @@ function WatInput({ setStoryInput, storyInput }) {
           value={storyInput.s3}
           onChange={(e) => {
             setStoryInput({ ...storyInput, s3: e.target.value });
-            console.log(e.target.value);
           }}
         ></textarea>
         <textarea
@@ -110,7 +107,6 @@ function WatInput({ setStoryInput, storyInput }) {
           value={storyInput.s4}
           onChange={(e) => {
             setStoryInput({ ...storyInput, s4: e.target.value });
-            console.log(e.target.value);
           }}
         ></textarea>
         <textarea
@@ -121,7 +117,6 @@ function WatInput({ setStoryInput, storyInput }) {
           value={storyInput.s5}
           onChange={(e) => {
             setStoryInput({ ...storyInput, s5: e.target.value });
-            console.log(e.target.value);
           }}
         ></textarea>
         <textarea
@@ -132,7 +127,6 @@ function WatInput({ setStoryInput, storyInput }) {
           value={storyInput.s6}
           onChange={(e) => {
             setStoryInput({ ...storyInput, s6: e.target.value });
-            console.log(e.target.value);
           }}
         ></textarea>
         <textarea
@@ -143,7 +137,6 @@ function WatInput({ setStoryInput, storyInput }) {
           value={storyInput.s7}
           onChange={(e) => {
             setStoryInput({ ...storyInput, s7: e.target.value });
-            console.log(e.target.value);
           }}
         ></textarea>
         <textarea
@@ -154,7 +147,6 @@ function WatInput({ setStoryInput, storyInput }) {
           value={storyInput.s8}
           onChange={(e) => {
             setStoryInput({ ...storyInput, s8: e.target.value });
-            console.log(e.target.value);
           }}
         ></textarea>
         <textarea
@@ -165,7 +157,6 @@ function WatInput({ setStoryInput, storyInput }) {
           value={storyInput.s9}
           onChange={(e) => {
             setStoryInput({ ...storyInput, s9: e.target.value });
-            console.log(e.target.value);
           }}
         ></textarea>
         <textarea
@@ -178,7 +169,6 @@ function WatInput({ setStoryInput, storyInput }) {
           value={storyInput.s10}
           onChange={(e) => {
             setStoryInput({ ...storyInput, s10: e.target.value });
-            console.log(e.target.value);
           }}
         ></textarea>
       </div>

@@ -17,3 +17,8 @@
     background-color: rgb(232, 233, 234);
     cursor: pointer;
 }
+
+textarea {
+    border: 2px solid brown;
+    border-radius: 1%;
+}
