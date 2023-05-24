@@ -37,6 +37,12 @@ import PpdtResponse from './AlumniDashboard/PpdtResponse';
 import TatResponse from './AlumniDashboard/TatResponse';
 import WatResponse from './AlumniDashboard/WatResponse';
 import GpeResponse from './AlumniDashboard/GpeResponse';
+import AdminDashboard from './Admin/AdminDashboard';
+import AdminSrt from './Admin/AdminSrt';
+import AdminWat from './Admin/AdminWat';
+import AdminTat from './Admin/AdminTat';
+import AdminPpdt from './Admin/AdminPpdt';
+import AdminGpe from './Admin/AdminGpe';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -77,6 +83,12 @@ function App() {
       <Route path='/tatresponse' element={<TatResponse/>}/>
       <Route path='/watresponse' element={<WatResponse/>}/>
       <Route path='/gperesponse' element={<GpeResponse/>}/>
+      <Route path='/admindash' element={<AdminDashboard/>}/>
+      <Route path='/adminsrt' element={<AdminSrt/>}/>
+      <Route path='/adminwat' element={<AdminWat/>}/>
+      <Route path='/admintat' element={<AdminTat/>}/>
+      <Route path='/adminppdt' element={<AdminPpdt/>}/>
+      <Route path='/admingpe' element={<AdminGpe/>}/>
       </Routes>
       
     </BrowserRouter>

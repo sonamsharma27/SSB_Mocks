@@ -222,6 +222,15 @@ exports.insertAlumniPpdtResponse = async function(req,res){
     }
 }
 
+exports.getAlumniPpdtResponse = async function(req,res){
+    try {
+        const q = await AlumniPpdtResponse.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
 exports.insertAlumniWatResponse = async function(req,res){
     try {
         console.log(req.body);
@@ -233,6 +242,15 @@ exports.insertAlumniWatResponse = async function(req,res){
         }, function (err, data) {
             res.json({ msg: "Alumni Wat Repsonse Saved Successfully...!" })
         })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.getAlumniWatResponse = async function(req,res){
+    try {
+        const q = await AlumniWatResponse.find()
+        res.json(q)
     } catch (error) {
         res.json({ error })
     }
@@ -254,6 +272,15 @@ exports.insertAlumniTatResponse = async function(req,res){
     }
 }
 
+exports.getAlumniTatResponse = async function(req,res){
+    try {
+        const q = await AlumniTatResponse.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
 exports.insertAlumniSrtResponse = async function(req,res){
     try {
         console.log(req.body);
@@ -265,6 +292,15 @@ exports.insertAlumniSrtResponse = async function(req,res){
         }, function (err, data) {
             res.json({ msg: "Alumni Srt Repsonse Saved Successfully...!" })
         })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.getAlumniSrtResponse = async function(req,res){
+    try {
+        const q = await AlumniSrtResponse.find()
+        res.json(q)
     } catch (error) {
         res.json({ error })
     }
@@ -282,6 +318,15 @@ exports.insertAlumniGpeResponse = async function(req,res){
         }, function (err, data) {
             res.json({ msg: "Alumni Gpe Repsonse Saved Successfully...!" })
         })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.getAlumniGpeResponse = async function(req,res){
+    try {
+        const q = await AlumniGpeResponse.find()
+        res.json(q)
     } catch (error) {
         res.json({ error })
     }
