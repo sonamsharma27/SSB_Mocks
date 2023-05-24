@@ -17,7 +17,7 @@ export default function PpdtResponse() {
 
   useEffect(()=>{
     getPpdtData()
-  })
+  },[])
   return (
     <>
       <div className='srtmain'>

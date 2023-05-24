@@ -22,6 +22,7 @@ const TatResponse = require('../models/tatResponseSchema.js')
 const WatStore = require('../models/watSchema.js')
 const WatResponse = require('../models/watResponseSchema.js')
 const srtFeedback = require('../models/srtFeedback.js')
+const watFeedback = require('../models/watFeedback.js')
 const axios = require('axios');
 exports.getQuestions = async function (req, res) {
     try {
@@ -44,6 +45,24 @@ exports.insertSrtFeedback = async function(req,res){
             
         }, function (err, data) {
             res.json({ msg: "Srt Feddback Saved Successfully...!" })
+        })
+    } catch (error){
+        res.json({ error});
+    }
+}
+
+exports.insertWatFeedback = async function(req,res){
+    try {
+        console.log(req.body);
+        const { feedback,username} = req.body;
+        if (!feedback) throw new Error('Data Not Provided...!');
+
+        watFeedback.create({ 
+            feedback: feedback, 
+            username: username
+            
+        }, function (err, data) {
+            res.json({ msg: "Wat Feddback Saved Successfully...!" })
         })
     } catch (error){
         res.json({ error});

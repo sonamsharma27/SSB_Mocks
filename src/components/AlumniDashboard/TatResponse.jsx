@@ -15,11 +15,9 @@ export default function TatResponse() {
     }
   };
   useEffect(()=>{
-    setTimeout(() => {
-      getTatData()
-    });
+    getTatData()
     
-  })
+  },[])
   return (
     <>
       <div className='tatmain'>

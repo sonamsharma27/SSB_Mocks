@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export default function WatResponse() {
   const [answers,getAnswers] = useState([])
+  const [feedback,setFeedback] = useState('')
   const getWatData = async () => {
     try {
       const response = await axios.get('http://localhost:5000/api/wat_resp');
@@ -13,12 +14,26 @@ export default function WatResponse() {
       console.log(error);
     }
   };
+
+  const submitWatFeedback = (e) =>{
+        // console.log(word);
+        axios.post('http://localhost:5000/api/wat_feedback', {
+        feedback: feedback,
+        username: answers.username
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      alert('Wat Feedback Saved Successfully...!')
+      setFeedback('')
+  }
   useEffect(()=>{
-    setTimeout(() => {
-      getWatData()
-    });
+    getWatData()
     
-  })
+  },[])
   return (
     <>
       <div className='srtmain'>
@@ -39,8 +54,9 @@ export default function WatResponse() {
             <div>{`word8: ${d.word8}`}</div>
             <div>{`word9: ${d.word9}`}</div>
             <div>{`word10: ${d.word10}`}</div>
-            <textarea name="text" id="" cols="120" rows="3" placeholder='Write Your Feedback Here'></textarea>
-            <button className='submitres'>Submit</button>
+            <textarea name="text" id="" cols="120" rows="3" placeholder='Write Your Feedback Here' value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}></textarea>
+            <button className='submitres' onClick={submitWatFeedback}>Submit</button>
           </div>
         ))
       }
