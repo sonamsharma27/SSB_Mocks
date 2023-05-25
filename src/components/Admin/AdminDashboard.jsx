@@ -6,7 +6,7 @@ import './admindash.css'
 
 export default function AdminDashboard() {
   return (
-    <>
+    <div className='Fragment'>
         <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
@@ -33,6 +33,6 @@ export default function AdminDashboard() {
         <a href='/adminppdt' className="respond ppdtrespond">Ppdt</a>
         <a href='/admingpe' className="respond gperespond">Gpe</a>
     </div>
-    </>
+    </div>
   )
 }

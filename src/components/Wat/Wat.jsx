@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import './Wat.css'
 // const getWords = () => {
-  
 //   return [
 //     "Guilty",
 //     "Battle",
@@ -127,7 +126,7 @@ function Wat() {
           storyInput={storyInput}
           words={words}
         />
-        {/* {personality.length > 0 ?<div className="container bg-info rounded border border-info p-2"> <h2>Your personality trait based on your WAT responses is :</h2> <br/>
+        {/* {personality.length > 0 ? <div className="container bg-info rounded border border-info p-2"> <h2>Your personality trait based on your WAT responses is :</h2> <br/>
       {personality.map(item => (<>
         <table className=" bg-light p-3 ">
           <thead >
