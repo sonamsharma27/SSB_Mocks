@@ -1,16 +1,9 @@
-*{
-    padding: 0px;
-    margin: 0px;
-}
-
-
-
 .cont{
     display: flex;
     background-color: black;
     padding-top: 3rem;
     color: white;
-    height: 130vh;
+    height: 160vh;
 }
 
 
@@ -35,28 +28,30 @@
 
 .btn_grid1{
     display: grid;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 400px 200px;
     justify-content: center;
     align-items: center;
     margin-top: 22rem;
+    margin-left: 30rem;
 }
 
 .next{
     background-color: var(--primary-color);
-    margin-left: 58rem;
-    padding-left: 26px;
     text-align: center;
+    width: 59%;
+    margin-left: -22rem;
 }
 
 .prev{
     background-color: #faff5a;
-    margin-left: -8rem;
-    padding-left: 26px;
+    margin-left: -46rem;
+    width: 24%;
 }
 
 .btn2{
-    width: 6%;
-    /* text-align: center; */
+    
+    text-align: center;
     margin-top: 14rem;
     border-radius: 6px;
+    cursor: pointer;
 }

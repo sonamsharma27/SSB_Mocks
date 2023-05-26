@@ -52,7 +52,7 @@ export default function Oir() {
         </form>
 
         <div className="btn_grid">
-            <NavLink to="/non_verbal" className="btn_non">
+            <NavLink to="/nonverbal" className="btn_non">
                 Non-Verbal Test
             </NavLink>
             

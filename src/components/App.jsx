@@ -43,6 +43,8 @@ import AdminWat from './Admin/AdminWat';
 import AdminTat from './Admin/AdminTat';
 import AdminPpdt from './Admin/AdminPpdt';
 import AdminGpe from './Admin/AdminGpe';
+import Non_verbal from './Non_verbal';
+import Non_ques_ver from './Non_ques_ver';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -89,6 +91,8 @@ function App() {
       <Route path='/admintat' element={<AdminTat/>}/>
       <Route path='/adminppdt' element={<AdminPpdt/>}/>
       <Route path='/admingpe' element={<AdminGpe/>}/>
+      <Route path='/nonverbal' element={<Non_verbal/>}/>
+      <Route path='/nonquesver' element={<Non_ques_ver/>}/>
       </Routes>
       
     </BrowserRouter>

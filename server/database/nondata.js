@@ -1,56 +1,61 @@
-const questions = [
+const nonquestions = [
     {
         id: 1,
-        question : "In a certain code language, 493 means friendship big challenge, 961 means struggle big exam and 178 means exam confidential subject. Then, what does confidential stand for?",
+        question : "Select a figure from amongst the four alternatives, which when placed in the blank space of figure (X) would complete the pattern.",
+        figure: "http://www.ssbinterviewtips.in/uploads/images/afcat0215-82q.JPG",
         options : [
-            '7 or 8',
-            '7 or 9',
-            '8'
-            // '8 or 1'
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82a.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82b.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82c.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-82d.JPG'
         ]
     },
     {
         id: 2,
-        question : "Parliament is related to Great Britain, in the same way as Congress is related to",
+        question : "Select a figure from amongst the four alternatives, which when placed in the blank space of figure (X) would complete the pattern.",
+        figure: "http://www.ssbinterviewtips.in/uploads/images/81.JPG",
         options : [
-            'Japan',
-            'India',
-            'USA'
-            // 'Netherlands'
+            'http://www.ssbinterviewtips.in/uploads/images/81a.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/81b.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/81c.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/81d.JPG'
         ]
     },
     {
         id: 3,
-        question : "Pardon is related to Penalty, in the same way Definitely is related to ",
+        question : "Select a figure from amongst the four alternatives, which when placed in the blank space of figure (X) would complete the pattern.",
+        figure: "http://www.ssbinterviewtips.in/uploads/images/afcat0215-83q.JPG",
         options : [
-            'Actually',
-            'Urgently',
-            'Positively'
-            // 'Probably'
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-83a.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-83b.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-83c.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-83d.JPG'
         ]
     },
     {
         id: 4,
-        question : "In a certain code, CONSIDER is written as RMNBSFEJ. How is CHLORINE written in that code?",
+        question : "Select a figure from amongst the four alternatives, which when placed in the blank space of figure (X) would complete the pattern.",
+        figure: "http://www.ssbinterviewtips.in/uploads/images/afcat0215-84q.JPG",
         options : [
-            'NKGBEOJS',
-            'NKHBFOJS',
-            'NKGBFNJS'
-            // 'NKGBFOJS'
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-84a.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-84b.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-84c.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-84d.JPG'
         ]
     },
     {
         id: 5,
-        question : "If + means ‘÷’, ‘÷’ means *, * means - and - means +, then 24 6 2 3 4 + * ÷ - = ?",
+        question : "Select a figure from amongst the four alternatives, which when placed in the blank space of figure (X) would complete the pattern.",
+        figure: "http://www.ssbinterviewtips.in/uploads/images/afcat0215-85q.JPG",
         options : [
-            '6',
-            '4',
-            '2'
-            // '7'
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-85a.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-85b.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-85c.JPG',
+            'http://www.ssbinterviewtips.in/uploads/images/afcat0215-85d.JPG'
         ]
     }
 ];
 
-const answers = [0, 2, 3, 1, 2];
+const nonanswers = [0, 2, 3, 1, 2];
 
-module.exports = {questions,answers}
+module.exports = {nonquestions,nonanswers}
