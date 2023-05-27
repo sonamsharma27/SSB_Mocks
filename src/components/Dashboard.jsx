@@ -31,7 +31,6 @@ function NavScrollExample() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
     <img src={pic9} alt="Army"/>
     <div className="ssb-section">
         <h1 className='ssb_inter'>SSB Interview</h1>

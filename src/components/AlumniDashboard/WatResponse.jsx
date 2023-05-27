@@ -40,7 +40,7 @@ export default function WatResponse() {
           {
         answers.map((d) => (
           <div key={d._id} className='srtcontent'>
-            <p style={{color: "black"}}>Username: {d.username}</p>
+            <p style={{color: "black"}}>Email: {d.username}</p>
             <p style={{color: "black"}}>Words: 
             </p>
             {/* <br /> */}

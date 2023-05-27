@@ -24,7 +24,7 @@ export default function TatResponse() {
           {
         answers.map((d) => (
           <div key={d._id} className='tatcontent'>
-            <p style={{color: "black"}}>Username: {d.username}</p>
+            <p style={{color: "black"}}>Email: {d.username}</p>
             <p style={{color: "black"}}>Picture: 
             </p>
             {/* <br /> */}

@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function PpdtQues({url}) {
     const [showQuestions, setShowQuestions] = useState(true);
     const [userResp, setUserResp] = useState({
-      username : 'username',
+      username : localStorage.getItem('email'),
       title : '',
       main_character : '',
       characters: '',

@@ -25,6 +25,7 @@ const login = () => {
   .then(res => {
       alert(res.data.message)
       setLoginUser(res.data.user)
+      localStorage.setItem('email', user.email);
       history("/dashboard")
   })
 }

@@ -27,11 +27,11 @@ export default function AdminDashboard() {
     </div>
 
     <div className="addlayout">
-        <a href='/adminsrt' className="respond srtrespond">Srt</a>
-        <a href='/adminwat' className="respond watrespond">Wat</a>
-        <a href='/admintat' className="respond tatrespond">Tat</a>
-        <a href='/adminppdt' className="respond ppdtrespond">Ppdt</a>
-        <a href='/admingpe' className="respond gperespond">Gpe</a>
+        <a href='/adminsrt' className="respond srtrespond ">Srt</a>
+        <a href='/adminwat' className="respond watrespond ">Wat</a>
+        <a href='/admintat' className="respond tatrespond ">Tat</a>
+        <a href='/adminppdt' className="respond ppdtrespond ">Ppdt</a>
+        <a href='/admingpe' className="respond gperespond ">Gpe</a>
     </div>
     </div>
   )

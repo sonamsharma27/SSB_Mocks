@@ -41,7 +41,7 @@ export default function SrtResponse() {
           {
         answers.map((d) => (
           <div key={d._id} className='srtcontent'>
-            <p style={{color: "black"}}>Username: {d.username}</p>
+            <p style={{color: "black"}}>Email: {d.username}</p>
             <p style={{color: "black"}}>Result: {d.result}</p>
             <textarea name="text" id="" cols="120" rows="4" placeholder='Write Your Feedback Here'></textarea>
             <button className='submitres' type='submit'  onClick={postData}>Submit</button>

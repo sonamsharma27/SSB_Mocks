@@ -23,7 +23,7 @@ export default function AdminSrt() {
     <table className='srttable'>
         <thead className='srtthead'>
         <tr>
-            <th>Situation</th>
+            <th className='col-8'>Situation</th>
             <th>Add Situation</th>
             <th>Delete Situation</th>
         </tr>
@@ -32,9 +32,9 @@ export default function AdminSrt() {
           {
         srtresponse.map((d) => (
             <tr key={d._id} className='srtitems'>
-            <td style={{color: "black"}} className='situationbody'>{d.situation}</td>
-            <td style={{color: "black"}}><button className='add'>Add</button></td>
-            <td style={{color: "black"}}><button className='del'>Delete</button></td>
+            <td style={{color: "black"}} className='situationbody col-8 '>{d.situation}</td>
+            <td style={{color: "black"}}><button className='add '>Add</button></td>
+            <td style={{color: "black"}}><button className='del '>Delete</button></td>
             </tr>
         ))
       }
