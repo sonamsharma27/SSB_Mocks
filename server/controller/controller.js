@@ -418,7 +418,9 @@ exports.insertWatWords = async function(req,res){
 
 exports.dropWatWords = async function (req, res) {
     try {
-        await AlumniWatResponse.deleteOne()
+         const {word} = req.body;
+         console.log("reqbody",word);
+        await AlumniWatResponse.deleteOne({"content": word});
         res.json({ msg: "word deleted successfully...." })
     } catch (error) {
         res.json({ error })
