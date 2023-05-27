@@ -3,19 +3,17 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend
@@ -29,31 +27,18 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Your Progress so far",
+      text: "",
     },
   },
 };
 
-//   const obj = {
-//     achived: "Passed",
-//     attempts: 2,
-//     createAt: "2023-04-24T09:03:49.993Z",
-//     points: 3,
-//     result: [1, 2, 3],
-//     username: "ash",
-//     __v: 0,
-//     _id: "644645f53f0750a7864dac62",
-//   };
-
-export function LineChart({ result }) {
+export function BarGraph({ result }) {
   let labels = [];
   let scores = [];
-  console.log('length',result?.length);
   result?.forEach((result) => {
     labels.push(result.achived + "," + result.createAt.slice(0, 10));
     scores.push(result.points);
   });
-  console.log(labels,scores);
   let nonVerbalScores = scores;
   const data = {
     labels,
@@ -72,7 +57,6 @@ export function LineChart({ result }) {
       },
     ],
   };
-  return (
-        <Line options={options} data={data} />
-  );
+
+  return <Bar options={options} data={data} />
 }

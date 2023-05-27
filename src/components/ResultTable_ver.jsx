@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getServerData } from "../helper/helper";
 import { LineChart } from "./Charts/LineChart";
+import { BarGraph } from "./Charts/BarGraph";
 
 export default function ResultTable_ver() {
   const [data, setData] = useState([]);
@@ -46,7 +47,10 @@ export default function ResultTable_ver() {
           ))} */}
           {console.log('data',data)}
           {
-            showChart && <LineChart result = {data} />
+            showChart && <>
+                <div className="container"><LineChart result = {data} /></div>
+                <div className="container"><BarGraph result = {data} /></div>
+            </>
           }
         {/* </tbody>
       </table> */}
