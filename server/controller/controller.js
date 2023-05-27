@@ -20,6 +20,7 @@ const SrtResponse = require('../models/srtResponseSchema.js')
 const TatStore = require('../models/tatSchema.js')
 const TatResponse = require('../models/tatResponseSchema.js')
 const WatStore = require('../models/watSchema.js')
+const AdminWatStore = require('../models/watSchema.js')
 const WatResponse = require('../models/watResponseSchema.js')
 const srtFeedback = require('../models/srtFeedback.js')
 const watFeedback = require('../models/watFeedback.js')
@@ -396,6 +397,31 @@ exports.getWatWords = async function (req,res) {
         res.json(word_doc);
     } catch (err) {
         res.json(err);
+    }
+}
+
+exports.insertWatWords = async function(req,res){
+    try {
+        console.log(req.body);
+        const { word} = req.body;
+        if (!word) throw new Error('Data Not Provided...!');
+
+        WatStore.create({ 
+            word: word
+           }, function (err, data) {
+            res.json({ msg: "Wat Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.dropWatWords = async function (req, res) {
+    try {
+        await AlumniWatResponse.deleteOne()
+        res.json({ msg: "word deleted successfully...." })
+    } catch (error) {
+        res.json({ error })
     }
 }
 

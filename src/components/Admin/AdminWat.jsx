@@ -5,6 +5,7 @@ import './admindash.css'
 export default function AdminWat() {
   const [watresponse,getWatResponse] = useState([])
 
+
   const getWat = async () => {
     try {
         const response = await axios.get('http://localhost:5000/api/alumni_wat_resp');
@@ -13,6 +14,35 @@ export default function AdminWat() {
       } catch (error) {
         console.log(error);
       }
+}
+
+const submitwat = async (word) => {
+  axios.post('http://localhost:5000/api/wat', {
+            word: word,
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+          alert('Admin Wat Repsonse Saved Successfully...!')
+}
+
+const deletewat = async (word) => {
+  console.log(word);
+  axios.delete('http://localhost:5000/api/alumni_wat_resp',{
+    word: word,
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  alert('Admin Wat Repsonse Delete Successfully...!')
+  getWat()
+
 }
 
 
@@ -35,8 +65,8 @@ useEffect(()=>{
         watresponse.map((d) => (
             <tr key={d._id} className='srtitems'>
             <td style={{color: "black"}} className='wordbody'>{d.content}</td>
-            <td style={{color: "black"}}><button className='add'>Add</button></td>
-            <td style={{color: "black"}}><button className='del'>Delete</button></td>
+            <td style={{color: "black"}}><button className='add' onClick={(e) => {submitwat(d.content)}}>Add</button></td>
+            <td style={{color: "black"}}><button className='del' onClick={(e) => {deletewat(d.content)}}>Delete</button></td>
             </tr>
         ))
       }
