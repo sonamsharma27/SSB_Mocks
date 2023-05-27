@@ -48,8 +48,8 @@ export default function ResultTable_ver() {
           {console.log('data',data)}
           {
             showChart && <>
-                <div className="container"><LineChart result = {data} /></div>
-                <div className="container"><BarGraph result = {data} /></div>
+                <div><LineChart result = {data} /></div>
+                <div><BarGraph result = {data} /></div>
             </>
           }
         {/* </tbody>

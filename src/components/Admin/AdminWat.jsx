@@ -17,6 +17,7 @@ export default function AdminWat() {
 }
 
 const submitwat = async (word) => {
+  deletewat(word);
   axios.post('http://localhost:5000/api/wat', {
             word: word,
           })
@@ -31,7 +32,7 @@ const submitwat = async (word) => {
 
 const deletewat = async (word) => {
   console.log(word);
-  axios.delete('http://localhost:5000/api/alumni_wat_resp',{
+  axios.post('http://localhost:5000/api/alumni_wat_drop',{
     word: word,
   })
   .then(function (response) {
@@ -40,7 +41,6 @@ const deletewat = async (word) => {
   .catch(function (error) {
     console.log(error);
   });
-  alert('Admin Wat Repsonse Delete Successfully...!')
   getWat()
 
 }
