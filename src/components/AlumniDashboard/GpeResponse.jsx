@@ -25,7 +25,7 @@ export default function GpeResponse() {
           {
         answers.map((d) => (
           <div key={d._id} className='gpecontent'>
-            <p style={{color: "black"}}>Username: {d.username}</p>
+            <p style={{color: "black"}}>Email: {d.username}</p>
             <p style={{color: "black"}} className='gpeurl'>Picture: <img src={d.url} alt=""/></p>
             <p style={{color: "black"}}>Problem: {d.problem}</p>
             <p style={{color: "black"}}>Result: {d.solution}</p>

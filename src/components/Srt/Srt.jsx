@@ -26,7 +26,7 @@ export default function Srt() {
     setTimeout(() => {
       
       axios.post('http://localhost:5000/api/srt_resp', {
-        username: 'Fred',
+        username: localStorage.getItem('email'),
         result: 'result'
       })
       .then(function (response) {

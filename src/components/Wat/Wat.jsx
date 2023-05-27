@@ -60,7 +60,7 @@ function Wat() {
 
     axios
     .post("http://localhost:5000/api/wat_resp", {
-      username: "John",
+      username: localStorage.getItem('email'),
       word1: words[0]?.word,
       word2: words[1]?.word,
       word3: words[2]?.word,

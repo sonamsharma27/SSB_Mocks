@@ -33,7 +33,7 @@ function Tat() {
   }, 30000);
   useEffect(() => {axios
     .post("http://localhost:5000/api/tat_resp", {
-      username: "Fred",
+      username: localStorage.getItem('email'),
       url1: imgUrls[0]?.url,
       url2: imgUrls[1]?.url,
       url3: imgUrls[2]?.url,

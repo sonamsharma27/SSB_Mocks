@@ -16,6 +16,7 @@
     margin-left: 2rem;
     margin-right: 1rem;
     margin-top: 2rem;
+
 }
 
 .addlayout .respond{
@@ -32,6 +33,7 @@
 
 .srttable{
     height: 100vh;
+    border: 2px solid blue;
 }
 .gpetable{
     height: 200vh;
@@ -39,9 +41,11 @@
 
 .srtthead{
     background-color: rgb(87, 200, 228);
+    border: 2px solid blue;
 }
 .srttbody{
     background-color: rgb(171, 200, 221);
+    border: 2px solid blue;
 }
 
 .situationbody{
@@ -49,6 +53,7 @@
     text-align: left;
     width: 412px;
     padding-left: 102px;
+    border: 2px solid blue;
 }
 .wordbody{
     /* border: 2px solid yellow; */
@@ -91,4 +96,15 @@
     background: radial-gradient(79.69% 102.24% at 100% 100.11%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(89.7% 115.09% at 3.43% 2.75%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), #764ABC;
     background-blend-mode: overlay, overlay, normal;
     box-shadow: 0 4px 0 #d5d5d5;
+}
+
+td,th {
+    border: 2px solid blue;
+    color: rgb(76, 76, 129)
+}
+
+thead tr{
+    height: 5rem;
+    font-size: 1.5rem;
+    color: #27055e;
 }

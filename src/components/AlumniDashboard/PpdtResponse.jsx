@@ -24,7 +24,7 @@ export default function PpdtResponse() {
           {
         answers.map((d) => (
           <div key={d._id} className='srtcontent'>
-            <p style={{color: "black"}}>Username: {d.username}</p>
+            <p style={{color: "black"}}>Email: {d.username}</p>
             <p style={{color: "black"}} className='imageurl'>Picture: <img src={d.url} alt="" className='picurl'/></p>
             <p style={{color: "black"}} className='imageurl'>Story: {d.story}</p>
             {/* <p style={{color: "black"}}>Result: {d.result}</p> */}

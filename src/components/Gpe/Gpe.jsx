@@ -24,7 +24,7 @@ export default function Gpe() {
   });
  useEffect(()=>{
   axios.post('http://localhost:5000/api/gpe_resp', {
-    username: 'Fred',
+    username: localStorage.getItem('email'),
     url: url,
     problem: problem,
     solution: solution
