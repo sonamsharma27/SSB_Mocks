@@ -15,6 +15,35 @@ export default function AdminSrt() {
           }
     }
 
+    const submitsrt = async (situation) => {
+      deletesrt(situation);
+      axios.post('http://localhost:5000/api/srt', {
+                situation: situation,
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+              alert('Admin Srt Repsonse Saved Successfully...!')
+    }
+
+    const deletesrt = async (situation) => {
+      console.log(situation);
+      axios.post('http://localhost:5000/api/alumni_srt_drop',{
+        situation: situation,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      getSrt()
+    
+    }
+
     useEffect(()=>{
         getSrt()
     },[])
@@ -33,8 +62,8 @@ export default function AdminSrt() {
         srtresponse.map((d) => (
             <tr key={d._id} className='srtitems'>
             <td style={{color: "black"}} className='situationbody col-8 '>{d.situation}</td>
-            <td style={{color: "black"}}><button className='add '>Add</button></td>
-            <td style={{color: "black"}}><button className='del '>Delete</button></td>
+            <td style={{color: "black"}}><button className='add' onClick={(e) => {submitsrt(d.situation)}}>Add</button></td>
+            <td style={{color: "black"}}><button className='del' onClick={(e) => {deletesrt(d.situation)}}>Delete</button></td>
             </tr>
         ))
       }

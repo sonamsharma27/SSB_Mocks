@@ -20,11 +20,38 @@ const SrtResponse = require('../models/srtResponseSchema.js')
 const TatStore = require('../models/tatSchema.js')
 const TatResponse = require('../models/tatResponseSchema.js')
 const WatStore = require('../models/watSchema.js')
-const AdminWatStore = require('../models/watSchema.js')
 const WatResponse = require('../models/watResponseSchema.js')
 const srtFeedback = require('../models/srtFeedback.js')
 const watFeedback = require('../models/watFeedback.js')
+const ppdtFeedbackStore = require('../models/ppdtFeedbackStore.js')
 const axios = require('axios');
+
+exports.insertPpdtFeedbackstore = async function(req,res){
+    try {
+        console.log(req.body);
+        const { feedback,story,url} = req.body;
+        if (!feedback || !url || !story) throw new Error('Data Not Provided...!');
+
+        ppdtFeedbackStore.create({ 
+            story: story,
+            url: url,
+            feedback: feedback, 
+        }, function (err, data) {
+            res.json({ msg: "ppdt Feddback Saved Successfully...!" })
+        })
+    } catch (error){
+        res.json({ error});
+    }
+}
+
+exports.getPpdtFeedback = async function(req,res){
+    try {
+        const q = await ppdtFeedbackStore.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
 exports.getQuestions = async function (req, res) {
     try {
         const q = await Questions.find()
@@ -415,6 +442,37 @@ exports.insertWatWords = async function(req,res){
         res.json({ error })
     }
 }
+exports.insertSrtSituation = async function(req,res){
+    try {
+        console.log(req.body);
+        const { situation} = req.body;
+        if (!situation) throw new Error('Data Not Provided...!');
+
+        SrtStore.create({ 
+            situation: situation
+           }, function (err, data) {
+            res.json({ msg: "Srt Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.insertTatUrl = async function(req,res){
+    try {
+        console.log(req.body);
+        const { taturl} = req.body;
+        if (!taturl) throw new Error('Data Not Provided...!');
+
+        SrtStore.create({ 
+            taturl: taturl
+           }, function (err, data) {
+            res.json({ msg: "Tat Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
 
 exports.dropWatWords = async function (req, res) {
     try {
@@ -422,6 +480,28 @@ exports.dropWatWords = async function (req, res) {
          console.log("reqbody",word);
         await AlumniWatResponse.deleteOne({"content": word});
         res.json({ msg: "word deleted successfully...." })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.dropSrtSituation = async function (req, res) {
+    try {
+         const {situation} = req.body;
+         console.log("reqbody",situation);
+        await AlumniSrtResponse.deleteOne({"content": situation});
+        res.json({ msg: "situation deleted successfully...." })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.dropTatUrl = async function (req, res) {
+    try {
+         const {taturl} = req.body;
+         console.log("reqbody",taturl);
+        await AlumniSrtResponse.deleteOne({"content": taturl});
+        res.json({ msg: "url deleted successfully...." })
     } catch (error) {
         res.json({ error })
     }

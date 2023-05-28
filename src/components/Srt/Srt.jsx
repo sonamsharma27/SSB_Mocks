@@ -9,7 +9,15 @@ export default function Srt() {
 //   const [showImage, setShowImage] = useState(true);
 //   const [url, setUrl] = useState("");
   const [questions, setQuestions] = useState([]);
-  const [result, setResult] = useState("");
+  const [results, setResult] = useState({
+    username: localStorage.getItem('email'),
+    result: ''
+  });
+
+  const handleChange = (e,name) => {
+    if(name==='result')
+    setResult({...results, result : e.target.value})
+  }
 
   const getData = async () => {
     try {
@@ -20,14 +28,14 @@ export default function Srt() {
       console.log(error);
     }
   };
-
+  // localStorage.getItem('email')
   useEffect(() => {
   getData()
     setTimeout(() => {
       
       axios.post('http://localhost:5000/api/srt_resp', {
-        username: localStorage.getItem('email'),
-        result: 'result'
+        username: 'John',
+        result: results.result
       })
       .then(function (response) {
         console.log(response);
@@ -42,7 +50,7 @@ export default function Srt() {
   return (
     <>
     <div className="timer position-absolute">
-         {/* { questions?<CountdownCircleTimer
+         { questions?<CountdownCircleTimer
             isPlaying
             duration={400}
             colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
@@ -50,7 +58,7 @@ export default function Srt() {
             size = {160}
           >
             {({ remainingTime }) => remainingTime}
-          </CountdownCircleTimer>: <></>} */}
+          </CountdownCircleTimer>: <></>}
         </div>
     <div className=" mt-2 p-0 d-flex flex-column align-items-center justify-content-center bg-grey ">
         <div>
@@ -75,7 +83,7 @@ export default function Srt() {
       </div>
       <div className="input1"> 
           <p className="text-center">Write your solution here.</p>
-            <textarea className="textar" name="srt_resp" value={result} onChange={e=>setResult(e.target.value)} cols="100" rows="10">
+            <textarea className="textar" name="srt_resp" value={results.result} onChange={(e)=>handleChange(e,'result')} cols="100" rows="10">
             
             </textarea>
             
