@@ -9,15 +9,12 @@ export default function Srt() {
 //   const [showImage, setShowImage] = useState(true);
 //   const [url, setUrl] = useState("");
   const [questions, setQuestions] = useState([]);
-  const [results, setResult] = useState({
-    username: localStorage.getItem('email'),
-    result: ''
-  });
+  const [result, setResult] = useState('');
 
-  const handleChange = (e,name) => {
-    if(name==='result')
-    setResult({...results, result : e.target.value})
-  }
+  // const handleChange = (e,name) => {
+  //   if(name==='result')
+  //   setResult({...results, result : e.target.value})
+  // }
 
   const getData = async () => {
     try {
@@ -34,8 +31,8 @@ export default function Srt() {
     setTimeout(() => {
       
       axios.post('http://localhost:5000/api/srt_resp', {
-        username: 'John',
-        result: results.result
+        username: localStorage.getItem('email'),
+        result: result
       })
       .then(function (response) {
         console.log(response);
@@ -43,7 +40,9 @@ export default function Srt() {
       .catch(function (error) {
         console.log(error);
       });
+      
       setQuestions()
+      console.log(result);
     },10000);
   }, []);
 
@@ -83,7 +82,7 @@ export default function Srt() {
       </div>
       <div className="input1"> 
           <p className="text-center">Write your solution here.</p>
-            <textarea className="textar" name="srt_resp" value={results.result} onChange={(e)=>handleChange(e,'result')} cols="100" rows="10">
+            <textarea className="textar" name="srt_resp" value={result} onChange={e=>setResult(e.target.value)} cols="100" rows="10">
             
             </textarea>
             
