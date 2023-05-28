@@ -6,7 +6,7 @@ export default function PpdtFeedback() {
 
   const [feedback,showFeedback] = useState([])
   const [ppdtfeedback,showPpdtFeedback] = useState('')
-
+  const [responseIndex, setResponseIndex] = useState(-1);
   const getPpdtFeedback = async () => {
     try {
       const response = await axios.get('http://localhost:5000/api/ppdtfeedbackstore');
@@ -38,6 +38,11 @@ export default function PpdtFeedback() {
     
   }
 
+  const handleFeedbackClick = (feedback, index) => {
+    setResponseIndex(index)
+    showppdtfeedback(feedback);
+  }
+
   useEffect(()=>{
     getPpdtFeedback()
   },[])
@@ -45,12 +50,12 @@ export default function PpdtFeedback() {
     <>
         <div className="showfeedback">
         {
-            feedback.map((ans)=>(
+            feedback.map((ans,index)=>(
               <div className="ppdtfeedback" key={ans._id}>
                   <p style={{color: "black"}}>Story: {ans.story}</p>
                   <p style={{color: "black"}} className='imageurl'>Picture: <img src={ans.url} alt="images" className='picurl'/></p>
-                  <button onClick={(e)=>{showppdtfeedback(ans.feedback)}}>Show Feedback</button>
-                  <p style={{color: "black"}} className='ppdtbtnfeedback'>{ppdtfeedback}</p>
+                  <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)}>Show Feedback</button>
+                 {index===responseIndex && <p style={{color: "black"}} className='ppdtbtnfeedback'>{ppdtfeedback}</p>}
               </div>
             ))
         }
