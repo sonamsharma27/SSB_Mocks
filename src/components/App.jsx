@@ -61,7 +61,7 @@ function App() {
       <Route exact path="/" element={<CarouselFadeExample/>} />
       <Route exact path="/signup" element={<SignUp/>} />
       <Route exact path="/alu_signup" element={<Alu_signup/>} />
-      <Route exact path="/login" element={<Login/>} />
+      <Route exact path="/login" element={<Login setLoginUser={setLoginUser}/>} />
       <Route exact path="/s_login" element={<S_login setLoginUser={setLoginUser}/>} />
       <Route exact path="/alu_login" element={<Alu_login setLoginUser={setLoginUser}/>} />
       {/* <Route path="/alumniform" element={<AlumniForm/>} />   */}

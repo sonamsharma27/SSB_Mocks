@@ -1,10 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { NavLink } from "react-router-dom"
+import axios from "axios";
+import { NavLink, useNavigate } from "react-router-dom"
 import '../css/login.css'
 
-export default function Login() {
+export default function Login({setLoginUser}) {
+  const history = useNavigate()
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Perform validation and authentication logic here
+    if (username === 'admin' && password === 'password') {
+      // Successful login
+      setLoginUser();
+      history('/admindash')
+    } else {
+      // Invalid credentials
+      alert('Invalid username or password');
+    }
+  };
   return (
     <>
     <div className="main-grid">
@@ -14,20 +40,20 @@ export default function Login() {
 
     <div className="image">
     <h1 className='login_admin'>Login as Admin </h1>
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Form.Group className="firstform" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" className='placeholder' placeholder="Enter email" />
+        <Form.Label>Username</Form.Label>
+        <Form.Control type="text" name='name' value={username} onChange={handleUsernameChange} className='placeholder' placeholder="Enter name" />
       </Form.Group>
 
       <Form.Group className="firstform" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password"  className='placeholder' placeholder="Password" />
+        <Form.Control type="password" name='password' value={password} onChange={handlePasswordChange}  className='placeholder' placeholder="Password" />
       </Form.Group>
 
-    <NavLink to="/dashboard" className="btn1">
+    <Button to="/admindash" className="btn1" type='submit'>
         Submit
-      </NavLink>
+      </Button>
       
     </Form>
     </div>
