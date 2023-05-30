@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import WatInput from "./WatInput";
 import Watword from "./Watword";
 import { Link } from "react-router-dom";
@@ -25,6 +25,8 @@ function Wat() {
     s8: "",
     s9: "",
   });
+  const wordsRef = useRef([]);
+  
   const [personality, setPersonality] = useState([]);
   const [timeup, setTimeUp] = useState(false);
   const [words, setWords] = useState([]);
@@ -45,19 +47,27 @@ function Wat() {
   }, 30000);
   
   useEffect(() => {
+    console.log('useEffect');
+    for(var i=0; i<11; i++){
+      wordsRef.current.push('');
+    }
     if(!timeup) return;
-    let personality_detection_string = storyInput.s0!==undefined ?storyInput.s0:'' +
-    storyInput.s1!==undefined ?storyInput.s1:'' + 
-    storyInput.s2!==undefined ?storyInput.s2:'' +
-    storyInput.s3!==undefined ?storyInput.s3:'' +
-    storyInput.s4!==undefined ?storyInput.s4:'' +
-    storyInput.s5!==undefined ?storyInput.s5:'' +
-    storyInput.s6!==undefined ?storyInput.s6:'' + 
-    storyInput.s7!==undefined ?storyInput.s7:'' +
-    storyInput.s8!==undefined ?storyInput.s8:'' +
-    storyInput.s9!==undefined ?storyInput.s9:'' ;
-    console.log(personality_detection_string)
 
+    // let personality_detection_string = storyInput.s0!==undefined ?storyInput.s0:'' +
+    // storyInput.s1!==undefined ?storyInput.s1:'' + 
+    // storyInput.s2!==undefined ?storyInput.s2:'' +
+    // storyInput.s3!==undefined ?storyInput.s3:'' +
+    // storyInput.s4!==undefined ?storyInput.s4:'' +
+    // storyInput.s5!==undefined ?storyInput.s5:'' +
+    // storyInput.s6!==undefined ?storyInput.s6:'' + 
+    // storyInput.s7!==undefined ?storyInput.s7:'' +
+    // storyInput.s8!==undefined ?storyInput.s8:'' +
+    // storyInput.s9!==undefined ?storyInput.s9:'' ;
+    // console.log(personality_detection_string)
+
+    let personality_detection_string = "";
+    wordsRef.current.forEach(word => personality_detection_string += word);
+    console.log(personality_detection_string,wordsRef);
     axios
     .post("http://localhost:5000/api/wat_resp", {
       username: localStorage.getItem('email'),
@@ -71,16 +81,16 @@ function Wat() {
       word8: words[7]?.word,
       word9: words[8]?.word,
       word10: words[9]?.word,
-      s1: storyInput?.s0,
-      s2: storyInput?.s1,
-      s3: storyInput?.s2,
-      s4: storyInput?.s3,
-      s5: storyInput?.s4,
-      s6: storyInput?.s5,
-      s7: storyInput?.s6,
-      s8: storyInput?.s7,
-      s9: storyInput?.s8,
-      s10: storyInput?.s9,
+      s1: wordsRef.current[0],
+      s2: wordsRef.current[1],
+      s3: wordsRef.current[2],
+      s4: wordsRef.current[3],
+      s5: wordsRef.current[4],
+      s6: wordsRef.current[5],
+      s7: wordsRef.current[6],
+      s8: wordsRef.current[7],
+      s9: wordsRef.current[8],
+      s10: wordsRef.current[9],
     })
     .then(function (response) {
       console.log(response);
@@ -88,6 +98,7 @@ function Wat() {
     .catch(function (error) {
       console.log(error);
     })
+    wordsRef.current= [];
     // axios.post("http://localhost:5000/api/personality_detection",{
     //   personality_detection_string
     // })
@@ -125,6 +136,7 @@ function Wat() {
           setStoryInput={setStoryInput}
           storyInput={storyInput}
           words={words}
+          wordsRef={wordsRef}
         />
         {/* {personality.length > 0 ? <div className="container bg-info rounded border border-info p-2"> <h2>Your personality trait based on your WAT responses is :</h2> <br/>
       {personality.map(item => (<>

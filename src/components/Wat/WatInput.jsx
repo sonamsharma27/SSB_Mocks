@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import "./WatInput.css";
 
-function WatInput({ setStoryInput, storyInput }) {
+function WatInput({ setStoryInput, storyInput, wordsRef }) {
   const [active, setActive] = useState(1);
   
   return (
@@ -76,6 +76,7 @@ function WatInput({ setStoryInput, storyInput }) {
           placeholder="Write your story here."
           value={storyInput.s1}
           onChange={(e) => {
+            wordsRef.current[0] = e.target.value;
             setStoryInput({ ...storyInput, s1: e.target.value });
           }}
         ></textarea>
@@ -86,6 +87,7 @@ function WatInput({ setStoryInput, storyInput }) {
           placeholder="Write your story here."
           value={storyInput.s2}
           onChange={(e) => {
+            wordsRef.current[1] = e.target.value;
             setStoryInput({ ...storyInput, s2: e.target.value });
           }}
         ></textarea>
@@ -96,6 +98,8 @@ function WatInput({ setStoryInput, storyInput }) {
           placeholder="Write your story here."
           value={storyInput.s3}
           onChange={(e) => {
+            wordsRef.current[2] = e.target.value;
+
             setStoryInput({ ...storyInput, s3: e.target.value });
           }}
         ></textarea>
@@ -106,6 +110,7 @@ function WatInput({ setStoryInput, storyInput }) {
           placeholder="Write your story here."
           value={storyInput.s4}
           onChange={(e) => {
+            wordsRef.current[3] = e.target.value;
             setStoryInput({ ...storyInput, s4: e.target.value });
           }}
         ></textarea>
@@ -116,6 +121,7 @@ function WatInput({ setStoryInput, storyInput }) {
           placeholder="Write your story here."
           value={storyInput.s5}
           onChange={(e) => {
+            wordsRef.current[4] = e.target.value;
             setStoryInput({ ...storyInput, s5: e.target.value });
           }}
         ></textarea>
@@ -126,6 +132,7 @@ function WatInput({ setStoryInput, storyInput }) {
           placeholder="Write your story here."
           value={storyInput.s6}
           onChange={(e) => {
+            wordsRef.current[5] = e.target.value;
             setStoryInput({ ...storyInput, s6: e.target.value });
           }}
         ></textarea>
@@ -136,6 +143,7 @@ function WatInput({ setStoryInput, storyInput }) {
           placeholder="Write your story here."
           value={storyInput.s7}
           onChange={(e) => {
+            wordsRef.current[6] = e.target.value;
             setStoryInput({ ...storyInput, s7: e.target.value });
           }}
         ></textarea>
@@ -146,6 +154,7 @@ function WatInput({ setStoryInput, storyInput }) {
           placeholder="Write your story here."
           value={storyInput.s8}
           onChange={(e) => {
+            wordsRef.current[7] = e.target.value;
             setStoryInput({ ...storyInput, s8: e.target.value });
           }}
         ></textarea>
@@ -156,6 +165,7 @@ function WatInput({ setStoryInput, storyInput }) {
           placeholder="Write your story here."
           value={storyInput.s9}
           onChange={(e) => {
+            wordsRef.current[8] = e.target.value;
             setStoryInput({ ...storyInput, s9: e.target.value });
           }}
         ></textarea>
@@ -168,6 +178,7 @@ function WatInput({ setStoryInput, storyInput }) {
           placeholder="Write your story here."
           value={storyInput.s10}
           onChange={(e) => {
+            wordsRef.current[9] = e.target.value;
             setStoryInput({ ...storyInput, s10: e.target.value });
           }}
         ></textarea>
