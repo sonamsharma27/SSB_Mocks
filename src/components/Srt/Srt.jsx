@@ -1,5 +1,5 @@
 import "./Srt.css";
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import PpdtTimer from '../Ppdt/PpdtTimer'
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
@@ -9,15 +9,9 @@ export default function Srt() {
 //   const [showImage, setShowImage] = useState(true);
 //   const [url, setUrl] = useState("");
   const [questions, setQuestions] = useState([]);
-  const [results, setResult] = useState({
-    username: localStorage.getItem('email'),
-    result: ''
-  });
-
-  const handleChange = (e,name) => {
-    if(name==='result')
-    setResult({...results, result : e.target.value})
-  }
+  const [result, setResult] = useState('');
+  const srtSol = useRef("");
+ 
 
   const getData = async () => {
     try {
@@ -31,11 +25,12 @@ export default function Srt() {
   // localStorage.getItem('email')
   useEffect(() => {
   getData()
+  console.log('use effect');
     setTimeout(() => {
-      
+      console.log('in timeout', result);
       axios.post('http://localhost:5000/api/srt_resp', {
-        username: 'John',
-        result: results.result
+        username : localStorage.getItem('email'),
+        result: srtSol.current
       })
       .then(function (response) {
         console.log(response);
@@ -83,7 +78,7 @@ export default function Srt() {
       </div>
       <div className="input1"> 
           <p className="text-center">Write your solution here.</p>
-            <textarea className="textar" name="srt_resp" value={results.result} onChange={(e)=>handleChange(e,'result')} cols="100" rows="10">
+            <textarea className="textar" name="srt_resp" value={result} onChange={(e)=>{ srtSol.current=e.target.value; setResult(e.target.value)}} cols="100" rows="10">
             
             </textarea>
             
