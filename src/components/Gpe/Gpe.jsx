@@ -20,7 +20,7 @@ export default function Gpe() {
     setTimeout(() => {
       setShowImage(false);
      
-    }, 100000);
+    }, 10000);
   });
  useEffect(()=>{
   axios.post('http://localhost:5000/api/gpe_resp', {
@@ -35,6 +35,7 @@ export default function Gpe() {
   .catch(function (error) {
     console.log(error);
   });
+  console.log(solution);
  },[showImage])
   return (
     <>

@@ -38,7 +38,9 @@ export default function Srt() {
       .catch(function (error) {
         console.log(error);
       });
+      
       setQuestions()
+      console.log(result);
     },10000);
   }, []);
 

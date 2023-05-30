@@ -24,6 +24,7 @@ const WatResponse = require('../models/watResponseSchema.js')
 const srtFeedback = require('../models/srtFeedback.js')
 const watFeedback = require('../models/watFeedback.js')
 const ppdtFeedbackStore = require('../models/ppdtFeedbackStore.js')
+const gpeFeedbackStore = require('../models/gpeFeedbackStore.js')
 const axios = require('axios');
 
 exports.insertPpdtFeedbackstore = async function(req,res){
@@ -44,9 +45,37 @@ exports.insertPpdtFeedbackstore = async function(req,res){
     }
 }
 
+exports.insertGpeFeedbackstore = async function(req,res){
+    try {
+        console.log(req.body);
+        const {problem,url, result,feedback} = req.body;
+        if (!problem || !url || !result || !feedback) throw new Error('Data Not Provided...!');
+
+        gpeFeedbackStore.create({ 
+            problem: problem,
+            url: url,
+            result: result,
+            feedback: feedback, 
+        }, function (err, data) {
+            res.json({ msg: "gpe Feddback Saved Successfully...!" })
+        })
+    } catch (error){
+        res.json({ error});
+    }
+}
+
 exports.getPpdtFeedback = async function(req,res){
     try {
         const q = await ppdtFeedbackStore.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.getGpeFeedback = async function(req,res){
+    try {
+        const q = await gpeFeedbackStore.find()
         res.json(q)
     } catch (error) {
         res.json({ error })
@@ -542,7 +571,7 @@ exports.insertSrtResponse = async function (req, res) {
     try {
         console.log(req.body);
         const { username,result} = req.body;
-        if (!username) throw new Error('Data Not Provided...!');
+        if (!username || !result) throw new Error('Data Not Provided...!');
 
         SrtResponse.create({ 
             username: username, 

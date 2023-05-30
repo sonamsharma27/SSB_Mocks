@@ -1,12 +1,6 @@
-.gpecontent{
+.gpefeedback{
     margin-top: 2rem;
     box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
     padding-left: 2rem;
     height: 120vh;
-}
-
-.gpeurl img{
-    width: 200px;
-    height: 100px;
-    margin-top: 10px;
 }
