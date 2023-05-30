@@ -82,7 +82,7 @@ function App() {
       <Route path='/gpe_intro' element={<GpeIntro/>}/>
       <Route path='/gpe' element={<Gpe/>}/>
       <Route path='/response' element={<Response/>}/>
-      <Route path='/alumnidash' element={<AlumniDash/>}/>
+      <Route path='/alumnidash' exact element={user?<AlumniDash setLoginUser={setLoginUser}/> : <Alu_login setLoginUser={setLoginUser}/>}/>
       <Route path='/alumnitestmaterial' element={<AlumniTestMaterial/>}/>
       <Route path='/alumnihome' element={<AlumniHome/>}/>
       <Route path='/srtresponse' element={<SrtResponse/>}/>

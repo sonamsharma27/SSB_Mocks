@@ -11,6 +11,18 @@
     height: 70vh;
 }
 
+.showwatfeedback{
+    height: 100vh;
+    scroll-behavior: auto;
+    overflow-y: scroll;
+}
+
+.showtatfeedback{
+    height: 100vh;
+    scroll-behavior: auto;
+    overflow-y: scroll;
+}
+
 .btnfeedback{
     margin-top: 2rem;
     border-radius: 6px;
@@ -23,3 +35,21 @@
     font-size: 20px;
 }
 
+.watfeedback{
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    height: 120vh;
+}
+.tatfeedback{
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    height: 250vh;
+}
+
+.tatfeedurl img{
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+}

@@ -23,6 +23,7 @@ const WatStore = require('../models/watSchema.js')
 const WatResponse = require('../models/watResponseSchema.js')
 const srtFeedback = require('../models/srtFeedback.js')
 const watFeedback = require('../models/watFeedback.js')
+const tatFeedback = require('../models/tatFeedback.js')
 const ppdtFeedbackStore = require('../models/ppdtFeedbackStore.js')
 const gpeFeedbackStore = require('../models/gpeFeedbackStore.js')
 const axios = require('axios');
@@ -72,6 +73,14 @@ exports.getPpdtFeedback = async function(req,res){
         res.json({ error })
     }
 }
+exports.getSrtFeedback = async function(req,res){
+    try {
+        const q = await srtFeedback.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
 
 exports.getGpeFeedback = async function(req,res){
     try {
@@ -94,10 +103,13 @@ exports.getQuestions = async function (req, res) {
 exports.insertSrtFeedback = async function(req,res){
     try {
         console.log(req.body);
-        const { feedback} = req.body;
-        if (!feedback) throw new Error('Data Not Provided...!');
+        const {username,result,alumniname, feedback} = req.body;
+        if (!username || !result || !alumniname || !feedback) throw new Error('Data Not Provided...!');
 
         srtFeedback.create({ 
+            username: username,
+            result: result,
+            alumniname: alumniname,
             feedback: feedback, 
             
         }, function (err, data) {
@@ -111,13 +123,33 @@ exports.insertSrtFeedback = async function(req,res){
 exports.insertWatFeedback = async function(req,res){
     try {
         console.log(req.body);
-        const { feedback,username} = req.body;
-        if (!feedback) throw new Error('Data Not Provided...!');
+        const { word1, s1, word2, s2,word3, s3,word4, s4,word5, s5,word6, s6,word7, s7,word8, s8,word9, s9,word10, s10,alumniname, feedback,username} = req.body;
+        if (!alumniname || !feedback) throw new Error('Data Not Provided...!');
 
         watFeedback.create({ 
+            word1: word1,
+            word2: word2,
+            word3: word3,
+            word4: word4,
+            word5: word5,
+            word6: word6,
+            word7: word7,
+            word8: word8,
+            word9: word9,
+            word10: word10,
+            s1: s1,
+            s2: s2,
+            s3: s3,
+            s4: s4,
+            s5: s5,
+            s6: s6,
+            s7: s7,
+            s8: s8,
+            s9: s9,
+            s10: s10,
+            alumniname: alumniname,
             feedback: feedback, 
             username: username
-            
         }, function (err, data) {
             res.json({ msg: "Wat Feddback Saved Successfully...!" })
         })
@@ -125,6 +157,62 @@ exports.insertWatFeedback = async function(req,res){
         res.json({ error});
     }
 }
+
+exports.insertTatFeedback = async function(req,res){
+    try {
+        console.log(req.body);
+        const { url1, s1, url2, s2,url3, s3,url4, s4,url5, s5,url6, s6,url7, s7,url8, s8,url9, s9,url10, s10,alumniname, feedback,username} = req.body;
+        if (!alumniname || !feedback) throw new Error('Data Not Provided...!');
+
+        tatFeedback.create({ 
+            url1: url1,
+            url2: url2,
+            url3: url3,
+            url4: url4,
+            url5: url5,
+            url6: url6,
+            url7: url7,
+            url8: url8,
+            url9: url9,
+            url10: url10,
+            s1: s1,
+            s2: s2,
+            s3: s3,
+            s4: s4,
+            s5: s5,
+            s6: s6,
+            s7: s7,
+            s8: s8,
+            s9: s9,
+            s10: s10,
+            alumniname: alumniname,
+            feedback: feedback, 
+            username: username
+        }, function (err, data) {
+            res.json({ msg: "Tat Feddback Saved Successfully...!" })
+        })
+    } catch (error){
+        res.json({ error});
+    }
+}
+exports.getWatFeedback = async function(req,res){
+    try {
+        const q = await watFeedback.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
+exports.getTatFeedback = async function(req,res){
+    try {
+        const q = await tatFeedback.find()
+        res.json(q)
+    } catch (error) {
+        res.json({ error })
+    }
+}
+
 
 exports.getNonQuestions = async function(req,res){
     try {

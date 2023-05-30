@@ -5,7 +5,7 @@ import './SrtResponse.css'
 
 export default function SrtResponse() {
   const [answers,getAnswers] = useState([])
-  const [feedback,setFeedback] = useState("")
+  const [feedback,setFeedback] = useState('')
 
   const getData = async () => {
     try {
@@ -18,9 +18,11 @@ export default function SrtResponse() {
     }
   };
 
-  const postData = async () => {
-    alert("Feedback submitted successfully!")
+  const postSrtData = async (username,result) => {
     axios.post('http://localhost:5000/api/srt_feedback', {
+    username: username,
+    result: result,
+    alumniname: localStorage.getItem('email'),
     feedback: feedback,
   })
   .then(function (response) {
@@ -29,7 +31,8 @@ export default function SrtResponse() {
   .catch(function (error) {
     console.log(error);
   });
-  setFeedback()
+  alert('srt Feedback Saved Successfully...!')
+  setFeedback('')
   }
 
   useEffect(()=>{
@@ -43,8 +46,8 @@ export default function SrtResponse() {
           <div key={d._id} className='srtcontent'>
             <p style={{color: "black"}}>Email: {d.username}</p>
             <p style={{color: "black"}}>Result: {d.result}</p>
-            <textarea name="text" id="" cols="120" rows="4" placeholder='Write Your Feedback Here'></textarea>
-            <button className='submitres' type='submit'  onClick={postData}>Submit</button>
+            <textarea name="text" id="" value={feedback} onChange={(e) => setFeedback(e.target.value)} cols="120" rows="4" placeholder='Write Your Feedback Here'></textarea>
+            <button className='submitres' type='submit' onClick={(e)=>{postSrtData(d.username,d.result)}}>Submit</button>
           </div>
         ))
       }
@@ -52,3 +55,5 @@ export default function SrtResponse() {
     </>
   )
 }
+
+// Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio facere soluta obcaecati tenetur mollitia aperiam totam praesentium harum dolorem! Neque quasi perspiciatis rem quo voluptate cum quia ducimus, itaque, possimus magni autem incidunt repellat!
