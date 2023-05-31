@@ -4,15 +4,10 @@ import Watword from "./Watword";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import './Wat.css'
-// const getWords = () => {
-//   return [
-//     "Guilty",
-//     "Battle",
-//     "Village",
-//   ];
-// };
 
 function Wat() {
+  const [personality, setPersonality] = useState([]); 
+  let personality_detection_string = useRef("");
   const [storyInput, setStoryInput] = useState({
     s1: "",
     s0: "",
@@ -27,9 +22,10 @@ function Wat() {
   });
   const wordsRef = useRef([]);
   
-  const [personality, setPersonality] = useState([]);
+  const [resp, setResp] = useState({});
   const [timeup, setTimeUp] = useState(false);
   const [words, setWords] = useState([]);
+  const [show, setShow] = useState(false);
 
   const getWords = () => {
     if(words.length > 0) return;
@@ -37,7 +33,7 @@ function Wat() {
       .then((res) => res.json())
       .then((res) => {
         setWords(res);
-        setStoryInput(res)
+        setStoryInput(res);
       });
   }
 
@@ -45,29 +41,37 @@ function Wat() {
   setTimeout(() => {
     setTimeUp(true);
   }, 30000);
+ 
+
   
+const handleButtonClick = () =>{
+  axios.post("http://localhost:5000/api/personality_detection",{
+    personality_detection_string : personality_detection_string.current
+  })
+  // .then((res) => res.json())
+  .then((res) =>{
+    setResp(res);
+});
+}
+
+useEffect(()=>{
+  if(resp?.data===undefined) return;
+  let arr=[];
+  for (let i in resp.data[0]){
+    if(i!=='id' &&  resp?.data[0][i]>0.7)
+      arr.push({prediction: i, probability: resp?.data[0][i]});
+  }
+  setPersonality(arr);
+  setShow(true);
+  setTimeout(()=>{},500);
+},[resp])
   useEffect(() => {
-    console.log('useEffect');
     for(var i=0; i<11; i++){
       wordsRef.current.push('');
     }
     if(!timeup) return;
 
-    // let personality_detection_string = storyInput.s0!==undefined ?storyInput.s0:'' +
-    // storyInput.s1!==undefined ?storyInput.s1:'' + 
-    // storyInput.s2!==undefined ?storyInput.s2:'' +
-    // storyInput.s3!==undefined ?storyInput.s3:'' +
-    // storyInput.s4!==undefined ?storyInput.s4:'' +
-    // storyInput.s5!==undefined ?storyInput.s5:'' +
-    // storyInput.s6!==undefined ?storyInput.s6:'' + 
-    // storyInput.s7!==undefined ?storyInput.s7:'' +
-    // storyInput.s8!==undefined ?storyInput.s8:'' +
-    // storyInput.s9!==undefined ?storyInput.s9:'' ;
-    // console.log(personality_detection_string)
-
-    let personality_detection_string = "";
-    wordsRef.current.forEach(word => personality_detection_string += word);
-    console.log(personality_detection_string,wordsRef);
+    wordsRef.current.forEach(word => personality_detection_string.current += word);
     axios
     .post("http://localhost:5000/api/wat_resp", {
       username: localStorage.getItem('email'),
@@ -93,32 +97,46 @@ function Wat() {
       s10: wordsRef.current[9],
     })
     .then(function (response) {
-      console.log(response);
+      ;
     })
     .catch(function (error) {
       console.log(error);
     })
     wordsRef.current= [];
-    // axios.post("http://localhost:5000/api/personality_detection",{
-    //   personality_detection_string
-    // })
-    // .then((res) => res.json())
-    // .then((res) => setPersonality(res));
   },[timeup]);
+
   return (
     <>
 {timeup ? (
   <div className="ques_submit">
     <h1>Your response has been submitted.</h1>
+    <button className={personality.length?'d-none':'btn btn-outline-info fw-bolder mt-5'} onClick={handleButtonClick}>Curious to know your personality traits based on your WAT response? Click here</button>
+  { (personality.length) ? <div className={ show ? "container bg-info rounded border border-info p-2":"d-none"}> <h2>Your personality trait based on your WAT responses is :</h2> <br/>
+        <table className=" bg-light p-3 ">
+          <thead >
+            <tr>
+              <th className="border border-dark p-3">Personality Type</th>
+              <th className="border border-dark p-3">Associated Probability</th>
+            </tr>
+          </thead>
+          <tbody>
+      {personality?.map((type,index) => (<tr key={type.prediction}>
+              <td className="border border-dark p-3">{type.prediction}</td>
+              <td className="border border-dark p-3">{type.probability}</td>
+            </tr>))
+      }
+          </tbody>
+        </table>
+      </div>:null}
     <div className="ques_link">
       <Link
-        className="ques_dash btn btn-warning border border-5 border-primary"
+        className="ques_dash btn btn-warning border border-5 border-primary m-0"
         to="/dashboard"
       >
         Click here to go to dashboard
       </Link>{" "}
       <br /> <br />
-      <Link className="ques_dash btn btn-info" to="/watintro">
+      <Link className="ques_dash btn btn-info m-0" to="/watintro">
         Try another WAT test
       </Link>
     </div>
@@ -130,7 +148,6 @@ function Wat() {
     </h1>
     {words.length ? (
       <>
-        {" "}
         <Watword words={words} />
         <WatInput
           setStoryInput={setStoryInput}
@@ -138,32 +155,15 @@ function Wat() {
           words={words}
           wordsRef={wordsRef}
         />
-        {/* {personality.length > 0 ? <div className="container bg-info rounded border border-info p-2"> <h2>Your personality trait based on your WAT responses is :</h2> <br/>
-      {personality.map(item => (<>
-        <table className=" bg-light p-3 ">
-          <thead >
-            <tr>
-              <th className="border border-dark p-3">Personality Type</th>
-              <th className="border border-dark p-3">Associated Probability</th>
-            </tr>
-          </thead>
-          <tbody>
-           {
-            item.predictions?.map((type)=>(<tr>
-              <td className="border border-dark p-3">{type.prediction}</td>
-              <td className="border border-dark p-3">{type.probability}</td>
-            </tr>))
-           }
-          </tbody>
-        </table>
-      </>))}
-      </div>:<></>} */}
+        
       </>
     ) : (
       <></>
     )}
   </div>
 )}
+
+    
     </>
     
   );

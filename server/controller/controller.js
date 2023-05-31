@@ -754,27 +754,35 @@ exports.dropNonResult = async function (req, res) {
 }
 
 exports.personalityDetection = async function (req,res) {
+    // res.json({
+    //     data: [{orderliness:0.8134823731728288,            self_efficacy:0.8836642504464756,
+    //         stress_prone:0.3458423049318159,
+    //         agreeableness:0.8102504284459913,
+    //         cooperative:0.8848545328932219,
+    //         trusting:0.8220664185348683}]
+    // });
+    const {personality_detection_string} = req.body;
     const options = {
         method: 'POST',
-        url: 'https://personality-traits.p.rapidapi.com/personality',
+        url: 'https://big-five-personality-insights.p.rapidapi.com/api/big5',
         headers: {
           'content-type': 'application/json',
           Accept: 'application/json',
-          'X-RapidAPI-Key': 'cc16c628e5msh335b79c5c758c18p132a42jsn500fcc56dc0b',
-          'X-RapidAPI-Host': 'personality-traits.p.rapidapi.com'
+          'X-RapidAPI-Key': '5f696d5cf6msh10aeac54f573da1p1db039jsn54b5361ebdb5',
+          'X-RapidAPI-Host': 'big-five-personality-insights.p.rapidapi.com'
         },
         data: [
           {
             id: '1',
             language: 'en',
-            text: 'I love the service'
+            text: personality_detection_string
           }
         ]
       };
       
       try {
           const response = await axios.request(options);
-          console.log(response.data);
+          console.log(response);
           res.json(response.data);
       } catch (error) {
           console.error(error);
