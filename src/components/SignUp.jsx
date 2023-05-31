@@ -73,7 +73,7 @@ const register = () => {
       </div>
 
     <div className="image">
-    <h1>Registration</h1>
+    <h1 className="formhead">Registration</h1>
     <Form> 
       <Form.Group id="firstform" className="firstform" controlId="formBasicEmail">
         <Form.Label>Name Of The Aspirant</Form.Label>

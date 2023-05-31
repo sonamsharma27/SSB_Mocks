@@ -67,7 +67,7 @@ function App() {
       {/* <Route path="/alumniform" element={<AlumniForm/>} />   */}
       <Route path="/add_test_material" element={<Test_material_aspirant/>} />
       <Route path="/oir" element={<Oir/>} />    
-      <Route path="/verbal" element={<CheckUserExist><Verbal/></CheckUserExist>} />
+      <Route path="/verbal" element={<Verbal/>} />
       <Route path="/ppdt_ques" element={<PpdtQues />} />
       {/* <Route path="/non_verbal" element={<Non_verbal/>} /> */}
       <Route path="/result" element={<CheckUserExist><Result_ver/></CheckUserExist>} />

@@ -6,14 +6,14 @@ import { setUserId } from '../redux/result_reducer'
 
 export default function Oir() {
 
-    const inputRef = useRef(null)
-    const dispatch = useDispatch()
+    // const inputRef = useRef(null)
+    // const dispatch = useDispatch()
 
-    function startQuiz(){
-        if(inputRef.current?.value){
-            dispatch(setUserId(inputRef.current?.value))
-        }
-    }
+    // function startQuiz(){
+    //     if(inputRef.current?.value){
+    //         dispatch(setUserId(inputRef.current?.value))
+    //     }
+    // }
   return (
     <>
         <h1 className='heading'>OIR Mock Test</h1>
@@ -47,16 +47,16 @@ export default function Oir() {
             </div>
         </div>
 
-        <form id='form'>
+        {/* <form id='form'>
             <input type="text" ref={inputRef} placeholder="Username"/>
-        </form>
+        </form> */}
 
         <div className="btn_grid">
             <NavLink to="/nonverbal" className="btn_non">
                 Non-Verbal Test
             </NavLink>
             
-            <NavLink to="/verbal" onClick={startQuiz} className="btn_ver">
+            <NavLink to="/verbal" className="btn_ver">
                 Verbal Test
             </NavLink>
             

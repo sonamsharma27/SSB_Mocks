@@ -5,10 +5,16 @@
 }
 
 .ppdtfeedback{
+    display: flex;
+    flex-direction: column;
     margin-top: 2rem;
     box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
     padding-left: 2rem;
     height: 70vh;
+}
+
+.ppdtfeedback  p{
+    font-weight: bolder;
 }
 
 .showwatfeedback{
@@ -23,8 +29,15 @@
     overflow-y: scroll;
 }
 
+.picurl{
+    width: 300px;
+    height: 200px;
+    margin-top: 10px;
+}
+
 .btnfeedback{
     margin-top: 2rem;
+    width: 30%;
     border-radius: 6px;
     background-color: blueviolet;
     color: white;
@@ -33,6 +46,7 @@
 .ppdtbtnfeedback{
     margin-top: 1rem;
     font-size: 20px;
+    font-weight: 100;
 }
 
 .watfeedback{

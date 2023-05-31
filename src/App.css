@@ -70,7 +70,7 @@
 }
 
 .main-grid .image{
-  height: 70vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,12 +81,13 @@
   box-shadow: 6px 4px 8px 1px #c4b6b6;
 }
 
+
+
 Form{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
   margin-right: 4rem;
 }
 
@@ -100,11 +101,6 @@ Form{
 
 Form .placeholder{
     width: 170%;
-}
-
-.para{
-  margin-bottom: 2rem;
-  margin-left: 3rem;
 }
 
 .s_login{

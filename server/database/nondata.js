@@ -56,6 +56,6 @@ const nonquestions = [
     }
 ];
 
-const nonanswers = [0, 2, 3, 1, 2];
+const nonanswers = [1, 2, 3, 1, 2];
 
 module.exports = {nonquestions,nonanswers}

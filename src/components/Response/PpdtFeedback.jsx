@@ -52,8 +52,8 @@ export default function PpdtFeedback() {
         {
             feedback.map((ans,index)=>(
               <div className="ppdtfeedback" key={ans._id}>
-                  <p style={{color: "black"}}>Story: {ans.story}</p>
-                  <p style={{color: "black"}} className='imageurl'>Picture: <img src={ans.url} alt="images" className='picurl'/></p>
+                  <p style={{color: "black"}} className='feedbackcont'>Story: </p><p>{ans.story}</p>
+                  <p style={{color: "black"}} className='imageurl' >Picture: </p><img src={ans.url} alt="images" className='picurl'/>
                   <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
                  {index===responseIndex && <p style={{color: "black"}} className='ppdtbtnfeedback'>{ppdtfeedback}</p>}
               </div>
