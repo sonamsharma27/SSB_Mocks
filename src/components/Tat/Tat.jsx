@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TatInput from "./TatInput";
 import TatImg from "./TatImg";
 import { Link } from "react-router-dom";
+import PpdtTimer from '../Ppdt/PpdtTimer'
 import axios from "axios";
 
 function Tat() {
@@ -64,6 +65,7 @@ function Tat() {
 
   return (
     <>
+   
       {timeup ? (
         <div className="ques_submit">
           <h1>Your response has been submitted.</h1>
@@ -82,6 +84,7 @@ function Tat() {
         </div>
       ) : (
         <div className="d-flex flex-column justify-content-center">
+           <PpdtTimer />
           <h1 className="text-center p-2 align-self-center bg-success rounded-2">
             Thematic Apperception Test
           </h1>

@@ -3,6 +3,7 @@ import WatInput from "./WatInput";
 import Watword from "./Watword";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import PpdtTimer from '../Ppdt/PpdtTimer'
 import './Wat.css'
 // const getWords = () => {
 //   return [
@@ -107,7 +108,9 @@ function Wat() {
   },[timeup]);
   return (
     <>
+    
 {timeup ? (
+  
   <div className="ques_submit">
     <h1>Your response has been submitted.</h1>
     <div className="ques_link">
@@ -125,6 +128,7 @@ function Wat() {
   </div>
 ) : (
   <div className="d-flex flex-column justify-content-center">
+    <PpdtTimer/>
     <h1 className="text-center p-2 align-self-center bg-success rounded-2">
     Word Association Test
     </h1>

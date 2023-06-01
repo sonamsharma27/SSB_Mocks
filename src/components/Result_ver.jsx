@@ -19,7 +19,7 @@ export default function Result_ver() {
 
     usePublishResult({
         result, 
-        username : userId,
+        username : localStorage.getItem('email'),
         attempts,
         points: earnPoints,
         achived : flag ? "Passed" : "Failed"

@@ -47,7 +47,8 @@ export default function Srt() {
   return (
     <>
     <div className="timer position-absolute">
-         { questions?<CountdownCircleTimer
+         { questions?
+         <CountdownCircleTimer
             isPlaying
             duration={400}
             colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
