@@ -17,13 +17,11 @@ import GpeFeedback from './GpeFeedback';
 
 export default function Response({children}) {
 
-    const[isOpen ,setIsOpen] = useState(false);
+    const[isOpen ,setIsOpen] = useState(true);
     const [active, setActive] = useState("");
     // const toggle = () => setIsOpen (!isOpen);
 
-    const toggle = () => {
-        setIsOpen(!isOpen)
-    }
+   
   return (
     <>
     <Navbar bg="light" expand="lg">
@@ -47,17 +45,13 @@ export default function Response({children}) {
                         See Ypur Feedback
                     </div> */}
 
-                    <div className={`${active === "response" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive(toggle)}>
-                    See Your Responses
-                    </div>
-                    <div className='responselist' style={{display: isOpen ? "block" : "none"}}>
-                        <div className={`${active === "srtfeedback" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("srtfeedback")}>Srt</div>
-                        <div className={`${active === "ppdtfeedback" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("ppdtfeedback")}>Ppdt</div>
-                        <div className={`${active === "watfeedback" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("watfeedback")}>Wat</div>
-                        <div className={`${active === "tatfeedback" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("tatfeedback")}>Tat</div>
-
-                        <div className={`${active === "gpefeedback" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("gpefeedback")}>Gpe</div>
-                    </div>
+                    <p className='responselist' style={{display: isOpen ? "block" : "none", fontWeight: "600"}}>
+                        <div className={`${active === "srtfeedback" ? "displaymain" : "sidelink"} text-center`} onClick={(e) => setActive("srtfeedback")}>Situation Reaction Test</div>
+                        <div className={`${active === "ppdtfeedback" ? "displaymain" : "sidelink"} fs-sm`} onClick={(e) => setActive("ppdtfeedback")}>Picture Perception Description Test</div>
+                        <div className={`${active === "watfeedback" ? "displaymain" : "sidelink"} `} onClick={(e) => setActive("watfeedback")}>Word Assocation Test</div>
+                        <div className={`${active === "tatfeedback" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("tatfeedback")}>Thematic Apperception Test</div>
+                        <div className={`${active === "gpefeedback" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("gpefeedback")}>Group Planning Exercise</div>
+                    </p>
                     {/* <div className={`${active === "alumnitestmaterial" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("alumnitestmaterial")}>
                     Add Test Material
                     </div> */}

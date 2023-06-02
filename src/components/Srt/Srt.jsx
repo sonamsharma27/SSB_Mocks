@@ -29,7 +29,7 @@ export default function Srt() {
   getData()
   console.log('use effect');
     setTimeout(() => {
-      console.log('in timeout', result);
+      console.log('in timeout', srtQues);
       console.log(questions);
       axios.post('http://localhost:5000/api/srt_resp', {
         username : localStorage.getItem('email'),

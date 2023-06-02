@@ -115,7 +115,7 @@ export default function AlumniTestMaterial() {
       <>
         <div>
           <h1 className="text-center">SSB Mocks</h1>
-          <h5 className="text-muted">Add test content for fellow aspirants</h5>
+          <h5 className="text-muted">Add test content for aspirants</h5>
           <h5 className="text-muted">
             Added content will be verified by administrator before it is used in
             SSB Mocks virtual test
