@@ -56,7 +56,7 @@ export default function PpdtFeedback() {
                   <p style={{color: "black"}} className='imageurl'>Picture: <img src={ans.url} alt="images" className='picurl'/></p>
                   <p style={{color: "black"}}>Story: {ans.result}</p>
                   <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
-                 {index===responseIndex && <p style={{color: "black"}} className='ppdtbtnfeedback'>{ppdtfeedback}</p>}
+                 {index===responseIndex && <><p style={{color: "black"}} className='ppdtbtnfeedback'>{ppdtfeedback}</p></>}
               </div>
             ))
         }

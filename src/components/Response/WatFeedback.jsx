@@ -68,9 +68,10 @@ export default function WatFeedback() {
                   <p style={{color: "black"}} className='imageurl my-2'>Username: {ans.username}</p>
                   <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>See Feedback</button>
                   
-                 {index===responseIndex && <p style={{color: "black"}} className='ppdtbtnfeedback'>{watfeedback}</p>}
+                 {index===responseIndex && <><p style={{color: "black"}} className='ppdtbtnfeedback'>{watfeedback}</p>
+                 <p style={{color: "black"}} className='imageurl'>Feedback is given by: {ans.alumniname}</p>
+                 </>}
 
-                 {/* <p style={{color: "black"}} className='imageurl'>Feedback is given by: {ans.alumniname}</p> */}
               </div>
             ))
         }

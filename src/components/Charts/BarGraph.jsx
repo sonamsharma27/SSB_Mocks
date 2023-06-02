@@ -43,7 +43,7 @@ export function BarGraph({ result }) {
     labels,
     datasets: [
       {
-        label: "Verbal",
+        label: "Scores",
         data: scores,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",

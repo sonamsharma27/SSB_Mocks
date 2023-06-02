@@ -660,12 +660,11 @@ exports.insertSrtResponse = async function (req, res) {
     try {
         console.log(req.body);
         const { username,result,question} = req.body;
-        if (!username || !result || !question) throw new Error('Data Not Provided...!');
+        if (!username || !result ) throw new Error('Data Not Provided...!');
 
         SrtResponse.create({ 
             username: username, 
             result: result,
-            question: question
            }, function (err, data) {
             res.json({ msg: "Srt Repsonse Saved Successfully...!" })
         })
