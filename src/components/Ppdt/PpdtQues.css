@@ -51,9 +51,8 @@
  }
 
  .pptime{
-   border: 2px solid black;
    width: 125px;
-   background-color: wheat;
    align-items: center;
-   color: black;
+   text-align: center;
+   margin-left: 10px;
 }

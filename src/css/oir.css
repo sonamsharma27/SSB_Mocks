@@ -37,13 +37,12 @@
 }
 
 .btn_grid{
-    margin-top: 2rem;
     grid-gap: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    margin-left: 32rem;
+    margin-top: 8rem;
 }
 
-.btn_grid .btn_non{
+/* .btn_grid .btn_non{
     padding-bottom: 10px;
     padding-top: 10px;
     color: white;
@@ -51,14 +50,19 @@
     background-color: #5e93ff;
     position: sticky;
     text-decoration: none;
-}
+} */
 
 .btn_grid .btn_ver{
+    padding-right: 175px;
     padding-bottom: 10px;
     padding-top: 10px;
-    padding-left: 22rem;
+    text-align: center;
+    /* padding-left: 22rem; */
     background-color: #5e93ff;
     color: white;
     position: sticky;
+    /* padding: 50px; */
+    width: 50%;
     text-decoration: none;
+    padding-left: 175px;
 }
