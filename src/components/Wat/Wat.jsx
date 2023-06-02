@@ -113,7 +113,7 @@ useEffect(()=>{
   
   <div className="ques_submit">
     <h1>Your response has been submitted.</h1>
-    <button className={personality.length?'d-none':'btn btn-outline-info fw-bolder mt-5'} onClick={handleButtonClick}>Curious to know your personality traits based on your WAT response? Click here</button>
+    <button className={personality.length?'d-none':'btn btn-outline-dark fw-bolder mt-5'} onClick={handleButtonClick}>Curious to know your personality traits based on your WAT response? Click here</button>
   { (personality.length) ? <div className={ show ? "container bg-light rounded border border-1 p-2":"d-none"}> <h2>Your personality traits based on your WAT response are:</h2> <br/>
         <div className="d-flex justify-content-between">
       {personality?.map((type,index) => (<h3 className="p-3 m-2 pers" key={type.prediction}>
@@ -127,13 +127,13 @@ useEffect(()=>{
 
     
       <Link
-        className="ques_dash btn btn-warning border border-5 border-primary m-0"
+        className="btn btn-dark btn-warning-dark  m-0"
         to="/dashboard"
       >
         Click here to go to dashboard
       </Link>{" "}
       <br /> <br />
-      <Link className="ques_dash btn btn-info m-0" to="/watintro">
+      <Link className=" btn btn-dark m-0" to="/watintro">
         Try another WAT test
       </Link>
     </div>
