@@ -10,8 +10,11 @@
  .ppdt-con{
     background-color: rgb(59, 120, 92);
     height: 80vh;
+    width: 100%;
  }
  .question_form{
+   margin-left: 2rem;
+   padding-bottom: 6rem;
  }
 
  .question_form form .ques_form{
@@ -55,4 +58,8 @@
    align-items: center;
    text-align: center;
    margin-left: 10px;
+}
+
+.ppdttime{
+   margin-left: 20rem;
 }

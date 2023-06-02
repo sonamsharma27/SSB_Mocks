@@ -4,12 +4,31 @@
 }
 
 .submitres{
-    margin-left: 49rem;
+    margin-left: 28rem;
     margin-top: 2rem;
-    width: 10%;
+    width: 15%;
     line-height: 30px;
-    background-color: aqua;
-    border-radius: 6px;
     outline: none;
+    margin-top: 2rem;
+    border-radius: 6px;
+    background-color: rgb(72, 62, 82);
+    color: white;
 }
 
+.ppdtfeedcontent{
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.ppdtfeedcontent .ppdtcon1{
+    margin-top: 2rem;
+}
+
+.ppdtfeedcontent .ppdtcon2{
+    margin-right: 2rem;
+    margin-top: 2rem;
+}

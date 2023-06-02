@@ -62,40 +62,75 @@ export default function TatResponse() {
           {
         answers.map((d) => (
           <div key={d._id} className='tatcontent'>
-            <p style={{color: "black"}}>Email: {d.username}</p>
-            <p style={{color: "black"}}>Picture: 
-            </p>
+            <p className='fw-bolder text-muted'>Email: {d.username}</p>
+            <p className='fw-bolder text-muted'>Your response: </p>
             {/* <br /> */}
             <div className='tatcont'>
-            <div className='taturl'>Picture1: <img src={d.url1} alt="" /></div>
-            <div className='taturl'>Picture2: <img src={d.url2} alt="" /></div>
-            <div className='taturl'>Picture3: <img src={d.url3} alt="" /></div>
-            <div className='taturl'>Picture4: <img src={d.url4} alt="" /></div>
-            <div className='taturl'>Picture5: <img src={d.url5} alt="" /></div>
-            <div className='taturl'>Picture6: <img src={d.url6} alt="" /></div>
-            <div className='taturl'>Picture7: <img src={d.url7} alt="" /></div>
-            <div className='taturl'>Picture8: <img src={d.url8} alt="" /></div>
-            <div className='taturl'>Picture9: <img src={d.url9} alt="" /></div>
-            <div className='taturl'>Picture10: <img src={d.url10} alt="" /></div>
-            </div>
+            <div className='taturl'>
+              <div>
+              <img src={d.url1} alt="" className='taturlimg'/>
+              </div>
+              <div className='tatinp'>:{d.s1}</div>
+              </div>
 
-            <p style={{color: "black"}}>Picture Answers: 
-            </p>
-            <div className='tatcont'>
-            <div className='taturl'>s1: {d.s1}</div>
-            <div className='taturl'>s2: {d.s2}</div>
-            <div className='taturl'>s3: {d.s3}</div>
-            <div className='taturl'>s4: {d.s4}</div>
-            <div className='taturl'>s5: {d.s5}</div>
-            <div className='taturl'>s6: {d.s6}</div>
-            <div className='taturl'>s7: {d.s7}</div>
-            <div className='taturl'>s8: {d.s8}</div>
-            <div className='taturl'>s9: {d.s9}</div>
-            <div className='taturl'>s10: {d.s10}</div>
+              <div className='taturl'>
+              <div>
+              <img src={d.url2} alt="" className='taturlimg'/>
+              </div>
+              <div className='tatinp'>:   {d.s2}</div>
+              </div>
+              <div className='taturl'>
+              <div>
+              <img src={d.url3} alt="" className='taturlimg'/>
+              </div>
+              <div className='tatinp'>:   {d.s3}</div>
+              </div>
+              <div className='taturl'>
+              <div>
+              <img src={d.url4} alt="" className='taturlimg'/>
+              </div>
+              <div className='tatinp'>:   {d.s4}</div>
+              </div>
+              <div className='taturl'>
+              <div>
+              <img src={d.url5} alt="" className='taturlimg'/>
+              </div>
+              <div className='tatinp'>:    {d.s5}</div>
+              </div>
+              <div className='taturl'>
+              <div>
+              <img src={d.url6} alt="" className='taturlimg'/>
+              </div>
+              <div className='tatinp'>:    {d.s6}</div>
+              </div>
+              <div className='taturl'>
+              <div>
+              <img src={d.url7} alt="" className='taturlimg'/>
+              </div>
+              <div className='tatinp'>:     {d.s7}</div>
+              </div>
+              <div className='taturl'>
+              <div>
+              <img src={d.url8} alt="" className='taturlimg'/>
+              </div>
+              <div className='tatinp'>:      {d.s8}</div>
+              </div>
+              <div className='taturl'>
+              <div>
+              <img src={d.url9} alt="" className='taturlimg'/>
+              </div>
+              <div className='tatinp'>: .   {d.s9}</div>
+              </div>
+              <div className='taturl'>
+              <div>
+              <img src={d.url10} alt="" className='taturlimg'/>
+              </div>
+              <div className='tatinp'>:     {d.s10}</div>
+              </div>
             </div>
             <textarea name="text" id="" cols="120" rows="3" placeholder='Write Your Feedback Here' value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}></textarea>
-            <button className='submitres' onClick={(e)=>{submittatFeedback(d.username,d.url1,d.url2,d.url3,d.url4,d.url5,d.url6,d.url7,d.url8,d.url9,d.url10,d.s1,d.s2,d.s3,d.s4,d.s5,d.s6,d.s7,d.s8,d.s9,d.s10)}}>Submit</button>
+            <button className='submitattres' onClick={(e)=>{submittatFeedback(d.username,d.url1,d.url2,d.url3,d.url4,d.url5,d.url6,d.url7,d.url8,d.url9,d.url10,d.s1,d.s2,d.s3,d.s4,d.s5,d.s6,d.s7,d.s8,d.s9,d.s10)}}>Submit</button>
           </div>
         ))
       }

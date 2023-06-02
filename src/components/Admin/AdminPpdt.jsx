@@ -14,7 +14,34 @@ export default function AdminPpdt() {
             console.log(error);
           }
     }
-
+    const submitppdt = async (url) => {
+      deleteppdt(url);
+      axios.post('http://localhost:5000/api/ppdt', {
+        url: url,
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+              alert('Admin Ppdt Repsonse Saved Successfully...!')
+    }
+    
+    const deleteppdt = async (url) => {
+      console.log(url);
+      axios.post('http://localhost:5000/api/alumni_ppdt_drop',{
+        url: url,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      getPpdt()
+    
+    }
     useEffect(()=>{
       getPpdt()
     },[])
@@ -34,8 +61,8 @@ export default function AdminPpdt() {
             <tr key={d._id} className='srtitems'>
             <td style={{color: "black"}} className='tatpic'>
               <img src={d.url} alt="" srcset="" /></td>
-            <td style={{color: "black"}}><button className='add'>Add</button></td>
-            <td style={{color: "black"}}><button className='del'>Delete</button></td>
+            <td style={{color: "black"}}><button className='add' onClick={(e) => {submitppdt(d.url)}}>Add</button></td>
+            <td style={{color: "black"}}><button className='del' onClick={(e) => {deleteppdt(d.url)}}>Delete</button></td>
             </tr>
         ))
       }

@@ -38,6 +38,7 @@ export default function AlumniDash({children}) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+            <Nav.Link href="/dashboard">Dashboard</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

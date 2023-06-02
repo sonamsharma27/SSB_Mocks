@@ -15,6 +15,37 @@ export default function AdminGpe() {
           }
     }
 
+    const submitgpe = async (url,problem) => {
+      deletegpe(url);
+      axios.post('http://localhost:5000/api/gpe', {
+        url: url,
+        problem: problem
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+              alert('Admin Gpe Repsonse Saved Successfully...!')
+    }
+    
+    const deletegpe = async (url,problem) => {
+      console.log(url);
+      axios.post('http://localhost:5000/api/alumni_gpe_drop',{
+        url: url,
+        problem: problem
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      getGpe()
+    
+    }
+
     useEffect(()=>{
       getGpe()
     },[])
@@ -36,8 +67,8 @@ export default function AdminGpe() {
             <td style={{color: "black"}} className='tatpic'>
               <img src={d.url} alt="" srcset="" /></td>
               <td style={{color: "black"}} className='gpeproblem'>{d.problem}</td>
-            <td style={{color: "black"}}><button className='add'>Add</button></td>
-            <td style={{color: "black"}}><button className='del'>Delete</button></td>
+            <td style={{color: "black"}}><button className='add' onClick={(e) => {submitgpe(d.url,d.problem)}}>Add</button></td>
+            <td style={{color: "black"}}><button className='del' onClick={(e) => {deletegpe(d.url,d.problem)}}>Delete</button></td>
             </tr>
         ))
       }

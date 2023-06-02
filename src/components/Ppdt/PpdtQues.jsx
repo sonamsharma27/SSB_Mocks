@@ -33,7 +33,7 @@ export default function PpdtQues({url}) {
         setShowQuestions(false);
         // console.log(userResp);
        
-      },50000000)
+      },15000)
     })
     useEffect(()=>{
       axios.post('http://localhost:5000/api/ppdt_resp', {
@@ -56,13 +56,12 @@ export default function PpdtQues({url}) {
   return (
 
     <>
-     <PpdtTimer />
-     <div className="ppdtmain2">
+     
      <div className='ppdt-con'>
         {showQuestions?
         
         <div className="question-container">
-       
+       <PpdtTimer className='ppdttime'/>
       <div className='question_form'>
         <form action="submit" method="post">
           <div className='ques_form'>
@@ -79,11 +78,11 @@ export default function PpdtQues({url}) {
           </div>
           <div className='ques_form'>
           <label className='ques_label' htmlFor="">Enter the name, age ,sex , mood of the all characters of your story:</label>
-          <textarea type="text" className='ques_input' name='characters' value={userResp.characters} onChange={(e)=>handleChange(e,'characters')}/>
+          <textarea type="text" cols="60" rows="3" className='ques_input' name='characters' value={userResp.characters} onChange={(e)=>handleChange(e,'characters')}/>
           </div>
           <div className='ques_form'>
           <label className='ques_label' htmlFor="">Write your story here:</label>
-          <textarea type="text" className='ques_input' name='story' value={userResp.story} onChange={(e)=>handleChange(e,'story')}/>
+          <textarea type="text" cols="60" rows="3" className='ques_input' name='story' value={userResp.story} onChange={(e)=>handleChange(e,'story')}/>
           </div>
         </form>
     </div>
@@ -98,7 +97,6 @@ export default function PpdtQues({url}) {
         </div>
     </div>
         }
-    </div>
      </div>
     
     </>

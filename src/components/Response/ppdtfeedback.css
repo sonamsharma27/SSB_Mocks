@@ -37,6 +37,12 @@
     overflow-y: scroll;
 }
 
+.pictaturl{
+    width: 300px;
+    height: 200px;
+    margin-top: 10px;
+}
+
 .picurl{
     width: 300px;
     height: 200px;
@@ -66,14 +72,14 @@
     margin-top: 2rem;
     box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
     padding-left: 2rem;
-    height: 250vh;
+    height: 200vh;
 }
 
-.tatfeedurl img{
+/* .tatfeedurl img{
     width: 200px;
     height: 100px;
     margin-top: 10px;
-}
+} */
 
 .words{
     color: rgb(7, 53, 105);

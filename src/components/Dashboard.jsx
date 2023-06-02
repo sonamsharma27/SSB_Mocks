@@ -25,13 +25,12 @@ function NavScrollExample() {
           >
             <Nav.Link href="/response">Response Section</Nav.Link>
             {/* <Nav.Link href="/dashboard">About Us</Nav.Link> */}
-            <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="/add_test_material">Add test material</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    <img src={pic9} alt="Army"/>
+    <img src={pic9} alt="Army" className='dashimage'/>
     <div className="ssb-section">
         <h1 className='ssb_inter'>SSB Interview</h1>
         <h2 style={{marginTop: "2rem"}}>Stage 1</h2>

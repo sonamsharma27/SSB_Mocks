@@ -34,6 +34,9 @@ export default function Response({children}) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+            <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+            <Nav.Link href="/add_test_material">Add test material</Nav.Link>
+
           </Nav>
         </Navbar.Collapse>
       </Container>

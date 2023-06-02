@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './Test_material_aspirant.css'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import axios from 'axios';
 
 export default function Test_material_aspirant() {
@@ -113,7 +116,24 @@ export default function Test_material_aspirant() {
     
     return (
       <>
-        <div>
+      <Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+            {/* <Nav.Link href="/dashboard">About Us</Nav.Link> */}
+            <Nav.Link href="/response">Response Section</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+        <div style={{marginTop: "2rem"}}>
           <h1 className="text-center">SSB Mocks</h1>
           <h5 className="text-muted">Add test content for fellow aspirants</h5>
           <h5 className="text-muted">

@@ -43,12 +43,30 @@ export default function GpeResponse() {
           {
         answers.map((d) => (
           <div key={d._id} className='gpecontent'>
-            <p style={{color: "black"}}>Email: {d.username}</p>
-            <p style={{color: "black"}} className='gpeurl'>Picture: <img src={d.url} alt=""/></p>
-            <p style={{color: "black"}}>Problem: {d.problem}</p>
-            <p style={{color: "black"}}>Result: {d.solution}</p>
-            <textarea name="text" id="" value={feedback} onChange={(e) => setFeedback(e.target.value)} cols="120" rows="3" placeholder='Write Your Feedback Here'></textarea>
+            <div className='gpecon1'>
+              <div>
+              <p className='text-muted' style={{fontWeight: "bolder"}}>Your Email: {d.username}</p>
+              </div>
+
+              <div>
+                <p className='text-muted' style={{fontWeight: "bolder"}}>Gpe Picture: </p>
+                <p style={{color: "black"}} className='picurl'><img src={d.url} alt="" className='picurl'/></p>
+              </div>
+            <div>
+            <p className='text-muted' style={{fontWeight: "bolder"}}>Your Result: </p>
+            <p className='text-muted' style={{fontWeight: "bolder"}}>{d.result}</p>
+            </div>
+            
+            <textarea name="text" id="" value={feedback} onChange={(e) => setFeedback(e.target.value)} cols="70" rows="3" placeholder='Write Your Feedback Here'></textarea>
             <button className='submitres' onClick={(e)=>{postGpeFeedback(d.problem,d.url,d.solution)}}>Submit</button>
+            </div>
+
+            <div className='gpecon2'>
+              <p className='text-muted' style={{fontWeight: "bolder"}}>Your Problem: </p>
+              <p className='response'>Problem: {d.problem}</p>
+            </div>
+            
+            
           </div>
         ))
       }

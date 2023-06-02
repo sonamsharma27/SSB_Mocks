@@ -5,6 +5,11 @@
 }
 
 .tatcont{
+    box-shadow: rgb(188, 183, 183) -2px 4px 30px 0px;
+    padding: 2%;
+    color: rgb(61, 49, 71);
+    border-radius: 10px;
+    width: 75%;
     margin-bottom: 3rem;
 }
 
@@ -15,8 +20,29 @@
     height: 240vh;
 }
 
-.taturl img{
+.taturl{
+    display: flex;
+}
+
+.taturl .tatinp{
+    margin-top: 3rem;
+    margin-left: 1rem;
+}
+
+.taturl .taturlimg{
     width: 200px;
     height: 100px;
     margin-top: 10px;
+}
+
+.submitattres{
+    margin-left: 46rem;
+    margin-top: 2rem;
+    width: 15%;
+    line-height: 30px;
+    outline: none;
+    margin-top: 2rem;
+    border-radius: 6px;
+    background-color: rgb(72, 62, 82);
+    color: white;
 }

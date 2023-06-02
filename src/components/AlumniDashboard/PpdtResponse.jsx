@@ -40,14 +40,29 @@ export default function PpdtResponse() {
       <div className='srtmain'>
           {
         answers.map((d) => (
-          <div key={d._id} className='srtcontent'>
-            <p style={{color: "black"}}>Email: {d.username}</p>
-            <p style={{color: "black"}} className='imageurl'>Picture: <img src={d.url} alt="" className='picurl'/></p>
-            <p style={{color: "black"}} className='imageurl'>Story: {d.story}</p>
-            {/* <p style={{color: "black"}}>Result: {d.result}</p> */}
-            <textarea name="text" id="" value={feedback} onChange={(e) => setFeedback(e.target.value)} cols="120" rows="3" placeholder='Write Your Feedback Here'></textarea>
+          <div key={d._id} className='ppdtfeedcontent'>
+            <div className='ppdtcon1'>
+              <div>
+              <p className='text-muted' style={{fontWeight: "bolder"}}>Your Email: {d.username}</p>
+              </div>
+
+              <div>
+                <p className='text-muted' style={{fontWeight: "bolder"}}>Ppdt Picture: </p>
+                <p style={{color: "black"}} className='picurl'><img src={d.url} alt="" className='picurl'/></p>
+              </div>
+            
+            
+            <textarea name="text" id="" value={feedback} onChange={(e) => setFeedback(e.target.value)} cols="70" rows="3" placeholder='Write Your Feedback Here'></textarea>
 
             <button className='submitres' onClick={(e)=>{postPpdtFeedback(d.story,d.url)}}>Submit</button>
+            </div>
+            <div className='ppdtcon2'>
+              <p className="text-muted" style={{fontWeight: "bolder"}}>Your Story: {" "}</p>
+            <p className='response'>Story: {d.story}</p>
+            </div>
+            
+            {/* <p style={{color: "black"}}>Result: {d.result}</p> */}
+            
           </div>
         ))
       }

@@ -591,6 +591,37 @@ exports.insertTatUrl = async function(req,res){
         res.json({ error })
     }
 }
+exports.insertPpdtUrl = async function(req,res){
+    try {
+        console.log(req.body);
+        const { ppdturl} = req.body;
+        if (!ppdturl) throw new Error('Data Not Provided...!');
+
+        SrtStore.create({ 
+            ppdturl: ppdturl
+           }, function (err, data) {
+            res.json({ msg: "Ppdt Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+exports.insertGpeProblem = async function(req,res){
+    try {
+        console.log(req.body);
+        const { gpeurl,gpeproblem} = req.body;
+        if (!gpeurl || !gpeproblem) throw new Error('Data Not Provided...!');
+
+        SrtStore.create({ 
+            gpeurl: gpeurl,
+            gpeproblem: gpeproblem
+           }, function (err, data) {
+            res.json({ msg: "Gpe Repsonse Saved Successfully...!" })
+        })
+    } catch (error) {
+        res.json({ error })
+    }
+}
 
 exports.dropWatWords = async function (req, res) {
     try {
@@ -603,11 +634,33 @@ exports.dropWatWords = async function (req, res) {
     }
 }
 
+exports.dropPpdtUrl = async function(req,res){
+    try {
+        const {ppdturl} = req.body;
+        console.log("reqbody",ppdturl);
+       await AlumniPpdtResponse.deleteOne({"content": ppdturl});
+       res.json({ msg: "url deleted successfully...." })
+   } catch (error) {
+       res.json({ error })
+   }
+}
+
 exports.dropSrtSituation = async function (req, res) {
     try {
          const {situation} = req.body;
          console.log("reqbody",situation);
         await AlumniSrtResponse.deleteOne({"content": situation});
+        res.json({ msg: "situation deleted successfully...." })
+    } catch (error) {
+        res.json({ error })
+    }
+}
+exports.dropGpeProblem = async function (req, res) {
+    try {
+         const {url,problem} = req.body;
+         console.log("reqbody",url);
+         console.log("reqbody2",problem);
+        await AlumniGpeResponse.deleteMany();
         res.json({ msg: "situation deleted successfully...." })
     } catch (error) {
         res.json({ error })
