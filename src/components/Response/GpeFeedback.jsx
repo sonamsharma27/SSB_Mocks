@@ -64,16 +64,10 @@ export default function PpdtFeedback() {
             <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='gpebtnfeed'>Show Feedback</button>
                  {index===responseIndex && <p style={{color: "black"}} className='ppdtbtnfeedback'>{ppdtfeedback}</p>}
             </div>
-            <div className='gpecon1'>
+            <div className='gpecon2'>
               <p className='text-muted' style={{fontWeight: "bolder"}}>Your Problem: </p>
             <p className='response'>{ans.problem}</p>
             </div>
-                  
-                  <p style={{color: "black"}}>Story: {ans.problem}</p>
-                  <p style={{color: "black"}} className='imageurl'>Picture: <img src={ans.url} alt="images" className='picurl'/></p>
-                  <p style={{color: "black"}}>Story: {ans.result}</p>
-                  <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
-                 {index===responseIndex && <><p style={{color: "black"}} className='ppdtbtnfeedback'>{ppdtfeedback}</p></>}
               </div>
             ))
         }
