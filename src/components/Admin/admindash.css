@@ -2,10 +2,13 @@
     margin-left: 2rem;
     margin-top: 2rem;
     height: 400px;
-    padding-top: 8rem;
     background-color: rgb(210, 206, 206);
     margin-right: 1rem;
-    padding-left: 4rem;
+}
+
+.welcome .adipic{
+    width: 1470px;
+    height: 400px;
 }
 
 .addlayout{
@@ -23,12 +26,28 @@
     height: 200px;
     border-radius: 10px;
     text-decoration: none;
-    padding-left: 20px;
-    padding-top: 20px;
     font-size: 22px;
     box-shadow: rgb(221, 213, 213) 2px 2px 4px 0px;
     color: black;
     background-color: aqua;
+}
+
+.respond .srtrespond{
+    height: 200px;
+    border-radius: 10px;
+    width: 490px;
+}
+
+.respond .tatrespond{
+    height: 200px;
+    border-radius: 10px;
+    width: 455px;
+}
+
+.respond .ppdtrespond{
+    height: 200px;
+    border-radius: 10px;
+    width: 490px;
 }
 
 .srttable{
@@ -92,11 +111,11 @@
     text-align: left;
 }
 
-.Fragment {
+/* .Fragment {
     background: radial-gradient(79.69% 102.24% at 100% 100.11%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(89.7% 115.09% at 3.43% 2.75%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), #764ABC;
     background-blend-mode: overlay, overlay, normal;
     box-shadow: 0 4px 0 #d5d5d5;
-}
+} */
 
 td,th {
     border: 2px solid blue;

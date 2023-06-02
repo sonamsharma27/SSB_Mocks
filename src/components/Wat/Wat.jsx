@@ -41,7 +41,7 @@ function Wat() {
   getWords()
   setTimeout(() => {
     setTimeUp(true);
-  }, 30000);
+  }, 3000000);
  
 
   

@@ -20,7 +20,7 @@ export default function Oir() {
         <hr />
         <h2 className='inst'>Please read the instructions carefully: </h2>
         <div className="oir_test">
-            <div className="non_verbal">
+            {/* <div className="non_verbal">
                 <h3 className="non_ver_head">OIR Non-Verbal Reasoning (CDS Category) : Mock Test</h3>
                 <h4>1. The question paper has -</h4>
                 <h4>i. Number of Questions - 40</h4>
@@ -31,7 +31,7 @@ export default function Oir() {
                 <h4>4. There is no negative marking.</h4>
                 <h4>5. No marks will be deducted for un-attempted questions.</h4>
                 <h4>6. Answer all the questions.</h4>
-            </div>
+            </div> */}
 
             <div className="verbal">
                 <h3 className="ver_head">OIR Verbal Reasoning (CDS Category) : Mock Test</h3>
@@ -52,10 +52,9 @@ export default function Oir() {
         </form> */}
 
         <div className="btn_grid">
-            <NavLink to="/nonverbal" className="btn_non">
+            {/* <NavLink to="/nonverbal" className="btn_non">
                 Non-Verbal Test
-            </NavLink>
-            
+            </NavLink> */}
             <NavLink to="/verbal" className="btn_ver">
                 Verbal Test
             </NavLink>
