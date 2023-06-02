@@ -48,7 +48,6 @@ export default function ResultTable_ver() {
           {console.log('data',data)}
           {
             showChart && <>
-                <div><LineChart result = {data} /></div>
                 <div><BarGraph result = {data} /></div>
             </>
           }

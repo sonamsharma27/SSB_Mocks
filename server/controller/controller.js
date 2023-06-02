@@ -695,7 +695,8 @@ exports.dropNonQuestion = async function (req, res) {
 exports.getResult = async function (req, res) {
     try {
         const {username} = req.body;
-        const r = await Results.find({"username": username})
+        // const r = await Results.find({"username": username})
+        const r = await Results.find();
         res.json(r)
     } catch (error) {
         res.json({ error })

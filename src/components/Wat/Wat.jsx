@@ -59,7 +59,7 @@ useEffect(()=>{
   if(resp?.data===undefined) return;
   let arr=[];
   for (let i in resp.data[0]){
-    if(i!=='id' &&  resp?.data[0][i]>0.7)
+    if(i!=='id' &&  resp?.data[0][i]>0.8 && arr.length<5)
       arr.push({prediction: i, probability: resp?.data[0][i]});
   }
   setPersonality(arr);
@@ -114,24 +114,18 @@ useEffect(()=>{
   <div className="ques_submit">
     <h1>Your response has been submitted.</h1>
     <button className={personality.length?'d-none':'btn btn-outline-info fw-bolder mt-5'} onClick={handleButtonClick}>Curious to know your personality traits based on your WAT response? Click here</button>
-  { (personality.length) ? <div className={ show ? "container bg-info rounded border border-info p-2":"d-none"}> <h2>Your personality trait based on your WAT responses is :</h2> <br/>
-        <table className=" bg-light p-3 ">
-          <thead >
-            <tr>
-              <th className="border border-dark p-3">Personality Type</th>
-              <th className="border border-dark p-3">Associated Probability</th>
-            </tr>
-          </thead>
-          <tbody>
-      {personality?.map((type,index) => (<tr key={type.prediction}>
-              <td className="border border-dark p-3">{type.prediction}</td>
-              <td className="border border-dark p-3">{type.probability}</td>
-            </tr>))
+  { (personality.length) ? <div className={ show ? "container bg-light rounded border border-1 p-2":"d-none"}> <h2>Your personality traits based on your WAT response are:</h2> <br/>
+        <div className="d-flex justify-content-between">
+      {personality?.map((type,index) => (<h3 className="p-3 m-2 pers" key={type.prediction}>
+              {type.prediction.charAt(0).toUpperCase() + type.prediction.substring(1)}
+            </h3>))
       }
-          </tbody>
-        </table>
+        </div>
       </div>:null}
+     
     <div className="ques_link">
+
+    
       <Link
         className="ques_dash btn btn-warning border border-5 border-primary m-0"
         to="/dashboard"
