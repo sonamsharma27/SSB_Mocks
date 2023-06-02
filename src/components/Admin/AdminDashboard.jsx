@@ -2,13 +2,6 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import adpic from '/ssb/ssb_mocks/src/images/admin.avif'
-import wat from'/ssb/ssb_mocks/src/images/wat.jpg'
-import tat from'/ssb/ssb_mocks/src/images/tat.jpg'
-import srt from'/ssb/ssb_mocks/src/images/srt.jpg'
-import oir from '/ssb/ssb_mocks/src/images/oir.jpeg'
-import pic9 from '/ssb/ssb_mocks/src/images/pic9.jpg'
-import pic10 from '/ssb/ssb_mocks/src/images/pic9.png'
 import './admindash.css'
 
 export default function AdminDashboard() {

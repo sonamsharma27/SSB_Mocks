@@ -52,6 +52,7 @@ export default function PpdtFeedback() {
         {
             feedback.map((ans,index)=>(
               <div className="gpefeedback" key={ans._id}>
+<<<<<<< HEAD
                 <div className='gpecon1'>
               <div>
                 <p className='text-muted' style={{fontWeight: "bolder"}}>Gpe Picture: </p>
@@ -69,6 +70,13 @@ export default function PpdtFeedback() {
             <p className='response'>{ans.problem}</p>
             </div>
                   
+=======
+                  <p style={{color: "black"}}>Story: {ans.problem}</p>
+                  <p style={{color: "black"}} className='imageurl'>Picture: <img src={ans.url} alt="images" className='picurl'/></p>
+                  <p style={{color: "black"}}>Story: {ans.result}</p>
+                  <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
+                 {index===responseIndex && <><p style={{color: "black"}} className='ppdtbtnfeedback'>{ppdtfeedback}</p></>}
+>>>>>>> 0f0cfd62ebc55f4c0abc36bfa3e88fa3c1f890e3
               </div>
             ))
         }

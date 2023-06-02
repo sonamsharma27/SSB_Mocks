@@ -49,14 +49,15 @@ export default function SrtFeedback() {
 <div className="showfeedback">
         {
             feedback.map((ans,index)=>(
-              <div className="ppdtfeedback" key={ans._id}>
+              <div className="ppdtfeedback container border border-1" key={ans._id}>
                   <p style={{color: "black"}}>Story: {ans.result}</p>
                   <p style={{color: "black"}} className='imageurl'>Username: {ans.username}</p>
                   <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
                   
-                 {index===responseIndex && <p style={{color: "black"}} className='ppdtbtnfeedback'>{srtfeedback}</p>}
+                 {index===responseIndex && <><p style={{color: "black"}} className='ppdtbtnfeedback'>{srtfeedback}</p>
+                  <p style={{color: "black"}} className='imageurl'>Alumni email: {ans.alumniname}</p></>}
 
-                 <p style={{color: "black"}} className='imageurl'>Feedback is given by: {ans.alumniname}</p>
+                
               </div>
             ))
         }

@@ -120,9 +120,13 @@ export default function TatFeedback() {
                       
                       <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
                       
-                     {index===responseIndex && <p style={{color: "black"}} className='ppdtbtnfeedback'>{tatfeedback}</p>}
+                     {index===responseIndex && <> <p style={{color: "black"}} className='ppdtbtnfeedback'>{tatfeedback}</p>
     
+<<<<<<< HEAD
                      <p className='fw-bolder text-muted'>Feedback is given by: {ans.alumniname}</p>
+=======
+                     <p style={{color: "black"}} className='imageurl'>Feedback is given by: {ans.alumniname}</p></>}
+>>>>>>> 0f0cfd62ebc55f4c0abc36bfa3e88fa3c1f890e3
                   </div>
                 ))
             }
