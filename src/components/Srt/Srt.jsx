@@ -8,16 +8,18 @@ export default function Srt() {
   // const navigate = useNavigate();
 //   const [showImage, setShowImage] = useState(true);
 //   const [url, setUrl] = useState("");
-  const [questions, setQuestions] = useState([]);
+  const [questions, setQuestions] = useState('');
   const [result, setResult] = useState('');
   const srtSol = useRef("");
+  const srtQues = useRef("");
  
 
   const getData = async () => {
     try {
       const response = await axios.get('http://localhost:5000/api/srt');
-    //   console.log(response);
+      // console.log(response);
       await setQuestions(response.data);
+      srtQues.current = response.data
     } catch (error) {
       console.log(error);
     }
@@ -28,9 +30,11 @@ export default function Srt() {
   console.log('use effect');
     setTimeout(() => {
       console.log('in timeout', result);
+      console.log(questions);
       axios.post('http://localhost:5000/api/srt_resp', {
         username : localStorage.getItem('email'),
-        result: srtSol.current
+        result: srtSol.current,
+        question: srtQues.current
       })
       .then(function (response) {
         console.log(response);
@@ -39,7 +43,7 @@ export default function Srt() {
         console.log(error);
       });
       
-      setQuestions()
+      setQuestions('')
       console.log(result);
     },10000);
   }, []);
@@ -56,7 +60,8 @@ export default function Srt() {
             size = {160}
           >
             {({ remainingTime }) => remainingTime}
-          </CountdownCircleTimer>: <></>}
+          </CountdownCircleTimer>
+          : <></>}
         </div>
     <div className=" mt-2 p-0 d-flex flex-column align-items-center justify-content-center bg-grey ">
         <div>

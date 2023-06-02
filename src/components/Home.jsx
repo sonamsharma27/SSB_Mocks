@@ -10,7 +10,7 @@ function CarouselFadeExample() {
   return (
     <>
   
-    <Carousel fade>
+    <Carousel fade indicators={false}>
       <Carousel.Item>
         <img
           className="d-block w-100"

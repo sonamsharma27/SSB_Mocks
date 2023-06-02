@@ -29,3 +29,7 @@
 .timer {
   font-size: 4rem;
 }
+
+.ppdtmain{
+  display: flex;
+}

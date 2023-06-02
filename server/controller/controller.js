@@ -103,14 +103,15 @@ exports.getQuestions = async function (req, res) {
 exports.insertSrtFeedback = async function(req,res){
     try {
         console.log(req.body);
-        const {username,result,alumniname, feedback} = req.body;
-        if (!username || !result || !alumniname || !feedback) throw new Error('Data Not Provided...!');
+        const {username,result,alumniname, feedback,situation} = req.body;
+        if (!username || !result || !alumniname || !feedback || !situation) throw new Error('Data Not Provided...!');
 
         srtFeedback.create({ 
             username: username,
             result: result,
             alumniname: alumniname,
             feedback: feedback, 
+            situation: situation
             
         }, function (err, data) {
             res.json({ msg: "Srt Feddback Saved Successfully...!" })
@@ -658,12 +659,13 @@ exports.insertNonQuestion = async function (req, res) {
 exports.insertSrtResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const { username,result} = req.body;
-        if (!username || !result) throw new Error('Data Not Provided...!');
+        const { username,result,question} = req.body;
+        if (!username || !result || !question) throw new Error('Data Not Provided...!');
 
         SrtResponse.create({ 
             username: username, 
-            result: result
+            result: result,
+            question: question
            }, function (err, data) {
             res.json({ msg: "Srt Repsonse Saved Successfully...!" })
         })

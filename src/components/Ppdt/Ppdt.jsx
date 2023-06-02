@@ -48,7 +48,7 @@ export default function Ppdt() {
             </div>
           </div>
         ) : (
-          <div>
+          <div className="ppdtmain">
            
              <PpdtQues url={url} showImage={showImage}/>
               {/* <Route path="/ppdt_ques" element={} /> */}

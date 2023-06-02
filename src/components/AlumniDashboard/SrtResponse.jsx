@@ -5,6 +5,7 @@ import './SrtResponse.css'
 
 export default function SrtResponse() {
   const [answers,getAnswers] = useState([])
+  const [feedbackAnswers,getFeedbackAnswers] = useState([])
   const [feedback,setFeedback] = useState('')
 
   const getData = async () => {
@@ -17,6 +18,17 @@ export default function SrtResponse() {
       console.log(error);
     }
   };
+
+  const srtData = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/api/srt_feedback');
+      console.log(response);
+      await getFeedbackAnswers(response.data);
+      // console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const postSrtData = async (username,result) => {
     axios.post('http://localhost:5000/api/srt_feedback', {
@@ -31,6 +43,7 @@ export default function SrtResponse() {
   .catch(function (error) {
     console.log(error);
   });
+  srtData()
   alert('srt Feedback Saved Successfully...!')
   setFeedback('')
   }
@@ -48,6 +61,7 @@ export default function SrtResponse() {
             <p style={{color: "black"}}>Result: {d.result}</p>
             <textarea name="text" id="" value={feedback} onChange={(e) => setFeedback(e.target.value)} cols="120" rows="4" placeholder='Write Your Feedback Here'></textarea>
             <button className='submitres' type='submit' onClick={(e)=>{postSrtData(d.username,d.result)}}>Submit</button>
+
           </div>
         ))
       }

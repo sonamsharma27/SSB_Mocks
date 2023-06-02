@@ -145,6 +145,7 @@ useEffect(()=>{
     </div>
   </div>
 ) : (
+  
   <div className="d-flex flex-column justify-content-center">
     <PpdtTimer/>
     <h1 className="text-center p-2 align-self-center bg-success rounded-2">

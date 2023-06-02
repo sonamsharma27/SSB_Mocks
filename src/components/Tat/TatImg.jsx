@@ -13,7 +13,7 @@ function TatImg({ imgUrls }) {
 
   return (
     <div className="container" >
-      <Carousel variant="dark" controls={false} interval={4000}>
+      <Carousel variant="dark" controls={false} interval={4000} indicators={false}>
       <Carousel.Item>
       {showImg && imgUrls.length>0 ?<div>
           <img src={imgUrls[0]?.url} alt="story1" />

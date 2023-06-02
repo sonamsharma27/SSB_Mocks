@@ -33,7 +33,7 @@ export default function PpdtQues({url}) {
         setShowQuestions(false);
         // console.log(userResp);
        
-      },50000)
+      },50000000)
     })
     useEffect(()=>{
       axios.post('http://localhost:5000/api/ppdt_resp', {
@@ -54,10 +54,15 @@ export default function PpdtQues({url}) {
     },[showQuestions])
    
   return (
-    <div className='ppdt-con'>
+
+    <>
+     <PpdtTimer />
+     <div className="ppdtmain2">
+     <div className='ppdt-con'>
         {showQuestions?
+        
         <div className="question-container">
-        <PpdtTimer/>
+       
       <div className='question_form'>
         <form action="submit" method="post">
           <div className='ques_form'>
@@ -83,6 +88,7 @@ export default function PpdtQues({url}) {
         </form>
     </div>
     </div>
+    
     :
     <div className='ques_submit'>
         <h1>Your response has been submitted.</h1>
@@ -93,6 +99,10 @@ export default function PpdtQues({url}) {
     </div>
         }
     </div>
+     </div>
+    
+    </>
+    
   )
 }
 

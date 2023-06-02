@@ -4,12 +4,14 @@
 }
  */
 
+ .ppdtmain2{
+ }
+
  .ppdt-con{
     background-color: rgb(59, 120, 92);
-    height: 100vh;
+    height: 80vh;
  }
  .question_form{
-    margin-top: 2rem;
  }
 
  .question_form form .ques_form{
@@ -47,10 +49,6 @@
     color: white;
     text-decoration: none;
  }
-
- .cnt{
-   margin-left: 2rem;
-}
 
  .pptime{
    border: 2px solid black;

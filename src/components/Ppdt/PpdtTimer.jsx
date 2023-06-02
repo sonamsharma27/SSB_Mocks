@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import './Timer.css'
 const App = () => {
 
 	// We need ref in this, because we are dealing
