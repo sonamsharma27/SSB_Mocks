@@ -45,9 +45,7 @@ export default function AlumniDash({children}) {
 
     <div className="maincont">
            <div className="sidebardiv">
-                    <div className={`${active === "alumnidash" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("alumnidash")}>
-                        AlumniHome
-                    </div>
+                 
 
                     <div className={`${active === "response" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive(toggle)}>
                     Feedback
@@ -55,12 +53,12 @@ export default function AlumniDash({children}) {
                     
                     </div>
                     <div className='responselist' style={{display: isOpen ? "block" : "none"}}>
-                        <div className={`${active === "srtresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("srtresponse")}>Srt</div>
-                        <div className={`${active === "ppdtresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("ppdtresponse")}>Ppdt</div>
-                        <div className={`${active === "watresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("watresponse")}>Wat</div>
-                        <div className={`${active === "tatresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("tatresponse")}>Tat</div>
+                        <div className={`${active === "srtresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("srtresponse")}>Situation Reaction Test</div>
+                        <div className={`${active === "ppdtresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("ppdtresponse")}>Picture Perception Description Test</div>
+                        <div className={`${active === "watresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("watresponse")}>Word Assocation Test</div>
+                        <div className={`${active === "tatresponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("tatresponse")}>Thematic Apperception Test</div>
 
-                        <div className={`${active === "gperesponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("gperesponse")}>Gpe</div>
+                        <div className={`${active === "gperesponse" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("gperesponse")}>Group Planning Exercise</div>
                     </div>
                     <div className={`${active === "alumnitestmaterial" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("alumnitestmaterial")}>
                     Add Test Material

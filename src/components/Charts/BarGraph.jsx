@@ -39,7 +39,6 @@ export function BarGraph({ result }) {
     labels.push(result.achived + "," + result.createAt.slice(0, 10));
     scores.push(result.points);
   });
-  let nonVerbalScores = scores;
   const data = {
     labels,
     datasets: [
@@ -48,13 +47,7 @@ export function BarGraph({ result }) {
         data: scores,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "Non-verbal",
-        data: nonVerbalScores,
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-      },
+      }
     ],
   };
 

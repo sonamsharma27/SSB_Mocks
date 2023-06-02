@@ -34,11 +34,11 @@ export default function AdminDashboard() {
     </div>
 
     <div className="addlayout">
-        <a href='/adminsrt' className="respond srtrespond ">Srt</a>
-        <a href='/adminwat' className="respond watrespond ">Wat</a>
-        <a href='/admintat' className="respond tatrespond ">Tat</a>
-        <a href='/adminppdt' className="respond ppdtrespond ">Ppdt</a>
-        <a href='/admingpe' className="respond gperespond ">Gpe</a>
+        <a href='/adminsrt'  className=" p-5  respond srtrespond ">Verify Situation Reaction Test (SRT) content</a>
+        <a href='/adminwat'  className=" p-5  respond watrespond ">Verify Word Association Test (WAT) content</a>
+        <a href='/admintat'  className=" p-5  respond tatrespond ">Verify Thematic Apperception Test (TAT) content</a>
+        <a href='/adminppdt' className=" p-5  respond ppdtrespond ">Verify Picture Perception Description Test (PPDT) content</a>
+        <a href='/admingpe'  className=" p-5  respond gperespond ">Verify Group Planning Exercise(GPE) content</a>
     </div>
     </div>
   )

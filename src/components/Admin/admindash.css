@@ -127,3 +127,8 @@ thead tr{
     font-size: 1.5rem;
     color: #27055e;
 }
+
+.respond {
+    font-weight: 600;
+    word-spacing: 2px;
+}
