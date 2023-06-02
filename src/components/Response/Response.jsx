@@ -48,7 +48,7 @@ export default function Response({children}) {
                     </div> */}
 
                     <div className={`${active === "response" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive(toggle)}>
-                    See Your Feedback
+                    See Your Responses
                     </div>
                     <div className='responselist' style={{display: isOpen ? "block" : "none"}}>
                         <div className={`${active === "srtfeedback" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("srtfeedback")}>Srt</div>

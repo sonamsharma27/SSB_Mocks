@@ -47,38 +47,30 @@ export default function WatFeedback() {
   },[])
   return (
     <>
-<div className="showwatfeedback">
+<div className="showwatfeedback ">
         {
             feedback.map((ans,index)=>(
-              <div className="watfeedback" key={ans._id}>
-                  <p style={{color: "black"}}>WordInput: </p>
-                  <div>{`word1: ${ans.word1}`}</div>
-            <div>{`word2: ${ans.word2}`}</div>
-            <div>{`word3: ${ans.word3}`}</div>
-            <div>{`word4: ${ans.word4}`}</div>
-            <div>{`word5: ${ans.word5}`}</div>
-            <div>{`word6: ${ans.word6}`}</div>
-            <div>{`word7: ${ans.word7}`}</div>
-            <div>{`word8: ${ans.word8}`}</div>
-            <div>{`word9: ${ans.word9}`}</div>
-            <div>{`word10: ${ans.word10}`}</div>
-                  <p style={{color: "black"}}>WordAnswer: </p>
-                  <div>{`s1: ${ans.s1}`}</div>
-            <div>{`s2: ${ans.s2}`}</div>
-            <div>{`s3: ${ans.s3}`}</div>
-            <div>{`s4: ${ans.s4}`}</div>
-            <div>{`s5: ${ans.s5}`}</div>
-            <div>{`s6: ${ans.s6}`}</div>
-            <div>{`s7: ${ans.s7}`}</div>
-            <div>{`s8: ${ans.s8}`}</div>
-            <div>{`s9: ${ans.s9}`}</div>
-            <div>{`s10: ${ans.s10}`}</div>
-                  <p style={{color: "black"}} className='imageurl'>Username: {ans.username}</p>
-                  <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
+              <div className="watfeedback container p-3" key={ans._id}>
+                <p className='fw-bolder text-muted'>Your response:</p>
+                <div className="response m-2"> 
+            <li><span >{`${ans.word1}`}: &nbsp;</span><span className='fw-bolder words'>{`${ans.s1}`}</span></li>
+            <li><span >{`${ans.word2}`}: &nbsp;</span><span className='fw-bolder words'>{`${ans.s2}`}</span></li>
+            <li><span >{`${ans.word3}`}: &nbsp;</span><span className='fw-bolder words'>{`${ans.s3}`}</span></li>
+            <li><span >{`${ans.word4}`}: &nbsp;</span><span className='fw-bolder words'>{`${ans.s4}`}</span></li>
+            <li><span >{`${ans.word5}`}: &nbsp;</span><span className='fw-bolder words'>{`${ans.s5}`}</span></li>
+            <li><span >{`${ans.word6}`}: &nbsp;</span><span className='fw-bolder words'>{`${ans.s6}`}</span></li>
+            <li><span >{`${ans.word7}`}: &nbsp;</span><span className='fw-bolder words'>{`${ans.s7}`}</span></li>
+            <li><span >{`${ans.word8}`}: &nbsp;</span><span className='fw-bolder words'>{`${ans.s8}`}</span></li>
+            <li><span >{`${ans.word9}`}: &nbsp;</span><span className='fw-bolder words'>{`${ans.s9}`}</span></li>
+            <li><span >{`${ans.word10}`}:&nbsp;</span><span className='fw-bolder words'>{`${ans.s10}`}</span></li>
+                </div>
+            
+                  <p style={{color: "black"}} className='imageurl my-2'>Username: {ans.username}</p>
+                  <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>See Feedback</button>
                   
                  {index===responseIndex && <p style={{color: "black"}} className='ppdtbtnfeedback'>{watfeedback}</p>}
 
-                 <p style={{color: "black"}} className='imageurl'>Feedback is given by: {ans.alumniname}</p>
+                 {/* <p style={{color: "black"}} className='imageurl'>Feedback is given by: {ans.alumniname}</p> */}
               </div>
             ))
         }

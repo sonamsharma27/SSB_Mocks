@@ -47,32 +47,42 @@ export default function TatFeedback() {
   },[])
   return (
     <>
-    <div className="showtatfeedback">
+    <div className="showtatfeedback ">
             {
                 feedback.map((ans,index)=>(
-                  <div className="tatfeedback" key={ans._id}>
-                      <p style={{color: "black"}}>urlInput: </p>
-                <div className='tatfeedurl'>Picture1: <img src={ans.url1} alt="" /></div>
-            <div className='tatfeedurl'>Picture2: <img src={ans.url2} alt="" /></div>
-            <div className='tatfeedurl'>Picture3: <img src={ans.url3} alt="" /></div>
-            <div className='tatfeedurl'>Picture4: <img src={ans.url4} alt="" /></div>
-            <div className='tatfeedurl'>Picture5: <img src={ans.url5} alt="" /></div>
-            <div className='tatfeedurl'>Picture6: <img src={ans.url6} alt="" /></div>
-            <div className='tatfeedurl'>Picture7: <img src={ans.url7} alt="" /></div>
-            <div className='tatfeedurl'>Picture8: <img src={ans.url8} alt="" /></div>
-            <div className='tatfeedurl'>Picture9: <img src={ans.url9} alt="" /></div>
-            <div className='tatfeedurl'>Picture10: <img src={ans.url10} alt="" /></div>
-                      <p style={{color: "black"}}>urlAnswer: </p>
-                      <div>{`s1: ${ans.s1}`}</div>
-                <div>{`s2: ${ans.s2}`}</div>
-                <div>{`s3: ${ans.s3}`}</div>
-                <div>{`s4: ${ans.s4}`}</div>
-                <div>{`s5: ${ans.s5}`}</div>
-                <div>{`s6: ${ans.s6}`}</div>
-                <div>{`s7: ${ans.s7}`}</div>
-                <div>{`s8: ${ans.s8}`}</div>
-                <div>{`s9: ${ans.s9}`}</div>
-                <div>{`s10: ${ans.s10}`}</div>
+                  <div className="tatfeedback container" key={ans._id}>
+                      <p style={{color: "black"}}>Your response: </p>
+            <div className='row'>
+              <div className="col-5"><img src={ans.url1} alt="" classname="picurl" /></div>
+              <div className="col-7">{ans.s1}</div></div>
+            <div className='row'>
+              <div className="col-5"><img src={ans.url2} alt="" classname="picurl" /></div>
+              <div className="col-7">{ans.s2}</div></div>
+            <div className='row'>
+              <div className="col-5"><img src={ans.url3} alt="" classname="picurl" /></div>
+              <div className="col-7">{ans.s3}</div></div>
+            <div className='row'>
+              <div className="col-5"><img src={ans.url4} alt="" classname="picurl" /></div>
+              <div className="col-7">{ans.s4}</div></div>
+            <div className='row'>
+              <div className="col-5"><img src={ans.url5} alt="" classname="picurl" /></div>
+              <div className="col-7">{ans.s5}</div></div>
+            <div className='row'>
+              <div className="col-5"><img src={ans.url6} alt="" classname="picurl" /></div>
+              <div className="col-7">{ans.s6}</div></div>
+            <div className='row'>
+              <div className="col-5"><img src={ans.url7} alt="" classname="picurl" /></div>
+              <div className="col-7">{ans.s7}</div></div>
+            <div className='row'>
+              <div className="col-5"><img src={ans.url8} alt="" classname="picurl" /></div>
+              <div className="col-7">{ans.s8}</div></div>
+            <div className='row'>
+              <div className="col-5"><img src={ans.url9} alt="" classname="picurl" /></div>
+              <div className="col-7">{ans.s9}</div></div>
+            <div className='row'>
+              <div className="col-5"><img src={ans.url10} alt="" classname="picurl" /></div>
+              <div className="col-7">{ans.s10}</div></div>
+                     
                       <p style={{color: "black"}} className='imageurl'>Username: {ans.username}</p>
                       <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
                       

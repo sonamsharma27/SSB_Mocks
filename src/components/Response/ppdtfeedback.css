@@ -10,7 +10,15 @@
     margin-top: 2rem;
     box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
     padding-left: 2rem;
-    height: 70vh;
+    background-color: rgb(252, 252, 252);
+    /* height: 70vh; */
+}
+
+.response {
+    box-shadow: rgb(188, 183, 183) -2px 4px 30px 0px;
+    padding: 2%;
+    color: rgb(61, 49, 71);
+    border-radius: 10px;
 }
 
 .ppdtfeedback  p{
@@ -39,7 +47,7 @@
     margin-top: 2rem;
     width: 30%;
     border-radius: 6px;
-    background-color: blueviolet;
+    background-color: rgb(72, 62, 82);
     color: white;
 }
 
@@ -53,7 +61,6 @@
     margin-top: 2rem;
     box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
     padding-left: 2rem;
-    height: 120vh;
 }
 .tatfeedback{
     margin-top: 2rem;
@@ -66,4 +73,10 @@
     width: 200px;
     height: 100px;
     margin-top: 10px;
+}
+
+.words{
+    color: rgb(7, 53, 105);
+    font-size: 16px;
+    font-weight: 600;
 }
