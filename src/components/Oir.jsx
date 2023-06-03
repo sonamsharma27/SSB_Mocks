@@ -56,7 +56,7 @@ export default function Oir() {
                 Non-Verbal Test
             </NavLink> */}
             <NavLink to="/verbal" className="btn_ver">
-                Verbal Test
+                Start Test
             </NavLink>
             
         </div>

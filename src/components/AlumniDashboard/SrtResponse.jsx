@@ -53,10 +53,10 @@ export default function SrtResponse() {
   },[])
   return (
     <>
-      <div className='srtmain'>
+      <div className='srtmain container'>
           {
         answers.map((d) => (
-          <div key={d._id} className='srtcontent'>
+          <div key={d._id} className='srtcontent container'>
             <p style={{color: "black"}}>Email: {d.username}</p>
             <p style={{color: "black"}}>Result: {d.result}</p>
             <textarea name="text" id="" value={feedback} onChange={(e) => setFeedback(e.target.value)} cols="120" rows="4" placeholder='Write Your Feedback Here'></textarea>

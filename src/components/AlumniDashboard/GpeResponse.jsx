@@ -54,7 +54,7 @@ export default function GpeResponse() {
               </div>
             <div>
             <p className='text-muted' style={{fontWeight: "bolder"}}>Your Result: </p>
-            <p className='text-muted' style={{fontWeight: "bolder"}}>{d.result}</p>
+            <p className='text-muted' style={{fontWeight: "bolder"}}>{d.solution}</p>
             </div>
             
             <textarea name="text" id="" value={feedback} onChange={(e) => setFeedback(e.target.value)} cols="70" rows="3" placeholder='Write Your Feedback Here'></textarea>
