@@ -8,7 +8,7 @@ function Watword({ words }) {
   const [showWord, setShowWord] = useState(true);
   return (
     <div className="container" >
-      <Carousel variant="dark" controls={false} interval={2000} indicators={false}>
+      <Carousel variant="dark" controls={false} interval={3000} indicators={false}>
       <Carousel.Item>
       {showWord && words.length>0 ?<div>
           {/* <img src={words[0]?.word} alt="Word1" /> */}
