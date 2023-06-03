@@ -50,7 +50,9 @@ export default function PpdtFeedback() {
     <>
         <div className="showfeedback">
         {
-            feedback.map((ans,index)=>(
+            feedback.map((ans,index)=>{
+              if(ans.problem.length===0) return <></>;
+              return (
               <div className="gpefeedback" key={ans._id}>
                 <div className='gpecon1'>
               <div>
@@ -69,7 +71,7 @@ export default function PpdtFeedback() {
             <p className='response'>{ans.problem}</p>
             </div>
               </div>
-            ))
+            )})
         }
         </div>
     </>
