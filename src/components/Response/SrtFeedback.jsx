@@ -50,7 +50,12 @@ export default function SrtFeedback() {
         {
             feedback.map((ans,index)=>(
               <div className="ppdtfeedback container border border-1" key={ans._id}>
-                  <p style={{color: "black"}}>Story: {ans.result}</p>
+                 <div>
+                  <p className='fw-bolder mt-2 mb-0'>Situations</p>
+                  {ans.situation.split("|||").map((item,index)=><li key={index} className={item.length?"":"d-none"}>{item}</li>)}
+                 </div>
+                  <p style={{color: "black"}} className='mb-0 mt-2'>Responses: </p>
+                  <p>{ans.result}</p>
                   <p style={{color: "black"}} className='imageurl'>Username: {ans.username}</p>
                   <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
                   

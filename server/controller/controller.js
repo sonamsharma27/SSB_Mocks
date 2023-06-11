@@ -111,7 +111,7 @@ exports.insertSrtFeedback = async function(req,res){
             result: result,
             alumniname: alumniname,
             feedback: feedback, 
-            situation: situation
+            situation: situation,
             
         }, function (err, data) {
             res.json({ msg: "Srt Feddback Saved Successfully...!" })
@@ -712,12 +712,13 @@ exports.insertNonQuestion = async function (req, res) {
 exports.insertSrtResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const { username,result,question} = req.body;
+        const { username,result,questions} = req.body;
         if (!username || !result ) throw new Error('Data Not Provided...!');
 
         SrtResponse.create({ 
             username: username, 
             result: result,
+            questions: questions
            }, function (err, data) {
             res.json({ msg: "Srt Repsonse Saved Successfully...!" })
         })

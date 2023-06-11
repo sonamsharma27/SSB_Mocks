@@ -4,7 +4,7 @@ const {Schema} = mongoose
 const srtResultModel = new Schema({
     username: {type:String},
     result:  {type:String},
-    question: {type:String},
+    questions: {type:String},
     createAt: {type:Date,default: Date.now}
 })
 

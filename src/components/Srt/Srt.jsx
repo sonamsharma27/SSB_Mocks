@@ -31,10 +31,13 @@ export default function Srt() {
     setTimeout(() => {
       console.log('in timeout', srtQues);
       console.log(questions);
+      let questionss = "";
+      srtQues.current.forEach((item)=>{questionss+=item.questions[0]+ '|||'});
+      console.log(questionss); 
       axios.post('http://localhost:5000/api/srt_resp', {
         username : localStorage.getItem('email'),
         result: srtSol.current,
-        question: srtQues.current
+        questions: questionss
       })
       .then(function (response) {
         console.log(response);
