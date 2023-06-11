@@ -582,7 +582,7 @@ exports.insertTatUrl = async function(req,res){
         const { taturl} = req.body;
         if (!taturl) throw new Error('Data Not Provided...!');
 
-        SrtStore.create({ 
+        TatStore.create({ 
             taturl: taturl
            }, function (err, data) {
             res.json({ msg: "Tat Repsonse Saved Successfully...!" })
@@ -597,7 +597,7 @@ exports.insertPpdtUrl = async function(req,res){
         const { ppdturl} = req.body;
         if (!ppdturl) throw new Error('Data Not Provided...!');
 
-        SrtStore.create({ 
+        PpdtStore.create({ 
             ppdturl: ppdturl
            }, function (err, data) {
             res.json({ msg: "Ppdt Repsonse Saved Successfully...!" })
@@ -612,7 +612,7 @@ exports.insertGpeProblem = async function(req,res){
         const { gpeurl,gpeproblem} = req.body;
         if (!gpeurl || !gpeproblem) throw new Error('Data Not Provided...!');
 
-        SrtStore.create({ 
+        GpeStore.create({ 
             gpeurl: gpeurl,
             gpeproblem: gpeproblem
            }, function (err, data) {
