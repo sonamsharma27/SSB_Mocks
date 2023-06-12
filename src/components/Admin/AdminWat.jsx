@@ -1,5 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import tick from '/ssb/ssb_mocks/src/images/tick1.jpg'
+import cross from '/ssb/ssb_mocks/src/images/cross.jpg'
 import './admindash.css'
 
 export default function AdminWat() {
@@ -52,7 +57,7 @@ useEffect(()=>{
 },[])
   return (
     <>
-    <table className='srttable'>
+    {/* <table className='srttable'>
         <thead className='srtthead'>
         <tr>
             <th>Words</th>
@@ -60,10 +65,10 @@ useEffect(()=>{
             <th>Delete Word</th>
         </tr>
         </thead>
-        <tbody className='srttbody'>
+        <tbody className='wattbody'>
           {
         watresponse.map((d) => (
-            <tr key={d._id} className='srtitems'>
+            <tr key={d._id} className='watitems'>
             <td style={{color: "black"}} className='wordbody'>{d.content}</td>
             <td style={{color: "black"}}><button className='add' onClick={(e) => {submitwat(d.content)}}>Add</button></td>
             <td style={{color: "black"}}><button className='del' onClick={(e) => {deletewat(d.content)}}>Delete</button></td>
@@ -71,7 +76,36 @@ useEffect(()=>{
         ))
       }
       </tbody>
-    </table>
+    </table> */}
+
+<Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Nav.Link href="/admindash">Admin Dashboard</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
+      <div className='wattbody'>
+          {
+            watresponse.map((d) => (
+              <div className="watitems" key={d._id}>
+                  <p style={{fontSize: "28px"}}>{d.content}</p>
+                  
+                  <img src={tick} className='tick' onClick={(e) => {submitwat(d.content)}} alt="add" />
+                  <img src={cross} className='cross' onClick={(e) => {deletewat(d.content)}} alt="add" />
+              </div>
+            ))
+          }
+    </div>
     </>
   )
 }

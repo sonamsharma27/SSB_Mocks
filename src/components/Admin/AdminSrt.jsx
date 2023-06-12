@@ -1,5 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import tick from '/ssb/ssb_mocks/src/images/tick1.jpg'
+import cross from '/ssb/ssb_mocks/src/images/cross.jpg'
 import './admindash.css'
 
 export default function AdminSrt() {
@@ -49,7 +54,7 @@ export default function AdminSrt() {
     },[])
   return (
     <>
-    <table className='srttable'>
+    {/* <table className='srttable'>
         <thead className='srtthead'>
         <tr>
             <th className='col-8'>Situation</th>
@@ -68,7 +73,38 @@ export default function AdminSrt() {
         ))
       }
       </tbody>
-    </table>
+    </table> */}
+
+<Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Nav.Link href="/admindash">Admin Dashboard</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
+    <div className="srtbody" >
+      {
+        srtresponse.map((d) => (
+            <div className="srtitems" key={d._id}>
+                  <p style={{textAlign: "left",marginLeft: "2rem"}}>{d.situation}</p>
+                  <img src={tick} className='tick' onClick={(e) => {submitsrt(d.content)}} alt="add" />
+                  <img src={cross} className='cross' onClick={(e) => {deletesrt(d.content)}} alt="add" />
+            </div>
+        ))
+}
+
+      
+      
+    </div>
     </>
   )
 }

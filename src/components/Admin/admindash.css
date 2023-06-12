@@ -98,17 +98,19 @@
     height: 35px;
 }
 
-.tatpic img{
+.tatpic{
     width: 300px;
     height: 200px;
     padding-top: 10px;
 }
 
 .gpeproblem{
-    width: 700px;
+    width: 100%;
     height: 300px;
     margin-top: 10px;
     text-align: left;
+    border: 2px solid red;
+    display: flex;
 }
 
 /* .Fragment {
@@ -131,4 +133,163 @@ thead tr{
 .respond {
     font-weight: 600;
     word-spacing: 2px;
+}
+
+.wattbody{
+    /* height: 100vh;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+.wattbody .watitems{
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: rgb(171, 166, 171);
+    text-align: center;
+    color: white;
+    margin-left: 10px;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    padding-top: 2rem;
+    margin-right: 10px;
+}
+.srtbody{
+    /* height: 100vh;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+.srtbody .srtitems{
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: rgb(171, 166, 171);
+    text-align: center;
+    color: white;
+    margin-left: 10px;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    padding-top: 2rem;
+    margin-right: 10px;
+}
+.tatbody{
+    /* height: 100vh;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+.tatbody .tatitems{
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: rgb(171, 166, 171);
+    text-align: center;
+    color: white;
+    margin-left: 10px;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    padding-top: 0rem;
+    margin-right: 10px;
+}
+
+.ppdtbody{
+    /* height: 100vh;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+.ppdtbody .ppdtitems{
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: rgb(171, 166, 171);
+    text-align: center;
+    color: white;
+    margin-left: 10px;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    padding-top: 0rem;
+    margin-right: 10px;
+}
+
+.ppdtitems .ppdtpic{
+width: 100px;
+    height: 50px;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.ppdtpic .ppdtimg{
+    width: 100px;
+    height: 70px;
+    transition: transform 0.3s;
+}
+
+.tatimg:hover{
+    transform: scale(3.5);
+}
+.ppdtimg:hover{
+    transform: scale(3.5);
+}
+
+.gpeitems{
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: rgb(231 140 219);
+    text-align: center;
+    color: white;
+    margin-left: 10px;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    padding-top: 2rem;
+    margin-right: 10px;
+}
+
+.tick{
+    width: 60px;
+    height: 40px;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.cross{
+    width: 60px;
+    height: 40px;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.tattick{
+    width: 60px;
+    height: 40px;
+    margin-right: 2rem;
+    margin-top: 4rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.tatcross{
+    width: 60px;
+    height: 40px;
+    margin-top: 4rem;
+    margin-left: 3rem;
+    cursor: pointer;
+    border-radius: 4px;
 }

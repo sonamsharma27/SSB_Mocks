@@ -1,15 +1,20 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import tick from '/ssb/ssb_mocks/src/images/tick1.jpg'
+import cross from '/ssb/ssb_mocks/src/images/cross.jpg'
+import Navbar from 'react-bootstrap/Navbar';
 import './admindash.css'
 
 export default function AdminGpe() {
-  const [srtresponse,getSrtResponse] = useState([])
+  const [gperesponse,getGpeResponse] = useState([])
 
     const getGpe = async () => {
         try {
             const response = await axios.get('http://localhost:5000/api/alumni_gpe_resp');
           //   console.log(response);
-            await getSrtResponse(response.data);
+            await getGpeResponse(response.data);
           } catch (error) {
             console.log(error);
           }
@@ -51,6 +56,21 @@ export default function AdminGpe() {
     },[])
   return (
     <>
+    <Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Nav.Link href="/admindash">Admin Dashboard</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     <table className='gpetable'>
         <thead className='srtthead'>
         <tr>
@@ -62,7 +82,7 @@ export default function AdminGpe() {
         </thead>
         <tbody className='srttbody'>
           {
-        srtresponse.map((d) => (
+        gperesponse.map((d) => (
             <tr key={d._id} className='srtitems'>
             <td style={{color: "black"}} className='tatpic'>
               <img src={d.url} alt="" srcset="" /></td>
@@ -74,6 +94,23 @@ export default function AdminGpe() {
       }
       </tbody>
     </table>
+
+{/* <div className='wattbody'>
+          {
+            gperesponse.map((d) => (
+              <div className="gpeitems" key={d._id}>
+                <img src={d.url} alt="" srcset="" className='tatpic'/>
+                <div className='gpeproblem'>
+                <p>{d.problem}</p>
+                </div>
+                  
+                  
+                  <img src={tick} className='tick' onClick={(e) => {submitgpe(d.content)}} alt="add" />
+                  <img src={cross} className='cross' onClick={(e) => {deletegpe(d.content)}} alt="add" />
+              </div>
+            ))
+          }
+    </div> */}
     </>
   )
 }

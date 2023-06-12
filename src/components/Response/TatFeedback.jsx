@@ -116,10 +116,7 @@ export default function TatFeedback() {
               <div className='tatinp'>:     {ans.s10}</div>
               </div>
             </div>
-                     
-                      
                       <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
-                      
                      {index===responseIndex && <> <p style={{color: "black"}} className='ppdtbtnfeedback'>{tatfeedback}</p>
     
                      <p className='fw-bolder text-muted'>Feedback is given by: {ans.alumniname}</p>
