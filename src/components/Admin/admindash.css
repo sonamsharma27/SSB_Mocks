@@ -225,6 +225,19 @@ thead tr{
     margin-right: 10px;
 }
 
+.tatitems .tatpic{
+    width: 100px;
+    height: 50px;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.tatpic .tatimg{
+    width: 100px;
+    height: 70px;
+    transition: transform 0.3s;
+}
+
 .ppdtitems .ppdtpic{
 width: 100px;
     height: 50px;
