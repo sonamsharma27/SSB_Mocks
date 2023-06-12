@@ -2,8 +2,8 @@ import React,{useState,useEffect} from 'react'
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import tick from '/ssb/ssb_mocks/src/images/tick1.jpg'
-import cross from '/ssb/ssb_mocks/src/images/cross.jpg'
+import tick from '../images/tick1.jpg'
+import cross from '../images/cross.jpg'
 import Navbar from 'react-bootstrap/Navbar';
 import './admindash.css'
 
