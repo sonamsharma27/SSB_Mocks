@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .wat_cont{
     background-color: black;
     padding-top: 2rem;
@@ -45,4 +46,53 @@
 .wat_link:hover{
     color: black;
     background-color: white;
+=======
+.wat_cont{
+    background-color: black;
+    padding-top: 2rem;
+    height: 150vh;
+}
+
+.wat_cont .wat_head{
+    text-align: center;
+    margin-top: 2rem;
+    border: 5px solid green;
+    width: 60%;
+    margin: auto;
+    padding: 6px;
+    color: white;
+}
+
+.wat_cont .wat_list{
+    text-align: center;
+    margin-top: 2rem;
+    border: 5px solid green;
+    width: 60%;
+    margin: auto;
+    padding: 6px;
+    color: white;
+    margin-top: 4rem;
+}
+
+
+.wat_cont .wat_para{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    color: white;
+}
+
+.wat_cont .wat_btn{
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.wat_link{
+    color: white;
+    background-color: rgb(9, 183, 35);
+}
+
+.wat_link:hover{
+    color: black;
+    background-color: white;
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d
 }

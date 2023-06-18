@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .login_admin{
     text-align: center;
     padding-top: 3rem;
@@ -65,4 +66,73 @@
     color: white;
     border-radius: 5px;
     text-align: center;
+=======
+.login_admin{
+    text-align: center;
+    padding-top: 3rem;
+  }
+  
+  .main-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 12rem;
+    padding-right: 12rem;
+    padding-top: 6rem;
+    height: 100vh;
+    background-color: hsl(168deg 86% 36% / 34%);
+  }
+  
+  .main-grid .grid-3{
+    background-image: url(../images/pic7.webp);
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+    box-shadow: 1px 4px 8px 3px #c4b6b6;
+  }
+  
+  .main-grid .image{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 90%);
+    border-top-right-radius: 2%;
+    border-bottom-right-radius: 2%;
+    box-shadow: 6px 4px 8px 1px #c4b6b6;
+  }
+  
+  Form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-right: 4rem;
+  }
+  
+  .image Form .firstform{
+    padding: 0.5rem;
+  }
+  
+  .image Form .btn1{
+    margin-left: 27rem;
+  }
+  
+  Form .placeholder{
+      width: 170%;
+  }
+  
+  .error_msg {
+    width: 370px;
+    padding: 15px;
+    margin: 5px 0;
+    font-size: 14px;
+    background-color: #f34646;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d
   }

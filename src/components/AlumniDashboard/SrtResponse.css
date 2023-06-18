@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .srtmain{
     height: 100vh;
     scroll-behavior: auto;
@@ -9,4 +10,17 @@
     box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
     padding-left: 2rem;
     height: 70vh;
+=======
+.srtmain{
+    height: 100vh;
+    scroll-behavior: auto;
+    overflow-y: scroll;
+}
+
+.srtcontent{
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    height: 70vh;
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d
 }

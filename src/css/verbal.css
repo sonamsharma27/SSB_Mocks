@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .cont{
     display: flex;
     background-color: black;
@@ -54,4 +55,62 @@
     margin-top: 14rem;
     border-radius: 6px;
     cursor: pointer;
+=======
+.cont{
+    display: flex;
+    background-color: black;
+    padding-top: 3rem;
+    color: white;
+    height: 160vh;
+}
+
+
+.cont .oir-head{
+    text-align: center;
+    border: 5px solid green;
+    width: 88%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.cont .questions{
+    margin-top: 6rem;
+    margin-left: 2rem;
+    color: white;
+}
+
+
+.questions .ques_list li{
+    color: white;
+}
+
+.btn_grid1{
+    display: grid;
+    grid-template-columns: 400px 200px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22rem;
+    margin-left: 30rem;
+}
+
+.next{
+    background-color: var(--primary-color);
+    text-align: center;
+    width: 59%;
+    margin-left: -22rem;
+}
+
+.prev{
+    background-color: #faff5a;
+    margin-left: -46rem;
+    width: 24%;
+}
+
+.btn2{
+    
+    text-align: center;
+    margin-top: 14rem;
+    border-radius: 6px;
+    cursor: pointer;
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d
 }

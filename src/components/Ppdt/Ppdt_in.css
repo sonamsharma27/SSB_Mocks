@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .ppdt_cont{
     background-color: black;
     padding-top: 2rem;
@@ -43,4 +44,51 @@
 .ppdt_link:hover{
     color: black;
     background-color: white;
+=======
+.ppdt_cont{
+    background-color: black;
+    padding-top: 2rem;
+    height: 150vh;
+}
+
+.ppdt_cont .ppdt_head{
+    text-align: center;
+    margin-top: 2rem;
+    border: 5px solid green;
+    width: 60%;
+    margin: auto;
+    padding: 6px;
+    color: white;
+}
+.ppdt_cont .ppdt_list{
+    text-align: center;
+    margin-top: 2rem;
+    border: 5px solid green;
+    width: 60%;
+    margin: auto;
+    padding: 6px;
+    color: white;
+    margin-top: 4rem;
+}
+
+.ppdt_cont .ppdt_para{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    color: white;
+}
+
+.ppdt_cont .ppdt_btn{
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.ppdt_link{
+    color: white;
+    background-color: rgb(9, 183, 35);
+}
+
+.ppdt_link:hover{
+    color: black;
+    background-color: white;
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d
 }

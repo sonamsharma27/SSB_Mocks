@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* button {
     position: absolute;
     display: flex;
@@ -17,3 +18,24 @@
     right: 2%;
 }
 
+=======
+/* button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+} */
+
+.prev {
+    left: 20%;
+}
+
+.next {
+   right: 20%;
+}
+
+.total_timer {
+    position: absolute;
+    right: 2%;
+}
+
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d

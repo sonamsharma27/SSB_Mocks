@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .showfeedback{
     height: 100vh;
     scroll-behavior: auto;
@@ -85,4 +86,93 @@
     color: rgb(7, 53, 105);
     font-size: 16px;
     font-weight: 600;
+=======
+.showfeedback{
+    height: 100vh;
+    scroll-behavior: auto;
+    overflow-y: scroll;
+}
+
+.ppdtfeedback{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    background-color: rgb(252, 252, 252);
+    /* height: 70vh; */
+}
+
+.response {
+    box-shadow: rgb(188, 183, 183) -2px 4px 30px 0px;
+    padding: 2%;
+    color: rgb(61, 49, 71);
+    border-radius: 10px;
+}
+
+.ppdtfeedback  p{
+    font-weight: bolder;
+}
+
+.showwatfeedback{
+    height: 100vh;
+    scroll-behavior: auto;
+    overflow-y: scroll;
+}
+
+.showtatfeedback{
+    height: 100vh;
+    scroll-behavior: auto;
+    overflow-y: scroll;
+}
+
+.pictaturl{
+    width: 300px;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.picurl{
+    width: 300px;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.btnfeedback{
+    margin-top: 2rem;
+    width: 30%;
+    border-radius: 6px;
+    background-color: rgb(72, 62, 82);
+    color: white;
+}
+
+.ppdtbtnfeedback{
+    margin-top: 1rem;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.watfeedback{
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+}
+.tatfeedback{
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    height: 200vh;
+}
+
+/* .tatfeedurl img{
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+} */
+
+.words{
+    color: rgb(7, 53, 105);
+    font-size: 16px;
+    font-weight: 600;
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d
 }

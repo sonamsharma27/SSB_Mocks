@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .imageurl .picurl{
     width: 500px;
     height: 200px;
@@ -32,3 +33,39 @@
     margin-right: 2rem;
     margin-top: 2rem;
 }
+=======
+.imageurl .picurl{
+    width: 500px;
+    height: 200px;
+}
+
+.submitres{
+    margin-left: 28rem;
+    margin-top: 2rem;
+    width: 15%;
+    line-height: 30px;
+    outline: none;
+    margin-top: 2rem;
+    border-radius: 6px;
+    background-color: rgb(72, 62, 82);
+    color: white;
+}
+
+.ppdtfeedcontent{
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.ppdtfeedcontent .ppdtcon1{
+    margin-top: 2rem;
+}
+
+.ppdtfeedcontent .ppdtcon2{
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d

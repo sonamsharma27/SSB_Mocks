@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .gpecontent{
     margin-top: 2rem;
     box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
@@ -21,3 +22,28 @@
     margin-left: 1rem;
     margin-top: 2rem;
 }
+=======
+.gpecontent{
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    height: 120vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.gpeurl img{
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.gpecontent .gpecon1{
+    margin-top: 2rem;
+}
+
+.gpecontent .gpecon2{
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d

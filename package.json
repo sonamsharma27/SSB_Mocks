@@ -20,7 +20,11 @@
     "react-redux": "^8.0.5",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.11.1",
+<<<<<<< HEAD
     "react-scripts": "^5.0.1",
+=======
+    "react-scripts": "5.0.1",
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d
     "web-vitals": "^2.1.4"
   },
   "scripts": {

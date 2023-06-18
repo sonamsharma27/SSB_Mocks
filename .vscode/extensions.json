@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 {
     "recommendations": [
         "rangav.vscode-thunder-client"
     ]
+=======
+{
+    "recommendations": [
+        "rangav.vscode-thunder-client"
+    ]
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d
 }

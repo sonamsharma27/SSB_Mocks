@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { postServerData } from '../helper/helper';
 import * as Action from '../redux/result_reducer'
 
@@ -27,4 +28,35 @@ export const usePublishResult = (resultData) => {
             console.log(error)
         }
     })();
+=======
+import { postServerData } from '../helper/helper';
+import * as Action from '../redux/result_reducer'
+
+export const PushAnswer = (result) => async (dispatch) => {
+try {
+    await dispatch(Action.pushResultAction(result))
+} catch (error) {
+    console.log(error);
+}
+}
+
+export const updateResult = (index) => async (dispatch) => {
+    try {
+        dispatch(Action.updateResultAction(index))
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const usePublishResult = (resultData) => {
+    const { result, username } = resultData;
+    (async () => {
+        try {
+            if(result !== [] && !username) throw new Error("Couldn't get Result");
+            await postServerData('http://localhost:5000/api/result', resultData, data => data)
+        } catch (error) {
+            console.log(error)
+        }
+    })();
+>>>>>>> 15ce9880dda5b0197b18653a98ab0045fc99e94d
 }
