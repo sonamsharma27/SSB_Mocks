@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+  background-color: #97bd94;
+  /* height: 100vh;
+  width: 100vh; */
+}
+
+/* .gpe {
+  font-size: 70px;
+  font-weight: 600;
+  color: #fdfdfe;
+  text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+    0px 0px 20px #b393d3;
+} */
+
+
+.situation .sitlist .sititems{
+  height: 60px;
+  border-bottom: none;
+}
+
+.timer {
+  margin-top: 5rem;
+  right: 0%;
+  margin-right: 1rem;
+}
+.grid_div1{
+  height: 350px;
+  margin-right: 19rem;
+}
+
+.problem {
+  overflow-y: auto;
+  height: 500px;
+}
+
+.input1 {
+  margin-top: 24rem;
+  align-self: center;
+}
+
+.textar {
+  margin-left: 11rem;
+}

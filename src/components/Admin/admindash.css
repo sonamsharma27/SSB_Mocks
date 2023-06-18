@@ -1,0 +1,308 @@
+.welcome{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    height: 400px;
+    background-color: rgb(210, 206, 206);
+    margin-right: 1rem;
+}
+
+.welcome .adipic{
+    width: 1470px;
+    height: 400px;
+}
+
+.addlayout{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 70vh;
+    grid-gap: 20px;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+
+}
+
+.addlayout .respond{
+    height: 200px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: rgb(221, 213, 213) 2px 2px 4px 0px;
+    color: black;
+    background-color: aqua;
+}
+
+.respond .srtrespond{
+    height: 200px;
+    border-radius: 10px;
+    width: 490px;
+}
+
+.respond .tatrespond{
+    height: 200px;
+    border-radius: 10px;
+    width: 455px;
+}
+
+.respond .ppdtrespond{
+    height: 200px;
+    border-radius: 10px;
+    width: 490px;
+}
+
+.srttable{
+    height: 100vh;
+    border: 2px solid blue;
+}
+.gpetable{
+    height: 200vh;
+}
+
+.srtthead{
+    background-color: rgb(87, 200, 228);
+    border: 2px solid blue;
+}
+.srttbody{
+    background-color: rgb(171, 200, 221);
+    border: 2px solid blue;
+}
+
+.situationbody{
+    /* border: 2px solid yellow; */
+    text-align: left;
+    width: 412px;
+    padding-left: 102px;
+    border: 2px solid blue;
+}
+.wordbody{
+    /* border: 2px solid yellow; */
+    text-align: center;
+    width: 412px;
+}
+
+.add{
+    width: 35%;
+    background-color: green;
+    color: white;
+    outline: none;
+    border-radius: 4px;
+    height: 35px;
+}
+
+.del{
+    width: 35%;
+    background-color: red;
+    color: white;
+    outline: none;
+    border-radius: 4px;
+    height: 35px;
+}
+
+.tatpic{
+    width: 300px;
+    height: 200px;
+    padding-top: 10px;
+}
+
+.gpeproblem{
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    text-align: left;
+    border: 2px solid red;
+    display: flex;
+}
+
+/* .Fragment {
+    background: radial-gradient(79.69% 102.24% at 100% 100.11%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(89.7% 115.09% at 3.43% 2.75%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), #764ABC;
+    background-blend-mode: overlay, overlay, normal;
+    box-shadow: 0 4px 0 #d5d5d5;
+} */
+
+td,th {
+    border: 2px solid blue;
+    color: rgb(76, 76, 129)
+}
+
+thead tr{
+    height: 5rem;
+    font-size: 1.5rem;
+    color: #27055e;
+}
+
+.respond {
+    font-weight: 600;
+    word-spacing: 2px;
+}
+
+.wattbody{
+    /* height: 100vh;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+.wattbody .watitems{
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: rgb(171, 166, 171);
+    text-align: center;
+    color: white;
+    margin-left: 10px;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    padding-top: 2rem;
+    margin-right: 10px;
+}
+.srtbody{
+    /* height: 100vh;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+.srtbody .srtitems{
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: rgb(171, 166, 171);
+    text-align: center;
+    color: white;
+    margin-left: 10px;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    padding-top: 2rem;
+    margin-right: 10px;
+}
+.tatbody{
+    /* height: 100vh;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+.tatbody .tatitems{
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: rgb(171, 166, 171);
+    text-align: center;
+    color: white;
+    margin-left: 10px;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    padding-top: 0rem;
+    margin-right: 10px;
+}
+
+.ppdtbody{
+    /* height: 100vh;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+.ppdtbody .ppdtitems{
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: rgb(171, 166, 171);
+    text-align: center;
+    color: white;
+    margin-left: 10px;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    padding-top: 0rem;
+    margin-right: 10px;
+}
+
+.tatitems .tatpic{
+    width: 100px;
+    height: 50px;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.tatpic .tatimg{
+    width: 100px;
+    height: 70px;
+    transition: transform 0.3s;
+}
+
+.ppdtitems .ppdtpic{
+width: 100px;
+    height: 50px;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.ppdtpic .ppdtimg{
+    width: 100px;
+    height: 70px;
+    transition: transform 0.3s;
+}
+
+.tatimg:hover{
+    transform: scale(3.5);
+}
+.ppdtimg:hover{
+    transform: scale(3.5);
+}
+
+.gpeitems{
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: rgb(231 140 219);
+    text-align: center;
+    color: white;
+    margin-left: 10px;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    padding-top: 2rem;
+    margin-right: 10px;
+}
+
+.tick{
+    width: 60px;
+    height: 40px;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.cross{
+    width: 60px;
+    height: 40px;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.tattick{
+    width: 60px;
+    height: 40px;
+    margin-right: 2rem;
+    margin-top: 4rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.tatcross{
+    width: 60px;
+    height: 40px;
+    margin-top: 4rem;
+    margin-left: 3rem;
+    cursor: pointer;
+    border-radius: 4px;
+}

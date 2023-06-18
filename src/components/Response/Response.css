@@ -1,0 +1,81 @@
+
+.maincont{
+    display:flex;
+}
+.displaymain{
+    text-decoration: none;
+    line-height: 60px;
+    display: flex;
+    color: #fff;
+    padding: 10px 15px;
+    transition: all 0.5s;
+    width: 234px;
+    background:lightskyblue;
+}
+.sidebardiv{
+    background: #000;
+    color: #fff;
+    height: 100vh;
+    width: 234px;
+}
+
+.displaymaincont{
+    padding: 10px 24px;
+    border-radius: 2px;
+    box-shadow: rgb(221, 213, 213) 2px 2px 4px 0px;
+    background-color: white;
+    cursor: pointer;
+    width: 100%;
+    height: 100vh;
+}
+.displaymaincontent{
+    padding: 10px 24px;
+    border-radius: 2px;
+    box-shadow: rgb(221, 213, 213) 2px 2px 4px 0px;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebardiv .sidelink{
+    text-decoration: none;
+    line-height: 60px;
+    display: flex;
+    color: #fff;
+    padding: 10px 15px;
+    transition: all 0.5s;
+    width: 234px;
+}
+
+.sidebardiv .sidelist{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.sidelink:hover{
+    background:lightskyblue;
+    color: #000;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.responselist{
+    display: none;
+    cursor: pointer;
+}
+
+.responselist .reslist{
+    text-align: left;
+    padding-top: 10px;
+    margin-top: 0px;
+    margin-left: 1rem;
+}
+
+.reslist:hover{
+    background:lightskyblue;
+    color: #000;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+

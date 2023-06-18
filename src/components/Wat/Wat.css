@@ -1,0 +1,21 @@
+table{
+    text-align: center;
+    /* border-radius: 1.5rem; */
+}
+
+thead {
+    border-radius: 1.5rem;
+    background-color: rgb(157, 157, 239);
+}
+
+tbody {
+    background-color: #d2d2ff;
+}
+
+.pers{
+  color: white;
+  box-shadow: 1px 4px 8px 3px #c4b6b6;
+  border: 1px solid rgb(101, 94, 101);
+  background-color: black;
+  border-radius: 10px;
+}

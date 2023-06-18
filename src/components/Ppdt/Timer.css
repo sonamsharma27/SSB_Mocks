@@ -1,0 +1,20 @@
+.AppTimer {
+    display: flex;
+    /* padding: 10px; */
+    height: 20vh;
+    margin-top: 20px;
+    background-color: aliceblue;
+    width: 18%;
+    margin-left: 2rem;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0px 1px 8px 0px #d5d5d5;
+}
+
+.cnt {
+    width: 250px;
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 10px;
+    color: rgb(55, 63, 168);
+}
