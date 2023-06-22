@@ -21,10 +21,10 @@ export default function AdminGpe() {
     }
 
     const submitgpe = async (url,problem) => {
-      deletegpe(url);
+      deletegpe(url,problem);
       axios.post('http://localhost:5000/api/gpe', {
-        url: url,
-        problem: problem
+        gpeurl: url,
+        gpeproblem: problem
               })
               .then(function (response) {
                 console.log(response);
@@ -32,7 +32,7 @@ export default function AdminGpe() {
               .catch(function (error) {
                 console.log(error);
               });
-              alert('Admin Gpe Repsonse Saved Successfully...!')
+              alert(' GPE problem saved successfully...!')
     }
     
     const deletegpe = async (url,problem) => {
@@ -71,7 +71,7 @@ export default function AdminGpe() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    <table className='gpetable'>
+    {/* <table className='gpetable'>
         <thead className='srtthead'>
         <tr>
             <th>Picture</th>
@@ -93,7 +93,7 @@ export default function AdminGpe() {
         ))
       }
       </tbody>
-    </table>
+    </table> */}
 
 {/* <div className='wattbody'>
           {
@@ -111,6 +111,29 @@ export default function AdminGpe() {
             ))
           }
     </div> */}
+    <div className='srtmain'>
+          {
+        gperesponse.map((d) => (
+          <div key={d._id} className='gpecontent'>
+            <div className='gpecon1'>
+              <div>
+                <p className='text-muted' style={{fontWeight: "bolder"}}>Gpe Picture: </p>
+                <p style={{color: "black"}} className='picurl'><img src={d.url} alt="" className='picurl'/></p>
+              </div>
+            <img src={tick} className='tick' onClick={(e) => {submitgpe(d.url,d.problem)}} alt="add" />
+                  <img src={cross} className='cross' onClick={(e) => {deletegpe(d.url,d.problem); alert('GPE problem deleted')}} alt="add" />
+            </div>
+
+            <div className='gpecon2'>
+              <p className='text-muted' style={{fontWeight: "bolder"}}>Your Problem: </p>
+              <p className='response'>Problem: {d.problem}</p>
+            </div>
+            
+            
+          </div>
+        ))
+      }
+      </div>
     </>
   )
 }

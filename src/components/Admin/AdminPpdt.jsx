@@ -22,7 +22,7 @@ export default function AdminPpdt() {
     const submitppdt = async (url) => {
       deleteppdt(url);
       axios.post('http://localhost:5000/api/ppdt', {
-        url: url,
+        ppdturl: url,
               })
               .then(function (response) {
                 console.log(response);
@@ -30,13 +30,13 @@ export default function AdminPpdt() {
               .catch(function (error) {
                 console.log(error);
               });
-              alert('Admin Ppdt Repsonse Saved Successfully...!')
+              alert(' PPDT url saved successfully...!')
     }
     
     const deleteppdt = async (url) => {
       console.log(url);
       axios.post('http://localhost:5000/api/alumni_ppdt_drop',{
-        url: url,
+        ppdturl: url,
       })
       .then(function (response) {
         console.log(response);
@@ -96,8 +96,8 @@ export default function AdminPpdt() {
             <div className='ppdtpic'>
                 <img src={d.url} alt="tat" className='ppdtimg'/>
             </div>
-                <img src={tick} className='tattick' onClick={(e) => {submitppdt(d.content)}} alt="add" />
-                <img src={cross} className='tatcross' onClick={(e) => {deleteppdt(d.content)}} alt="add" />
+                <img src={tick} className='tattick' onClick={(e) => {submitppdt(d.url)}} alt="add" />
+                <img src={cross} className='tatcross' onClick={(e) => {deleteppdt(d.url);alert(' PPDT url deleted successfully...!')}} alt="add" />
           </div>
         ))
       }

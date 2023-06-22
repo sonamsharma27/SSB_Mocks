@@ -26,12 +26,13 @@ export default function AdminSrt() {
                 situation: situation,
               })
               .then(function (response) {
+                alert('Situation added successfully...!')
                 console.log(response);
               })
               .catch(function (error) {
                 console.log(error);
               });
-              alert('Admin Srt Repsonse Saved Successfully...!')
+             
     }
 
     const deletesrt = async (situation) => {
@@ -96,8 +97,8 @@ export default function AdminSrt() {
         srtresponse.map((d) => (
             <div className="srtitems" key={d._id}>
                   <p style={{textAlign: "left",marginLeft: "2rem"}}>{d.situation}</p>
-                  <img src={tick} className='tick' onClick={(e) => {submitsrt(d.content)}} alt="add" />
-                  <img src={cross} className='cross' onClick={(e) => {deletesrt(d.content)}} alt="add" />
+                  <img src={tick} className='tick' onClick={(e) => {submitsrt(d.situation)}} alt="add" />
+                  <img src={cross} className='cross' onClick={(e) => {deletesrt(d.situation); alert('Situation deleted successfully')}} alt="add" />
             </div>
         ))
 }

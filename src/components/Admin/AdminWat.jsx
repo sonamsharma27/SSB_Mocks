@@ -32,7 +32,7 @@ const submitwat = async (word) => {
           .catch(function (error) {
             console.log(error);
           });
-          alert('Admin Wat Repsonse Saved Successfully...!')
+          alert('Word saved successfully...!')
 }
 
 const deletewat = async (word) => {
@@ -101,7 +101,7 @@ useEffect(()=>{
                   <p style={{fontSize: "28px"}}>{d.content}</p>
                   
                   <img src={tick} className='tick' onClick={(e) => {submitwat(d.content)}} alt="add" />
-                  <img src={cross} className='cross' onClick={(e) => {deletewat(d.content)}} alt="add" />
+                  <img src={cross} className='cross' onClick={(e) => {deletewat(d.content);alert('Word deleted successfully...!')}} alt="add" />
               </div>
             ))
           }

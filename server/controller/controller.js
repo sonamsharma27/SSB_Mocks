@@ -554,7 +554,7 @@ exports.insertWatWords = async function(req,res){
         WatStore.create({ 
             word: word
            }, function (err, data) {
-            res.json({ msg: "Wat Repsonse Saved Successfully...!" })
+            res.json({ msg: "Word added successfully...!" })
         })
     } catch (error) {
         res.json({ error })
@@ -562,14 +562,13 @@ exports.insertWatWords = async function(req,res){
 }
 exports.insertSrtSituation = async function(req,res){
     try {
-        console.log(req.body);
         const { situation} = req.body;
         if (!situation) throw new Error('Data Not Provided...!');
 
         SrtStore.create({ 
             situation: situation
            }, function (err, data) {
-            res.json({ msg: "Srt Repsonse Saved Successfully...!" })
+            res.json({ msg: "Situation added successfully...!" })
         })
     } catch (error) {
         res.json({ error })
@@ -583,7 +582,7 @@ exports.insertTatUrl = async function(req,res){
         if (!taturl) throw new Error('Data Not Provided...!');
 
         TatStore.create({ 
-            taturl: taturl
+            url: taturl
            }, function (err, data) {
             res.json({ msg: "Tat Repsonse Saved Successfully...!" })
         })
@@ -598,7 +597,7 @@ exports.insertPpdtUrl = async function(req,res){
         if (!ppdturl) throw new Error('Data Not Provided...!');
 
         PpdtStore.create({ 
-            ppdturl: ppdturl
+            url: ppdturl
            }, function (err, data) {
             res.json({ msg: "Ppdt Repsonse Saved Successfully...!" })
         })
@@ -613,8 +612,8 @@ exports.insertGpeProblem = async function(req,res){
         if (!gpeurl || !gpeproblem) throw new Error('Data Not Provided...!');
 
         GpeStore.create({ 
-            gpeurl: gpeurl,
-            gpeproblem: gpeproblem
+            url: gpeurl,
+            problem: gpeproblem
            }, function (err, data) {
             res.json({ msg: "Gpe Repsonse Saved Successfully...!" })
         })
@@ -628,7 +627,7 @@ exports.dropWatWords = async function (req, res) {
          const {word} = req.body;
          console.log("reqbody",word);
         await AlumniWatResponse.deleteOne({"content": word});
-        res.json({ msg: "word deleted successfully...." })
+        res.json({ msg: "Word deleted successfully...." })
     } catch (error) {
         res.json({ error })
     }
@@ -638,8 +637,8 @@ exports.dropPpdtUrl = async function(req,res){
     try {
         const {ppdturl} = req.body;
         console.log("reqbody",ppdturl);
-       await AlumniPpdtResponse.deleteOne({"content": ppdturl});
-       res.json({ msg: "url deleted successfully...." })
+       await AlumniPpdtResponse.deleteOne({"url": ppdturl});
+       res.json({ msg: "Url deleted successfully...." })
    } catch (error) {
        res.json({ error })
    }
@@ -649,8 +648,8 @@ exports.dropSrtSituation = async function (req, res) {
     try {
          const {situation} = req.body;
          console.log("reqbody",situation);
-        await AlumniSrtResponse.deleteOne({"content": situation});
-        res.json({ msg: "situation deleted successfully...." })
+        await AlumniSrtResponse.deleteMany({"situation": situation});
+        res.json({ msg: "Situation deleted successfully...." })
     } catch (error) {
         res.json({ error })
     }
@@ -660,8 +659,8 @@ exports.dropGpeProblem = async function (req, res) {
          const {url,problem} = req.body;
          console.log("reqbody",url);
          console.log("reqbody2",problem);
-        await AlumniGpeResponse.deleteMany();
-        res.json({ msg: "situation deleted successfully...." })
+        await AlumniGpeResponse.deleteMany({"url":url, "problem":problem});
+        res.json({ msg: "Situation deleted successfully...." })
     } catch (error) {
         res.json({ error })
     }
@@ -671,8 +670,8 @@ exports.dropTatUrl = async function (req, res) {
     try {
          const {taturl} = req.body;
          console.log("reqbody",taturl);
-        await AlumniSrtResponse.deleteOne({"content": taturl});
-        res.json({ msg: "url deleted successfully...." })
+        await AlumniTatResponse.deleteMany({"url": taturl});
+        res.json({ msg: "Url deleted successfully...." })
     } catch (error) {
         res.json({ error })
     }
@@ -747,8 +746,6 @@ exports.dropNonQuestion = async function (req, res) {
 
 exports.getResult = async function (req, res) {
     try {
-        const {username} = req.body;
-        // const r = await Results.find({"username": username})
         const r = await Results.find();
         res.json(r)
     } catch (error) {
