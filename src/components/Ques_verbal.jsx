@@ -33,7 +33,7 @@ export default function Ques_verbal({onChecked}) {
         <ul key={questions?.id} className='ques_list'>
             {
                 questions?.options.map((q,i)=>(
-                    <li key={i}>
+                    <li key={i} className='quiz_stage_list'>
                         <input type="radio" 
                         value={false}
                         name="options"

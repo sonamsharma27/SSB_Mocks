@@ -18,6 +18,8 @@ function Tat() {
     s8: "",
     s9: "",
   });
+
+  
   const [timeup, setTimeUp] = useState(false);
   const [imgUrls, setImgUrls] = useState([]);
   const getImgUrls = () => {
@@ -83,7 +85,7 @@ function Tat() {
           </div>
         </div>
       ) : (
-        <div className="d-flex flex-column justify-content-center">
+        <div className="d-flex flex-column justify-content-center watback">
            <PpdtTimer />
           <h1 className="text-center p-2 align-self-center bg-success rounded-2">
             Thematic Apperception Test

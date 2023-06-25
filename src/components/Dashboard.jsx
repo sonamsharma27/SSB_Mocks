@@ -26,14 +26,15 @@ function NavScrollExample() {
             <Nav.Link href="/response">Response Section</Nav.Link>
             {/* <Nav.Link href="/dashboard">About Us</Nav.Link> */}
             <Nav.Link href="/add_test_material">Add test material</Nav.Link>
+            <Nav.Link href="/references">References</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
     <img src={pic9} alt="Army" className='dashimage'/>
     <div className="ssb-section">
-        <h1 className='ssb_inter'>SSB Interview</h1>
-        <h2 style={{marginTop: "2rem"}}>Stage 1</h2>
+        <h1 className='ssb_inter' style={{color: "white"}}>SSB Interview</h1>
+        <h2 style={{marginTop: "2rem",color: "white"}}>Stage 1</h2>
         <div className="ssb-stage1">
         <div className="ssb-stage-grid1">
               <Nav.Link href='/oir'>
@@ -48,7 +49,7 @@ function NavScrollExample() {
          </div>
         </div>
         
-        <h2 style={{marginTop: "2rem"}}>Stage 2</h2>
+        <h2 style={{marginTop: "2rem",color: "white"}}>Stage 2</h2>
         <div className="ssb-grid">
             <div className="ssb-grid1">
               <Nav.Link href='/watintro'>

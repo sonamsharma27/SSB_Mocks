@@ -43,17 +43,17 @@ export default function Response({children}) {
     </Navbar>
 
     <div className="maincont">
-           <div className="sidebardiv">
+           <div className="sidebardivs">
                     {/* <div className={`${active === "response" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("response")}>
                         See Ypur Feedback
                     </div> */}
 
                     <p className='responselist' style={{display: isOpen ? "block" : "none", fontWeight: "600"}}>
-                        <div className={`${active === "srtfeedback" ? "displaymain" : "sidelink"} text-center`} onClick={(e) => setActive("srtfeedback")}>Situation Reaction Test</div>
-                        <div className={`${active === "ppdtfeedback" ? "displaymain" : "sidelink"} fs-sm`} onClick={(e) => setActive("ppdtfeedback")}>Picture Perception Description Test</div>
-                        <div className={`${active === "watfeedback" ? "displaymain" : "sidelink"} `} onClick={(e) => setActive("watfeedback")}>Word Assocation Test</div>
-                        <div className={`${active === "tatfeedback" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("tatfeedback")}>Thematic Apperception Test</div>
-                        <div className={`${active === "gpefeedback" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("gpefeedback")}>Group Planning Exercise</div>
+                        <div className={`${active === "srtfeedback" ? "displaymains" : "sidelinks"} text-center`} onClick={(e) => setActive("srtfeedback")}>Situation Reaction Test</div>
+                        <div className={`${active === "ppdtfeedback" ? "displaymains" : "sidelinks"} fs-sm`} onClick={(e) => setActive("ppdtfeedback")}>Picture Perception Description Test</div>
+                        <div className={`${active === "watfeedback" ? "displaymains" : "sidelinks"} `} onClick={(e) => setActive("watfeedback")}>Word Assocation Test</div>
+                        <div className={`${active === "tatfeedback" ? "displaymains" : "sidelinks"}`} onClick={(e) => setActive("tatfeedback")}>Thematic Apperception Test</div>
+                        <div className={`${active === "gpefeedback" ? "displaymains" : "sidelinks"}`} onClick={(e) => setActive("gpefeedback")}>Group Planning Exercise</div>
                     </p>
                     {/* <div className={`${active === "alumnitestmaterial" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("alumnitestmaterial")}>
                     Add Test Material
@@ -63,31 +63,31 @@ export default function Response({children}) {
               : "d-none"}`}>
                     Response
            </div> */}
-           <div className={`${active === "response" ? "displaymaincontent"
+           <div className={`${active === "response" ? "displaymaincontents"
               : "d-none"}`}>
                     Response
            </div>
 
-           <div className={`${active === "srtfeedback" ? "displaymaincontent"
+           <div className={`${active === "srtfeedback" ? "displaymaincontents"
               : "d-none"}`}>
                     <SrtFeedback />
            </div>
 
-           <div className={`${active === "ppdtfeedback" ? "displaymaincontent"
+           <div className={`${active === "ppdtfeedback" ? "displaymaincontents"
               : "d-none"}`}>
                     <PpdtFeedback />
            </div>
 
-           <div className={`${active === "watfeedback" ? "displaymaincontent"
+           <div className={`${active === "watfeedback" ? "displaymaincontents"
               : "d-none"}`}>
                     <WatFeedback />
            </div>
 
-           <div className={`${active === "tatfeedback" ? "displaymaincontent"
+           <div className={`${active === "tatfeedback" ? "displaymaincontents"
               : "d-none"}`}>
                     <TatFeedback />
            </div>
-           <div className={`${active === "gpefeedback" ? "displaymaincontent"
+           <div className={`${active === "gpefeedback" ? "displaymaincontents"
               : "d-none"}`}>
                     <GpeFeedback />
            </div>

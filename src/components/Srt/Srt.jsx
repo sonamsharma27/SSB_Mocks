@@ -53,12 +53,12 @@ export default function Srt() {
 
   return (
     <>
-    <div className="timer position-absolute">
+    <div className="timer position-absolute" style={{color: "white"}}>
          { questions?
          <CountdownCircleTimer
             isPlaying
             duration={400}
-            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+            colors={["#fff", "#fff", "#fff", "#fff"]}
             colorsTime={[23, 15, 8, 0]}
             size = {160}
           >
@@ -66,11 +66,11 @@ export default function Srt() {
           </CountdownCircleTimer>
           : <></>}
         </div>
-    <div className=" mt-2 p-0 d-flex flex-column align-items-center justify-content-center bg-grey ">
+    <div className=" mt-2 p-0 d-flex flex-column align-items-center justify-content-center bg-grey watback">
         <div>
             <div className=" m-0 p-0 d-flex">
           <div className="me-auto">
-            <h1 className="Gpe text-center">Situation Reaction Test(SRT)</h1>
+            <h1 className="Gpe text-center" style={{color: "white"}}>Situation Reaction Test(SRT)</h1>
           </div>
             </div>
         </div>
@@ -82,13 +82,13 @@ export default function Srt() {
           {
         questions.map((d) => (
           <ul key={d._id} className="sitlist">
-            <li style={{color: "black"}} className="sititems">{d.questions}</li>
+            <li style={{color: "white"}} className="sititems">{d.questions}</li>
           </ul>
         ))
       }
       </div>
-      <div className="input1"> 
-          <p className="text-center">Write your solution here.</p>
+      <div className="input1 watback"> 
+          <p className="text-center" style={{color: "white"}}>Write your solution here.</p>
             <textarea className="textar" name="srt_resp" value={result} onChange={(e)=>{ srtSol.current=e.target.value; setResult(e.target.value)}} cols="100" rows="10">
             
             </textarea>

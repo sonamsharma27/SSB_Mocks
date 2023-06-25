@@ -5,7 +5,7 @@
 }
 
 
-/* .container ul{
+/* .container .ques_list{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -38,7 +38,7 @@
 
 
 
-ul li{
+.ques_list .quiz_stage_list{
   color: #de1010;
   display: block;
   position: relative;
@@ -48,12 +48,12 @@ ul li{
 	border-bottom: 1px solid #333;
 }
 
-ul li input[type=radio]{
+.ques_list .quiz_stage_list input[type=radio]{
   position: absolute;
   visibility: hidden;
 }
 
-ul li label{
+.ques_list .quiz_stage_list label{
   display: block;
   position: relative;
   font-weight: 300;
@@ -66,12 +66,12 @@ ul li label{
   -webkit-transition: all 0.25s linear;
 }
 
-ul li:hover label{
+.ques_list .quiz_stage_list:hover label{
 	color: #FFFFFF;
 }
 
 
-ul li .check{
+.ques_list .quiz_stage_list .check{
   display: block;
   position: absolute;
   border: 5px solid #AAAAAA;
@@ -85,11 +85,11 @@ ul li .check{
 	-webkit-transition: border .25s linear;
 }
 
-ul li:hover .checked {
+.ques_list .quiz_stage_list:hover .checked {
   border: 5px solid #FFFFFF;
 }
 
-ul li .check::before {
+.ques_list .quiz_stage_list .check::before {
   display: block;
   position: absolute;
 	content: '';

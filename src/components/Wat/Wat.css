@@ -3,6 +3,10 @@ table{
     /* border-radius: 1.5rem; */
 }
 
+.watback{
+    background: linear-gradient(45deg,#0d0229,#02392d);
+}
+
 thead {
     border-radius: 1.5rem;
     background-color: rgb(157, 157, 239);

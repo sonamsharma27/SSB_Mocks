@@ -1,22 +1,21 @@
-
 .maincont{
     display:flex;
 }
-.displaymain{
+.displaymains{
     text-decoration: none;
     line-height: 60px;
     display: flex;
     color: #fff;
     padding: 10px 15px;
     transition: all 0.5s;
-    width: 234px;
+    width: 334px;
     background:lightskyblue;
 }
-.sidebardiv{
+.sidebardivs{
     background: #000;
     color: #fff;
     height: 100vh;
-    width: 234px;
+    width: 334px;
 }
 
 .displaymaincont{
@@ -25,10 +24,10 @@
     box-shadow: rgb(221, 213, 213) 2px 2px 4px 0px;
     background-color: white;
     cursor: pointer;
-    width: 100%;
+    width: 334px;
     height: 100vh;
 }
-.displaymaincontent{
+.displaymaincontents{
     padding: 10px 24px;
     border-radius: 2px;
     box-shadow: rgb(221, 213, 213) 2px 2px 4px 0px;
@@ -37,23 +36,23 @@
     height: 100vh;
 }
 
-.sidebardiv .sidelink{
+.sidebardivs .sidelinks{
     text-decoration: none;
     line-height: 60px;
     display: flex;
     color: #fff;
     padding: 10px 15px;
     transition: all 0.5s;
-    width: 234px;
+    width: 334px;
 }
 
-.sidebardiv .sidelist{
+.sidebardivs .sidelist{
     text-align: center;
     color: white;
     font-size: 20px;
 }
 
-.sidelink:hover{
+.sidelinks:hover{
     background:lightskyblue;
     color: #000;
     transition: all 0.5s;
@@ -78,4 +77,3 @@
     transition: all 0.5s;
     cursor: pointer;
 }
-

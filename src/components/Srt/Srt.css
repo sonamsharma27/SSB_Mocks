@@ -17,6 +17,7 @@
 .situation .sitlist .sititems{
   height: 60px;
   border-bottom: none;
+  color: white;
 }
 
 .timer {
@@ -35,10 +36,11 @@
 }
 
 .input1 {
-  margin-top: 24rem;
-  align-self: center;
+    align-self: center;
+    width: 137.5%;
+    margin-left: -6rem;
 }
 
 .textar {
-  margin-left: 11rem;
+  margin-left: 22rem;
 }

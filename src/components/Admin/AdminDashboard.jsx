@@ -2,6 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import army from '../images/army1.jpeg'
 import './admindash.css'
 
 export default function AdminDashboard() {
@@ -23,7 +24,7 @@ export default function AdminDashboard() {
     </Navbar>
 
     <div className="welcome">
-        <img src="https://4.bp.blogspot.com/-zDcGYI679nA/VVWOPU8yn4I/AAAAAAAAIkk/NoMst4UYYFI/s1600/New%2BPay%2BScales%2Bfor%2Bnavy%2Bair%2Bforce%2Band%2Barmy.png" alt="images" className='adipic'/>
+        <img src={army} alt="images" className='adipic'/>
     </div>
 
     <div className="addlayout">

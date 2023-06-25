@@ -6,14 +6,14 @@ import  Carousel  from "react-bootstrap/Carousel";
 import { useNavigate } from "react-router-dom";
 function TatImg({ imgUrls }) {
   const [showImg, setShowImg] = useState(true);
-  setInterval(() => {
-    setShowImg(!showImg);
-  }, 5000);
+  // setInterval(() => {
+  //   setShowImg(!showImg);
+  // }, 5000);
 
 
   return (
     <div className="container" >
-      <Carousel variant="dark" controls={false} interval={4000} indicators={false}>
+      <Carousel variant="dark" controls={false} interval={3000} indicators={false}>
       <Carousel.Item>
       {showImg && imgUrls.length>0 ?<div>
           <img src={imgUrls[0]?.url} alt="story1" />

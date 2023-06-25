@@ -1,14 +1,21 @@
 .welcome{
     margin-left: 2rem;
     margin-top: 2rem;
-    height: 400px;
+    /* width: 970px;
+    height: 100vh; */
     background-color: rgb(210, 206, 206);
+    /* background-image: url(https://4.bp.blogspot.com/-zDcGYI679nA/VVWOPU8yn4I/AAAAAAAAIkk/NoMst4UYYFI/s1600/New%2BPay%2BScales%2Bfor%2Bnavy%2Bair%2Bforce%2Band%2Barmy.png);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
     margin-right: 1rem;
+    border-radius: 16px;
 }
 
 .welcome .adipic{
     width: 1470px;
-    height: 400px;
+    height: 100vh;
+    border-radius: 16px;
 }
 
 .addlayout{
@@ -27,9 +34,9 @@
     border-radius: 10px;
     text-decoration: none;
     font-size: 22px;
-    box-shadow: rgb(221, 213, 213) 2px 2px 4px 0px;
-    color: black;
-    background-color: aqua;
+    box-shadow: rgb(221, 213, 213) 2px 1px 12px 3px;
+    color: white;
+    background-color: rgb(171, 166, 171);
 }
 
 .respond .srtrespond{

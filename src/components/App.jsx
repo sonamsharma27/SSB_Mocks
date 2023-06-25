@@ -50,6 +50,7 @@ import SrtFeedback from './Response/SrtFeedback';
 import WatFeedback from './Response/WatFeedback';
 import TatFeedback from './Response/TatFeedback';
 import GpeFeedback from './Response/GpeFeedback';
+import References from './References/References';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -103,6 +104,7 @@ function App() {
       <Route path='/watfeedback' element={<WatFeedback/>}/>
       <Route path='/tatfeedback' element={<TatFeedback/>}/>
       <Route path='/gpefeedback' element={<GpeFeedback/>}/>
+      <Route path='/references' element={<References/>}/>
       </Routes>
       
     </BrowserRouter>
