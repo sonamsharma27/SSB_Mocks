@@ -1,0 +1,65 @@
+/* .timer-con {
+    display: flex;
+    align-self: flex-end;
+}
+ */
+
+ .ppdtmain2{
+ }
+
+ .ppdt-con{
+    background-color: rgb(59, 120, 92);
+    height: 80vh;
+    width: 100%;
+ }
+ .question_form{
+   margin-left: 2rem;
+   padding-bottom: 6rem;
+ }
+
+ .question_form form .ques_form{
+    display: grid;
+    grid-template-columns: 400px 400px;
+ }
+
+ .ques_form .ques_label{
+    margin-top: 20px;
+    color: white;
+ }
+ .ques_form .ques_input{
+    margin-top: 20px;
+ }
+
+ .ques_submit{
+    text-align: center;
+    padding-top: 2rem;
+ }
+
+ .ques_submit .ques_link{
+    margin-top: 2rem;
+ }
+
+ .ques_dash{
+    color: black;
+    text-decoration: none;
+    padding: 6px;
+    background-color: aqua;
+    margin-top: 2rem;
+ }
+ 
+ .ques_dash:hover{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+ }
+
+ .pptime{
+   width: 125px;
+   align-items: center;
+   text-align: center;
+   margin-left: 10px;
+}
+
+.ppdttime{
+   margin-left: 20rem;
+}

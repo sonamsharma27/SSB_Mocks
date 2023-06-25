@@ -1,0 +1,20 @@
+.refdiv{
+    background: linear-gradient(45deg,#0d0229,#02392d);
+    color: white;
+}
+
+.ref{
+    margin-top: 1rem;
+    box-shadow: 1px 3px 13px 6px #a89999;
+    height: 300px;
+    margin-right: 2rem;
+    border-radius: 8px;
+}
+
+.ref .reful{
+    padding-top: 1rem;
+}
+
+.reful .reflist{
+    padding-top: 10px;
+}

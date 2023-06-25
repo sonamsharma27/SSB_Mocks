@@ -1,0 +1,46 @@
+.tat_cont{
+    background-color: black;
+    padding-top: 2rem;
+    height: 150vh;
+}
+
+.tat_cont .tat_head{
+    text-align: center;
+    margin-top: 2rem;
+    border: 5px solid green;
+    width: 60%;
+    margin: auto;
+    padding: 6px;
+    color: white;
+}
+.tat_cont .tat_list{
+    text-align: center;
+    margin-top: 2rem;
+    border: 5px solid green;
+    width: 60%;
+    margin: auto;
+    padding: 6px;
+    color: white;
+    margin-top: 4rem;
+}
+
+.tat_cont .tat_para{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    color: white;
+}
+
+.tat_cont .tat_btn{
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.tat_link{
+    color: white;
+    background-color: rgb(9, 183, 35);
+}
+
+.tat_link:hover{
+    color: black;
+    background-color: white;
+}

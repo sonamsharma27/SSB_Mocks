@@ -1,0 +1,36 @@
+.gpefeedback{
+    padding-left: 2rem;
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    height: 120vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.gpeurl img{
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.gpecontent .gpecon1{
+    margin-top: 2rem;
+}
+
+.gpecontent .gpecon2{
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+
+.gpebtnfeed{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 50%;
+    line-height: 30px;
+    outline: none;
+    margin-top: 2rem;
+    border-radius: 6px;
+    background-color: rgb(72, 62, 82);
+    color: white;
+}

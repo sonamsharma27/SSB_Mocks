@@ -1,0 +1,22 @@
+/* button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+} */
+
+.prev {
+    left: 20%;
+}
+
+.next {
+   right: 20%;
+}
+
+.total_timer {
+    position: absolute;
+    right: 2%;
+}
+
+.wathead{
+    color: white;
+}
