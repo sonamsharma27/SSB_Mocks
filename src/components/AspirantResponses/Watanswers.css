@@ -1,0 +1,26 @@
+.watcontents{
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    height: 60vh;
+}
+
+.watfeedcont{
+    box-shadow: rgb(188, 183, 183) -2px 4px 30px 0px;
+    padding: 2%;
+    color: rgb(61, 49, 71);
+    border-radius: 10px;
+    width: 75%;
+}
+
+.submitrewats{
+    margin-left: 46rem;
+    margin-top: 2rem;
+    width: 15%;
+    line-height: 30px;
+    outline: none;
+    margin-top: 2rem;
+    border-radius: 6px;
+    background-color: rgb(72, 62, 82);
+    color: white;
+}

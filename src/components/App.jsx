@@ -51,6 +51,12 @@ import WatFeedback from './Response/WatFeedback';
 import TatFeedback from './Response/TatFeedback';
 import GpeFeedback from './Response/GpeFeedback';
 import References from './References/References';
+import AspirantResponse from './AspirantResponses/AspirantResponse';
+import SrtAnswers from './AspirantResponses/SrtAnswers';
+import WatAnswers from './AspirantResponses/WatAnswers';
+import TatAnswers from './AspirantResponses/TatAnswers';
+import GpeAnswers from './AspirantResponses/GpeAnswers';
+import PpdtAnswers from './AspirantResponses/PpdtAnswers';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -105,6 +111,12 @@ function App() {
       <Route path='/tatfeedback' element={<TatFeedback/>}/>
       <Route path='/gpefeedback' element={<GpeFeedback/>}/>
       <Route path='/references' element={<References/>}/>
+      <Route path='/aspirantresponse' element={<AspirantResponse/>}/>
+      <Route path='/srtanswer' element={<SrtAnswers/>}/>
+      <Route path='/watanswer' element={<WatAnswers/>}/>
+      <Route path='/tatanswer' element={<TatAnswers/>}/>
+      <Route path='/gpeanswer' element={<GpeAnswers/>}/>
+      <Route path='/ppdtanswer' element={<PpdtAnswers/>}/>
       </Routes>
       
     </BrowserRouter>

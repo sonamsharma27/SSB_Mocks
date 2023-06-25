@@ -1,0 +1,23 @@
+.gpecontents{
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.gpeurl img{
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.gpecontgpecontentsent .gpecon1{
+    margin-top: 2rem;
+}
+
+.gpecontents .gpecon2{
+    margin-left: 1rem;
+    margin-top: 2rem;
+}

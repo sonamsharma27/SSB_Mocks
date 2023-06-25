@@ -55,28 +55,6 @@ useEffect(()=>{
 },[])
   return (
     <>
-    {/* <table className='srttable'>
-        <thead className='srtthead'>
-        <tr>
-            <th>Picture</th>
-            <th>Add Picture</th>
-            <th>Delete Picture</th>
-        </tr>
-        </thead>
-        <tbody className='srttbody'>
-          {
-        tatresponse.map((d) => (
-            <tr key={d._id} className='srtitems'>
-            <td style={{color: "black"}} className='tatpic'>
-              <img src={d.url} alt=""/></td>
-            <td style={{color: "black"}}><button className='add' onClick={(e)=>{submittat(d.url)}}>Add</button></td>
-            <td style={{color: "black"}}><button className='del' onClick={(e)=>{deletetat(d.url)}}>Delete</button></td>
-            </tr>
-        ))
-      }
-      </tbody>
-    </table> */}
-
 <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">SSB Mocks</Navbar.Brand>
