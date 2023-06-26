@@ -9,6 +9,8 @@ const PpdtResponse = new Schema({
     total_characters:  {type:Number},
     characters:  {type:String},
     story:  {type:String},
+    rating: {type:Number, default: 0},
+    users: {type:Array, default: []},
     createAt: {type:Date,default: Date.now}
 })
 

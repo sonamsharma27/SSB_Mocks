@@ -1,10 +1,12 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
+import { Rating } from 'react-simple-star-rating'
 import './PpdtResponse.css'
 
 export default function PpdtResponse() {
   const [answers,getAnswers] = useState([])
   const [feedback,setFeedback] = useState('')
+  const [curResponse,setCurResponse] = useState({})
   const getPpdtData = async () => {
     try {
       const response = await axios.get('http://localhost:5000/api/ppdt_resp');
@@ -15,6 +17,28 @@ export default function PpdtResponse() {
       console.log(error);
     }
   };
+
+  const handleRating = async (e,objectid) => {
+    console.log(e,objectid,localStorage.getItem('email'));
+    try {
+      const resp = await axios.post('http://localhost:5000/api/ppdt_resp_by_id',{
+        oid: objectid,
+        email: localStorage.getItem('email'),
+        rating: e
+      });
+      console.log(resp);
+      // setCurResponse(resp.data);
+      if(resp.data.errmsg){
+        alert(resp.data.errmsg);
+      }
+      else {
+      alert(resp.data.msg);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    
+   }
 
   const postPpdtFeedback = async (story,url) => {
     axios.post('http://localhost:5000/api/ppdtfeedbackstore', {
@@ -43,7 +67,7 @@ export default function PpdtResponse() {
           <div key={d._id} className='ppdtfeedcontent'>
             <div className='ppdtcon1'>
               <div>
-              <p className='text-muted' style={{fontWeight: "bolder"}}>Your Email: {d.username}</p>
+              <p className='text-muted' style={{fontWeight: "bolder"}}>Aspirant's Email: {d.username}</p>
               </div>
 
               <div>
@@ -60,8 +84,11 @@ export default function PpdtResponse() {
               <p className="text-muted" style={{fontWeight: "bolder"}}>Your Story: {" "}</p>
             <p className='response'>Story: {d.story}</p>
             </div>
-            
-            {/* <p style={{color: "black"}}>Result: {d.result}</p> */}
+            <Rating
+        onClick={(e) =>handleRating(e,d._id)}
+        showTooltip = {true}
+        tooltipArray= {['Bad', 'Average', 'Good', 'Great', 'Awesome']}
+      />
             
           </div>
         ))

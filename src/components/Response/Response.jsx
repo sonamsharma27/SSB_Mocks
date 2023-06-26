@@ -2,12 +2,6 @@ import React,{useState} from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink } from "react-router-dom"
-import {
-    FaBars,
-    
-} from "react-icons/fa";
-// import pic9 from '/ssb/ssb_mocks/src/images/pic9.jpg'
 import './Response.css'
 import SrtFeedback from './SrtFeedback';
 import PpdtFeedback from './PpdtFeedback';
@@ -44,10 +38,6 @@ export default function Response({children}) {
 
     <div className="maincont">
            <div className="sidebardivs">
-                    {/* <div className={`${active === "response" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("response")}>
-                        See Ypur Feedback
-                    </div> */}
-
                     <p className='responselist' style={{display: isOpen ? "block" : "none", fontWeight: "600"}}>
                         <div className={`${active === "srtfeedback" ? "displaymains" : "sidelinks"} text-center`} onClick={(e) => setActive("srtfeedback")}>Situation Reaction Test</div>
                         <div className={`${active === "ppdtfeedback" ? "displaymains" : "sidelinks"} fs-sm`} onClick={(e) => setActive("ppdtfeedback")}>Picture Perception Description Test</div>
@@ -55,14 +45,7 @@ export default function Response({children}) {
                         <div className={`${active === "tatfeedback" ? "displaymains" : "sidelinks"}`} onClick={(e) => setActive("tatfeedback")}>Thematic Apperception Test</div>
                         <div className={`${active === "gpefeedback" ? "displaymains" : "sidelinks"}`} onClick={(e) => setActive("gpefeedback")}>Group Planning Exercise</div>
                     </p>
-                    {/* <div className={`${active === "alumnitestmaterial" ? "displaymain" : "sidelink"}`} onClick={(e) => setActive("alumnitestmaterial")}>
-                    Add Test Material
-                    </div> */}
            </div>
-           {/* <div className={`${active === "response" ? "displaymaincontent"
-              : "d-none"}`}>
-                    Response
-           </div> */}
            <div className={`${active === "response" ? "displaymaincontents"
               : "d-none"}`}>
                     Response
@@ -91,12 +74,6 @@ export default function Response({children}) {
               : "d-none"}`}>
                     <GpeFeedback />
            </div>
-           {/* <div className={`${active === "alumnitestmaterial" ? "displaymaincontent"
-              : "d-none"}`}>
-                    <AlumniTestMaterial />
-           </div> */}
-
-
         </div>
 
     </>

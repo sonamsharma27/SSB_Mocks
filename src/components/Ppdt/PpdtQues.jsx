@@ -36,6 +36,7 @@ export default function PpdtQues({url}) {
       },15000)
     })
     useEffect(()=>{
+      if(userResp.title==='') return;
       axios.post('http://localhost:5000/api/ppdt_resp', {
         username: 'John',
         url: userResp.url,
@@ -51,7 +52,7 @@ export default function PpdtQues({url}) {
       .catch(function (error) {
         console.log(error);
       });
-    },[showQuestions])
+    },[])
    
   return (
 

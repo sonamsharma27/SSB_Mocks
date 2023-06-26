@@ -16,7 +16,8 @@
 }
 
 .ppdtfeedcontents{
-    margin-top: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 5rem;
     box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
     padding-left: 2rem;
     height: 50vh;
@@ -31,4 +32,8 @@
 .ppdtfeedcontent .ppdtcon2{
     margin-right: 2rem;
     margin-top: 2rem;
+}
+
+.badge {
+    margin-bottom: -1rem;
 }

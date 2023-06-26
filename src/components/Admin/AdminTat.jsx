@@ -23,7 +23,7 @@ export default function AdminTat() {
 const submittat = async (url) => {
   deletetat(url);
   axios.post('http://localhost:5000/api/tat', {
-    url: url,
+    taturl: url,
           })
           .then(function (response) {
             console.log(response);
@@ -79,8 +79,8 @@ useEffect(()=>{
             <img src={d.url} alt="tat" className='tatimg'/>
             </div>
               
-              <img src={tick} className='tattick' onClick={(e) => {submittat(d.content)}} alt="add" />
-              <img src={cross} className='tatcross' onClick={(e) => {deletetat(d.content)}} alt="add" />
+              <img src={tick} className='tattick' onClick={(e) => {submittat(d.url)}} alt="add" />
+              <img src={cross} className='tatcross' onClick={(e) => {deletetat(d.url)}} alt="add" />
           </div>
         ))
       }

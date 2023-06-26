@@ -15,23 +15,7 @@ export default function PpdtAnswers() {
         console.log(error);
       }
     };
-  
-    const postPpdtFeedback = async (story,url) => {
-      axios.post('http://localhost:5000/api/ppdtfeedbackstore', {
-        story: story,
-        url: url,
-        feedback: feedback
-        })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-        alert('ppdt Feedback Saved Successfully...!')
-        setFeedback('')
-    }
-  
+
     useEffect(()=>{
       getPpdtData()
     },[])
@@ -39,11 +23,44 @@ export default function PpdtAnswers() {
       <>
         <div className='srtmain'>
             {
-          answers.map((d) => (
-            <div key={d._id} className='ppdtfeedcontents'>
+          answers.map((d) => { 
+            let onestar=0;
+            let twostar=0;
+            let threestar=0;
+            let fourstar=0;
+            let fivestar=0;
+            d.users.forEach(user=>{
+              if(user.rating===1){
+                onestar++;
+              }
+              else if(user.rating===2){
+                twostar++;
+              }
+              else if(user.rating===3){
+                threestar++;
+              }
+              else if(user.rating===4){
+                fourstar++;
+              }
+              else {
+                fivestar++;
+              }
+
+            })
+            let avgRating = 0.0;
+            console.log(d.users);
+            if(d.users.length>0){
+              avgRating = (onestar + 2*twostar + 3*threestar + 4*fourstar + 5*fivestar)/d.users.length;
+            }
+            return(
+              <div>
+                <div className="d- ">
+              <button className={`cursor-pointer badge ${avgRating>=4?'btn-success':avgRating>=3?'btn-warning':'btn-danger'} me-0`}>Rated {avgRating}</button>
+              </div>
+              <div key={d._id} className='ppdtfeedcontents'>
               <div className='ppdtcon1'>
                 <div>
-                <p className='text-muted' style={{fontWeight: "bolder"}}>Your Email: {d.username}</p>
+                <p className='text-muted mt-4' style={{fontWeight: "bolder"}}>Your Email: {d.username}</p>
                 </div>
   
                 <div>
@@ -55,11 +72,14 @@ export default function PpdtAnswers() {
                 <p className="text-muted" style={{fontWeight: "bolder"}}>Your Story: {" "}</p>
               <p className='response'>Story: {d.story}</p>
               </div>
-              
-              {/* <p style={{color: "black"}}>Result: {d.result}</p> */}
-              
+           {d.users.length>0 && <div className="rating-div">
+              <div className="fw-bolder">RATINGS</div>
+             
+
+            </div>}
             </div>
-          ))
+              </div>
+          )})
         }
         </div>
       </>

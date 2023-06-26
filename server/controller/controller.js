@@ -27,6 +27,7 @@ const tatFeedback = require('../models/tatFeedback.js')
 const ppdtFeedbackStore = require('../models/ppdtFeedbackStore.js')
 const gpeFeedbackStore = require('../models/gpeFeedbackStore.js')
 const axios = require('axios');
+const mongoose = require('mongoose');
 
 exports.insertPpdtFeedbackstore = async function(req,res){
     try {
@@ -527,6 +528,41 @@ exports.getImage = async function (req, res) {
     }
 }
 
+exports.fetchPpdtResponseById = async function (req, res) {
+    const { oid, email, rating } = req.body;
+    try {
+      const resp = await PpdtResponse.findOne({ _id: oid });
+      console.log(resp);
+      let hasRated = false;
+      resp.users.forEach((user) => {
+        if (user.email === email) {
+          console.log('existing rating');
+          hasRated = true;
+          res.json({ errmsg: 'You have already rated this response' });
+        }
+      });
+      
+      if (!hasRated) {
+        PpdtResponse.findByIdAndUpdate(
+          oid,
+          { $push: { users: { email: email, rating: rating } } },
+          function (err, docs) {
+            if (err) {
+              console.log(err);
+              res.json({ errmsg: 'Unable to add rating' });
+            } else {
+              console.log(docs);
+              res.json({ msg: 'Rating added successfully' });
+            }
+          }
+        );
+      }
+    } catch (err) {
+      res.json(err);
+    }
+  };
+  
+
 exports.getTatImages = async function (req,res) {
     try {
         const url_doc = await TatStore.aggregate([{ $sample: {size: 10} }] );
@@ -583,7 +619,7 @@ exports.insertTatUrl = async function(req,res){
         if (!taturl) throw new Error('Data Not Provided...!');
 
         TatStore.create({ 
-            taturl: taturl
+            url: taturl
            }, function (err, data) {
             res.json({ msg: "Tat Repsonse Saved Successfully...!" })
         })
