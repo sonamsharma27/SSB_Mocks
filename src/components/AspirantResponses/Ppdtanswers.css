@@ -37,3 +37,24 @@
 .badge {
     margin-bottom: -1rem;
 }
+
+.rating-div {
+    /* box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px; */
+    width: 30rem;
+}
+.mainRating{
+    font-size: 4rem;
+}
+
+.starsdiv {
+    border-left: .1rem solid rgb(188, 185, 185);
+}
+
+.progress-bar {
+    height: .5rem;
+    background-color: rgb(185, 96, 24) !important;
+}
+
+.col-2 {
+    font-size: small;
+}
