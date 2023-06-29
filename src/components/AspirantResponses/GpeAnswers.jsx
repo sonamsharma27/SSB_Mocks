@@ -4,17 +4,57 @@ import "./Gpeanswers.css";
 
 export default function GpeAnswers() {
   const [answers, getAnswers] = useState([]);
+  const [selectedFilter, setSelectedFilter] = useState("past1week");
   const [feedback, setFeedback] = useState("");
 
-  const getGpeData = async () => {
+  // const getGpeData = async () => {
+  //   try {
+  //     const response = await axios.get("http://localhost:5000/api/gpe_resp");
+  //     //   console.log(response);
+  //     await getAnswers(response.data);
+  //     // console.log(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const fetchdata = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/gpe_resp");
-      //   console.log(response);
-      await getAnswers(response.data);
-      // console.log(response.data);
+      const currentDate = new Date();
+      const pastDate = new Date();
+
+      if (selectedFilter === "past1week") {
+        pastDate.setDate(pastDate.getDate() - 7);
+      } else if (selectedFilter === "past2week") {
+        pastDate.setDate(pastDate.getDate() - 14);
+      } else if (selectedFilter === "past3week") {
+        pastDate.setDate(pastDate.getDate() - 21);
+      } else if (selectedFilter === "past4week") {
+        pastDate.setDate(pastDate.getDate() - 28);
+      }
+
+      const response = await axios.get("http://localhost:5000/api/gpe_resp", {
+        params: {
+          start: pastDate.toISOString(),
+          end: currentDate.toISOString()
+        }
+      });
+      console.log(response.data);
+
+      const filteredAnswers = response.data.filter(answer => {
+        const createAt = new Date(answer.createAt);
+        return createAt >= pastDate && createAt <= currentDate;
+      });
+
+      console.log(filteredAnswers);
+      getAnswers(filteredAnswers);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleFilterChange = (e) => {
+    setSelectedFilter(e.target.value);
   };
 
   const postGpeFeedback = async (problem, url, result) => {
@@ -35,12 +75,24 @@ export default function GpeAnswers() {
     setFeedback("");
   };
 
+  // useEffect(() => {
+  //   getGpeData();
+  // }, []);
   useEffect(() => {
-    getGpeData();
-  }, []);
+    fetchdata();
+  }, [selectedFilter]);
   return (
     <>
       <div className="srtmain">
+      <div>
+        <h2>Filter Response by Week</h2>
+        <select onChange={handleFilterChange} value={selectedFilter} style={{width: "30%",height: "30px",borderRadius: "6px",cursor: "pointer"}}>
+          <option value="past1week">Previous 1 week</option>
+          <option value="past2week">Previous 2 week</option>
+          <option value="past3week">Previous 3 week</option>
+          <option value="past4week">Previous 4 week</option>
+        </select>
+      </div>
         {answers.map((d) => {
           let onestar = 0;
           let twostar = 0;

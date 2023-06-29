@@ -128,7 +128,7 @@ export default function GpeResponse() {
               <div className="gpecon1">
                 <div>
                   <p className="text-muted" style={{ fontWeight: "bolder" }}>
-                    Your Email: {d.username}
+                  Aspirant's Email: {d.username}
                   </p>
                 </div>
 

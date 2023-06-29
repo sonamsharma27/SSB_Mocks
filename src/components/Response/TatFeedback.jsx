@@ -4,18 +4,58 @@ import './ppdtfeedback.css'
 
 export default function TatFeedback() {
   const [feedback,showFeedback] = useState([])
+  const [selectedFilter, setSelectedFilter] = useState("past1week");
   const [tatfeedback,showTatFeedback] = useState('')
   const [responseIndex, setResponseIndex] = useState(-1);
 
-  const gettatFeedback = async () => {
+  // const gettatFeedback = async () => {
+  //   try {
+  //     const response = await axios.get('http://localhost:5000/api/tat_feedback');
+  //   //   console.log(response);
+  //     await showFeedback(response.data);
+  //     // console.log(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const fetchdata = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/tat_feedback');
-    //   console.log(response);
-      await showFeedback(response.data);
-      // console.log(response.data);
+      const currentDate = new Date();
+      const pastDate = new Date();
+
+      if (selectedFilter === "past1week") {
+        pastDate.setDate(pastDate.getDate() - 7);
+      } else if (selectedFilter === "past2week") {
+        pastDate.setDate(pastDate.getDate() - 14);
+      } else if (selectedFilter === "past3week") {
+        pastDate.setDate(pastDate.getDate() - 21);
+      } else if (selectedFilter === "past4week") {
+        pastDate.setDate(pastDate.getDate() - 28);
+      }
+
+      const response = await axios.get("http://localhost:5000/api/tat_feedback", {
+        params: {
+          start: pastDate.toISOString(),
+          end: currentDate.toISOString()
+        }
+      });
+      console.log(response.data);
+
+      const filteredAnswers = response.data.filter(answer => {
+        const createAt = new Date(answer.createAt);
+        return createAt >= pastDate && createAt <= currentDate;
+      });
+
+      console.log(filteredAnswers);
+      showFeedback(filteredAnswers);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleFilterChange = (e) => {
+    setSelectedFilter(e.target.value);
   };
 
   var flag = true
@@ -38,21 +78,39 @@ export default function TatFeedback() {
   }
 
   const handleFeedbackClick = (feedback, index) => {
-    setResponseIndex(index)
+    
+    if (responseIndex === index) {
+      setResponseIndex(null)
+    showwatfeedback("");
+    } else {
+      setResponseIndex(index)
     showwatfeedback(feedback);
+    }
   }
 
-  useEffect(()=>{
-    gettatFeedback()
-  },[])
+  // useEffect(()=>{
+  //   gettatFeedback()
+  // },[])
+  useEffect(() => {
+    fetchdata();
+  }, [selectedFilter]);
   return (
     <>
     <div className="showtatfeedback ">
+    <div>
+        <h2>Filter Response by Week</h2>
+        <select onChange={handleFilterChange} value={selectedFilter} style={{width: "30%",height: "30px",borderRadius: "6px",cursor: "pointer"}}>
+          <option value="past1week">Previous 1 week</option>
+          <option value="past2week">Previous 2 week</option>
+          <option value="past3week">Previous 3 week</option>
+          <option value="past4week">Previous 4 week</option>
+        </select>
+      </div>
             {
                 feedback.map((ans,index)=>(
                   <div className="tatfeedback container" key={ans._id}>
                     <p className='fw-bolder text-muted'>Username: {ans.username}</p>
-                      <p className='fw-bolder text-muted'>Your response: </p>
+                      <p className='fw-bolder text-muted'>Aspirant's response: </p>
                       <div className='tatcont'>
             <div className='taturl'>
               <div>
@@ -116,10 +174,14 @@ export default function TatFeedback() {
               <div className='tatinp'>:     {ans.s10}</div>
               </div>
             </div>
-                      <button onClick={(e)=>handleFeedbackClick(ans.feedback,index)} className='btnfeedback'>Show Feedback</button>
+            <p style={{color: "black",fontSize: "20px"}}>Feedback is given by: </p>
+            <p style={{color: "black"}} className='imageurl'>Alumni email: {ans.alumniname}</p>
+            <button onClick={() => handleFeedbackClick(ans.feedback, index)} className='btnfeedback'>
+                    {responseIndex === index ? "Hide Feedback" : "Show Feedback"}
+                  </button>
                      {index===responseIndex && <> <p style={{color: "black"}} className='ppdtbtnfeedback'>{tatfeedback}</p>
     
-                     <p className='fw-bolder text-muted'>Feedback is given by: {ans.alumniname}</p>
+                     
                      </>}
                   </div>
                 ))

@@ -183,8 +183,8 @@ export default function WatResponse() {
           });
           return (
             <div key={d._id} className="watcontent">
-              <p className="fw-bolder text-muted">Your Email: {d.username}</p>
-              <p className="fw-bolder text-muted">Your response:</p>
+              <p className="text-muted" style={{ fontWeight: "bolder" }}>Aspirant's Email: {d.username}</p>
+              <p className="text-muted" style={{ fontWeight: "bolder" }}>Aspirant's response:</p>
               {/* <br /> */}
               <div className="watfeedcont m-2">
                 <li>

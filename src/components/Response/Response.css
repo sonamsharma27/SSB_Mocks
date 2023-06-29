@@ -79,3 +79,18 @@
     cursor: pointer;
 }
 
+.srtlistdata{
+    /* display: flex;
+    flex-direction: column; */
+    border-radius: 6px;
+    margin-top: 2rem;
+    box-shadow: rgb(221, 213, 213) -2px 4px 30px 0px;
+    padding-left: 2rem;
+    background-color: rgb(252, 252, 252);
+    height: 200px;
+}
+
+.srtlistdata .srtlistitems{
+    /* display: block; */
+    padding-top: 6px;
+}

@@ -149,7 +149,7 @@ export default function TatResponse() {
     <>
       <div className="tatmain">
       <div>
-        <h2>Select Answer by week</h2>
+      <h2>Filter Response by Week</h2>
         <select onChange={handleFilterChange} value={selectedFilter} style={{width: "30%",height: "30px"}}>
           <option value="past1week">past 1 week</option>
           <option value="past2week">past 2 week</option>
@@ -166,8 +166,8 @@ export default function TatResponse() {
           });
           return (
             <div key={d._id} className="tatcontent">
-              <p className="fw-bolder text-muted">Email: {d.username}</p>
-              <p className="fw-bolder text-muted">Your response: </p>
+              <p className="text-muted" style={{ fontWeight: "bolder" }}>Aspirant's Email: {d.username}</p>
+              <p className="text-muted" style={{ fontWeight: "bolder" }}>Aspirant's response: </p>
               {/* <br /> */}
               <div className="tatcont">
                 <div className="taturl">

@@ -141,7 +141,7 @@ export default function SrtResponse() {
           });
           return (
             <div key={d._id} className="srtcontent container">
-              <p style={{ color: "black" }}>Email: {d.username}</p>
+              <p style={{ color: "black" }}>Aspirant's Email: {d.username}</p>
               <div className="m-0 ">
                 <p className="fw-bolder mt-1 mb-1">Situations:</p>
                 {d.questions.split("|||").map((item, index) => (
