@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Ppdtanswers.css";
-import StarLogo from "../images/StarLogo.js";
 export default function PpdtAnswers() {
   const [answers, getAnswers] = useState([]);
-  const [feedback, setFeedback] = useState("");
   const getPpdtData = async () => {
     try {
       const response = await axios.get("http://localhost:5000/api/ppdt_resp");
-      //   console.log(response);
       await getAnswers(response.data);
-      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -42,7 +38,6 @@ export default function PpdtAnswers() {
             }
           });
           let avgRating = 0.0;
-          console.log(d.users);
           if (d.users.length > 0) {
             avgRating =
               (onestar +
@@ -93,7 +88,6 @@ export default function PpdtAnswers() {
                   </p>
                   <p className="response">Story: {d.story}</p>
                 </div>
-                {/* ★ */}
                 {d.users.length > 0 && (
                   <div className="rating-div mt-3">
                     <div className="fw-bolder bg-light p-2 rounded">

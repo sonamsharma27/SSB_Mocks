@@ -6,7 +6,6 @@ import "./PpdtResponse.css";
 export default function PpdtResponse() {
   const [answers, getAnswers] = useState([]);
   const [feedback, setFeedback] = useState("");
-  const [curResponse, setCurResponse] = useState({});
   const getPpdtData = async () => {
     try {
       const response = await axios.get("http://localhost:5000/api/ppdt_resp");
@@ -119,6 +118,7 @@ export default function PpdtResponse() {
                 showTooltip={true}
                 initialValue={storedRating}
                 tooltipArray={["Bad", "Average", "Good", "Great", "Awesome"]}
+                style={{ pointerEvents: storedRating > 0 ? "none" : "" }}
               />
             </div>
           );

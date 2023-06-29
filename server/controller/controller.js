@@ -29,44 +29,44 @@ const gpeFeedbackStore = require('../models/gpeFeedbackStore.js')
 const axios = require('axios');
 const mongoose = require('mongoose');
 
-exports.insertPpdtFeedbackstore = async function(req,res){
+exports.insertPpdtFeedbackstore = async function (req, res) {
     try {
         console.log(req.body);
-        const { feedback,story,url} = req.body;
+        const { feedback, story, url } = req.body;
         if (!feedback || !url || !story) throw new Error('Data Not Provided...!');
 
-        ppdtFeedbackStore.create({ 
+        ppdtFeedbackStore.create({
             story: story,
             url: url,
-            feedback: feedback, 
+            feedback: feedback,
         }, function (err, data) {
             res.json({ msg: "ppdt Feddback Saved Successfully...!" })
         })
-    } catch (error){
-        res.json({ error});
+    } catch (error) {
+        res.json({ error });
     }
 }
 
-exports.insertGpeFeedbackstore = async function(req,res){
+exports.insertGpeFeedbackstore = async function (req, res) {
     try {
         console.log(req.body);
-        const {problem,url, result,feedback} = req.body;
+        const { problem, url, result, feedback } = req.body;
         if (!problem || !url || !result || !feedback) throw new Error('Data Not Provided...!');
 
-        gpeFeedbackStore.create({ 
+        gpeFeedbackStore.create({
             problem: problem,
             url: url,
             result: result,
-            feedback: feedback, 
+            feedback: feedback,
         }, function (err, data) {
             res.json({ msg: "gpe Feddback Saved Successfully...!" })
         })
-    } catch (error){
-        res.json({ error});
+    } catch (error) {
+        res.json({ error });
     }
 }
 
-exports.getPpdtFeedback = async function(req,res){
+exports.getPpdtFeedback = async function (req, res) {
     try {
         const q = await ppdtFeedbackStore.find()
         res.json(q)
@@ -74,7 +74,7 @@ exports.getPpdtFeedback = async function(req,res){
         res.json({ error })
     }
 }
-exports.getSrtFeedback = async function(req,res){
+exports.getSrtFeedback = async function (req, res) {
     try {
         const q = await srtFeedback.find()
         res.json(q)
@@ -83,7 +83,7 @@ exports.getSrtFeedback = async function(req,res){
     }
 }
 
-exports.getGpeFeedback = async function(req,res){
+exports.getGpeFeedback = async function (req, res) {
     try {
         const q = await gpeFeedbackStore.find()
         res.json(q)
@@ -101,34 +101,34 @@ exports.getQuestions = async function (req, res) {
     // res.json("questions api get request")
 }
 
-exports.insertSrtFeedback = async function(req,res){
+exports.insertSrtFeedback = async function (req, res) {
     try {
         console.log(req.body);
-        const {username,result,alumniname, feedback,situation} = req.body;
+        const { username, result, alumniname, feedback, situation } = req.body;
         if (!username || !result || !alumniname || !feedback || !situation) throw new Error('Data Not Provided...!');
 
-        srtFeedback.create({ 
+        srtFeedback.create({
             username: username,
             result: result,
             alumniname: alumniname,
-            feedback: feedback, 
+            feedback: feedback,
             situation: situation,
-            
+
         }, function (err, data) {
             res.json({ msg: "Srt Feddback Saved Successfully...!" })
         })
-    } catch (error){
-        res.json({ error});
+    } catch (error) {
+        res.json({ error });
     }
 }
 
-exports.insertWatFeedback = async function(req,res){
+exports.insertWatFeedback = async function (req, res) {
     try {
         console.log(req.body);
-        const { word1, s1, word2, s2,word3, s3,word4, s4,word5, s5,word6, s6,word7, s7,word8, s8,word9, s9,word10, s10,alumniname, feedback,username} = req.body;
+        const { word1, s1, word2, s2, word3, s3, word4, s4, word5, s5, word6, s6, word7, s7, word8, s8, word9, s9, word10, s10, alumniname, feedback, username } = req.body;
         if (!alumniname || !feedback) throw new Error('Data Not Provided...!');
 
-        watFeedback.create({ 
+        watFeedback.create({
             word1: word1,
             word2: word2,
             word3: word3,
@@ -150,23 +150,23 @@ exports.insertWatFeedback = async function(req,res){
             s9: s9,
             s10: s10,
             alumniname: alumniname,
-            feedback: feedback, 
+            feedback: feedback,
             username: username
         }, function (err, data) {
             res.json({ msg: "Wat Feddback Saved Successfully...!" })
         })
-    } catch (error){
-        res.json({ error});
+    } catch (error) {
+        res.json({ error });
     }
 }
 
-exports.insertTatFeedback = async function(req,res){
+exports.insertTatFeedback = async function (req, res) {
     try {
         console.log(req.body);
-        const { url1, s1, url2, s2,url3, s3,url4, s4,url5, s5,url6, s6,url7, s7,url8, s8,url9, s9,url10, s10,alumniname, feedback,username} = req.body;
+        const { url1, s1, url2, s2, url3, s3, url4, s4, url5, s5, url6, s6, url7, s7, url8, s8, url9, s9, url10, s10, alumniname, feedback, username } = req.body;
         if (!alumniname || !feedback) throw new Error('Data Not Provided...!');
 
-        tatFeedback.create({ 
+        tatFeedback.create({
             url1: url1,
             url2: url2,
             url3: url3,
@@ -188,16 +188,16 @@ exports.insertTatFeedback = async function(req,res){
             s9: s9,
             s10: s10,
             alumniname: alumniname,
-            feedback: feedback, 
+            feedback: feedback,
             username: username
         }, function (err, data) {
             res.json({ msg: "Tat Feddback Saved Successfully...!" })
         })
-    } catch (error){
-        res.json({ error});
+    } catch (error) {
+        res.json({ error });
     }
 }
-exports.getWatFeedback = async function(req,res){
+exports.getWatFeedback = async function (req, res) {
     try {
         const q = await watFeedback.find()
         res.json(q)
@@ -206,7 +206,7 @@ exports.getWatFeedback = async function(req,res){
     }
 }
 
-exports.getTatFeedback = async function(req,res){
+exports.getTatFeedback = async function (req, res) {
     try {
         const q = await tatFeedback.find()
         res.json(q)
@@ -216,7 +216,7 @@ exports.getTatFeedback = async function(req,res){
 }
 
 
-exports.getNonQuestions = async function(req,res){
+exports.getNonQuestions = async function (req, res) {
     try {
         const q = await NonQuestions.find()
         res.json(q)
@@ -225,7 +225,7 @@ exports.getNonQuestions = async function(req,res){
     }
 }
 
-exports.getSrtResponses = async function(req,res){
+exports.getSrtResponses = async function (req, res) {
     try {
         const q = await SrtResponse.find()
         res.json(q)
@@ -234,7 +234,7 @@ exports.getSrtResponses = async function(req,res){
     }
 }
 
-exports.getPpdtResponses = async function(req,res){
+exports.getPpdtResponses = async function (req, res) {
     try {
         const q = await PpdtResponse.find()
         res.json(q)
@@ -242,7 +242,7 @@ exports.getPpdtResponses = async function(req,res){
         res.json({ error })
     }
 }
-exports.getGpeResponses = async function(req,res){
+exports.getGpeResponses = async function (req, res) {
     try {
         const q = await GpeResponse.find()
         res.json(q)
@@ -251,7 +251,7 @@ exports.getGpeResponses = async function(req,res){
     }
 }
 
-exports.getWatResponses = async function(req,res){
+exports.getWatResponses = async function (req, res) {
     try {
         const q = await WatResponse.find()
         res.json(q)
@@ -260,7 +260,7 @@ exports.getWatResponses = async function(req,res){
     }
 }
 
-exports.getTatResponses = async function(req,res){
+exports.getTatResponses = async function (req, res) {
     try {
         const q = await TatResponse.find()
         res.json(q)
@@ -274,7 +274,7 @@ exports.getSrtQuestion = async function (req, res) {
         const q = await SrtStore.find()
         res.json(q)
     } catch (error) {
-        res.json({error})
+        res.json({ error })
     }
 }
 
@@ -284,14 +284,15 @@ exports.insertPpdtResponse = async function (req, res) {
         const { username, title, story, main_character, url, total_characters, characters } = req.body;
         if (!username || !url) throw new Error('Data Not Provided...!');
 
-        PpdtResponse.create({ 
-            username: username, 
-            url: url, 
-            title: title, 
-            main_character: main_character, 
-            total_characters: total_characters, 
-            characters: characters, 
-            story: story }, function (err, data) {
+        PpdtResponse.create({
+            username: username,
+            url: url,
+            title: title,
+            main_character: main_character,
+            total_characters: total_characters,
+            characters: characters,
+            story: story
+        }, function (err, data) {
             res.json({ msg: "PPDT Repsonse Saved Successfully...!" })
         })
     } catch (error) {
@@ -299,14 +300,14 @@ exports.insertPpdtResponse = async function (req, res) {
     }
 }
 
-exports.insertTatResponse = async function (req,res) {
+exports.insertTatResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const { username, url1, s1, url2, s2,url3, s3,url4, s4,url5, s5,url6, s6,url7, s7,url8, s8,url9, s9,url10, s10} = req.body;
+        const { username, url1, s1, url2, s2, url3, s3, url4, s4, url5, s5, url6, s6, url7, s7, url8, s8, url9, s9, url10, s10 } = req.body;
         if (!username) throw new Error('Data Not Provided...!');
 
-        TatResponse.create({ 
-            username: username, 
+        TatResponse.create({
+            username: username,
             url1: url1,
             s1: s1,
             url2: url2,
@@ -324,25 +325,25 @@ exports.insertTatResponse = async function (req,res) {
             url8: url8,
             s8: s8,
             url9: url9,
-            s9:s9,
+            s9: s9,
             url10: url10,
             s10: s10
         }, function (err, data) {
             res.json({ msg: "Tat Repsonse Saved Successfully...!" })
         })
-    } catch (error){
-        res.json({ error});
+    } catch (error) {
+        res.json({ error });
     }
 }
 
-exports.insertWatResponse = async function (req,res) {
+exports.insertWatResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const { username, word1, s1, word2, s2,word3, s3,word4, s4,word5, s5,word6, s6,word7, s7,word8, s8,word9, s9,word10, s10} = req.body;
+        const { username, word1, s1, word2, s2, word3, s3, word4, s4, word5, s5, word6, s6, word7, s7, word8, s8, word9, s9, word10, s10 } = req.body;
         if (!username) throw new Error('Data Not Provided...!');
 
-        WatResponse.create({ 
-            username: username, 
+        WatResponse.create({
+            username: username,
             word1: word1,
             word2: word2,
             word3: word3,
@@ -366,17 +367,17 @@ exports.insertWatResponse = async function (req,res) {
         }, function (err, data) {
             res.json({ msg: "Wat Repsonse Saved Successfully...!" })
         })
-    } catch (error){
-        res.json({ error});
+    } catch (error) {
+        res.json({ error });
     }
 }
 
 
-exports.insertAlumniPpdtResponse = async function(req,res){
+exports.insertAlumniPpdtResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const {url} = req.body
-        if(!url) throw new Error('Data Not Provided...!');
+        const { url } = req.body
+        if (!url) throw new Error('Data Not Provided...!');
 
         AlumniPpdtResponse.create({
             url: url
@@ -388,7 +389,7 @@ exports.insertAlumniPpdtResponse = async function(req,res){
     }
 }
 
-exports.getAlumniPpdtResponse = async function(req,res){
+exports.getAlumniPpdtResponse = async function (req, res) {
     try {
         const q = await AlumniPpdtResponse.find()
         res.json(q)
@@ -397,11 +398,11 @@ exports.getAlumniPpdtResponse = async function(req,res){
     }
 }
 
-exports.insertAlumniWatResponse = async function(req,res){
+exports.insertAlumniWatResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const {content} = req.body
-        if(!content) throw new Error('Data Not Provided...!');
+        const { content } = req.body
+        if (!content) throw new Error('Data Not Provided...!');
 
         AlumniWatResponse.create({
             content: content
@@ -413,7 +414,7 @@ exports.insertAlumniWatResponse = async function(req,res){
     }
 }
 
-exports.getAlumniWatResponse = async function(req,res){
+exports.getAlumniWatResponse = async function (req, res) {
     try {
         const q = await AlumniWatResponse.find()
         res.json(q)
@@ -422,11 +423,11 @@ exports.getAlumniWatResponse = async function(req,res){
     }
 }
 
-exports.insertAlumniTatResponse = async function(req,res){
+exports.insertAlumniTatResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const {url} = req.body
-        if(!url) throw new Error('Data Not Provided...!');
+        const { url } = req.body
+        if (!url) throw new Error('Data Not Provided...!');
 
         AlumniTatResponse.create({
             url: url
@@ -438,7 +439,7 @@ exports.insertAlumniTatResponse = async function(req,res){
     }
 }
 
-exports.getAlumniTatResponse = async function(req,res){
+exports.getAlumniTatResponse = async function (req, res) {
     try {
         const q = await AlumniTatResponse.find()
         res.json(q)
@@ -447,11 +448,11 @@ exports.getAlumniTatResponse = async function(req,res){
     }
 }
 
-exports.insertAlumniSrtResponse = async function(req,res){
+exports.insertAlumniSrtResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const {situation} = req.body
-        if(!situation) throw new Error('Data Not Provided...!');
+        const { situation } = req.body
+        if (!situation) throw new Error('Data Not Provided...!');
 
         AlumniSrtResponse.create({
             situation: situation
@@ -463,7 +464,7 @@ exports.insertAlumniSrtResponse = async function(req,res){
     }
 }
 
-exports.getAlumniSrtResponse = async function(req,res){
+exports.getAlumniSrtResponse = async function (req, res) {
     try {
         const q = await AlumniSrtResponse.find()
         res.json(q)
@@ -472,11 +473,11 @@ exports.getAlumniSrtResponse = async function(req,res){
     }
 }
 
-exports.insertAlumniGpeResponse = async function(req,res){
+exports.insertAlumniGpeResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const {url,problem} = req.body
-        if(!url) throw new Error('Data Not Provided...!');
+        const { url, problem } = req.body
+        if (!url) throw new Error('Data Not Provided...!');
 
         AlumniGpeResponse.create({
             url: url,
@@ -489,7 +490,7 @@ exports.insertAlumniGpeResponse = async function(req,res){
     }
 }
 
-exports.getAlumniGpeResponse = async function(req,res){
+exports.getAlumniGpeResponse = async function (req, res) {
     try {
         const q = await AlumniGpeResponse.find()
         res.json(q)
@@ -501,15 +502,15 @@ exports.getAlumniGpeResponse = async function(req,res){
 exports.insertGpeResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const { username,  problem, solution, url} = req.body;
-        if (!username ) throw new Error('Data Not Provided...!');
+        const { username, problem, solution, url } = req.body;
+        if (!username) throw new Error('Data Not Provided...!');
 
-        GpeResponse.create({ 
-            username: username, 
-            url: url, 
-            problem: problem, 
+        GpeResponse.create({
+            username: username,
+            url: url,
+            problem: problem,
             solution: solution
-           }, function (err, data) {
+        }, function (err, data) {
             res.json({ msg: "Gpe Repsonse Saved Successfully...!" })
         })
     } catch (error) {
@@ -531,80 +532,212 @@ exports.getImage = async function (req, res) {
 exports.fetchPpdtResponseById = async function (req, res) {
     const { oid, email, rating } = req.body;
     try {
-      const resp = await PpdtResponse.findOne({ _id: oid });
-      console.log(resp);
-      let hasRated = false;
-      resp.users.forEach((user) => {
-        if (user.email === email) {
-          console.log('existing rating');
-          hasRated = true;
-          res.json({ errmsg: 'You have already rated this response' });
-        }
-      });
-      
-      if (!hasRated) {
-        PpdtResponse.findByIdAndUpdate(
-          oid,
-          { $push: { users: { email: email, rating: rating } } },
-          function (err, docs) {
-            if (err) {
-              console.log(err);
-              res.json({ errmsg: 'Unable to add rating' });
-            } else {
-              console.log(docs);
-              res.json({ msg: 'Rating added successfully' });
+        const resp = await PpdtResponse.findOne({ _id: oid });
+        console.log(resp);
+        let hasRated = false;
+        resp.users.forEach((user) => {
+            if (user.email === email) {
+                console.log('existing rating');
+                hasRated = true;
+                res.json({ errmsg: 'You have already rated this response' });
             }
-          }
-        );
-      }
-    } catch (err) {
-      res.json(err);
-    }
-  };
-  
+        });
 
-exports.getTatImages = async function (req,res) {
+        if (!hasRated) {
+            PpdtResponse.findByIdAndUpdate(
+                oid,
+                { $push: { users: { email: email, rating: rating } } },
+                function (err, docs) {
+                    if (err) {
+                        console.log(err);
+                        res.json({ errmsg: 'Unable to add rating' });
+                    } else {
+                        console.log(docs);
+                        res.json({ msg: 'Rating added successfully' });
+                    }
+                }
+            );
+        }
+    } catch (err) {
+        res.json(err);
+    }
+};
+exports.fetchTatResponseById = async function (req, res) {
+    const { oid, email, rating } = req.body;
     try {
-        const url_doc = await TatStore.aggregate([{ $sample: {size: 10} }] );
+        const resp = await TatResponse.findOne({ _id: oid });
+        console.log(resp);
+        let hasRated = false;
+        resp.users.forEach((user) => {
+            if (user.email === email) {
+                console.log('existing rating');
+                hasRated = true;
+                res.json({ errmsg: 'You have already rated this response' });
+            }
+        });
+
+        if (!hasRated) {
+            TatResponse.findByIdAndUpdate(
+                oid,
+                { $push: { users: { email: email, rating: rating } } },
+                function (err, docs) {
+                    if (err) {
+                        console.log(err);
+                        res.json({ errmsg: 'Unable to add rating' });
+                    } else {
+                        console.log(docs);
+                        res.json({ msg: 'Rating added successfully' });
+                    }
+                }
+            );
+        }
+    } catch (err) {
+        res.json(err);
+    }
+};
+exports.fetchWatResponseById = async function (req, res) {
+    const { oid, email, rating } = req.body;
+    try {
+        const resp = await WatResponse.findOne({ _id: oid });
+        console.log(resp);
+        let hasRated = false;
+        resp.users.forEach((user) => {
+            if (user.email === email) {
+                console.log('existing rating');
+                hasRated = true;
+                res.json({ errmsg: 'You have already rated this response' });
+            }
+        });
+
+        if (!hasRated) {
+            WatResponse.findByIdAndUpdate(
+                oid,
+                { $push: { users: { email: email, rating: rating } } },
+                function (err, docs) {
+                    if (err) {
+                        console.log(err);
+                        res.json({ errmsg: 'Unable to add rating' });
+                    } else {
+                        console.log(docs);
+                        res.json({ msg: 'Rating added successfully' });
+                    }
+                }
+            );
+        }
+    } catch (err) {
+        res.json(err);
+    }
+};
+exports.fetchGpeResponseById = async function (req, res) {
+    const { oid, email, rating } = req.body;
+    try {
+        const resp = await GpeResponse.findOne({ _id: oid });
+        console.log(resp);
+        let hasRated = false;
+        resp.users.forEach((user) => {
+            if (user.email === email) {
+                console.log('existing rating');
+                hasRated = true;
+                res.json({ errmsg: 'You have already rated this response' });
+            }
+        });
+
+        if (!hasRated) {
+            GpeResponse.findByIdAndUpdate(
+                oid,
+                { $push: { users: { email: email, rating: rating } } },
+                function (err, docs) {
+                    if (err) {
+                        console.log(err);
+                        res.json({ errmsg: 'Unable to add rating' });
+                    } else {
+                        console.log(docs);
+                        res.json({ msg: 'Rating added successfully' });
+                    }
+                }
+            );
+        }
+    } catch (err) {
+        res.json(err);
+    }
+};
+exports.fetchSrtResponseById = async function (req, res) {
+    const { oid, email, rating } = req.body;
+    try {
+        const resp = await SrtResponse.findOne({ _id: oid });
+        console.log(resp);
+        let hasRated = false;
+        resp.users.forEach((user) => {
+            if (user.email === email) {
+                console.log('existing rating');
+                hasRated = true;
+                res.json({ errmsg: 'You have already rated this response' });
+            }
+        });
+
+        if (!hasRated) {
+            SrtResponse.findByIdAndUpdate(
+                oid,
+                { $push: { users: { email: email, rating: rating } } },
+                function (err, docs) {
+                    if (err) {
+                        console.log(err);
+                        res.json({ errmsg: 'Unable to add rating' });
+                    } else {
+                        console.log(docs);
+                        res.json({ msg: 'Rating added successfully' });
+                    }
+                }
+            );
+        }
+    } catch (err) {
+        res.json(err);
+    }
+};
+
+
+exports.getTatImages = async function (req, res) {
+    try {
+        const url_doc = await TatStore.aggregate([{ $sample: { size: 10 } }]);
         res.json(url_doc);
     } catch (err) {
         res.json(err);
     }
 }
 
-exports.getWatWords = async function (req,res) {
+exports.getWatWords = async function (req, res) {
     try {
-        const word_doc = await WatStore.aggregate([{ $sample: {size: 10} }] );
+        const word_doc = await WatStore.aggregate([{ $sample: { size: 10 } }]);
         res.json(word_doc);
     } catch (err) {
         res.json(err);
     }
 }
 
-exports.insertWatWords = async function(req,res){
+exports.insertWatWords = async function (req, res) {
     try {
         console.log(req.body);
-        const { word} = req.body;
+        const { word } = req.body;
         if (!word) throw new Error('Data Not Provided...!');
 
-        WatStore.create({ 
+        WatStore.create({
             word: word
-           }, function (err, data) {
+        }, function (err, data) {
             res.json({ msg: "Wat Repsonse Saved Successfully...!" })
         })
     } catch (error) {
         res.json({ error })
     }
 }
-exports.insertSrtSituation = async function(req,res){
+exports.insertSrtSituation = async function (req, res) {
     try {
         console.log(req.body);
-        const { situation} = req.body;
+        const { situation } = req.body;
         if (!situation) throw new Error('Data Not Provided...!');
 
-        SrtStore.create({ 
+        SrtStore.create({
             situation: situation
-           }, function (err, data) {
+        }, function (err, data) {
             res.json({ msg: "Srt Repsonse Saved Successfully...!" })
         })
     } catch (error) {
@@ -612,46 +745,46 @@ exports.insertSrtSituation = async function(req,res){
     }
 }
 
-exports.insertTatUrl = async function(req,res){
+exports.insertTatUrl = async function (req, res) {
     try {
         console.log(req.body);
-        const { taturl} = req.body;
+        const { taturl } = req.body;
         if (!taturl) throw new Error('Data Not Provided...!');
 
-        TatStore.create({ 
+        TatStore.create({
             url: taturl
-           }, function (err, data) {
+        }, function (err, data) {
             res.json({ msg: "Tat Repsonse Saved Successfully...!" })
         })
     } catch (error) {
         res.json({ error })
     }
 }
-exports.insertPpdtUrl = async function(req,res){
+exports.insertPpdtUrl = async function (req, res) {
     try {
         console.log(req.body);
-        const { ppdturl} = req.body;
+        const { ppdturl } = req.body;
         if (!ppdturl) throw new Error('Data Not Provided...!');
 
-        PpdtStore.create({ 
+        PpdtStore.create({
             ppdturl: ppdturl
-           }, function (err, data) {
+        }, function (err, data) {
             res.json({ msg: "Ppdt Repsonse Saved Successfully...!" })
         })
     } catch (error) {
         res.json({ error })
     }
 }
-exports.insertGpeProblem = async function(req,res){
+exports.insertGpeProblem = async function (req, res) {
     try {
         console.log(req.body);
-        const { gpeurl,gpeproblem} = req.body;
+        const { gpeurl, gpeproblem } = req.body;
         if (!gpeurl || !gpeproblem) throw new Error('Data Not Provided...!');
 
-        GpeStore.create({ 
+        GpeStore.create({
             gpeurl: gpeurl,
             gpeproblem: gpeproblem
-           }, function (err, data) {
+        }, function (err, data) {
             res.json({ msg: "Gpe Repsonse Saved Successfully...!" })
         })
     } catch (error) {
@@ -661,31 +794,31 @@ exports.insertGpeProblem = async function(req,res){
 
 exports.dropWatWords = async function (req, res) {
     try {
-         const {word} = req.body;
-         console.log("reqbody",word);
-        await AlumniWatResponse.deleteOne({"content": word});
+        const { word } = req.body;
+        console.log("reqbody", word);
+        await AlumniWatResponse.deleteOne({ "content": word });
         res.json({ msg: "word deleted successfully...." })
     } catch (error) {
         res.json({ error })
     }
 }
 
-exports.dropPpdtUrl = async function(req,res){
+exports.dropPpdtUrl = async function (req, res) {
     try {
-        const {ppdturl} = req.body;
-        console.log("reqbody",ppdturl);
-       await AlumniPpdtResponse.deleteOne({"content": ppdturl});
-       res.json({ msg: "url deleted successfully...." })
-   } catch (error) {
-       res.json({ error })
-   }
+        const { ppdturl } = req.body;
+        console.log("reqbody", ppdturl);
+        await AlumniPpdtResponse.deleteOne({ "content": ppdturl });
+        res.json({ msg: "url deleted successfully...." })
+    } catch (error) {
+        res.json({ error })
+    }
 }
 
 exports.dropSrtSituation = async function (req, res) {
     try {
-         const {situation} = req.body;
-         console.log("reqbody",situation);
-        await AlumniSrtResponse.deleteOne({"content": situation});
+        const { situation } = req.body;
+        console.log("reqbody", situation);
+        await AlumniSrtResponse.deleteOne({ "content": situation });
         res.json({ msg: "situation deleted successfully...." })
     } catch (error) {
         res.json({ error })
@@ -693,9 +826,9 @@ exports.dropSrtSituation = async function (req, res) {
 }
 exports.dropGpeProblem = async function (req, res) {
     try {
-         const {url,problem} = req.body;
-         console.log("reqbody",url);
-         console.log("reqbody2",problem);
+        const { url, problem } = req.body;
+        console.log("reqbody", url);
+        console.log("reqbody2", problem);
         await AlumniGpeResponse.deleteMany();
         res.json({ msg: "situation deleted successfully...." })
     } catch (error) {
@@ -705,9 +838,9 @@ exports.dropGpeProblem = async function (req, res) {
 
 exports.dropTatUrl = async function (req, res) {
     try {
-         const {taturl} = req.body;
-         console.log("reqbody",taturl);
-        await AlumniSrtResponse.deleteOne({"content": taturl});
+        const { taturl } = req.body;
+        console.log("reqbody", taturl);
+        await AlumniSrtResponse.deleteOne({ "content": taturl });
         res.json({ msg: "url deleted successfully...." })
     } catch (error) {
         res.json({ error })
@@ -748,14 +881,14 @@ exports.insertNonQuestion = async function (req, res) {
 exports.insertSrtResponse = async function (req, res) {
     try {
         console.log(req.body);
-        const { username,result,questions} = req.body;
-        if (!username || !result ) throw new Error('Data Not Provided...!');
+        const { username, result, questions } = req.body;
+        if (!username || !result) throw new Error('Data Not Provided...!');
 
-        SrtResponse.create({ 
-            username: username, 
+        SrtResponse.create({
+            username: username,
             result: result,
             questions: questions
-           }, function (err, data) {
+        }, function (err, data) {
             res.json({ msg: "Srt Repsonse Saved Successfully...!" })
         })
     } catch (error) {
@@ -783,7 +916,7 @@ exports.dropNonQuestion = async function (req, res) {
 
 exports.getResult = async function (req, res) {
     try {
-        const {username} = req.body;
+        const { username } = req.body;
         // const r = await Results.find({"username": username})
         const r = await Results.find();
         res.json(r)
@@ -845,32 +978,32 @@ exports.dropNonResult = async function (req, res) {
     }
 }
 
-exports.personalityDetection = async function (req,res) {
-    const {personality_detection_string} = req.body;
+exports.personalityDetection = async function (req, res) {
+    const { personality_detection_string } = req.body;
     const options = {
         method: 'POST',
         url: 'https://big-five-personality-insights.p.rapidapi.com/api/big5',
         headers: {
-          'content-type': 'application/json',
-          Accept: 'application/json',
-          'X-RapidAPI-Key': '5f696d5cf6msh10aeac54f573da1p1db039jsn54b5361ebdb5',
-          'X-RapidAPI-Host': 'big-five-personality-insights.p.rapidapi.com'
+            'content-type': 'application/json',
+            Accept: 'application/json',
+            'X-RapidAPI-Key': '5f696d5cf6msh10aeac54f573da1p1db039jsn54b5361ebdb5',
+            'X-RapidAPI-Host': 'big-five-personality-insights.p.rapidapi.com'
         },
         data: [
-          {
-            id: '1',
-            language: 'en',
-            text: personality_detection_string
-          }
+            {
+                id: '1',
+                language: 'en',
+                text: personality_detection_string
+            }
         ]
-      };
-      
-      try {
-          const response = await axios.request(options);
-          console.log(response);
-          res.json(response.data);
-      } catch (error) {
-          console.error(error);
-          res.json({ error })
-      }
+    };
+
+    try {
+        const response = await axios.request(options);
+        console.log(response);
+        res.json(response.data);
+    } catch (error) {
+        console.error(error);
+        res.json({ error })
+    }
 }
