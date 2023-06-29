@@ -16,7 +16,7 @@ const TatResponse = new Schema({
     url6: { type: String },
     s6: { type: String },
     url7: { type: String },
-    s17: { type: String },
+    s7: { type: String },
     url8: { type: String },
     s8: { type: String },
     url9: { type: String },
@@ -24,6 +24,7 @@ const TatResponse = new Schema({
     url10: { type: String },
     s10: { type: String },
     users: { type: Array, default: [] },
+    createAt: { type: Date, default: Date.now }
 
 })
 

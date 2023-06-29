@@ -113,7 +113,7 @@ export default function TatAnswers() {
           avgRating = avgRating.toFixed(1);
           return (
             <div key={d._id} className="tatcontents">
-              <p className="fw-bolder text-muted">Email: {d.username}</p>
+              <p className="text-muted mt-4" style={{ fontWeight: "bolder" }}>Aspirant Email: {d.username}</p>
               <p className="fw-bolder text-muted">Your response: </p>
               {/* <br /> */}
               <div className="tatcont">

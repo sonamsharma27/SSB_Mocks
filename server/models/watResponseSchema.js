@@ -16,7 +16,7 @@ const WatResponse = new Schema({
     word6: { type: String },
     s6: { type: String },
     word7: { type: String },
-    s17: { type: String },
+    s7: { type: String },
     word8: { type: String },
     s8: { type: String },
     word9: { type: String },
@@ -24,6 +24,7 @@ const WatResponse = new Schema({
     word10: { type: String },
     s10: { type: String },
     users: { type: Array, default: [] },
+    createAt: { type: Date, default: Date.now }
 
 })
 

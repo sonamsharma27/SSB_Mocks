@@ -5,16 +5,56 @@ import "./PpdtResponse.css";
 
 export default function PpdtResponse() {
   const [answers, getAnswers] = useState([]);
+  const [selectedFilter, setSelectedFilter] = useState("past1week");
   const [feedback, setFeedback] = useState("");
-  const getPpdtData = async () => {
+  // const getPpdtData = async () => {
+  //   try {
+  //     const response = await axios.get("http://localhost:5000/api/ppdt_resp");
+  //     //   console.log(response);
+  //     await getAnswers(response.data);
+  //     // console.log(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const fetchdata = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/ppdt_resp");
-      //   console.log(response);
-      await getAnswers(response.data);
-      // console.log(response.data);
+      const currentDate = new Date();
+      const pastDate = new Date();
+
+      if (selectedFilter === "past1week") {
+        pastDate.setDate(pastDate.getDate() - 7);
+      } else if (selectedFilter === "past2week") {
+        pastDate.setDate(pastDate.getDate() - 14);
+      } else if (selectedFilter === "past3week") {
+        pastDate.setDate(pastDate.getDate() - 21);
+      } else if (selectedFilter === "past4week") {
+        pastDate.setDate(pastDate.getDate() - 28);
+      }
+
+      const response = await axios.get("http://localhost:5000/api/ppdt_resp", {
+        params: {
+          start: pastDate.toISOString(),
+          end: currentDate.toISOString()
+        }
+      });
+      console.log(response.data);
+
+      const filteredAnswers = response.data.filter(answer => {
+        const createAt = new Date(answer.createAt);
+        return createAt >= pastDate && createAt <= currentDate;
+      });
+
+      console.log(filteredAnswers);
+      getAnswers(filteredAnswers);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleFilterChange = (e) => {
+    setSelectedFilter(e.target.value);
   };
 
   const handleRating = async (e, objectid) => {
@@ -57,12 +97,24 @@ export default function PpdtResponse() {
     setFeedback("");
   };
 
+  // useEffect(() => {
+  //   getPpdtData();
+  // }, []);
   useEffect(() => {
-    getPpdtData();
-  }, []);
+    fetchdata();
+  }, [selectedFilter]);
   return (
     <>
       <div className="srtmain">
+      <div>
+        <h2>Select Answer by week</h2>
+        <select onChange={handleFilterChange} value={selectedFilter} style={{width: "30%",height: "30px"}}>
+          <option value="past1week">past 1 week</option>
+          <option value="past2week">past 2 week</option>
+          <option value="past3week">past 3 week</option>
+          <option value="past4week">past 4 week</option>
+        </select>
+      </div>
         {answers.map((d) => {
           let storedRating = 0;
           d.users.forEach((user) => {

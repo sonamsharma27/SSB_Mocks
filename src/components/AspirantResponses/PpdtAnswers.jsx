@@ -70,7 +70,7 @@ export default function PpdtAnswers() {
                       className="text-muted mt-4"
                       style={{ fontWeight: "bolder" }}
                     >
-                      Your Email: {d.username}
+                      Aspirant Email: {d.username}
                     </p>
                   </div>
                   <div>
@@ -90,7 +90,7 @@ export default function PpdtAnswers() {
                 </div>
                 {d.users.length > 0 && (
                   <div className="rating-div mt-3">
-                    <div className="fw-bolder bg-light p-2 rounded">
+                    <div className="fw-bolder p-2 rounded">
                       <h5 className="m-0 py-1 px-0">Response Ratings</h5>
                       <div className="row">
                         <div className={" fs-1 col-4"}>

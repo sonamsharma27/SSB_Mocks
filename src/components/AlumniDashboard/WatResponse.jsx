@@ -5,17 +5,39 @@ import "./WatResponse.css";
 
 export default function WatResponse() {
   const [answers, getAnswers] = useState([]);
+  const [selectedFilter, setSelectedFilter] = useState("past1week");
+  const [answers1, getAnswers1] = useState([]);
+  const [answers2, getAnswers2] = useState([]);
+  const [answers3, getAnswers3] = useState([]);
   const [feedback, setFeedback] = useState("");
-  const getWatData = async () => {
-    try {
-      const response = await axios.get("http://localhost:5000/api/wat_resp");
-      //   console.log(response);
-      await getAnswers(response.data);
-      // console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const[date,setDate] = useState([
+  //   "week1": [],
+
+  // ])
+  // const getWatData = async () => {
+  //   try {
+  //     const currentDate = new Date();
+  //     const pastDate = new Date();
+  //     pastDate.setDate(pastDate.getDate() - 7)
+  //     const response = await axios.get("http://localhost:5000/api/wat_resp", {
+  //       params: {
+  //         start: pastDate.toISOString(),
+  //         end: currentDate.toISOString()
+  //       }
+  //     });
+  //     console.log("Response: ",response.data);
+  //     const filteredAnswers = response.data.filter(answer => {
+  //       const createAt = new Date(answer.createAt);
+  //       return createAt >= pastDate && createAt <= currentDate;
+  //     });
+  //     console.log("Filtered: ",filteredAnswers);
+  //     //   console.log(response);
+  //     await getAnswers(filteredAnswers);
+  //     // console.log(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const handleRating = async (e, objectid) => {
     console.log(e, objectid, localStorage.getItem("email"));
@@ -36,6 +58,45 @@ export default function WatResponse() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const fetchdata = async () => {
+    try {
+      const currentDate = new Date();
+      const pastDate = new Date();
+
+      if (selectedFilter === "past1week") {
+        pastDate.setDate(pastDate.getDate() - 7);
+      } else if (selectedFilter === "past2week") {
+        pastDate.setDate(pastDate.getDate() - 14);
+      } else if (selectedFilter === "past3week") {
+        pastDate.setDate(pastDate.getDate() - 21);
+      } else if (selectedFilter === "past4week") {
+        pastDate.setDate(pastDate.getDate() - 28);
+      }
+
+      const response = await axios.get("http://localhost:5000/api/wat_resp", {
+        params: {
+          start: pastDate.toISOString(),
+          end: currentDate.toISOString()
+        }
+      });
+      console.log(response.data);
+
+      const filteredAnswers = response.data.filter(answer => {
+        const createAt = new Date(answer.createAt);
+        return createAt >= pastDate && createAt <= currentDate;
+      });
+
+      console.log(filteredAnswers);
+      getAnswers(filteredAnswers);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleFilterChange = (e) => {
+    setSelectedFilter(e.target.value);
   };
 
   const submitWatFeedback = (
@@ -98,12 +159,22 @@ export default function WatResponse() {
     setFeedback("");
   };
   useEffect(() => {
-    getWatData();
-  }, []);
+    fetchdata();
+  }, [selectedFilter]);
   return (
     <>
       <div className="srtmain">
-        {answers.map((d) => {
+      <div>
+        <h2>Select Answer by week</h2>
+        <select onChange={handleFilterChange} value={selectedFilter} style={{width: "30%",height: "30px"}}>
+          <option value="past1week">past 1 week</option>
+          <option value="past2week">past 2 week</option>
+          <option value="past3week">past 3 week</option>
+          <option value="past4week">past 4 week</option>
+        </select>
+      </div>
+      <div>
+      {answers.map((d) => {
           let storedRating = 0;
           d.users.forEach((user) => {
             if (user.email === localStorage.getItem("email")) {
@@ -211,6 +282,9 @@ export default function WatResponse() {
             </div>
           );
         })}
+      </div>
+      
+
       </div>
     </>
   );

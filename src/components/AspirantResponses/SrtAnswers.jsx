@@ -89,7 +89,7 @@ export default function SrtAnswers() {
           avgRating = avgRating.toFixed(1);
           return (
             <div key={d._id} className="srtcontents container">
-              <p style={{ color: "black" }}>Email: {d.username}</p>
+              <p className="text-muted mt-4" style={{ fontWeight: "bolder" }}>Aspirant Email: {d.username}</p>
               <div className="m-0 ">
                 <p className="fw-bolder mt-1 mb-1">Situations:</p>
                 {d.questions.split("|||").map((item, index) => (
@@ -104,7 +104,7 @@ export default function SrtAnswers() {
               <p>{d.result}</p>
               {d.users.length > 0 && (
                 <div className="rating-div mt-3">
-                  <div className="fw-bolder bg-light p-2 rounded">
+                  <div className="fw-bolder p-2 rounded">
                     <h5 className="m-0 py-1 px-0">Response Ratings</h5>
                     <div className="row">
                       <div className={" fs-1 col-4"}>

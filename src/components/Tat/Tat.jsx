@@ -34,7 +34,9 @@ function Tat() {
   setTimeout(() => {
     setTimeUp(true);
   }, 30000);
-  useEffect(() => {axios
+  useEffect(() => {
+    if(!timeup) return;
+    axios
     .post("http://localhost:5000/api/tat_resp", {
       username: localStorage.getItem('email'),
       url1: imgUrls[0]?.url,
