@@ -219,13 +219,18 @@ export default function TatResponse() {
               >
                 Submit
               </button>
-              <Rating
-                onClick={(e) => handleRating(e, d._id)}
-                showTooltip={true}
-                initialValue={storedRating}
-                tooltipArray={["Bad", "Average", "Good", "Great", "Awesome"]}
-                style={{ pointerEvents: storedRating > 0 ? "none" : "" }}
-              />
+              <div>
+                <div className="text-muted">
+                  Your rating to aspirant's response:
+                </div>
+                <Rating
+                  onClick={(e) => handleRating(e, d._id)}
+                  showTooltip={true}
+                  initialValue={storedRating}
+                  tooltipArray={["Bad", "Average", "Good", "Great", "Awesome"]}
+                  style={{ pointerEvents: storedRating > 0 ? "none" : "" }}
+                />
+              </div>
             </div>
           );
         })}
