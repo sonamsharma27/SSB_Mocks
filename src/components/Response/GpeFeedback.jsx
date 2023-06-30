@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
-import './gpeFeedback.css'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./gpeFeedback.css";
 
 export default function PpdtFeedback() {
-
-  
-  const [feedback,showFeedback] = useState([])
+  const [feedback, showFeedback] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("past1week");
-  const [ppdtfeedback,showPpdtFeedback] = useState('')
+  const [ppdtfeedback, showPpdtFeedback] = useState("");
   const [responseIndex, setResponseIndex] = useState(-1);
   // const getGpeFeedback = async () => {
   //   try {
@@ -35,15 +33,18 @@ export default function PpdtFeedback() {
         pastDate.setDate(pastDate.getDate() - 28);
       }
 
-      const response = await axios.get("http://localhost:5000/api/gpefeedbackstore", {
-        params: {
-          start: pastDate.toISOString(),
-          end: currentDate.toISOString()
+      const response = await axios.get(
+        "http://localhost:5000/api/gpefeedbackstore",
+        {
+          params: {
+            start: pastDate.toISOString(),
+            end: currentDate.toISOString(),
+          },
         }
-      });
+      );
       console.log(response.data);
 
-      const filteredAnswers = response.data.filter(answer => {
+      const filteredAnswers = response.data.filter((answer) => {
         const createAt = new Date(answer.createAt);
         return createAt >= pastDate && createAt <= currentDate;
       });
@@ -59,36 +60,31 @@ export default function PpdtFeedback() {
     setSelectedFilter(e.target.value);
   };
 
-  var flag = true
+  var flag = true;
 
-  const showppdtfeedback = async (feed) =>{
+  const showppdtfeedback = async (feed) => {
     if (flag) {
       // const updateMessages = [...ppdtfeedback]
       // updateMessages[index] = `Button ${index + 1} clicked!`;
       // showPpdtFeedback(updateMessages)
-      
-      flag = false
-      showPpdtFeedback(feed)
+
+      flag = false;
+      showPpdtFeedback(feed);
+    } else {
+      showPpdtFeedback(null);
+      flag = true;
     }
-    else{
-      
-      showPpdtFeedback(null)
-      flag = true
-      
-    }
-    
-  }
+  };
 
   const handleFeedbackClick = (feedback, index) => {
-    
     if (responseIndex === index) {
-      setResponseIndex(null)
-    showppdtfeedback("");
+      setResponseIndex(null);
+      showppdtfeedback("");
     } else {
-      setResponseIndex(index)
-    showppdtfeedback(feedback);
+      setResponseIndex(index);
+      showppdtfeedback(feedback);
     }
-  }
+  };
 
   // useEffect(()=>{
   //   getGpeFeedback()
@@ -98,47 +94,75 @@ export default function PpdtFeedback() {
   }, [selectedFilter]);
   return (
     <>
-        <div className="showfeedback">
+      <div className="showfeedback">
         <div>
-        <h2>Filter Response by Week</h2>
-        <select onChange={handleFilterChange} value={selectedFilter} style={{width: "30%",height: "30px",borderRadius: "6px",cursor: "pointer"}}>
-          <option value="past1week">Previous 1 week</option>
-          <option value="past2week">Previous 2 week</option>
-          <option value="past3week">Previous 3 week</option>
-          <option value="past4week">Previous 4 week</option>
-        </select>
-      </div>
-        {
-            feedback.map((ans,index)=>{
-              if(ans.problem.length===0) return <></>;
-              return (
-              <div className="gpefeedback" key={ans._id}>
-                <div className='gpecon1'>
-              <div>
-                <p className='text-muted' style={{fontWeight: "bolder"}}>Gpe Picture: </p>
-                <p style={{color: "black"}} className='picurl'><img src={ans.url} alt="" className='picurl'/></p>
-              </div>
-            <div>
-            <p className='text-muted' style={{fontWeight: "bolder"}}>Aspirant's Result: </p>
-            <p className='text-muted' style={{fontWeight: "bolder"}}>{ans.result}</p>
-            </div>
-            <p style={{color: "black",fontSize: "20px"}}>Feedback is given by: </p>
-            <p style={{color: "black"}} className='imageurl'>Alumni email: {ans.alumniname}</p>
-            <button onClick={() => handleFeedbackClick(ans.feedback, index)} className='gpebtnfeed'>
-                    {responseIndex === index ? "Hide Feedback" : "Show Feedback"}
-            </button>
-                 {index===responseIndex && <p style={{color: "black"}} className='ppdtbtnfeedback'>{ppdtfeedback}</p>}
-            </div>
-            <div className='gpecon2'>
-              <p className='text-muted' style={{fontWeight: "bolder"}}>Aspirant's Problem: </p>
-            <p className='response'>{ans.problem}</p>
-            </div>
-              </div>
-            )})
-        }
+          <h2>Filter Responses by Week</h2>
+          <select
+            onChange={handleFilterChange}
+            value={selectedFilter}
+            style={{
+              width: "30%",
+              height: "30px",
+              borderRadius: "6px",
+              cursor: "pointer",
+            }}
+          >
+            <option value="past1week">Previous 1 week</option>
+            <option value="past2week">Previous 2 weeks</option>
+            <option value="past3week">Previous 3 weeks</option>
+            <option value="past4week">Previous 4 weeks</option>
+          </select>
         </div>
+        {feedback.map((ans, index) => {
+          if (ans.problem.length === 0) return <></>;
+          return (
+            <div className="gpefeedback" key={ans._id}>
+              <div className="gpecon1">
+                <div>
+                  <p className="text-muted" style={{ fontWeight: "bolder" }}>
+                    Gpe Picture:{" "}
+                  </p>
+                  <p style={{ color: "black" }} className="picurl">
+                    <img src={ans.url} alt="" className="picurl" />
+                  </p>
+                </div>
+                <div>
+                  <p className="text-muted" style={{ fontWeight: "bolder" }}>
+                    Aspirant's Result:{" "}
+                  </p>
+                  <p className="text-muted" style={{ fontWeight: "bolder" }}>
+                    {ans.result}
+                  </p>
+                </div>
+                <p style={{ color: "black", fontSize: "20px" }}>
+                  Feedback is given by:{" "}
+                </p>
+                <p style={{ color: "black" }} className="imageurl">
+                  Alumni email: {ans.alumniname}
+                </p>
+                <button
+                  onClick={() => handleFeedbackClick(ans.feedback, index)}
+                  className="gpebtnfeed"
+                >
+                  {responseIndex === index ? "Hide Feedback" : "Show Feedback"}
+                </button>
+                {index === responseIndex && (
+                  <p style={{ color: "black" }} className="ppdtbtnfeedback">
+                    {ppdtfeedback}
+                  </p>
+                )}
+              </div>
+              <div className="gpecon2">
+                <p className="text-muted" style={{ fontWeight: "bolder" }}>
+                  Aspirant's Problem:{" "}
+                </p>
+                <p className="response">{ans.problem}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </>
-  )
+  );
 }
 // Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non libero sed repellendus alias omnis iste voluptatem dicta consequatur, perferendis aperiam dolor impedit eos eaque eum inventore, voluptates sapiente labore dolore voluptas quis et eveniet!
-

@@ -4,7 +4,7 @@ import axios from "axios";
 import "./ppdtfeedback.css";
 
 export default function PpdtFeedback() {
-  const [feedback,showFeedback] = useState([])
+  const [feedback, showFeedback] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("past1week");
   const [ppdtfeedback, showPpdtFeedback] = useState("");
   const [responseIndex, setResponseIndex] = useState(-1);
@@ -35,15 +35,18 @@ export default function PpdtFeedback() {
         pastDate.setDate(pastDate.getDate() - 28);
       }
 
-      const response = await axios.get("http://localhost:5000/api/ppdtfeedbackstore", {
-        params: {
-          start: pastDate.toISOString(),
-          end: currentDate.toISOString()
+      const response = await axios.get(
+        "http://localhost:5000/api/ppdtfeedbackstore",
+        {
+          params: {
+            start: pastDate.toISOString(),
+            end: currentDate.toISOString(),
+          },
         }
-      });
+      );
       console.log(response.data);
 
-      const filteredAnswers = response.data.filter(answer => {
+      const filteredAnswers = response.data.filter((answer) => {
         const createAt = new Date(answer.createAt);
         return createAt >= pastDate && createAt <= currentDate;
       });
@@ -58,7 +61,7 @@ export default function PpdtFeedback() {
   const handleFilterChange = (e) => {
     setSelectedFilter(e.target.value);
   };
-  
+
   var flag = true;
 
   const showppdtfeedback = async (feed) => {
@@ -80,10 +83,10 @@ export default function PpdtFeedback() {
     // showppdtfeedback(feedback);
     if (responseIndex === index) {
       setResponseIndex(null);
-    showppdtfeedback("");
+      showppdtfeedback("");
     } else {
       setResponseIndex(index);
-    showppdtfeedback(feedback);
+      showppdtfeedback(feedback);
     }
   };
 
@@ -96,36 +99,48 @@ export default function PpdtFeedback() {
   return (
     <>
       <div className="showfeedback">
-      <div>
-        <h2>Filter Response by Week</h2>
-        <select onChange={handleFilterChange} value={selectedFilter} style={{width: "30%",height: "30px",borderRadius: "6px",cursor: "pointer"}}>
-          <option value="past1week">Previous 1 week</option>
-          <option value="past2week">Previous 2 week</option>
-          <option value="past3week">Previous 3 week</option>
-          <option value="past4week">Previous 4 week</option>
-        </select>
-      </div>
+        <div>
+          <h2>Filter Responses by Week</h2>
+          <select
+            onChange={handleFilterChange}
+            value={selectedFilter}
+            style={{
+              width: "30%",
+              height: "30px",
+              borderRadius: "6px",
+              cursor: "pointer",
+            }}
+          >
+            <option value="past1week">Previous 1 week</option>
+            <option value="past2week">Previous 2 weeks</option>
+            <option value="past3week">Previous 3 weeks</option>
+            <option value="past4week">Previous 4 weeks</option>
+          </select>
+        </div>
         {feedback.map((ans, index) => (
           <div className="ppdtfeedback container rounded p-5" key={ans._id}>
             <div className="row">
               <div className="col-5 ">
-                <p className="imageurl p-3 text-muted">
-                  Ppdt picture:{" "}
-                </p>
+                <p className="imageurl p-3 text-muted">Ppdt picture: </p>
                 <img src={ans.url} alt="images" className="picurl" />
               </div>
               <div className="col-7 p-3">
-                <p  className="feedbackcont text-muted">
-                  Your story :{" "}
-                </p>
+                <p className="feedbackcont text-muted">Your story : </p>
                 <p className="response">{ans.story}</p>
               </div>
             </div>
-            <p style={{color: "black",fontSize: "20px"}}>Feedback is given by: </p>
-            <p style={{color: "black"}} className='imageurl'>Alumni email: {ans.alumniname}</p>
-            <button onClick={() => handleFeedbackClick(ans.feedback, index)} className='btnfeedback'>
-                    {responseIndex === index ? "Hide Feedback" : "Show Feedback"}
-                  </button>
+            <p style={{ color: "black", fontSize: "20px" }}>
+              Feedback is given by:{" "}
+            </p>
+            <p style={{ color: "black" }} className="imageurl">
+              Alumni email: {ans.alumniname}
+            </p>
+            <button
+              onClick={() => handleFeedbackClick(ans.feedback, index)}
+              className="btnfeedback"
+            >
+              {responseIndex === index ? "Hide Feedback" : "Show Feedback"}
+            </button>
             {index === responseIndex && (
               <p style={{ color: "black" }} className="ppdtbtnfeedback">
                 {ppdtfeedback}

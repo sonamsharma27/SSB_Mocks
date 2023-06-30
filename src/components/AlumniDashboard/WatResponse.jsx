@@ -78,12 +78,12 @@ export default function WatResponse() {
       const response = await axios.get("http://localhost:5000/api/wat_resp", {
         params: {
           start: pastDate.toISOString(),
-          end: currentDate.toISOString()
-        }
+          end: currentDate.toISOString(),
+        },
       });
       console.log(response.data);
 
-      const filteredAnswers = response.data.filter(answer => {
+      const filteredAnswers = response.data.filter((answer) => {
         const createAt = new Date(answer.createAt);
         return createAt >= pastDate && createAt <= currentDate;
       });
@@ -164,127 +164,139 @@ export default function WatResponse() {
   return (
     <>
       <div className="srtmain">
-      <div>
-        <h2>Select Answer by week</h2>
-        <select onChange={handleFilterChange} value={selectedFilter} style={{width: "30%",height: "30px"}}>
-          <option value="past1week">past 1 week</option>
-          <option value="past2week">past 2 week</option>
-          <option value="past3week">past 3 week</option>
-          <option value="past4week">past 4 week</option>
-        </select>
-      </div>
-      <div>
-      {answers.map((d) => {
-          let storedRating = 0;
-          d.users.forEach((user) => {
-            if (user.email === localStorage.getItem("email")) {
-              storedRating = user.rating;
-            }
-          });
-          return (
-            <div key={d._id} className="watcontent">
-              <p className="text-muted" style={{ fontWeight: "bolder" }}>Aspirant's Email: {d.username}</p>
-              <p className="text-muted" style={{ fontWeight: "bolder" }}>Aspirant's response:</p>
-              {/* <br /> */}
-              <div className="watfeedcont m-2">
-                <li>
-                  <span>{`${d.word1}`}: &nbsp;</span>
-                  <span className="fw-bolder words">{`${d.s1}`}</span>
-                </li>
-                <li>
-                  <span>{`${d.word2}`}: &nbsp;</span>
-                  <span className="fw-bolder words">{`${d.s2}`}</span>
-                </li>
-                <li>
-                  <span>{`${d.word3}`}: &nbsp;</span>
-                  <span className="fw-bolder words">{`${d.s3}`}</span>
-                </li>
-                <li>
-                  <span>{`${d.word4}`}: &nbsp;</span>
-                  <span className="fw-bolder words">{`${d.s4}`}</span>
-                </li>
-                <li>
-                  <span>{`${d.word5}`}: &nbsp;</span>
-                  <span className="fw-bolder words">{`${d.s5}`}</span>
-                </li>
-                <li>
-                  <span>{`${d.word6}`}: &nbsp;</span>
-                  <span className="fw-bolder words">{`${d.s6}`}</span>
-                </li>
-                <li>
-                  <span>{`${d.word7}`}: &nbsp;</span>
-                  <span className="fw-bolder words">{`${d.s7}`}</span>
-                </li>
-                <li>
-                  <span>{`${d.word8}`}: &nbsp;</span>
-                  <span className="fw-bolder words">{`${d.s8}`}</span>
-                </li>
-                <li>
-                  <span>{`${d.word9}`}: &nbsp;</span>
-                  <span className="fw-bolder words">{`${d.s9}`}</span>
-                </li>
-                <li>
-                  <span>{`${d.word10}`}:&nbsp;</span>
-                  <span className="fw-bolder words">{`${d.s10}`}</span>
-                </li>
-              </div>
-              <textarea
-                name="text"
-                id=""
-                cols="120"
-                rows="3"
-                placeholder="Write Your Feedback Here"
-                value={feedback}
-                onChange={(e) => setFeedback(e.target.value)}
-              ></textarea>
-              <button
-                className="submitrewats"
-                onClick={(e) => {
-                  submitWatFeedback(
-                    d.username,
-                    d.word1,
-                    d.word2,
-                    d.word3,
-                    d.word4,
-                    d.word5,
-                    d.word6,
-                    d.word7,
-                    d.word8,
-                    d.word9,
-                    d.word10,
-                    d.s1,
-                    d.s2,
-                    d.s3,
-                    d.s4,
-                    d.s5,
-                    d.s6,
-                    d.s7,
-                    d.s8,
-                    d.s9,
-                    d.s10
-                  );
-                }}
-              >
-                Submit
-              </button>
-              <div>
-                <div className="text-muted">
-                  Your rating to aspirant's response:
+        <div>
+          <h2>Filter Responses by week</h2>
+          <select
+            onChange={handleFilterChange}
+            value={selectedFilter}
+            style={{ width: "30%", height: "30px" }}
+          >
+            <option value="past1week">Previous 1 week</option>
+            <option value="past2week">Previous 2 weeks</option>
+            <option value="past3week">Previous 3 weeks</option>
+            <option value="past4week">Previous 4 weeks</option>
+          </select>
+        </div>
+        <div>
+          {answers.map((d) => {
+            let storedRating = 0;
+            d.users.forEach((user) => {
+              if (user.email === localStorage.getItem("email")) {
+                storedRating = user.rating;
+              }
+            });
+            return (
+              <div key={d._id} className="watcontent">
+                <p className="text-muted" style={{ fontWeight: "bolder" }}>
+                  Aspirant's Email: {d.username}
+                </p>
+                <p className="text-muted" style={{ fontWeight: "bolder" }}>
+                  Aspirant's response:
+                </p>
+                {/* <br /> */}
+                <div className="watfeedcont m-2">
+                  <li>
+                    <span>{`${d.word1}`}: &nbsp;</span>
+                    <span className="fw-bolder words">{`${d.s1}`}</span>
+                  </li>
+                  <li>
+                    <span>{`${d.word2}`}: &nbsp;</span>
+                    <span className="fw-bolder words">{`${d.s2}`}</span>
+                  </li>
+                  <li>
+                    <span>{`${d.word3}`}: &nbsp;</span>
+                    <span className="fw-bolder words">{`${d.s3}`}</span>
+                  </li>
+                  <li>
+                    <span>{`${d.word4}`}: &nbsp;</span>
+                    <span className="fw-bolder words">{`${d.s4}`}</span>
+                  </li>
+                  <li>
+                    <span>{`${d.word5}`}: &nbsp;</span>
+                    <span className="fw-bolder words">{`${d.s5}`}</span>
+                  </li>
+                  <li>
+                    <span>{`${d.word6}`}: &nbsp;</span>
+                    <span className="fw-bolder words">{`${d.s6}`}</span>
+                  </li>
+                  <li>
+                    <span>{`${d.word7}`}: &nbsp;</span>
+                    <span className="fw-bolder words">{`${d.s7}`}</span>
+                  </li>
+                  <li>
+                    <span>{`${d.word8}`}: &nbsp;</span>
+                    <span className="fw-bolder words">{`${d.s8}`}</span>
+                  </li>
+                  <li>
+                    <span>{`${d.word9}`}: &nbsp;</span>
+                    <span className="fw-bolder words">{`${d.s9}`}</span>
+                  </li>
+                  <li>
+                    <span>{`${d.word10}`}:&nbsp;</span>
+                    <span className="fw-bolder words">{`${d.s10}`}</span>
+                  </li>
                 </div>
-                <Rating
-                  onClick={(e) => handleRating(e, d._id)}
-                  showTooltip={true}
-                  initialValue={storedRating}
-                  tooltipArray={["Bad", "Average", "Good", "Great", "Awesome"]}
-                  style={{ pointerEvents: storedRating > 0 ? "none" : "" }}
-                />
+                <textarea
+                  name="text"
+                  id=""
+                  cols="120"
+                  rows="3"
+                  placeholder="Write Your Feedback Here"
+                  value={feedback}
+                  onChange={(e) => setFeedback(e.target.value)}
+                ></textarea>
+                <button
+                  className="submitrewats"
+                  onClick={(e) => {
+                    submitWatFeedback(
+                      d.username,
+                      d.word1,
+                      d.word2,
+                      d.word3,
+                      d.word4,
+                      d.word5,
+                      d.word6,
+                      d.word7,
+                      d.word8,
+                      d.word9,
+                      d.word10,
+                      d.s1,
+                      d.s2,
+                      d.s3,
+                      d.s4,
+                      d.s5,
+                      d.s6,
+                      d.s7,
+                      d.s8,
+                      d.s9,
+                      d.s10
+                    );
+                  }}
+                >
+                  Submit
+                </button>
+                <div>
+                  <div className="text-muted">
+                    Your rating to aspirant's response:
+                  </div>
+                  <Rating
+                    onClick={(e) => handleRating(e, d._id)}
+                    showTooltip={true}
+                    initialValue={storedRating}
+                    tooltipArray={[
+                      "Bad",
+                      "Average",
+                      "Good",
+                      "Great",
+                      "Awesome",
+                    ]}
+                    style={{ pointerEvents: storedRating > 0 ? "none" : "" }}
+                  />
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-      
-
+            );
+          })}
+        </div>
       </div>
     </>
   );
