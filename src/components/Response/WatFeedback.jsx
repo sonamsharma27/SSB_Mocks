@@ -34,12 +34,6 @@ export default function WatFeedback() {
         pastDate.setDate(pastDate.getDate() - 28);
       }
 
-<<<<<<< HEAD
-      const response = await axios.get("http://localhost:5000/api/wat_feedback", {
-        params: {
-          start: pastDate.toISOString(),
-          end: currentDate.toISOString()
-=======
       const response = await axios.get(
         "http://localhost:5000/api/wat_feedback",
         {
@@ -47,7 +41,6 @@ export default function WatFeedback() {
             start: pastDate.toISOString(),
             end: currentDate.toISOString(),
           },
->>>>>>> 0ad01bdfc8c332da30234fbd50486a6fc7d4c063
         }
       );
       console.log(response.data);
