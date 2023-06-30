@@ -76,8 +76,8 @@ export default function PpdtFeedback() {
   };
 
   const handleFeedbackClick = (feedback, index) => {
-    setResponseIndex(index);
-    showppdtfeedback(feedback);
+    // setResponseIndex(index);
+    // showppdtfeedback(feedback);
     if (responseIndex === index) {
       setResponseIndex(null);
     showppdtfeedback("");

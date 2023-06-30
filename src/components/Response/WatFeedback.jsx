@@ -34,7 +34,7 @@ export default function WatFeedback() {
         pastDate.setDate(pastDate.getDate() - 28);
       }
 
-      const response = await axios.get("http://localhost:5000/api/gpefeedbackstore", {
+      const response = await axios.get("http://localhost:5000/api/wat_feedback", {
         params: {
           start: pastDate.toISOString(),
           end: currentDate.toISOString()
