@@ -35,12 +35,12 @@ export default function WatAnswers() {
       const response = await axios.get("http://localhost:5000/api/wat_resp", {
         params: {
           start: pastDate.toISOString(),
-          end: currentDate.toISOString()
-        }
+          end: currentDate.toISOString(),
+        },
       });
       console.log(response.data);
 
-      const filteredAnswers = response.data.filter(answer => {
+      const filteredAnswers = response.data.filter((answer) => {
         const createAt = new Date(answer.createAt);
         return createAt >= pastDate && createAt <= currentDate;
       });
@@ -124,15 +124,24 @@ export default function WatAnswers() {
   return (
     <>
       <div className="srtmain">
-      <div>
-        <h2>Filter Response by Week</h2>
-        <select onChange={handleFilterChange} value={selectedFilter} style={{width: "30%",height: "30px",borderRadius: "6px",cursor: "pointer"}}>
-          <option value="past1week">Previous 1 week</option>
-          <option value="past2week">Previous 2 week</option>
-          <option value="past3week">Previous 3 week</option>
-          <option value="past4week">Previous 4 week</option>
-        </select>
-      </div>
+        <div>
+          <h2>Filter Responses by Week</h2>
+          <select
+            onChange={handleFilterChange}
+            value={selectedFilter}
+            style={{
+              width: "30%",
+              height: "30px",
+              borderRadius: "6px",
+              cursor: "pointer",
+            }}
+          >
+            <option value="past1week">Previous 1 week</option>
+            <option value="past2week">Previous 2 weeks</option>
+            <option value="past3week">Previous 3 weeks</option>
+            <option value="past4week">Previous 4 weeks</option>
+          </select>
+        </div>
         {answers.map((d) => {
           let onestar = 0;
           let twostar = 0;
@@ -165,7 +174,9 @@ export default function WatAnswers() {
           avgRating = avgRating.toFixed(1);
           return (
             <div key={d._id} className="watcontents">
-              <p className="text-muted mt-4" style={{ fontWeight: "bolder" }}>Aspirant Email: {d.username}</p>
+              <p className="text-muted mt-4" style={{ fontWeight: "bolder" }}>
+                Aspirant Email: {d.username}
+              </p>
               <p className="fw-bolder text-muted">Your response:</p>
               <div className="watfeedcont m-2">
                 <li>

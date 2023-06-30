@@ -37,12 +37,12 @@ export default function TatResponse() {
       const response = await axios.get("http://localhost:5000/api/tat_resp", {
         params: {
           start: pastDate.toISOString(),
-          end: currentDate.toISOString()
-        }
+          end: currentDate.toISOString(),
+        },
       });
       console.log(response.data);
 
-      const filteredAnswers = response.data.filter(answer => {
+      const filteredAnswers = response.data.filter((answer) => {
         const createAt = new Date(answer.createAt);
         return createAt >= pastDate && createAt <= currentDate;
       });
@@ -148,15 +148,19 @@ export default function TatResponse() {
   return (
     <>
       <div className="tatmain">
-      <div>
-      <h2>Filter Response by Week</h2>
-        <select onChange={handleFilterChange} value={selectedFilter} style={{width: "30%",height: "30px"}}>
-          <option value="past1week">past 1 week</option>
-          <option value="past2week">past 2 week</option>
-          <option value="past3week">past 3 week</option>
-          <option value="past4week">past 4 week</option>
-        </select>
-      </div>
+        <div>
+          <h2>Filter Responses by Week</h2>
+          <select
+            onChange={handleFilterChange}
+            value={selectedFilter}
+            style={{ width: "30%", height: "30px" }}
+          >
+            <option value="past1week">Previous 1 week</option>
+            <option value="past2week">Previous 2 weeks</option>
+            <option value="past3week">Previous 3 weeks</option>
+            <option value="past4week">Previous 4 weeks</option>
+          </select>
+        </div>
         {answers.map((d) => {
           let storedRating = 0;
           d.users.forEach((user) => {
@@ -166,8 +170,12 @@ export default function TatResponse() {
           });
           return (
             <div key={d._id} className="tatcontent">
-              <p className="text-muted" style={{ fontWeight: "bolder" }}>Aspirant's Email: {d.username}</p>
-              <p className="text-muted" style={{ fontWeight: "bolder" }}>Aspirant's response: </p>
+              <p className="text-muted" style={{ fontWeight: "bolder" }}>
+                Aspirant's Email: {d.username}
+              </p>
+              <p className="text-muted" style={{ fontWeight: "bolder" }}>
+                Aspirant's response:{" "}
+              </p>
               {/* <br /> */}
               <div className="tatcont">
                 <div className="taturl">
