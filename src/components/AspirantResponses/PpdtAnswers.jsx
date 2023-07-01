@@ -157,7 +157,13 @@ export default function PpdtAnswers() {
                         <div className={" fs-1 col-4"}>
                           <div className="mainRating d-flex align-content-center">
                             {" "}
-                            {avgRating} <h1 className="mt-4 m-1">★</h1>
+                            {avgRating}{" "}
+                            <h1
+                              className="mt-4 m-1"
+                              style={{ color: "#ffbc0b" }}
+                            >
+                              ★
+                            </h1>
                           </div>
                           <div className="text-muted">
                             Rated by {d.users.length} Alumni
@@ -165,20 +171,24 @@ export default function PpdtAnswers() {
                         </div>
                         <div className="col-6 starsdiv px-4 ">
                           <div className="row">
-                            <div className="col-2">5★</div>
+                            <div className="col-2">
+                              5<span style={{ color: "#ffbc0b" }}>★</span>
+                            </div>
                             <div className="col-8 d-flex px-0">
                               <progress
-                                className="progress-bar mt-1 p-0 bg-light rounded align-self-center progresscolor"
+                                className="progress-bar mt-1 p-0 bg-light rounded align-self-center"
                                 value={fivestar}
                                 max={d.users.length}
-                                style={{ backgroundColor: "red" }}
                                 min={0}
+                                style={{ color: "blue" }}
                               ></progress>
                             </div>
                             <div className="col-2 px-1"> {fivestar}</div>
                           </div>
                           <div className="row">
-                            <div className="col-2">4★</div>
+                            <div className="col-2">
+                              4<span style={{ color: "#ffbc0b" }}>★</span>
+                            </div>
                             <div className="col-8 d-flex px-0">
                               <progress
                                 className="progress-bar mt-1 p-0 bg-light rounded align-self-center"
@@ -191,7 +201,9 @@ export default function PpdtAnswers() {
                             <div className="col-2 px-1"> {fourstar}</div>
                           </div>
                           <div className="row">
-                            <div className="col-2">3★</div>
+                            <div className="col-2">
+                              3<span style={{ color: "#ffbc0b" }}>★</span>
+                            </div>
                             <div className="col-8 d-flex px-0">
                               <progress
                                 className="progress-bar mt-1 p-0 bg-light rounded align-self-center"
@@ -204,7 +216,9 @@ export default function PpdtAnswers() {
                             <div className="col-2 px-1"> {threestar}</div>
                           </div>
                           <div className="row">
-                            <div className="col-2">2★</div>
+                            <div className="col-2">
+                              2<span style={{ color: "#ffbc0b" }}>★</span>
+                            </div>
                             <div className="col-8 d-flex px-0">
                               <progress
                                 className="progress-bar mt-1 p-0 bg-light rounded align-self-center"
@@ -217,7 +231,9 @@ export default function PpdtAnswers() {
                             <div className="col-2 px-1"> {twostar}</div>
                           </div>
                           <div className="row">
-                            <div className="col-2">1★</div>
+                            <div className="col-2">
+                              1<span style={{ color: "#ffbc0b" }}>★</span>
+                            </div>
                             <div className="col-8 d-flex px-0">
                               <progress
                                 className="progress-bar mt-1 p-0 bg-light rounded align-self-center"
