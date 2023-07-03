@@ -47,6 +47,8 @@ export default function SrtResponse() {
         return createAt >= pastDate && createAt <= currentDate;
       });
 
+      filteredAnswers.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
+
       console.log(filteredAnswers);
       getAnswers(filteredAnswers);
     } catch (error) {
@@ -145,6 +147,7 @@ export default function SrtResponse() {
           });
           return (
             <div key={d._id} className="srtcontent container">
+              <p className="text-muted" style={{ fontWeight: "bolder" }}>Date of Test: {d.createAt.slice(0, 10)}</p>
               <p style={{ color: "black" }}>Aspirant's Email: {d.username}</p>
               <div className="m-0 ">
                 <p className="fw-bolder mt-1 mb-1">Situations:</p>

@@ -48,6 +48,8 @@ export default function SrtFeedback() {
         return createAt >= pastDate && createAt <= currentDate;
       });
 
+      filteredAnswers.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
+
       console.log(filteredAnswers);
       showFeedback(filteredAnswers);
     } catch (error) {
@@ -114,6 +116,7 @@ export default function SrtFeedback() {
         {feedback.map((ans, index) => (
           <div className="ppdtfeedback container border border-1" key={ans._id}>
             <div>
+            <p className="text-muted" style={{ fontWeight: "bolder" }}>Date of Test: {ans.createAt.slice(0, 10)}</p>
               <p className="fw-bolder mt-2 mb-0">Situations</p>
               <div className="srtlistdata">
                 {ans.situation.split("|||").map((item, index) => (

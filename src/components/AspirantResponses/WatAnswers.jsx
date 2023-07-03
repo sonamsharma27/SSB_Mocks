@@ -45,6 +45,8 @@ export default function WatAnswers() {
         return createAt >= pastDate && createAt <= currentDate;
       });
 
+      filteredAnswers.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
+
       console.log(filteredAnswers);
       getAnswers(filteredAnswers);
     } catch (error) {
@@ -174,6 +176,7 @@ export default function WatAnswers() {
           avgRating = avgRating.toFixed(1);
           return (
             <div key={d._id} className="watcontents">
+              <p className="text-muted" style={{ fontWeight: "bolder" }}>Date of Test: {d.createAt.slice(0, 10)}</p>
               <p className="text-muted mt-4" style={{ fontWeight: "bolder" }}>
                 Aspirant Email: {d.username}
               </p>

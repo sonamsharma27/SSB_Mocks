@@ -47,6 +47,8 @@ export default function TatResponse() {
         return createAt >= pastDate && createAt <= currentDate;
       });
 
+      filteredAnswers.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
+
       console.log(filteredAnswers);
       getAnswers(filteredAnswers);
     } catch (error) {
@@ -170,6 +172,7 @@ export default function TatResponse() {
           });
           return (
             <div key={d._id} className="tatcontent">
+              <p className="text-muted" style={{ fontWeight: "bolder" }}>Date of Test: {d.createAt.slice(0, 10)}</p>
               <p className="text-muted" style={{ fontWeight: "bolder" }}>
                 Aspirant's Email: {d.username}
               </p>

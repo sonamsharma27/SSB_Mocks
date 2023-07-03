@@ -51,6 +51,8 @@ export default function PpdtFeedback() {
         return createAt >= pastDate && createAt <= currentDate;
       });
 
+      filteredAnswers.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
+
       console.log(filteredAnswers);
       showFeedback(filteredAnswers);
     } catch (error) {
@@ -121,6 +123,7 @@ export default function PpdtFeedback() {
           <div className="ppdtfeedback container rounded p-5" key={ans._id}>
             <div className="row">
               <div className="col-5 ">
+              <p className="text-muted" style={{ fontWeight: "bolder" }}>Date of Test: {ans.createAt.slice(0, 10)}</p>
                 <p className="imageurl p-3 text-muted">Ppdt picture: </p>
                 <img src={ans.url} alt="images" className="picurl" />
               </div>

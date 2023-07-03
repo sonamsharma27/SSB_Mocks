@@ -49,6 +49,7 @@ export default function PpdtFeedback() {
         return createAt >= pastDate && createAt <= currentDate;
       });
 
+      filteredAnswers.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
       console.log(filteredAnswers);
       showFeedback(filteredAnswers);
     } catch (error) {
@@ -119,6 +120,7 @@ export default function PpdtFeedback() {
             <div className="gpefeedback" key={ans._id}>
               <div className="gpecon1">
                 <div>
+                <p className="text-muted" style={{ fontWeight: "bolder" }}>Date of Test: {ans.createAt.slice(0, 10)}</p>
                   <p className="text-muted" style={{ fontWeight: "bolder" }}>
                     Gpe Picture:{" "}
                   </p>

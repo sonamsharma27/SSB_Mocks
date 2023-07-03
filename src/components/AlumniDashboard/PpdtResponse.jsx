@@ -46,6 +46,8 @@ export default function PpdtResponse() {
         return createAt >= pastDate && createAt <= currentDate;
       });
 
+      filteredAnswers.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
+
       console.log(filteredAnswers);
       getAnswers(filteredAnswers);
     } catch (error) {
@@ -130,6 +132,7 @@ export default function PpdtResponse() {
             <div key={d._id} className="ppdtfeedcontent">
               <div className="ppdtcon1">
                 <div>
+                <p className="text-muted" style={{ fontWeight: "bolder" }}>Date of Test: {d.createAt.slice(0, 10)}</p>
                   <p className="text-muted" style={{ fontWeight: "bolder" }}>
                     Aspirant's Email: {d.username}
                   </p>

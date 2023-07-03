@@ -50,6 +50,8 @@ export default function WatFeedback() {
         return createAt >= pastDate && createAt <= currentDate;
       });
 
+      filteredAnswers.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
+
       console.log(filteredAnswers);
       showFeedback(filteredAnswers);
     } catch (error) {
@@ -115,6 +117,7 @@ export default function WatFeedback() {
         </div>
         {feedback.map((ans, index) => (
           <div className="watfeedback container p-3" key={ans._id}>
+            <p className="text-muted" style={{ fontWeight: "bolder" }}>Date of Test: {ans.createAt.slice(0, 10)}</p>
             <p className="fw-bolder text-muted">Aspirant's response:</p>
             <div className="response m-2">
               <li>

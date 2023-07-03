@@ -47,6 +47,8 @@ export default function GpeResponse() {
         return createAt >= pastDate && createAt <= currentDate;
       });
 
+      filteredAnswers.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
+
       console.log(filteredAnswers);
       getAnswers(filteredAnswers);
     } catch (error) {
@@ -131,6 +133,7 @@ export default function GpeResponse() {
             <div key={d._id} className="gpecontent">
               <div className="gpecon1">
                 <div>
+                <p className="text-muted" style={{ fontWeight: "bolder" }}>Date of Test: {d.createAt.slice(0, 10)}</p>
                   <p className="text-muted" style={{ fontWeight: "bolder" }}>
                     Aspirant's Email: {d.username}
                   </p>
