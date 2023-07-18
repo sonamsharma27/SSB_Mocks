@@ -31,14 +31,14 @@ export default function PpdtQues({url}) {
     useEffect(()=>{
       setTimeout(()=>{
         setShowQuestions(false);
-        // console.log(userResp);
+        console.log("UserResp: ",userResp);
        
-      },15000)
+      },20000)
     })
     useEffect(()=>{
       if(userResp.title==='') return;
       axios.post('http://localhost:5000/api/ppdt_resp', {
-        username: 'John',
+        username: localStorage.getItem('email'),
         url: userResp.url,
         title : userResp.title,
         main_character : userResp.main_character,
@@ -47,7 +47,7 @@ export default function PpdtQues({url}) {
         story: userResp.story
       })
       .then(function (response) {
-        console.log(response);
+        console.log("Response: ",response);
       })
       .catch(function (error) {
         console.log(error);

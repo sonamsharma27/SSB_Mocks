@@ -37,15 +37,17 @@ const submittat = async (url) => {
 const deletetat = async (url) => {
   console.log(url);
   axios.post('http://localhost:5000/api/alumni_tat_drop',{
-    url: url,
+    taturl: url,
   })
   .then(function (response) {
+    getTat();
     console.log(response);
   })
   .catch(function (error) {
+    getTat();
     console.log(error);
   });
-  getTat()
+  
 
 }
 

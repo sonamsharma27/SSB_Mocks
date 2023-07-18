@@ -42,11 +42,13 @@ const deletewat = async (word) => {
   })
   .then(function (response) {
     console.log(response);
+    getWat();
   })
   .catch(function (error) {
+    getWat();
     console.log(error);
   });
-  getWat()
+  
 
 }
 

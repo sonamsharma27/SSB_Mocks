@@ -88,6 +88,7 @@ export default function PpdtResponse() {
         story: story,
         url: url,
         feedback: feedback,
+        alumniname: localStorage.getItem("email"),
       })
       .then(function (response) {
         console.log(response);

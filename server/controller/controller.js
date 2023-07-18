@@ -32,13 +32,14 @@ const mongoose = require('mongoose');
 exports.insertPpdtFeedbackstore = async function (req, res) {
     try {
         console.log(req.body);
-        const { feedback, story, url } = req.body;
-        if (!feedback || !url || !story) throw new Error('Data Not Provided...!');
+        const { feedback, story, url,alumniname } = req.body;
+        if (!alumniname || !feedback || !url || !story) throw new Error('Data Not Provided...!');
 
         ppdtFeedbackStore.create({
             story: story,
             url: url,
             feedback: feedback,
+            alumniname: alumniname,
         }, function (err, data) {
             res.json({ msg: "ppdt Feddback Saved Successfully...!" })
         })
@@ -50,14 +51,15 @@ exports.insertPpdtFeedbackstore = async function (req, res) {
 exports.insertGpeFeedbackstore = async function (req, res) {
     try {
         console.log(req.body);
-        const { problem, url, result, feedback } = req.body;
-        if (!problem || !url || !result || !feedback) throw new Error('Data Not Provided...!');
+        const { problem, url, result, feedback,alumniname } = req.body;
+        if (!alumniname || !problem || !url || !result || !feedback) throw new Error('Data Not Provided...!');
 
         gpeFeedbackStore.create({
             problem: problem,
             url: url,
             result: result,
             feedback: feedback,
+            alumniname: alumniname,
         }, function (err, data) {
             res.json({ msg: "gpe Feddback Saved Successfully...!" })
         })
@@ -282,7 +284,7 @@ exports.insertPpdtResponse = async function (req, res) {
     try {
         console.log(req.body);
         const { username, title, story, main_character, url, total_characters, characters } = req.body;
-        if (!username || !url) throw new Error('Data Not Provided...!');
+        if (!username || !url || !title || !story || !main_character || !total_characters || !characters) throw new Error('Data Not Provided...!');
 
         PpdtResponse.create({
             username: username,
@@ -796,7 +798,7 @@ exports.dropWatWords = async function (req, res) {
     try {
         const { word } = req.body;
         console.log("reqbody", word);
-        await AlumniWatResponse.deleteOne({ "content": word });
+        await AlumniWatResponse.deleteMany({ "content": word });
         res.json({ msg: "word deleted successfully...." })
     } catch (error) {
         res.json({ error })
@@ -807,7 +809,7 @@ exports.dropPpdtUrl = async function (req, res) {
     try {
         const { ppdturl } = req.body;
         console.log("reqbody", ppdturl);
-        await AlumniPpdtResponse.deleteOne({ "content": ppdturl });
+        await AlumniPpdtResponse.deleteMany({ "url": ppdturl });
         res.json({ msg: "url deleted successfully...." })
     } catch (error) {
         res.json({ error })
@@ -818,7 +820,7 @@ exports.dropSrtSituation = async function (req, res) {
     try {
         const { situation } = req.body;
         console.log("reqbody", situation);
-        await AlumniSrtResponse.deleteOne({ "content": situation });
+        await AlumniSrtResponse.deleteMany({ "situation": situation });
         res.json({ msg: "situation deleted successfully...." })
     } catch (error) {
         res.json({ error })
@@ -829,7 +831,7 @@ exports.dropGpeProblem = async function (req, res) {
         const { url, problem } = req.body;
         console.log("reqbody", url);
         console.log("reqbody2", problem);
-        await AlumniGpeResponse.deleteMany();
+        await AlumniGpeResponse.deleteMany({"url":url });
         res.json({ msg: "situation deleted successfully...." })
     } catch (error) {
         res.json({ error })
@@ -839,8 +841,8 @@ exports.dropGpeProblem = async function (req, res) {
 exports.dropTatUrl = async function (req, res) {
     try {
         const { taturl } = req.body;
-        console.log("reqbody", taturl);
-        await AlumniSrtResponse.deleteOne({ "content": taturl });
+        console.log("reqbody tat", taturl);
+        await AlumniTatResponse.deleteMany({ "url": taturl });
         res.json({ msg: "url deleted successfully...." })
     } catch (error) {
         res.json({ error })

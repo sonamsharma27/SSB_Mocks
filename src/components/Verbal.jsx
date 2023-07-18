@@ -13,7 +13,7 @@ export default function Verbal() {
   const [showQuestions, setShowQuestions] = useState(true);
     setTimeout(()=>{
         setShowQuestions(false);
-    },10000)
+    },20000)
   const [check,setChecked] = useState(undefined)
   const result = useSelector(state => state.result.result)
   const {queue,trace} = useSelector(state => state.questions)

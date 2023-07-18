@@ -5,6 +5,7 @@ const ppdtFeedbackStore = new Schema({
     story: {type:String},
     url: {type:String},
     feedback: {type:String},
+    alumniname: {type:String},
     createAt: {type:Date,default: Date.now}
 })
 

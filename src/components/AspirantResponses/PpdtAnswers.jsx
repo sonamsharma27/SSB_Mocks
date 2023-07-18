@@ -5,12 +5,12 @@ export default function PpdtAnswers() {
   const [answers, getAnswers] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("past1week");
   // const getPpdtData = async () => {
-  //   try {
-  //     const response = await axios.get("http://localhost:5000/api/ppdt_resp");
-  //     await getAnswers(response.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
+    // try {
+    //   const response = await axios.get("http://localhost:5000/api/ppdt_resp");
+    //   await getAnswers(response.data);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   // };
   const fetchdata = async () => {
     try {

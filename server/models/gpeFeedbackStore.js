@@ -6,6 +6,7 @@ const gpeFeedbackStore = new Schema({
     url: {type:String},
     result: {type:String},
     feedback: {type:String},
+    alumniname: {type:String},
     createAt: {type:Date,default: Date.now}
 })
 

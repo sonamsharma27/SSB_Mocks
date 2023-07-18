@@ -42,12 +42,13 @@ export default function AdminGpe() {
         problem: problem
       })
       .then(function (response) {
+        getGpe()
         console.log(response);
       })
       .catch(function (error) {
+        getGpe()
         console.log(error);
       });
-      getGpe()
     
     }
 
@@ -81,8 +82,8 @@ export default function AdminGpe() {
                 <p className='text-muted' style={{fontWeight: "bolder"}}>Gpe Picture: </p>
                 <p style={{color: "black"}} className='picurl'><img src={d.url} alt="" className='picurl'/></p>
               </div>
-            <img src={tick} className='tick' onClick={(e) => {submitgpe(d.content)}} alt="add" />
-                  <img src={cross} className='cross' onClick={(e) => {deletegpe(d.content)}} alt="add" />
+            <img src={tick} className='tick' onClick={(e) => {submitgpe(d.url)}} alt="add" />
+                  <img src={cross} className='cross' onClick={(e) => {deletegpe(d.url)}} alt="add" />
             </div>
 
             <div className='gpecon2'>

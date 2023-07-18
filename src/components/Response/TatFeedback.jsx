@@ -183,12 +183,12 @@ export default function TatFeedback() {
                 <div className="tatinp">: {ans.s10}</div>
               </div>
             </div>
-            <p style={{ color: "black", fontSize: "20px" }}>
+            {/* <p style={{ color: "black", fontSize: "20px" }}>
               Feedback is given by:{" "}
             </p>
             <p style={{ color: "black" }} className="imageurl">
               Alumni email: {ans.alumniname}
-            </p>
+            </p> */}
             <button
               onClick={() => handleFeedbackClick(ans.feedback, index)}
               className="btnfeedback"
@@ -199,7 +199,10 @@ export default function TatFeedback() {
               <>
                 {" "}
                 <p style={{ color: "black" }} className="ppdtbtnfeedback">
-                  {tatfeedback}
+                  <p style={{fontSize: "14px",fontWeight: "lighter"}}>{"Feedback is given by:  "}
+                  {ans.alumniname}
+                  </p>
+                  <p style={{color: "black",fontWeight: "500"}}>{tatfeedback}</p>
                 </p>
               </>
             )}

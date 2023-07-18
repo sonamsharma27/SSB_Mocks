@@ -137,12 +137,12 @@ export default function SrtFeedback() {
             </p>
             <p>{ans.result}</p>
             {/* <p style={{color: "black"}} className='imageurl'>Username: {ans.username}</p> */}
-            <p style={{ color: "black", fontSize: "20px" }}>
+            {/* <p style={{ color: "black", fontSize: "20px" }}>
               Feedback is given by:{" "}
             </p>
             <p style={{ color: "black" }} className="imageurl">
               Alumni email: {ans.alumniname}
-            </p>
+            </p> */}
             {/* {responseIndex === index && <p>{ans.feedback}</p>} */}
             <button
               onClick={() => handleFeedbackClick(ans.feedback, index)}
@@ -154,7 +154,10 @@ export default function SrtFeedback() {
             {index === responseIndex && (
               <>
                 <p style={{ color: "black" }} className="ppdtbtnfeedback">
-                  {srtfeedback}
+                  <p style={{fontSize: "14px",fontWeight: "lighter"}}>{"Feedback is given by:  "}
+                  {ans.alumniname}
+                  </p>
+                  <p style={{color: "black",fontWeight: "500"}}>{srtfeedback}</p>
                 </p>
               </>
             )}

@@ -36,15 +36,16 @@ export default function AdminPpdt() {
     const deleteppdt = async (url) => {
       console.log(url);
       axios.post('http://localhost:5000/api/alumni_ppdt_drop',{
-        url: url,
+        ppdturl: url,
       })
       .then(function (response) {
         console.log(response);
+        getPpdt()
       })
       .catch(function (error) {
         console.log(error);
+        getPpdt()
       });
-      getPpdt()
     
     }
     useEffect(()=>{
@@ -94,10 +95,10 @@ export default function AdminPpdt() {
         ppdtresponse.map((d) => (
           <div className="ppdtitems" key={d._id}>
             <div className='ppdtpic'>
-                <img src={d.url} alt="tat" className='ppdtimg'/>
+                <img src={d.url} alt="ppdt" className='ppdtimg'/>
             </div>
-                <img src={tick} className='tattick' onClick={(e) => {submitppdt(d.content)}} alt="add" />
-                <img src={cross} className='tatcross' onClick={(e) => {deleteppdt(d.content)}} alt="add" />
+                <img src={tick} className='tattick' onClick={(e) => {submitppdt(d.url)}} alt="add" />
+                <img src={cross} className='tatcross' onClick={(e) => {deleteppdt(d.url)}} alt="add" />
           </div>
         ))
       }

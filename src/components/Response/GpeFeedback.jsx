@@ -136,21 +136,32 @@ export default function PpdtFeedback() {
                     {ans.result}
                   </p>
                 </div>
-                <p style={{ color: "black", fontSize: "20px" }}>
+                {/* <p style={{ color: "black", fontSize: "20px" }}>
                   Feedback is given by:{" "}
                 </p>
                 <p style={{ color: "black" }} className="imageurl">
                   Alumni email: {ans.alumniname}
-                </p>
+                </p> */}
                 <button
                   onClick={() => handleFeedbackClick(ans.feedback, index)}
                   className="gpebtnfeed"
                 >
                   {responseIndex === index ? "Hide Feedback" : "Show Feedback"}
                 </button>
-                {index === responseIndex && (
+                {index === responseIndex && 
+              //   (<p style={{ color: "black", fontSize: "20px" }}>
+              //     Feedback is given by:{" "}
+              //   </p>
+              //   ) && 
+              //   (<p style={{ color: "black" }} className="imageurl">
+              //   {alumnimail}
+              // </p>) && 
+              (
                   <p style={{ color: "black" }} className="ppdtbtnfeedback">
-                    {ppdtfeedback}
+                    <p style={{fontSize: "14px",fontWeight: "lighter"}}>{"Feedback is given by:  "}
+                  {ans.alumniname}
+                  </p>
+                  <p style={{color: "black",fontWeight: "500"}}>{ppdtfeedback}</p>
                   </p>
                 )}
               </div>

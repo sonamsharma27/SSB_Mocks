@@ -19,11 +19,9 @@ export default function Gpe() {
     },1)
     setTimeout(() => {
       setShowImage(false);
-     
-    }, 15000);
+    }, 20000);
   });
  useEffect(()=>{
-  // if(showImage) return;
   if(!problem.length) return;
   axios.post('http://localhost:5000/api/gpe_resp', {
     username: localStorage.getItem('email'),

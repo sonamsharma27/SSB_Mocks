@@ -89,6 +89,7 @@ export default function GpeResponse() {
         url: url,
         result: result,
         feedback: feedback,
+        alumniname: localStorage.getItem("email"),
       })
       .then(function (response) {
         console.log(response);

@@ -48,7 +48,7 @@ export default function Srt() {
       
       setQuestions('')
       console.log(result);
-    },10000);
+    },20000);
   }, []);
 
   return (
